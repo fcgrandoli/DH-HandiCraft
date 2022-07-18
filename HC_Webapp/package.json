@@ -1,6 +1,6 @@
 {
   "name": "handicraft",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "app.js",
   "scripts": {
     "test": "node app.js"
@@ -19,5 +19,5 @@
     "type": "git",
     "url": "https://github.com/fcgrandoli"
   },
-  "description": ""
+  "description": "Es un emprendimiento que pone al alcance de un click la compra de productos en los que interviene el diseño de articulos en vidrio, con los mejores estándares de especificación y calidad."
 }
