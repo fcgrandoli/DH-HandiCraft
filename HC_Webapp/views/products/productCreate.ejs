@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('../partials/head') %>
+  <link rel="stylesheet" type="text/css" href="/public/css/productEdit.css" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="/public/css/productEdit-tablet.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="/public/css/productEdit-desktop.css"
+  />
+  <%- include ('../partials/header') %>
+  <body>
+    <main>
+      <div class="banner">
+        <img src="/../public/images/banner.jpg" />
+      </div>
+      <div id="container">
+        <form class="fields" method="POST" action="/producto/crear?_method=PUT">
+          <label for="">ID: </label>
+          <input
+            type="number"
+            name="id"
+            value="<%= productList.length %>"
+            readonly="readonly"
+          />
+          <label for="">Nombre: </label>
+          <input type="text" name="name" value="" />
+          <label for="">Descripcion corta:</label>
+          <input type="text" name="descs" value="" />
+          <label for="">Descripcion larga:</label>
+          <input type="text" name="descl" value="" />
+          <label for="">Precio:</label>
+          <input type="number" name="price" value="" />
+          <label for="">Descuento:</label>
+          <input type="number" name="disc" value="" />
+          <label for="">Imagen:</label>
+          <input type="text" name="image" value="" />
+          <input class="submit" type="submit" value="Crear producto" />
+        </form>
+      </div>
+    </main>
+  </body>
+  <%- include ('../partials/footer') %>
+</html>

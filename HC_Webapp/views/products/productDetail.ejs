@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('../partials/head') %>
+  <link rel="stylesheet" type="text/css" href="/public/css/productDetail.css" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="/public/css/productDetail-tablet.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="/public/css/productDetail-desktop.css"
+  />
+  <%- include ('../partials/header') %>
+  <body>
+    <main>
+      <div id="container">
+        <section class="producto">
+          <div class="half-1">
+            <div class="prd-name">
+              <p><%= productList[i].name %></p>
+            </div>
+            <div class="image">
+              <img
+                class="preview"
+                src="/public/images/<%= productList[i].image %>"
+              />
+            </div>
+            <div class="description">
+              <div class="estrellas">
+                <i class="fa-solid fa-star estrella"></i>
+                <i class="fa-solid fa-star estrella"></i>
+                <i class="fa-solid fa-star estrella"></i>
+                <i class="fa-solid fa-star estrella"></i>
+                <i class="fa-solid fa-star estrella"></i>
+              </div>
+              <p class="disc">
+                <% if(productList[i].disc.length == 0){ %> <%=
+                productList[i].disc %> <% } else{ %> <%= productList[i].disc %>%
+                off <% } %>
+              </p>
+              <div class="price">
+                <p>$<%= productList[i].price %></p>
+              </div>
+            </div>
+            <div class="nav-buttons">
+              <i class="fa-solid fa-heart"></i>
+              <a class="cart" href="">Agregar al carrito</a>
+              <a class="buy" href="">Comprar</a>
+            </div>
+          </div>
+          <div class="half-2">
+            <% if(userLoggedIn.user_name){ %>
+            <a class="btn-edit" href="/producto/<%= productList[i].id%>/editar"
+              >EDITAR</a
+            >
+            <form
+              class="fields"
+              method="POST"
+              action="/producto/eliminar?_method=DELETE"
+            >
+              <a
+                class="btn-delete"
+                href="/producto/<%= productList[i].id%>/eliminar"
+                >ELIMINAR</a
+              >
+            </form>
+            <% } %>
+
+            <div class="text">
+              <div class="desc-short">
+                <p><%= productList[i].descs %></p>
+              </div>
+              <div class="desc-large">
+                <p><%= productList[i].descl %></p>
+              </div>
+            </div>
+            <p class="galeria-text">Galeria de imágenes:</p>
+            <div class="galeria">
+              <% for (let e = 0; e < 3; e++) { %>
+              <div class="image-mini">
+                <img
+                  class="preview-mini"
+                  src="/public/images/<%= productList[i].image %>"
+                />
+              </div>
+              <% } %>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+  <%- include ('../partials/footer') %>
+</html>

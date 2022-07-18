@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('../partials/head') %>
+  <link rel="stylesheet" type="text/css" href="../public/css/login.css" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="../public/css/login-tablet.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="../public/css/login-desktop.css"
+  />
+  <body>
+    <div class="container">
+      <%- include ('../partials/header') %>
+      <main>
+        <div class="banner">
+          <img src="public/images/banner.jpg" />
+        </div>
+        <form action="/login/user?_method=PUT" method="POST">
+          <div class="user">
+            <label for="user">Nombre de usuario</label>
+            <input class="input-fields" type="text" name="user_name" />
+          </div>
+          <div class="passwords">
+            <label for="password">Ingresar contraseña</label>
+            <input class="input-fields" type="password" name="passwd" />
+          </div>
+          <div class="buttons">
+            <button type="submit" value="enviar">Enviar</button>
+            <div class="show-btn-back">
+              <a class="nav-back" href="home">Volver</a>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+    <%- include ('../partials/footer') %>
+  </body>
+</html>

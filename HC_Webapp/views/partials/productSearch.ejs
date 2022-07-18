@@ -1,0 +1,27 @@
+<% for (let i = 0; i < tempProduct.length; i++) { %>
+<article class="producto">
+  <div class="image">
+    <a href="producto/<%= productList[tempProduct[i].id].id%>/mostrar"
+      ><img
+        class="preview"
+        src="../public/images/<%= productList[tempProduct[i].id].image %>"
+    /></a>
+  </div>
+  <div class="prd-container">
+    <div class="prd-name">
+      <p><%= productList[tempProduct[i].id].name %></p>
+    </div>
+    <div class="desc">
+      <p><%= productList[tempProduct[i].id].descs %></p>
+    </div>
+    <div class="price">
+      <p>$<%= productList[tempProduct[i].id].price %></p>
+      <p class="disc">
+        <%= productList[tempProduct[i].id].disc.length == 0 ?
+        productList[tempProduct[i].id].disc :
+        productList[tempProduct[i].id].disc + "% off" %>
+      </p>
+    </div>
+  </div>
+</article>
+<% } %>

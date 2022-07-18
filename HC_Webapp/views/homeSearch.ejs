@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./partials/head') %>
+  <link rel="stylesheet" type="text/css" href="public/css/home.css" />
+  <link rel="stylesheet" type="text/css" href="public/css/home-tablet.css" />
+  <link rel="stylesheet" type="text/css" href="public/css/home-desktop.css" />
+  <body>
+    <div id="container">
+      <%- include ('./partials/header') %>
+      <main>
+        <div class="banner">
+          <img src="public/images/banner.jpg" />
+        </div>
+        <section class="section-prd">
+          <%- include ('./partials/productSearch') %> <%
+          if(userLoggedIn.user_name){ %>
+          <div>
+            <a class="btn-create" href="../producto/crear">+</a>
+          </div>
+          <% } %>
+        </section>
+      </main>
+    </div>
+    <%- include ('./partials/footer') %>
+  </body>
+</html>

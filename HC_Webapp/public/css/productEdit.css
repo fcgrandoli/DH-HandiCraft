@@ -1,0 +1,59 @@
+@media only screen and (min-width: 361px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Calibri';
+  }
+
+  body {
+    background-color: #87a6ab;
+    min-height: 91vh;
+    margin-top: 95px;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+  }
+
+  .fields {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+
+  label {
+    text-align: left;
+    font-size: 48px;
+    top: 26px;
+    left: 5px;
+    padding: 25px 25px;
+    color: white;
+    border-radius: 0.25rem;
+    border: none;
+  }
+
+  input {
+    text-align: left;
+    font-size: 48px;
+    height: 75px;
+    top: 26px;
+    left: 5px;
+    padding: 5px 5px;
+    color: black;
+    border-radius: 0.25rem;
+    border: none;
+  }
+
+  .submit {
+    margin: auto;
+    margin-top: 35px;
+    width: 350px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: #39b54a;
+  }
+}
