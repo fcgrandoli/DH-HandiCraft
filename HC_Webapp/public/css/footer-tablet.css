@@ -45,6 +45,13 @@
     align-items: center;
     border-top: 2px solid whitesmoke;
   }
+
+  .logo-image-footer {
+    height: 65px;
+    padding: 10px 10px;
+    margin: auto;
+  }
+
   .footer-links {
     display: flex;
     align-items: center;

@@ -43,7 +43,14 @@
 
   .logo {
     display: flex;
+    align-items: center;
     width: 25%;
+  }
+
+  .logo-image {
+    width: 30%;
+    height: 80px;
+    padding: 10px 10px;
   }
 
   .logo-text {
