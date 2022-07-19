@@ -45,11 +45,20 @@
 
   .logo {
     display: flex;
+    align-items: center;
     width: 15%;
   }
 
+  .logo-image {
+    width: 30%;
+    height: 80px;
+    padding: 10px 10px;
+  }
+
   .logo-text {
-    font-size: 40px;
+    display: flex;
+    align-items: baseline;
+    font-size: 25px;
     font-family: 'Lucida Sans';
     font-style: italic;
   }
@@ -80,7 +89,7 @@
     border-radius: 10px;
     background-color: white;
     height: 40px;
-    width: 275px;
+    width: 400px;
     font-size: 18px;
     padding-left: 10px;
   }
