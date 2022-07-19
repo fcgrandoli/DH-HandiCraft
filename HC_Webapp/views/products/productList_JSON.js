@@ -18,7 +18,7 @@ const productList = [
     image: 'PRD-CanastoFlor.webp',
     descs: 'Canasto de flores tallado en vidrio.',
     descl:
-      'Esta decoracion elegante forma de canasta de flores de HandiCraft, hecha a mano, brillante y brillante al sol, detallada, vívida y realista, nunca se desvanece, una delicada decoración de mesa. Ideal para agregar un toque decorativo a su hogar, oficina, hotel, etc. Maravilloso accesorio para encimeras de cocina, expositores de centro de mesa de comedor. Este seria un regalo perfecto para aniversarios de bodas, inauguración de la casa, cumpleaños, Navidad, etc. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.',
+      'Esta decoracion elegante forma de canasta de flores de HandiCraft, hecha a mano, brillante y brillante al sol, detallada, vívida y realista, nunca se desvanece, una delicada decoración de mesa. Ideal para agregar un toque decorativo a su hogar, oficina, hotel, etc. Maravilloso accesorio para encimeras de cocina, expositores de centro de mesa de comedor. Este seria un regalo perfecto para aniversarios de bodas, inauguración de la casa, cumpleaños, Navidad, etc.',
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const productList = [
     image: 'PRD-Pajaros.jpg',
     descs: 'Figura de cristal hecha a mano en forma de pajaros.',
     descl:
-      'Esta preciosa creación de cristal captura la naturaleza alegre y los hermosos colores de los pajaritos. Elaborado en su totalidad de cristal, sus 280 facetas brillan en diferentes tonos de colores, con unos ojos de cristal negro y un pico de cristal rojo. Diseñado por HandiCraft, esta decoracion aportará un toque fresco y moderno a la decoración de tu hogar. Ideal para regalar y una pieza imprescindible para los coleccionistas. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.',
+      'Esta preciosa creación de cristal captura la naturaleza alegre y los hermosos colores de los pajaritos. Elaborado en su totalidad de cristal, sus 280 facetas brillan en diferentes tonos de colores, con unos ojos de cristal negro y un pico de cristal rojo. Diseñado por HandiCraft, esta decoracion aportará un toque fresco y moderno a la decoración de tu hogar. Ideal para regalar y una pieza imprescindible para los coleccionistas.',
   },
   {
     id: 5,

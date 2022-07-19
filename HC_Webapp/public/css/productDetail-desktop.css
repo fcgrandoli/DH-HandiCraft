@@ -37,8 +37,8 @@
   .image {
     display: flex;
     justify-content: center;
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 350px;
   }
 
   .preview {
@@ -195,7 +195,7 @@
     display: flex;
     width: 100%;
     position: absolute;
-    bottom: 180px;
+    bottom: 130px;
     font-size: 18px;
     padding-left: 20px;
   }
@@ -203,8 +203,8 @@
   .image-mini {
     display: flex;
     justify-content: center;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
   }
 
   .preview-mini {
