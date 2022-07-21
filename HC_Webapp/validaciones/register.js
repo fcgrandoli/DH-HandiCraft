@@ -1,4 +1,4 @@
-const { body } = require('express-validator');
+/*const { body } = require('express-validator');
 const {extname,resolve} = require('path')
 const {unlinkSync} = require('fs')
 const {index} = require('../model/users.model')
@@ -35,8 +35,8 @@ const register = [
         } 
     
         return true
-    })*/
+    })
 
 ]
 
-module.exports = register;
+module.exports = register; */

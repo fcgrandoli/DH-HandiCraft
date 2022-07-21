@@ -1,4 +1,4 @@
-const { body } = require('express-validator');
+/*const { body } = require('express-validator');
 const {index} = require('../model/users.model')
 const {compareSync} = require('bcryptjs')
 
@@ -31,4 +31,4 @@ body('passwd').notEmpty().withMessage('La contraseña no puede quedar vacía.').
 })
 ]
 
-module.exports = login
+module.exports = login */

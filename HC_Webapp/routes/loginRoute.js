@@ -2,14 +2,15 @@ const express = require('express');
 const router = express.Router();
 const userList = require('../views/users/usersList_JSON');
 const userLoggedIn = require('../views/users/userSession_JSON');
-const {controllerLogin, process } = require('../controllers/controllerLogin.js');
-const registerValidation = require('../validaciones/register');
+const controllerLogin = require('../controllers/controllerLogin.js');
+//const {controllerLogin,process} = require('../controllers/controllerLogin.js');
+//const registerValidation = require('../validaciones/register');
 
 router.get('/', controllerLogin.mostrarLogin);
 
 router.get('/close', controllerLogin.closeSession);
 
-router.post('/register',registerValidation,process)
+//router.post('/register',registerValidation,process)
 
 router.put('/update', (req, res) => {
   userList.forEach(function (user, index) {

@@ -29,9 +29,9 @@ const controllerLogin = {
 
     res.redirect('/');
   },
-  process: function(req, res) {
+ /* process: function(req, res) {
     res.send('validacion on');
-  },
+  },*/
 };
 
 module.exports = controllerLogin;
