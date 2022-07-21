@@ -6,6 +6,7 @@ const controllerLogin = {
     return res.render('users/login', {
       userLoggedIn: userLoggedIn,
     });
+    
   },
   accountDetails: (req, res) => {
     res.render('users/accountDetails', {
@@ -13,6 +14,7 @@ const controllerLogin = {
       userList: userList,
     });
   },
+  
   closeSession: (req, res) => {
     userList.forEach(function (user, index) {
       if (userLoggedIn.user_name == user.user_name) {
@@ -26,6 +28,9 @@ const controllerLogin = {
     userLoggedIn.passwd = '';
 
     res.redirect('/');
+  },
+  process: function(req, res) {
+    res.send('validacion on');
   },
 };
 

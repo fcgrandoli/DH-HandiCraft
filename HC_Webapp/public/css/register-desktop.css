@@ -28,7 +28,8 @@
   label[for='user'],
   label[for='password'],
   label[for='firstName'],
-  label[for='lastName'] {
+  label[for='lastName'],
+  label[for='email'] {
     text-align: left;
     font-size: 16px;
     top: 26px;
@@ -40,6 +41,7 @@
   .user,
   .passwords,
   .firstName,
+  .email,
   .lastName {
     margin: auto;
     width: 40%;
