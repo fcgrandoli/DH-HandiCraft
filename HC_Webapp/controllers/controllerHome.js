@@ -14,6 +14,9 @@ const controllerHome = {
   },
 
   buscarProducto: (req, res) => {
+    let productFile = resolve(__dirname, '../data', 'productList.json');
+    let productJSON = readFileSync(productFile);
+    let productList = JSON.parse(productJSON);
     let tempProduct = [];
     let userQuery = req.query.buscar.toLowerCase();
     for (i = 0; i < productList.length; i++) {
