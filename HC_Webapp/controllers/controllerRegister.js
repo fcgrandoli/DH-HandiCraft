@@ -1,4 +1,3 @@
-const userList = require('../views/users/usersList_JSON');
 const userLoggedIn = require('../views/users/userSession_JSON');
 
 const controllerRegister = {

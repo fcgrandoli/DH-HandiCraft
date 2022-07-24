@@ -1,26 +1,32 @@
-const userList = require('../views/users/usersList_JSON');
 const userLoggedIn = require('../views/users/userSession_JSON');
+const { resolve } = require('path');
+const { readFileSync, writeFileSync } = require('fs');
 
 const controllerLogin = {
   mostrarLogin: (req, res) => {
     return res.render('users/login', {
       userLoggedIn: userLoggedIn,
     });
-    
   },
   accountDetails: (req, res) => {
+    let usersFile = resolve(__dirname, '../data', 'usersList.json');
+    let usersJSON = readFileSync(usersFile);
+    let usersList = JSON.parse(usersJSON);
     res.render('users/accountDetails', {
       userLoggedIn: userLoggedIn,
-      userList: userList,
+      usersList: usersList,
     });
   },
-  
+
   closeSession: (req, res) => {
-    userList.forEach(function (user, index) {
+    let usersFile = resolve(__dirname, '../data', 'usersList.json');
+    let usersJSON = readFileSync(usersFile);
+    let usersList = JSON.parse(usersJSON);
+    usersList.forEach(function (user, index) {
       if (userLoggedIn.user_name == user.user_name) {
         this[index].loggedIn = false;
       }
-    }, userList);
+    }, usersList);
     userLoggedIn.loggedIn = false;
     userLoggedIn.first_name = '';
     userLoggedIn.last_name = '';
@@ -29,7 +35,7 @@ const controllerLogin = {
 
     res.redirect('/');
   },
- /* process: function(req, res) {
+  /* process: function(req, res) {
     res.send('validacion on');
   },*/
 };

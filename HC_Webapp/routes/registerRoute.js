@@ -1,13 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const controllerRegister = require('../controllers/controllerRegister.js');
-const userList = require('../views/users/usersList_JSON');
 const userLoggedIn = require('../views/users/userSession_JSON');
+const { resolve } = require('path');
+const { readFileSync, writeFileSync } = require('fs');
 
 router.get('/', controllerRegister.mostrarRegister);
 
 router.put('/user', (req, res) => {
-  let tempID = userList.length;
+  let usersFile = resolve(__dirname, '../data', 'usersList.json');
+  let usersJSON = readFileSync(usersFile);
+  let usersList = JSON.parse(usersJSON);
+  let tempID = usersList.length;
   tempID++;
   let tempUser = {
     id: tempID,
@@ -18,7 +22,9 @@ router.put('/user', (req, res) => {
     role: '',
     loggedIn: false,
   };
-  userList.push(tempUser);
+  usersList.push(tempUser);
+  let write = JSON.stringify(usersList, null, 2);
+  writeFileSync(usersFile, write);
   res.redirect('/');
 });
 

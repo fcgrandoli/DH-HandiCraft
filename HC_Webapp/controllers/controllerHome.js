@@ -1,9 +1,12 @@
-const productList = require('../views/products/productList_JSON');
-const userList = require('../views/users/usersList_JSON');
 const userLoggedIn = require('../views/users/userSession_JSON');
+const { resolve } = require('path');
+const { readFileSync, writeFileSync } = require('fs');
 
 const controllerHome = {
   mostrarHome: (req, res) => {
+    let productFile = resolve(__dirname, '../data', 'productList.json');
+    let productJSON = readFileSync(productFile);
+    let productList = JSON.parse(productJSON);
     return res.render('home', {
       productList: productList,
       userLoggedIn: userLoggedIn,

@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const userList = require('../views/users/usersList_JSON');
 const userLoggedIn = require('../views/users/userSession_JSON');
 const controllerLogin = require('../controllers/controllerLogin.js');
-//const {controllerLogin,process} = require('../controllers/controllerLogin.js');
-//const registerValidation = require('../validaciones/register');
+const { resolve } = require('path');
+const { readFileSync, writeFileSync } = require('fs');
 
 router.get('/', controllerLogin.mostrarLogin);
 
 router.get('/close', controllerLogin.closeSession);
 
-//router.post('/register',registerValidation,process)
-
 router.put('/update', (req, res) => {
-  userList.forEach(function (user, index) {
+  let usersFile = resolve(__dirname, '../data', 'usersList.json');
+  let usersJSON = readFileSync(usersFile);
+  let usersList = JSON.parse(usersJSON);
+  usersList.forEach(function (user, index) {
     if (userLoggedIn.user_name == user.user_name) {
       this[index].first_name = req.body.first_name;
       this[index].last_name = req.body.last_name;
@@ -24,7 +24,9 @@ router.put('/update', (req, res) => {
       userLoggedIn.user_name = req.body.user_name;
       userLoggedIn.passwd = req.body.passwd;
     }
-  }, userList);
+  }, usersList);
+  let write = JSON.stringify(usersList, null, 2);
+  writeFileSync(usersFile, write);
   res.redirect('/');
 });
 
@@ -32,7 +34,10 @@ router.get('/user', controllerLogin.accountDetails);
 
 router.put('/user', (req, res) => {
   let validateUser = 'el usuario no existe o la contraseña es incorrecta';
-  userList.forEach(user => {
+  let usersFile = resolve(__dirname, '../data', 'usersList.json');
+  let usersJSON = readFileSync(usersFile);
+  let usersList = JSON.parse(usersJSON);
+  usersList.forEach(user => {
     if (
       req.body.user_name == user.user_name &&
       req.body.passwd == user.passwd
