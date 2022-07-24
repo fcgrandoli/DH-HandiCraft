@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controllerRegister = require('../controllers/controllerRegister.js');
+const controllerRegister = require('../controllers/controller.register.js');
 const userLoggedIn = require('../views/users/userSession_JSON');
 const { resolve } = require('path');
 const { readFileSync, writeFileSync } = require('fs');
