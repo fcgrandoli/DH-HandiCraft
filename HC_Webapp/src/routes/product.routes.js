@@ -1,16 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controllerProducto = require('../controllers/controller.product.js');
-const userLoggedIn = require('../views/users/userSession_JSON');
-const {
-  index,
-  create,
-  write,
-  update,
-  remove,
-} = require('../model/products.model');
-const { resolve } = require('path');
-const { readFileSync, writeFileSync } = require('fs');
+const { index, create, write, update } = require('../model/products.model');
 
 router.get('/', controllerProducto.mostrarProducto);
 

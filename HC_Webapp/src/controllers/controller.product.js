@@ -1,13 +1,5 @@
 const userLoggedIn = require('../views/users/userSession_JSON');
-const {
-  index,
-  create,
-  write,
-  update,
-  remove,
-} = require('../model/products.model');
-const { resolve } = require('path');
-const { readFileSync, writeFileSync } = require('fs');
+const { index, write, remove } = require('../model/products.model');
 
 const controllerProducto = {
   mostrarProducto: (req, res) => {

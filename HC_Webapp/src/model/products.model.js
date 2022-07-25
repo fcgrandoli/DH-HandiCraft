@@ -21,7 +21,6 @@ const productModel = {
   },
   remove: function (id) {
     productList = productModel.index();
-    //let i = data.id;
     productList[id].name = 'DELETED';
     productList[id].price = 'DELETED';
     productList[id].disc = 'DELETED';
@@ -40,6 +39,15 @@ const productModel = {
     productList[i].descl = data.descl;
     productList[i].image = data.image;
     productModel.write(productList);
+  },
+  search: function (data, query) {
+    let tempProduct = [];
+    for (i = 0; i < data.length; i++) {
+      if (data[i].name.toLowerCase().includes(query)) {
+        tempProduct.push(data[i]);
+      }
+    }
+    return tempProduct;
   },
   write: function (data) {
     let productFile = resolve(__dirname, '../data', 'productList.json');

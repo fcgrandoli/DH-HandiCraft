@@ -1,7 +1,5 @@
 const userLoggedIn = require('../views/users/userSession_JSON');
-const { resolve } = require('path');
-const { readFileSync, writeFileSync } = require('fs');
-const { index, create, write } = require('../model/users.model');
+const { index } = require('../model/products.model');
 
 const controllerLogin = {
   mostrarLogin: (req, res) => {

@@ -1,13 +1,5 @@
 const userLoggedIn = require('../views/users/userSession_JSON');
-const {
-  index,
-  create,
-  write,
-  update,
-  remove,
-} = require('../model/products.model');
-const { resolve } = require('path');
-const { readFileSync, writeFileSync } = require('fs');
+const { index, search } = require('../model/products.model');
 
 const controllerHome = {
   mostrarHome: (req, res) => {
@@ -19,14 +11,8 @@ const controllerHome = {
   },
 
   buscarProducto: (req, res) => {
-    productList = index();
-    let tempProduct = [];
     let userQuery = req.query.buscar.toLowerCase();
-    for (i = 0; i < productList.length; i++) {
-      if (productList[i].name.toLowerCase().includes(userQuery)) {
-        tempProduct.push(productList[i]);
-      }
-    }
+    let tempProduct = search(index(), userQuery);
     res.render('homeSearch', {
       userLoggedIn: userLoggedIn,
       productList: productList,

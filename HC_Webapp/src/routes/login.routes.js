@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userLoggedIn = require('../views/users/userSession_JSON');
 const controllerLogin = require('../controllers/controller.login.js');
-const { index, createUser, write } = require('../model/users.model');
-const { resolve } = require('path');
-const { readFileSync, writeFileSync } = require('fs');
+const { index, write } = require('../model/users.model');
 
 router.get('/', controllerLogin.mostrarLogin);
 
