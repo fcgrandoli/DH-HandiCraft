@@ -1,9 +1,13 @@
 const userLoggedIn = require('../views/users/userSession_JSON');
-const { index, write, remove } = require('../model/products.model');
+const {
+  indexProduct,
+  writeProductJSON,
+  removeProduct,
+} = require('../model/products.model');
 
 const controllerProducto = {
   mostrarProducto: (req, res) => {
-    productList = index();
+    productList = indexProduct();
     let i = req.params.id;
     res.render('products/productDetail', {
       productList: productList,
@@ -13,7 +17,7 @@ const controllerProducto = {
   },
 
   crearProducto: (req, res) => {
-    productList = index();
+    productList = indexProduct();
     let i = req.params.id;
     res.render('products/productCreate', {
       productList: productList,
@@ -23,7 +27,7 @@ const controllerProducto = {
   },
 
   editarProducto: (req, res) => {
-    productList = index();
+    productList = indexProduct();
     if (!req.params.id) {
       res.redirect('/');
     } else {
@@ -37,8 +41,8 @@ const controllerProducto = {
   },
 
   eliminarProducto: (req, res) => {
-    remove(req.params.id);
-    write(productList);
+    removeProduct(req.params.id);
+    writeProductJSON(productList);
     res.redirect('/');
   },
 };

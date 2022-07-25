@@ -3,24 +3,45 @@ const { readFileSync, writeFileSync } = require('fs');
 
 let file = resolve(__dirname, './data', 'usersList.json');
 let info = readFileSync(file);
-let users = JSON.parse(info);
+let users = JSON.parse(info); */
 
 //console.log(users);
-let newUser = {
-  id: 5,
-  first_name: 'asd',
-  last_name: 'asd',
-  user_name: 'asd',
-  passwd: '1',
-  role: 'admin',
-  loggedIn: false,
-};
+let users = [
+  {
+    id: 1,
+    first_name: 'Carolina',
+    last_name: 'Shlain',
+    user_name: 'cshlain',
+    passwd: '123',
+    role: 'admin',
+    loggedIn: false,
+  },
+  {
+    id: 2,
+    first_name: 'Shirel',
+    last_name: 'Lalo',
+    user_name: 'slalo',
+    passwd: '123',
+    role: 'admin',
+    loggedIn: false,
+  },
+  {
+    id: 3,
+    first_name: 'Fernando',
+    last_name: 'Grandoli',
+    user_name: 'fgrandoli',
+    passwd: '123',
+    role: 'admin',
+    loggedIn: false,
+  },
+];
 
-users.push(newUser);
+/* users.push(newUser);
 let write = JSON.stringify(users, null, 2);
 writeFileSync(file, write);
-
-console.log(users); */
-console.log(__dirname);
+ */
+let change = users.find(u => u.id == 2);
+let index = users.findIndex(u => u.id == 4);
+console.log(index);
 
 //console.log(info);

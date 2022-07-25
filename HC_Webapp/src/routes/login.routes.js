@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const userLoggedIn = require('../views/users/userSession_JSON');
 const controllerLogin = require('../controllers/controller.login.js');
-const { index, write } = require('../model/users.model');
+const { indexUser, writeUserJSON } = require('../model/users.model');
 
 router.get('/', controllerLogin.mostrarLogin);
 
 router.get('/close', controllerLogin.closeSession);
 
 router.put('/update', (req, res) => {
-  let usersList = index();
+  let usersList = indexUser();
   usersList.forEach(function (user, index) {
     if (userLoggedIn.user_name == user.user_name) {
       this[index].first_name = req.body.first_name;
@@ -22,14 +22,14 @@ router.put('/update', (req, res) => {
       userLoggedIn.passwd = req.body.passwd;
     }
   }, usersList);
-  write(usersList);
+  writeUserJSON(usersList);
   res.redirect('/');
 });
 
 router.get('/user', controllerLogin.accountDetails);
 
 router.put('/user', (req, res) => {
-  let usersList = index();
+  let usersList = indexUser();
   usersList.forEach(user => {
     if (
       req.body.user_name == user.user_name &&

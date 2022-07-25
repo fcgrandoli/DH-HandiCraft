@@ -1,9 +1,9 @@
 const userLoggedIn = require('../views/users/userSession_JSON');
-const { index, search } = require('../model/products.model');
+const { indexProduct, searchProduct } = require('../model/products.model');
 
 const controllerHome = {
   mostrarHome: (req, res) => {
-    productList = index();
+    productList = indexProduct();
     return res.render('home', {
       productList: productList,
       userLoggedIn: userLoggedIn,
@@ -12,7 +12,7 @@ const controllerHome = {
 
   buscarProducto: (req, res) => {
     let userQuery = req.query.buscar.toLowerCase();
-    let tempProduct = search(index(), userQuery);
+    let tempProduct = searchProduct(indexProduct(), userQuery);
     res.render('homeSearch', {
       userLoggedIn: userLoggedIn,
       productList: productList,

@@ -2,13 +2,13 @@ const { readFileSync, writeFileSync } = require('fs');
 const { resolve } = require('path');
 
 const productModel = {
-  index: function () {
+  indexProduct: function () {
     let productFile = resolve(__dirname, '../data', 'productList.json');
     let productJSON = readFileSync(productFile);
     return JSON.parse(productJSON);
   },
-  create: function (data) {
-    let products = productModel.index();
+  createProduct: function (data) {
+    let products = productModel.indexProduct();
     return Object({
       id: products.length,
       name: data.name,
@@ -19,18 +19,18 @@ const productModel = {
       descl: data.descl,
     });
   },
-  remove: function (id) {
-    productList = productModel.index();
+  removeProduct: function (id) {
+    productList = productModel.indexProduct();
     productList[id].name = 'DELETED';
     productList[id].price = 'DELETED';
     productList[id].disc = 'DELETED';
     productList[id].descs = 'DELETED';
     productList[id].descl = 'DELETED';
     productList[id].image = 'DELETED';
-    productModel.write(productList);
+    productModel.writeProductJSON(productList);
   },
-  update: function (data) {
-    productList = productModel.index();
+  updateProduct: function (data) {
+    productList = productModel.indexProduct();
     let i = data.id;
     productList[i].name = data.name;
     productList[i].price = data.price;
@@ -38,9 +38,9 @@ const productModel = {
     productList[i].descs = data.descs;
     productList[i].descl = data.descl;
     productList[i].image = data.image;
-    productModel.write(productList);
+    productModel.writeProductJSON(productList);
   },
-  search: function (data, query) {
+  searchProduct: function (data, query) {
     let tempProduct = [];
     for (i = 0; i < data.length; i++) {
       if (data[i].name.toLowerCase().includes(query)) {
@@ -49,7 +49,7 @@ const productModel = {
     }
     return tempProduct;
   },
-  write: function (data) {
+  writeProductJSON: function (data) {
     let productFile = resolve(__dirname, '../data', 'productList.json');
     let update = JSON.stringify(data, null, 2);
     return writeFileSync(productFile, update);

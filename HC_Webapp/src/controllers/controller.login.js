@@ -1,5 +1,5 @@
 const userLoggedIn = require('../views/users/userSession_JSON');
-const { index } = require('../model/products.model');
+const { indexUser } = require('../model/products.model');
 
 const controllerLogin = {
   mostrarLogin: (req, res) => {
@@ -8,7 +8,7 @@ const controllerLogin = {
     });
   },
   accountDetails: (req, res) => {
-    let usersList = index();
+    let usersList = indexUser();
     res.render('users/accountDetails', {
       userLoggedIn: userLoggedIn,
       usersList: usersList,
