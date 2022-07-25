@@ -1,18 +1,21 @@
 const express = require('express');
 const app = express();
-const cartRoute = require('./routes/cart.routes.js');
-const homeRoute = require('./routes/home.routes.js');
-const loginRoute = require('./routes/login.routes.js');
-const mainRoute = require('./routes/main.routes.js');
-const productRoute = require('./routes/product.routes.js');
-const registerRoute = require('./routes/register.routes.js');
+const cartRoute = require('./src/routes/cart.routes.js');
+const homeRoute = require('./src/routes/home.routes.js');
+const loginRoute = require('./src/routes/login.routes.js');
+const mainRoute = require('./src/routes/main.routes.js');
+const productRoute = require('./src/routes/product.routes.js');
+const registerRoute = require('./src/routes/register.routes.js');
 const path = require('path');
 const multer = require('multer');
 const methodOverride = require('method-override');
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/src/views'));
 app.use('/public', express.static(__dirname + '/public'));
-app.use('/css', express.static(__dirname + '/css'));
+
+let pathObj = path.parse(__dirname + '/public');
+console.log(pathObj);
 
 app.listen(process.env.PORT || 3000, () => console.log('Server runnning'));
 
@@ -29,24 +32,3 @@ app.use('/crear', productRoute);
 app.use('/cart', cartRoute);
 app.use('/enconstruccion', mainRoute);
 app.use('/enmantenimiento', mainRoute);
-
-// DIVISOR ========================================================================
-
-//const mainRoute =require('./routes/mainRoute.old')
-/* app.use('/', mainRoute);
-app.use('/login', mainRoute);
-app.use('/register', mainRoute);
-app.use('/producto', mainRoute);
-app.use('/cart', mainRoute); */
-
-/* Nuevo código código MVC. - creo estructura de carpetas y controlador + archivo rutas
-
-app.set('view engine', 'ejs');
-
-app.use('/', mainRoute);
-app.use('/login', mainRoute);
-app.use('/register', mainRoute);
-app.use('/producto', mainRoute);
-app.use('/cart', mainRoute);
-
-  */

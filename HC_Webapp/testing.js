@@ -1,4 +1,4 @@
-const { resolve } = require('path');
+/* const { resolve } = require('path');
 const { readFileSync, writeFileSync } = require('fs');
 
 let file = resolve(__dirname, './data', 'usersList.json');
@@ -20,6 +20,7 @@ users.push(newUser);
 let write = JSON.stringify(users, null, 2);
 writeFileSync(file, write);
 
-console.log(users);
+console.log(users); */
+console.log(__dirname);
 
 //console.log(info);
