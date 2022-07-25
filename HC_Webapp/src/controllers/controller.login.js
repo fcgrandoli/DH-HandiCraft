@@ -10,9 +10,7 @@ const controllerLogin = {
     });
   },
   accountDetails: (req, res) => {
-    let usersFile = resolve(__dirname, '../data', 'usersList.json');
-    let usersJSON = readFileSync(usersFile);
-    let usersList = JSON.parse(usersJSON);
+    let usersList = index();
     res.render('users/accountDetails', {
       userLoggedIn: userLoggedIn,
       usersList: usersList,
@@ -20,9 +18,7 @@ const controllerLogin = {
   },
 
   closeSession: (req, res) => {
-    let usersFile = resolve(__dirname, '../data', 'usersList.json');
-    let usersJSON = readFileSync(usersFile);
-    let usersList = JSON.parse(usersJSON);
+    let usersList = index();
     usersList.forEach(function (user, index) {
       if (userLoggedIn.user_name == user.user_name) {
         this[index].loggedIn = false;
@@ -36,9 +32,6 @@ const controllerLogin = {
 
     res.redirect('/');
   },
-  /* process: function(req, res) {
-    res.send('validacion on');
-  },*/
 };
 
 module.exports = controllerLogin;

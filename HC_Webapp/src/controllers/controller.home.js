@@ -1,12 +1,17 @@
 const userLoggedIn = require('../views/users/userSession_JSON');
+const {
+  index,
+  create,
+  write,
+  update,
+  remove,
+} = require('../model/products.model');
 const { resolve } = require('path');
 const { readFileSync, writeFileSync } = require('fs');
 
 const controllerHome = {
   mostrarHome: (req, res) => {
-    let productFile = resolve(__dirname, '../data', 'productList.json');
-    let productJSON = readFileSync(productFile);
-    let productList = JSON.parse(productJSON);
+    productList = index();
     return res.render('home', {
       productList: productList,
       userLoggedIn: userLoggedIn,
@@ -14,9 +19,7 @@ const controllerHome = {
   },
 
   buscarProducto: (req, res) => {
-    let productFile = resolve(__dirname, '../data', 'productList.json');
-    let productJSON = readFileSync(productFile);
-    let productList = JSON.parse(productJSON);
+    productList = index();
     let tempProduct = [];
     let userQuery = req.query.buscar.toLowerCase();
     for (i = 0; i < productList.length; i++) {

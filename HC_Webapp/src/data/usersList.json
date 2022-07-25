@@ -22,17 +22,8 @@
     "first_name": "Fernando",
     "last_name": "Grandoli",
     "user_name": "fgrandoli",
-    "passwd": "321",
-    "role": "admin",
-    "loggedIn": false
-  },
-  {
-    "id": 4,
-    "first_name": "TempUser",
-    "last_name": "TempUser",
-    "user_name": "TempUser",
     "passwd": "123",
-    "role": "",
+    "role": "admin",
     "loggedIn": false
   }
 ]
