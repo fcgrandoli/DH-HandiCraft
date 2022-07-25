@@ -51,6 +51,4 @@ router.put('/crear', (req, res) => {
 
 router.get('/:id/eliminar', controllerProducto.eliminarProducto);
 
-router.get('/:id/comentarios/:cmt?', controllerProducto.detalleComentario);
-
 module.exports = router;

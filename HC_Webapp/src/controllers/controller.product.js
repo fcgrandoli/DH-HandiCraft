@@ -58,20 +58,6 @@ const controllerProducto = {
     writeFileSync(productFile, write);
     res.redirect('/');
   },
-
-  detalleProducto: (req, res) => {
-    res.send('Bienvenidos al detalle del producto: ' + req.params.id);
-  },
-
-  detalleComentario: (req, res) => {
-    if (!req.params.cmt) {
-      res.send(`Este articulo todavia no tiene comentarios.`);
-    } else {
-      res.send(
-        `Bienvenidos al detalle del producto: ${req.params.id} comentario numero: ${req.params.cmt}`
-      );
-    }
-  },
 };
 
 module.exports = controllerProducto;
