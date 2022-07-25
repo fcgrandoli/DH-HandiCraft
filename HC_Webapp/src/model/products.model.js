@@ -1,38 +1,51 @@
 const { readFileSync, writeFileSync } = require('fs');
-/* const {resolve}= require('path');
-const {hashSync} = require('bcryptjs') */
-const products = {
+const { resolve } = require('path');
+
+const productModel = {
   index: function () {
-    let file = resolve(__dirname, '../data', 'productList.json');
-    let data = readFileSync(file);
-    return JSON.parse(data);
-  },
-  one: function (id) {
-    let file = resolve(__dirname, '../data', 'users.json');
-    let data = readFileSync(file);
-    let users = JSON.parse(data);
-    return users.find(user => user.id === id);
+    let productFile = resolve(__dirname, '../data', 'productList.json');
+    let productJSON = readFileSync(productFile);
+    return JSON.parse(productJSON);
   },
   create: function (data) {
-    let file = resolve(__dirname, '../data', 'users.json');
-    let info = readFileSync(file);
-    let users = JSON.parse(info);
-    let last = users[users.length - 1];
+    let products = productModel.index();
     return Object({
-      id: users.length == 0 ? 1 : last.id + 1,
-      nombre: data.nombre,
-      apellido: data.apellido,
-      email: data.email,
-      password: hashSync(data.password, 10),
+      id: products.length,
+      name: data.name,
+      price: data.price,
+      disc: data.disc,
       image: data.image,
-      isAdmin: data.email.includes('@dh.com'),
+      descs: data.descs,
+      descl: data.descl,
     });
   },
+  remove: function (id) {
+    productList = productModel.index();
+    //let i = data.id;
+    productList[id].name = 'DELETED';
+    productList[id].price = 'DELETED';
+    productList[id].disc = 'DELETED';
+    productList[id].descs = 'DELETED';
+    productList[id].descl = 'DELETED';
+    productList[id].image = 'DELETED';
+    productModel.write(productList);
+  },
+  update: function (data) {
+    productList = productModel.index();
+    let i = data.id;
+    productList[i].name = data.name;
+    productList[i].price = data.price;
+    productList[i].disc = data.disc;
+    productList[i].descs = data.descs;
+    productList[i].descl = data.descl;
+    productList[i].image = data.image;
+    productModel.write(productList);
+  },
   write: function (data) {
-    let file = resolve(__dirname, '../data', 'users.json');
-    let info = JSON.stringify(data, null, 2);
-    return writeFileSync(file, info);
+    let productFile = resolve(__dirname, '../data', 'productList.json');
+    let update = JSON.stringify(data, null, 2);
+    return writeFileSync(productFile, update);
   },
 };
 
-module.exports = products;
+module.exports = productModel;

@@ -1,40 +1,40 @@
-/*
-archivo copiado de Flor:
-const {readFileSync, writeFileSync}= require('fs');
-const {resolve}= require('path');
-const {hashSync} = require('bcryptjs')
-const model = {
-  index:function(){
-    let file = resolve(__dirname,'../data','users.json');
-    let data = readFileSync(file);
-    return JSON.parse(data);
+/* const { readFileSync, writeFileSync } = require('fs');
+const { resolve } = require('path');
+const { hashSync } = require('bcryptjs');
+
+const usersModel = {
+  index: function () {
+    let usersFile = resolve(__dirname, '../data', 'usersList.json');
+    let usersJSON = readFileSync(usersFile);
+    return JSON.parse(usersJSON);
   },
-  one:function(id){
-    let file = resolve(__dirname,'../data','users.json');
+  one: function (id) {
+    let file = resolve(__dirname, '../data', 'users.json');
     let data = readFileSync(file);
     let users = JSON.parse(data);
-    return users.find(user => user.id === id)
+    return users.find(user => user.id === id);
   },
-  create: function(data){
-    let file = resolve(__dirname,'../data','users.json');
+  create: function (data) {
+    let file = resolve(__dirname, '../data', 'users.json');
     let info = readFileSync(file);
     let users = JSON.parse(info);
-    let last= users[users.length - 1];
+    let last = users[users.length - 1];
     return Object({
-        id: users.length == 0 ? 1 : last.id + 1,
-        nombre: data.nombre,
-        apellido: data.apellido,
-        email: data.email,
-        password: hashSync(data.password,10),
-        image: data.image,
-        isAdmin: data.email.includes('@dh.com')
-    })
+      id: users.length == 0 ? 1 : last.id + 1,
+      nombre: data.nombre,
+      apellido: data.apellido,
+      email: data.email,
+      password: hashSync(data.password, 10),
+      image: data.image,
+      isAdmin: data.email.includes('@dh.com'),
+    });
   },
-  write: function(data) {
-    let file = resolve(__dirname,'../data','users.json');
-    let info = JSON.stringify(data,null,2);
+  write: function (data) {
+    let file = resolve(__dirname, '../data', 'users.json');
+    let info = JSON.stringify(data, null, 2);
     return writeFileSync(file, info);
   },
-}
+};
 
-module.exports = model; */
+module.exports = usersModel;
+ */
