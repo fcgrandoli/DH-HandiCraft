@@ -1,4 +1,3 @@
-const userLoggedIn = require('../views/users/userSession_JSON');
 const {
   indexProduct,
   writeProductJSON,

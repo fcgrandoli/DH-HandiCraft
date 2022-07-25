@@ -1,33 +1,25 @@
-const userLoggedIn = require('../views/users/userSession_JSON');
-const { indexUser } = require('../model/products.model');
+const {
+  indexUser,
+  readLoggedUser,
+  closeSession,
+} = require('../model/users.model');
 
 const controllerLogin = {
   mostrarLogin: (req, res) => {
+    let userLoggedIn = readLoggedUser();
     return res.render('users/login', {
       userLoggedIn: userLoggedIn,
     });
   },
   accountDetails: (req, res) => {
-    let usersList = indexUser();
+    let userLoggedIn = readLoggedUser();
     res.render('users/accountDetails', {
       userLoggedIn: userLoggedIn,
-      usersList: usersList,
     });
   },
 
   closeSession: (req, res) => {
-    let usersList = index();
-    usersList.forEach(function (user, index) {
-      if (userLoggedIn.user_name == user.user_name) {
-        this[index].loggedIn = false;
-      }
-    }, usersList);
-    userLoggedIn.loggedIn = false;
-    userLoggedIn.first_name = '';
-    userLoggedIn.last_name = '';
-    userLoggedIn.user_name = '';
-    userLoggedIn.passwd = '';
-
+    closeSession();
     res.redirect('/');
   },
 };

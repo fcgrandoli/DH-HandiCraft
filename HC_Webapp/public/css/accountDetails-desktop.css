@@ -25,6 +25,7 @@
     border: none;
   }
 
+  label[for='id'],
   label[for='user'],
   label[for='password'],
   label[for='firstName'],
@@ -36,7 +37,7 @@
     padding-bottom: 10px;
     color: white;
   }
-
+  .id,
   .user,
   .passwords,
   .firstName,

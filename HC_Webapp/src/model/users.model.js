@@ -1,7 +1,6 @@
 const { readFileSync, writeFileSync } = require('fs');
 const { resolve } = require('path');
 const { hashSync } = require('bcryptjs');
-const userLoggedIn = require('../views/users/userSession_JSON');
 
 const usersModel = {
   indexUser: function () {
@@ -9,8 +8,40 @@ const usersModel = {
     let usersJSON = readFileSync(usersFile);
     return JSON.parse(usersJSON);
   },
+  readLoggedUser: function () {
+    let loggedUser = resolve(__dirname, '../data', 'userSession.json');
+    let userJSON = readFileSync(loggedUser);
+    return JSON.parse(userJSON);
+  },
+  writeLoggedUser: function (data) {
+    let loggedUser = resolve(__dirname, '../data', 'userSession.json');
+    let update = JSON.stringify(data, null, 2);
+    writeFileSync(loggedUser, update);
+    return Object({
+      first_name: data.first_name,
+      last_name: data.last_name,
+      user_name: data.user_name,
+      passwd: data.passwd,
+      role: data.role,
+      loggedIn: data.loggedIn,
+    });
+  },
+  closeSession: function () {
+    let loggedUser = resolve(__dirname, '../data', 'userSession.json');
+    let eraseSession = Object({
+      id: '',
+      first_name: '',
+      last_name: '',
+      user_name: '',
+      passwd: '',
+      role: '',
+      loggedIn: false,
+    });
+    let update = JSON.stringify(eraseSession, null, 2);
+    writeFileSync(loggedUser, update);
+  },
   createUser: function (data) {
-    let usersList = usersModel.index();
+    let usersList = usersModel.indexUser();
     let tempID = usersList.length;
     tempID++;
     let tempUser = {
@@ -18,12 +49,44 @@ const usersModel = {
       first_name: data.first_name,
       last_name: data.last_name,
       user_name: data.user_name,
-      passwd: hashSync(data.passwd, 10),
+      //passwd: hashSync(data.passwd, 10),
+      passwd: data.passwd,
       role: '',
       loggedIn: false,
     };
     usersList.push(tempUser);
-    usersModel.write(usersList);
+    usersModel.writeUserJSON(usersList);
+  },
+  loginUser: function (data) {
+    let usersList = usersModel.indexUser();
+    usersList.forEach(user => {
+      if (data.user_name == user.user_name && data.passwd == user.passwd) {
+        user.loggedIn = true;
+        usersModel.writeLoggedUser(user);
+      }
+    });
+  },
+  updateUser: function (actualUser) {
+    let usersList = usersModel.indexUser();
+    let userLoggedIn = usersModel.readLoggedUser();
+    usersList.forEach(function (user, index) {
+      if (actualUser.id == user.id) {
+        this[index].first_name = actualUser.first_name;
+        this[index].last_name = actualUser.last_name;
+        this[index].user_name = actualUser.user_name;
+        this[index].passwd = actualUser.passwd;
+        //this[index].passwd = hashSync(actualUser.passwd, 10);
+        userLoggedIn.first_name = actualUser.first_name;
+        userLoggedIn.last_name = actualUser.last_name;
+        userLoggedIn.user_name = actualUser.user_name;
+        userLoggedIn.passwd = actualUser.passwd;
+        //userLoggedIn.passwd = hashSync(actualUser.passwd, 10);
+        userLoggedIn.role = this[index].role;
+        userLoggedIn.loggedIn = this[index].loggedIn;
+        usersModel.writeLoggedUser(user);
+      }
+    }, usersList);
+    usersModel.writeUserJSON(usersList);
   },
   writeUserJSON: function (data) {
     let usersFile = resolve(__dirname, '../data', 'usersList.json');

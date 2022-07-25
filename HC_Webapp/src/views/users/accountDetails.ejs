@@ -24,6 +24,15 @@
           <img src="/public/images/banner.jpg" />
         </div>
         <form  action="/login/update?_method=PUT" method="POST">
+          <div class="id">
+            <label for="id">ID:</label>
+            <input class="input-fields" 
+              type="number"
+              name="id"
+              value="<%= userLoggedIn.id %>"
+              readonly="readonly"
+            />
+          </div>
         <div class="firstName">
           <label for="user">Nombre:</label>
           <input class="input-fields" 

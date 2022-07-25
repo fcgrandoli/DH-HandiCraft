@@ -24,6 +24,6 @@
     "user_name": "fgrandoli",
     "passwd": "123",
     "role": "admin",
-    "loggedIn": false
+    "loggedIn": true
   }
 ]
