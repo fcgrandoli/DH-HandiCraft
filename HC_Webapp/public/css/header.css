@@ -70,6 +70,7 @@
 
   .nav-search {
     display: flex;
+    justify-content: center;
     padding: 15px 15px;
     width: 25%;
   }
