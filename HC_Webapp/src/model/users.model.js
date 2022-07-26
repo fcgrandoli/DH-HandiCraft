@@ -57,8 +57,8 @@ const usersModel = {
       //passwd: hashSync(data.passwd, 10),
       passwd: data.passwd,
       isAdmin: data.isAdmin == undefined ? '' : data.isAdmin,
-      avatar: imageName == undefined ? '' : imageName,
-      loggedIn: false,
+      avatar: imageName,
+      loggedIn: true,
     });
   },
   loginUser: function (data) {
