@@ -67,4 +67,15 @@
   label {
     padding-left: 10px;
   }
+
+  .submit {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    background-color: #7cc6b0;
+    color: white;
+  }
 }

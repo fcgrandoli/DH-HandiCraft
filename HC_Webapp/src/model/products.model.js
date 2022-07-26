@@ -9,7 +9,6 @@ const productModel = {
   },
   createProduct: function (data, imageName) {
     let products = productModel.indexProduct();
-    console.log(data, imageName);
     return Object({
       id: products.length,
       name: data.name,

@@ -23,8 +23,14 @@ router.put('/editar', (req, res) => {
 router.get('/crear', controllerProducto.crearProducto);
 
 router.post('/crear', uploadProduct.single('image'), (req, res) => {
+  let imageCheck = '';
   let productList = indexProduct();
-  productList.push(createProduct(req.body, req.file.filename));
+  if (!req.file) {
+    imageCheck = 'noproduct.png';
+  } else {
+    imageCheck = req.file.filename;
+  }
+  productList.push(createProduct(req.body, imageCheck));
   writeProductJSON(productList);
   res.redirect('/producto/' + req.body.id + '/mostrar');
 });

@@ -56,14 +56,14 @@
 
   .submit {
     margin: auto;
-    margin-top: 15px;
-    width: 150px;
-    height: 25px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    background-color: #39b54a;
-    border-radius: 0.25rem;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 10px;
+    border-radius: 5px;
     border: none;
+    font-weight: bold;
+    background-color: #7cc6b0;
+    color: white;
   }
 }
