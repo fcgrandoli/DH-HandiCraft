@@ -35,15 +35,10 @@
     border: none;
   }
 
-  .image-upload {
-    font-weight: bold;
-    padding-top: 10px;
-    text-decoration: underline;
-  }
   .input-fields {
     text-align: left;
-    font-size: 28px;
-    height: 45px;
+    font-size: 16px;
+    height: 40px;
     top: 26px;
     left: 5px;
     padding: 5px 5px;
@@ -51,14 +46,25 @@
     border-radius: 0.25rem;
     border: none;
   }
+  .image-fields-container {
+    display: flex;
+  }
+  .image-upload {
+    font-weight: bold;
+    padding-top: 10px;
+    text-decoration: underline;
+  }
 
   .submit {
     margin: auto;
     margin-top: 25px;
-    width: 300px;
-    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
     font-weight: bold;
+    background-color: #7cc6b0;
     color: white;
-    background-color: #39b54a;
   }
 }
