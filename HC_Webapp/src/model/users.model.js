@@ -21,8 +21,10 @@ const usersModel = {
       first_name: data.first_name,
       last_name: data.last_name,
       user_name: data.user_name,
+      email: data.email,
       passwd: data.passwd,
-      role: data.role,
+      isAdmin: data.isAdmin,
+      avatar: data.avatar,
       loggedIn: data.loggedIn,
     });
   },
@@ -33,29 +35,31 @@ const usersModel = {
       first_name: '',
       last_name: '',
       user_name: '',
+      email: '',
       passwd: '',
-      role: '',
+      isAdmin: '',
+      avatar: '',
       loggedIn: false,
     });
     let update = JSON.stringify(eraseSession, null, 2);
     writeFileSync(loggedUser, update);
   },
-  createUser: function (data) {
+  createUser: function (data, imageName) {
     let usersList = usersModel.indexUser();
     let tempID = usersList.length;
     tempID++;
-    let tempUser = {
+    return Object({
       id: tempID,
       first_name: data.first_name,
       last_name: data.last_name,
       user_name: data.user_name,
+      email: data.email,
       //passwd: hashSync(data.passwd, 10),
       passwd: data.passwd,
-      role: '',
+      isAdmin: data.isAdmin == undefined ? '' : data.isAdmin,
+      avatar: imageName == undefined ? '' : imageName,
       loggedIn: false,
-    };
-    usersList.push(tempUser);
-    usersModel.writeUserJSON(usersList);
+    });
   },
   loginUser: function (data) {
     let usersList = usersModel.indexUser();
@@ -74,14 +78,19 @@ const usersModel = {
         this[index].first_name = actualUser.first_name;
         this[index].last_name = actualUser.last_name;
         this[index].user_name = actualUser.user_name;
+        this[index].email = actualUser.email;
         this[index].passwd = actualUser.passwd;
+        this[index].isAdmin = actualUser.isAdmin;
+        this[index].avatar = actualUser.avatar;
         //this[index].passwd = hashSync(actualUser.passwd, 10);
         userLoggedIn.first_name = actualUser.first_name;
         userLoggedIn.last_name = actualUser.last_name;
         userLoggedIn.user_name = actualUser.user_name;
+        userLoggedIn.email = actualUser.email;
         userLoggedIn.passwd = actualUser.passwd;
+        userLoggedIn.isAdmin = actualUser.isAdmin;
+        userLoggedIn.avatar = actualUser.avatar;
         //userLoggedIn.passwd = hashSync(actualUser.passwd, 10);
-        userLoggedIn.role = this[index].role;
         userLoggedIn.loggedIn = this[index].loggedIn;
         usersModel.writeLoggedUser(user);
       }

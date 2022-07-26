@@ -1,12 +1,19 @@
+const { validationResult } = require('express-validator');
 const {
   indexProduct,
   writeProductJSON,
   removeProduct,
 } = require('../model/products.model');
+const {
+  indexUser,
+  readLoggedUser,
+  closeSession,
+} = require('../model/users.model');
 
 const controllerProducto = {
   mostrarProducto: (req, res) => {
-    productList = indexProduct();
+    let userLoggedIn = readLoggedUser();
+    let productList = indexProduct();
     let i = req.params.id;
     res.render('products/productDetail', {
       productList: productList,
@@ -16,7 +23,8 @@ const controllerProducto = {
   },
 
   crearProducto: (req, res) => {
-    productList = indexProduct();
+    let productList = indexProduct();
+    let userLoggedIn = readLoggedUser();
     let i = req.params.id;
     res.render('products/productCreate', {
       productList: productList,
@@ -26,7 +34,8 @@ const controllerProducto = {
   },
 
   editarProducto: (req, res) => {
-    productList = indexProduct();
+    let productList = indexProduct();
+    let userLoggedIn = readLoggedUser();
     if (!req.params.id) {
       res.redirect('/');
     } else {
@@ -41,7 +50,6 @@ const controllerProducto = {
 
   eliminarProducto: (req, res) => {
     removeProduct(req.params.id);
-    writeProductJSON(productList);
     res.redirect('/');
   },
 };

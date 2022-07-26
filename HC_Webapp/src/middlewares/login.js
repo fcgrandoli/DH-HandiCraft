@@ -1,2 +1,2 @@
-const  validaciones = require('../validaciones/login');
-module.exports = [validaciones]
+/* const  validaciones = require('../validaciones/login');
+module.exports = [validaciones]*/

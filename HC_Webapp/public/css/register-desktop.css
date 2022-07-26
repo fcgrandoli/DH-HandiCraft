@@ -25,10 +25,23 @@
     border: none;
   }
 
+  .image-fields-container {
+    margin: auto;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 12px 15px;
+  }
+  .image-upload {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   label[for='user'],
   label[for='password'],
   label[for='firstName'],
   label[for='lastName'],
+  label[for='image'],
   label[for='email'] {
     text-align: left;
     font-size: 16px;

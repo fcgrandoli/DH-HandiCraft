@@ -18,27 +18,35 @@
       <div class="banner">
         <img src="/../public/images/banner.jpg" />
       </div>
-      <div id="container">
-        <form class="fields" method="POST" action="/producto/crear?_method=PUT">
+      <div class="container">
+        <form
+          class="fields"
+          method="POST"
+          action="/producto/crear"
+          enctype="multipart/form-data"
+        >
           <label for="">ID: </label>
           <input
+            class="input-fields"
             type="number"
             name="id"
             value="<%= productList.length %>"
             readonly="readonly"
           />
-          <label for="">Nombre: </label>
-          <input type="text" name="name" value="" />
+          <label for="">Nombre:</label>
+          <input class="input-fields" type="text" name="name" value="" />
           <label for="">Descripcion corta:</label>
-          <input type="text" name="descs" value="" />
+          <input class="input-fields" type="text" name="descs" value="" />
           <label for="">Descripcion larga:</label>
-          <input type="text" name="descl" value="" />
+          <input class="input-fields" type="text" name="descl" value="" />
           <label for="">Precio:</label>
-          <input type="number" name="price" value="" />
+          <input class="input-fields" type="number" name="price" value="" />
           <label for="">Descuento:</label>
-          <input type="number" name="disc" value="" />
-          <label for="">Imagen:</label>
-          <input type="text" name="image" value="" />
+          <input class="input-fields" type="number" name="disc" value="" />
+          <div class="image-fields-container">
+            <label for="image">Foto del producto:</label>
+            <input class="image-upload" type="file" name="image" />
+          </div>
           <input class="submit" type="submit" value="Crear producto" />
         </form>
       </div>

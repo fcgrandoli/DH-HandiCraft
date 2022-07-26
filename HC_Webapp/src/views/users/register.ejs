@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include ('../partials/head') %>
-  <link rel="stylesheet" type="text/css" href="../public/css/register.css" />
+  <link rel="stylesheet" type="text/css" href="/public/css/register.css" />
   <link
     rel="stylesheet"
     type="text/css"
-    href="../public/css/register-tablet.css"
+    href="/public/css/register-tablet.css"
   />
-  <link 
+  <link
     rel="stylesheet"
     type="text/css"
-    href="../public/css/register-desktop.css"
+    href="/public/css/register-desktop.css"
   />
-  <body>
-    <div class="container">
-      <%- include ('../partials/header') %>
+  <%- include ('../partials/header') %>
+  <body>  
       <main>
+        <div class="container"></div>
         <div class="banner">
           <img src="public/images/banner.jpg" />
         </div>
-        <form action="/register/user?_method=PUT" method="POST">
+        <form
+          class="fields"
+          method="POST"
+          action="/register/create"
+          enctype="multipart/form-data"
+        >
           <div class="firstName">
             <label for="user">Nombre:</label>
-            <input class="input-fields" type="text" name="first_name" />
+            <input class="input-fields" type="text" name="first_name" value="" />
           </div>
           <div class="lastName">
             <label for="user">Apellido:</label>
-            <input class="input-fields" type="text" name="last_name" />
+            <input class="input-fields" type="text" name="last_name" value="" />
           </div>
           <div class="user">
             <label for="user">Nombre de usuario:</label>
-            <input class="input-fields" type="text" name="user_name" />
+            <input class="input-fields" type="text" name="user_name" value="" />
           </div>
           <div class="email">
             <label for="user">Correo electronico:</label>
-            <input class="input-fields" type="email" name="email" />
+            <input class="input-fields" type="email" name="email" value="" />
           </div>
           <div class="passwords">
             <label for="password">Ingresar contraseña:</label>
@@ -49,8 +54,13 @@
             <label for="password">Confirmar contraseña:</label>
             <input type="password" name="passwd2" value="" />
           </div> -->
+          <div class="image-fields-container">
+            <label for="image">Foto de perfil:</label>
+            <input class="image-upload" type="file" name="avatar" />
+          </div>
           <div class="buttons">
-            <button type="submit" value="enviar">Registrarme</button>
+            <!-- <button type="submit" value="enviar">Registrarme</button> -->
+            <input class="submit" type="submit" value="Registrarme" />
             <button class="nav-reset" type="reset" value="reset">Reset</button>
             <div class="show-btn-back">
               <a class="nav-back" href="home">Volver</a>

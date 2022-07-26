@@ -4,8 +4,10 @@
     "first_name": "Carolina",
     "last_name": "Shlain",
     "user_name": "cshlain",
+    "email": "cshlain@hc.com",
     "passwd": "123",
-    "role": "admin",
+    "isAdmin": true,
+    "avatar": "",
     "loggedIn": false
   },
   {
@@ -13,8 +15,10 @@
     "first_name": "Shirel",
     "last_name": "Lalo",
     "user_name": "slalo",
+    "email": "slalo@hc.com",
     "passwd": "123",
-    "role": "admin",
+    "isAdmin": true,
+    "avatar": "",
     "loggedIn": false
   },
   {
@@ -22,26 +26,10 @@
     "first_name": "Fernando",
     "last_name": "Grandoli",
     "user_name": "fgrandoli",
+    "email": "fgrandoli@hc.com",
     "passwd": "123",
-    "role": "admin",
-    "loggedIn": false
-  },
-  {
-    "id": 4,
-    "first_name": "asd",
-    "last_name": "asd",
-    "user_name": "asd",
-    "passwd": "1",
-    "role": "admin",
-    "loggedIn": false
-  },
-  {
-    "id": 5,
-    "first_name": "asd",
-    "last_name": "asd",
-    "user_name": "asd",
-    "passwd": "1",
-    "role": "admin",
+    "isAdmin": true,
+    "avatar": "",
     "loggedIn": false
   }
 ]

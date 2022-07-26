@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controllerProducto = require('../controllers/controller.product.js');
+const uploadProduct = require('../middlewares/productUpload.js');
 const {
   indexProduct,
   createProduct,
@@ -21,9 +22,9 @@ router.put('/editar', (req, res) => {
 
 router.get('/crear', controllerProducto.crearProducto);
 
-router.put('/crear', (req, res) => {
-  productList = indexProduct();
-  productList.push(createProduct(req.body));
+router.post('/crear', uploadProduct.single('image'), (req, res) => {
+  let productList = indexProduct();
+  productList.push(createProduct(req.body, req.file.filename));
   writeProductJSON(productList);
   res.redirect('/producto/' + req.body.id + '/mostrar');
 });

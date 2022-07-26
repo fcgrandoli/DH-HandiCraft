@@ -18,6 +18,17 @@
     flex-direction: column;
   }
 
+  .avatar {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
+    border: solid 5px whitesmoke;
+    margin: 150px 150px;
+  }
+
   .input-fields {
     padding: 10px 10px;
     border-radius: 5px;
@@ -25,8 +36,22 @@
     border: none;
   }
 
+  .image-fields-container {
+    margin: auto;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 12px 15px;
+  }
+  .image-upload {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   label[for='id'],
   label[for='user'],
+  label[for='email'],
+  label[for='image'],
   label[for='password'],
   label[for='firstName'],
   label[for='lastName'] {
@@ -39,6 +64,7 @@
   }
   .id,
   .user,
+  .email,
   .passwords,
   .firstName,
   .lastName {

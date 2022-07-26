@@ -7,20 +7,21 @@ const productModel = {
     let productJSON = readFileSync(productFile);
     return JSON.parse(productJSON);
   },
-  createProduct: function (data) {
+  createProduct: function (data, imageName) {
     let products = productModel.indexProduct();
+    console.log(data, imageName);
     return Object({
       id: products.length,
       name: data.name,
       price: data.price,
       disc: data.disc,
-      image: data.image,
+      image: imageName,
       descs: data.descs,
       descl: data.descl,
     });
   },
   removeProduct: function (id) {
-    productList = productModel.indexProduct();
+    let productList = productModel.indexProduct();
     productList[id].name = 'DELETED';
     productList[id].price = 'DELETED';
     productList[id].disc = 'DELETED';

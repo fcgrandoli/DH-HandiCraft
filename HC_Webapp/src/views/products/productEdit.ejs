@@ -26,27 +26,55 @@
         >
           <label for="">ID: </label>
           <input
+            class="input-fields"
             type="number"
             name="id"
             value="<%= productList[i].id %>"
             readonly="readonly"
           />
           <label for="">Nombre: </label>
-          <input type="text" name="name" value="<%= productList[i].name %>" />
+          <input
+            class="input-fields"
+            class="input"
+            type="text"
+            name="name"
+            value="<%= productList[i].name %>"
+          />
           <label for="">Descripcion corta:</label>
-          <input type="text" name="descs" value="<%= productList[i].descs %>" />
+          <input
+            class="input-fields"
+            type="text"
+            name="descs"
+            value="<%= productList[i].descs %>"
+          />
           <label for="">Descripcion larga:</label>
-          <input type="text" name="descl" value="<%= productList[i].descl %>" />
+          <input
+            class="input-fields"
+            type="text"
+            name="descl"
+            value="<%= productList[i].descl %>"
+          />
           <label for="">Precio:</label>
           <input
+            class="input-fields"
             type="number"
             name="price"
             value="<%= productList[i].price %>"
           />
           <label for="">Descuento:</label>
-          <input type="number" name="disc" value="<%= productList[i].disc %>" />
+          <input
+            class="input-fields"
+            type="number"
+            name="disc"
+            value="<%= productList[i].disc %>"
+          />
           <label for="">Imagen:</label>
-          <input type="text" name="image" value="<%= productList[i].image %>" />
+          <input
+            class="input-fields"
+            type="text"
+            name="image"
+            value="<%= productList[i].image %>"
+          />
           <input class="submit" type="submit" value="Actualizar datos" />
         </form>
       </div>

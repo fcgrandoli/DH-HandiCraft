@@ -12,6 +12,8 @@ const controllerHome = {
   },
 
   buscarProducto: (req, res) => {
+    productList = indexProduct();
+    userLoggedIn = readLoggedUser();
     let userQuery = req.query.buscar.toLowerCase();
     let tempProduct = searchProduct(indexProduct(), userQuery);
     res.render('homeSearch', {

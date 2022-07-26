@@ -11,9 +11,11 @@ const multer = require('multer');
 const methodOverride = require('method-override');
 
 app.set('view engine', 'ejs');
+
 app.set('views', path.join(__dirname, '/src/views'));
 
 app.use('/public', express.static(__dirname + '/public'));
+app.use('/images', express.static(__dirname + '/public/images'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -22,8 +24,10 @@ app.use('/', homeRoute);
 app.use('/home', homeRoute);
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
+app.post('/create', registerRoute);
 app.use('/producto', productRoute);
-app.use('/crear', productRoute);
+//app.use('/crear', productRoute);
+app.post('/crear', productRoute);
 app.use('/cart', cartRoute);
 app.use('/enconstruccion', mainRoute);
 app.use('/enmantenimiento', mainRoute);

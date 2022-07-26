@@ -35,7 +35,13 @@
     border: none;
   }
 
-  input {
+  .image-upload {
+    font-weight: bold;
+    padding-top: 10px;
+    text-decoration: underline;
+  }
+
+  .input-fields {
     text-align: left;
     font-size: 48px;
     height: 75px;
