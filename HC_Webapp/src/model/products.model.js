@@ -42,11 +42,11 @@ const productModel = {
   },
   searchProduct: function (data, query) {
     let tempProduct = [];
-    for (i = 0; i < data.length; i++) {
-      if (data[i].name.toLowerCase().includes(query)) {
-        tempProduct.push(data[i]);
-      }
-    }
+    data.forEach(product => {
+      product.name.toLowerCase().includes(query)
+        ? tempProduct.push(product)
+        : '';
+    });
     return tempProduct;
   },
   writeProductJSON: function (data) {
