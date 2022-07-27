@@ -7,6 +7,11 @@ const productModel = {
     let productJSON = readFileSync(productFile);
     return JSON.parse(productJSON);
   },
+  indexCart: function () {
+    let productFile = resolve(__dirname, '../data', 'cartList.json');
+    let cartJSON = readFileSync(productFile);
+    return JSON.parse(cartJSON);
+  },
   createProduct: function (data, imageName) {
     let products = productModel.indexProduct();
     return Object({
@@ -56,6 +61,11 @@ const productModel = {
   },
   writeProductJSON: function (data) {
     let productFile = resolve(__dirname, '../data', 'productList.json');
+    let update = JSON.stringify(data, null, 2);
+    return writeFileSync(productFile, update);
+  },
+  writeCartJSON: function (data) {
+    let productFile = resolve(__dirname, '../data', 'cartList.json');
     let update = JSON.stringify(data, null, 2);
     return writeFileSync(productFile, update);
   },

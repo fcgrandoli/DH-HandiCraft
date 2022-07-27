@@ -1,27 +1,21 @@
 const { validationResult } = require('express-validator');
 const {
-  indexProduct,
-  writeProductJSON,
-  removeProduct,
+  writeCartJSON,
+  indexCart,
 } = require('../model/products.model');
-const {
-  indexUser,
-  readLoggedUser,
-  closeSession,
-} = require('../model/users.model');
 
 const controllerCart = {
   mostrarCart: (req, res) => {
-    return res.render('products/cart', { userLoggedIn: userLoggedIn });
+    return res.render('products/cart');
   }, 
     productsCart : (req, res) => {
-      let userLoggedIn = readLoggedUser();
-      let productList = indexProduct();
+      
+      let cartList = indexCart();
       let i = req.params.id;
-      res.render('cart', {
-        productList: productList,
+      res.render('products/cart', {
+        cartList: cartList,
         i: i,
-        userLoggedIn: userLoggedIn,
+        
       });
     }
 } 
