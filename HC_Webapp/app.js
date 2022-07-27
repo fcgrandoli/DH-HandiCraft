@@ -26,7 +26,6 @@ app.use('/login', loginRoute);
 app.use('/register', registerRoute);
 app.post('/create', registerRoute);
 app.use('/producto', productRoute);
-//app.use('/crear', productRoute);
 app.post('/crear', productRoute);
 app.use('/cart', cartRoute);
 app.use('/enconstruccion', mainRoute);

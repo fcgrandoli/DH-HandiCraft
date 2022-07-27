@@ -28,8 +28,17 @@
     "user_name": "fgrandoli",
     "email": "fgrandoli@hc.com",
     "passwd": "123",
-    "isAdmin": true,
     "avatar": "blank.jpg",
     "loggedIn": false
+  },
+  {
+    "id": 4,
+    "first_name": "Fernando",
+    "last_name": "Grandoli123",
+    "user_name": "123123",
+    "email": "fcgrandoli@gmail.com",
+    "passwd": "123",
+    "loggedIn": true,
+    "avatar": "avatar-1658882143769_img.webp"
   }
 ]

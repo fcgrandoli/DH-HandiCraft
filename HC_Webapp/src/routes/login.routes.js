@@ -8,13 +8,18 @@ const {
   readLoggedUser,
   updateUser,
 } = require('../model/users.model');
+const uploadUser = require('../middlewares/userUpload.js');
 
 router.get('/', controllerLogin.mostrarLogin);
 
 router.get('/close', controllerLogin.closeSession);
 
-router.put('/update', (req, res) => {
-  updateUser(req.body);
+router.post('/update', uploadUser.single('avatar'), (req, res) => {
+  if (!req.file) {
+    updateUser(req.body);
+  } else {
+    updateUser(req.body, req.file.filename);
+  }
   res.redirect('/');
 });
 

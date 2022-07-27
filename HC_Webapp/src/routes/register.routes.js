@@ -7,7 +7,7 @@ const {
   writeUserJSON,
   writeLoggedUser,
 } = require('../model/users.model');
-const uploadUser = require('../middlewares/registerUpload.js');
+const uploadUser = require('../middlewares/userUpload.js');
 
 router.get('/', controllerRegister.mostrarRegister);
 

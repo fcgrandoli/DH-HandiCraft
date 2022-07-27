@@ -70,7 +70,7 @@ const usersModel = {
       }
     });
   },
-  updateUser: function (actualUser) {
+  updateUser: function (actualUser, imageName) {
     let usersList = usersModel.indexUser();
     let userLoggedIn = usersModel.readLoggedUser();
     usersList.forEach(function (user, index) {
@@ -81,7 +81,7 @@ const usersModel = {
         this[index].email = actualUser.email;
         this[index].passwd = actualUser.passwd;
         this[index].isAdmin = actualUser.isAdmin;
-        this[index].avatar = actualUser.avatar;
+        this[index].avatar = !imageName ? actualUser.avatar : imageName;
         //this[index].passwd = hashSync(actualUser.passwd, 10);
         userLoggedIn.first_name = actualUser.first_name;
         userLoggedIn.last_name = actualUser.last_name;
@@ -89,7 +89,7 @@ const usersModel = {
         userLoggedIn.email = actualUser.email;
         userLoggedIn.passwd = actualUser.passwd;
         userLoggedIn.isAdmin = actualUser.isAdmin;
-        userLoggedIn.avatar = actualUser.avatar;
+        userLoggedIn.avatar = !imageName ? actualUser.avatar : imageName;
         //userLoggedIn.passwd = hashSync(actualUser.passwd, 10);
         userLoggedIn.loggedIn = this[index].loggedIn;
         usersModel.writeLoggedUser(user);
