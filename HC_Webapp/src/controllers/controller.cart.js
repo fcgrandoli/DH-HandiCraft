@@ -14,7 +14,7 @@ const controllerCart = {
   mostrarCart: (req, res) => {
     return res.render('products/cart', { userLoggedIn: userLoggedIn });
   }, 
-    mostrarCart : (req, res) => {
+    productsCart : (req, res) => {
       let userLoggedIn = readLoggedUser();
       let productList = indexProduct();
       let i = req.params.id;
