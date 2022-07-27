@@ -41,12 +41,17 @@ const productModel = {
     productModel.writeProductJSON(productList);
   },
   searchProduct: function (data, query) {
+    //Crea un array vacion para llenarno con los productos que cumplan la condicion de la busqueda.
     let tempProduct = [];
+    //Recorre el array de productos que viene por el 1er parametro de la funcion, por cada producto
     data.forEach(product => {
+      //Convierte el nombre del producto en minscula para poder hacer la comparacion y se fija si coincide con la busqueda del usuario.
       product.name.toLowerCase().includes(query)
-        ? tempProduct.push(product)
+        ? //? es un condicional, en caso que devuelva "true" hace push del objeto al array tempProduct.
+          tempProduct.push(product)
         : '';
     });
+    //Finalmente retorna el array tempProduct.
     return tempProduct;
   },
   writeProductJSON: function (data) {
