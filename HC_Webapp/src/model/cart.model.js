@@ -13,12 +13,7 @@ const cartModel = {
         let update = JSON.stringify(data, null, 2);
         return writeFileSync(productFile, update);
       },
-      sumarCarrito: function(){
-        let acumulador= [];
-        
-
-        return acumulador;
-      }
+   
 }
 
 module.exports = cartModel;

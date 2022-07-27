@@ -1,3 +1,7 @@
+const express = require('express');
+const app = express();
+const jsonMiddlewares= require ('../middlewares/cart.js')
+app.use (jsonMiddlewares);
 const { validationResult } = require('express-validator');
 const {
   writeCartJSON,
