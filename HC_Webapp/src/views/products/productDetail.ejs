@@ -46,7 +46,9 @@
             </div>
             <div class="nav-buttons">
               <i class="fa-solid fa-heart"></i>
-              <a class="cart" href="/cart">Agregar al carrito</a>
+            <!-- let i = req.params.id;-->
+
+              <a class="cart" href="/cart/<%= productList[i].id%>">Agregar al carrito</a>
               <a class="buy" href="/cart">Comprar</a>
             </div>
           </div>
