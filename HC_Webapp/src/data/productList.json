@@ -79,5 +79,32 @@
     "image": "PRD-FruteraTallada.webp",
     "descs": "Frutera tallada.",
     "descl": "Vesti tu mesa con esta elegante frutera tallada hecha por HandiCraft. Ideal para poner frutas en la mesa de manera delicada. Maravilloso regalo para cuando estas invitado a un acontecimiento y no sabes que llevar."
+  },
+  {
+    "id": 9,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED"
+  },
+  {
+    "id": 10,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED"
+  },
+  {
+    "id": 11,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED"
   }
 ]

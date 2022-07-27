@@ -6,7 +6,7 @@
     "user_name": "cshlain",
     "email": "cshlain@hc.com",
     "passwd": "123",
-    "isAdmin": true,
+    "isAdmin": "",
     "avatar": "blank.jpg",
     "loggedIn": false
   },
@@ -17,7 +17,7 @@
     "user_name": "slalo",
     "email": "slalo@hc.com",
     "passwd": "123",
-    "isAdmin": true,
+    "isAdmin": "",
     "avatar": "blank.jpg",
     "loggedIn": false
   },
@@ -28,7 +28,7 @@
     "user_name": "fgrandoli",
     "email": "fgrandoli@hc.com",
     "passwd": "123",
-    "isAdmin": true,
+    "isAdmin": "",
     "avatar": "blank.jpg",
     "loggedIn": false
   }
