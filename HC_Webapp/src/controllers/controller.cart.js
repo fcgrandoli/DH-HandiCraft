@@ -1,26 +1,57 @@
-const express = require('express');
-const app = express();
-const jsonMiddlewares= require ('../middlewares/cart.js')
-app.use (jsonMiddlewares);
 const { validationResult } = require('express-validator');
 const {
-  writeCartJSON,
-  indexCart,
+  indexProduct,
+  writeProductJSON,
+  removeProduct,
 } = require('../model/cart.model');
+const {
+  indexUser,
+  readLoggedUser,
+  closeSession,
+} = require('../model/users.model');
 
 const controllerCart = {
-  mostrarCart: (req, res) => {
-    return res.render('products/cart');
-  }, 
-    productsCart : (req, res) => {
-      let cartList = indexCart();
+  mostrarProducto: (req, res) => {
+    let userLoggedIn = readLoggedUser();
+    let productList = indexProduct();
+    let i = req.params.id;
+    res.render('products/productDetail', {
+      productList: productList,
+      i: i,
+      userLoggedIn: userLoggedIn,
+    });
+  },
+
+  crearProducto: (req, res) => {
+    let productList = indexProduct();
+    let userLoggedIn = readLoggedUser();
+    let i = req.params.id;
+    res.render('products/productCreate', {
+      productList: productList,
+      i: i,
+      userLoggedIn: userLoggedIn,
+    });
+  },
+
+  editarProducto: (req, res) => {
+    let productList = indexProduct();
+    let userLoggedIn = readLoggedUser();
+    if (!req.params.id) {
+      res.redirect('/');
+    } else {
       let i = req.params.id;
-      res.render('products/cart', {
-        cartList: cartList,
+      return res.render('products/productEdit', {
+        productList: productList,
         i: i,
+        userLoggedIn: userLoggedIn,
       });
-    },
-  
-} 
- 
+    }
+  },
+
+  eliminarProducto: (req, res) => {
+    removeProduct(req.params.id);
+    res.redirect('/');
+  },
+};
+
 module.exports = controllerCart;

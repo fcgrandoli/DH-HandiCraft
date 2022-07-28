@@ -1,10 +1,21 @@
 
+  [ 
     {
-        "id": "",
-        "name": "",
-        "price": "",
-        "disc": "",
-        "image": "",
-        "descs": "",
-        "descl": ""
-      }
+    "id": "",
+    "name": "",
+    "price": "",
+    "disc": "",
+    "image": "",
+    "descs": "",
+    "descl": ""
+  },
+  {
+    "id": 1,
+    "name": "Flor de Vidrio",
+    "price": "12000",
+    "disc": "",
+    "image": "PRD-AlzadaFlor.png",
+    "descs": "Alzada con pie en forma de flor.",
+    "descl": "Esta decoracion de cristal floral de HandiCraft combina la decoración clásica con el estilo moderno. Inspirada en la tendencia contemporánea de las flores individuales, presenta una flor, elaborada con 130 facetas de cristal de colores, sobre un soporte de cristal con distintos tonos de colores. Este sería el regalo perfecto para cualquier ocasión especial. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años."
+  } 
+ ]
