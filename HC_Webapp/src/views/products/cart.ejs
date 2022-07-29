@@ -16,10 +16,17 @@
           <img src="public/images/Banner.jpg" />
         </section>
 
-        <h4>Todavia no seleccionaste ningun producto! Entra al home para seleccionar! 
-          Esperamos su compra!!!
-        </h4>
+        <div class="half-2">
+          
+            <a
+              class="btn-delete"
+              href="/producto/<%= productList[i].id%>/eliminar"
+              >ELIMINAR</a
+            >
+          </form>
+          
 
+          </div>
             </main>
         </div>
         <%- include ('../partials/footer') %>

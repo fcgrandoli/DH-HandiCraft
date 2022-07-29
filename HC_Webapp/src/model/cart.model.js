@@ -1,7 +1,7 @@
-const { readFileSync, writeFileSync } = require('fs');
+/*const { readFileSync, writeFileSync } = require('fs');
 const { resolve } = require('path');
 
-const productModel = {
+const productCartModel = {
   indexProduct: function () {
     let productFile = resolve(__dirname, '../data', 'productList.json');
     let productJSON = readFileSync(productFile);
@@ -9,7 +9,7 @@ const productModel = {
   },
  
   createProduct: function (data, imageName) {
-    let products = productModel.indexProduct();
+    let products = productCartModel.indexProduct();
     return Object({
       id: products.length,
       name: data.name,
@@ -21,17 +21,17 @@ const productModel = {
     });
   },
   removeProduct: function (id) {
-    let productList = productModel.indexProduct();
+    let productList = productCartModel.indexProduct();
     productList[id].name = 'DELETED';
     productList[id].price = 'DELETED';
     productList[id].disc = 'DELETED';
     productList[id].descs = 'DELETED';
     productList[id].descl = 'DELETED';
     productList[id].image = 'DELETED';
-    productModel.writeProductJSON(productList);
+    productCartModel.writeProductJSON(productList);
   },
   updateProduct: function (data) {
-    productList = productModel.indexProduct();
+    productList = productCartModel.indexProduct();
     let i = data.id;
     productList[i].name = data.name;
     productList[i].price = data.price;
@@ -39,7 +39,7 @@ const productModel = {
     productList[i].descs = data.descs;
     productList[i].descl = data.descl;
     productList[i].image = data.image;
-    productModel.writeProductJSON(productList);
+    productCartModel.writeProductJSON(productList);
   },
   //searchProduct: function (data, query) {
     //Crea un array vacion para llenarno con los productos que cumplan la condicion de la busqueda.
@@ -63,4 +63,71 @@ const productModel = {
   
 };
 
-module.exports = productModel;
+module.exports = productCartModel;*/
+const { readFileSync, writeFileSync } = require('fs');
+const { resolve } = require('path');
+
+const productCartModel = {
+  indexProduct: function () {
+    let productFile = resolve(__dirname, '../data', 'cartList.json');
+    let productJSON = readFileSync(productFile);
+    return JSON.parse(productJSON);
+  },
+  //muestra todos los productos
+ 
+  createProduct: function (data, imageName) {
+    let products = productCartModel.indexProduct();
+    return Object({
+      id: products.length,
+      name: data.name,
+      price: data.price,
+      disc: data.disc,
+      image: imageName,
+      descs: data.descs,
+      descl: data.descl,
+    });
+  },
+  removeProduct: function (id) {
+    let productList = productCartModel.indexProduct();
+    productList[id].name = 'DELETED';
+    productList[id].price = 'DELETED';
+    productList[id].disc = 'DELETED';
+    productList[id].descs = 'DELETED';
+    productList[id].descl = 'DELETED';
+    productList[id].image = 'DELETED';
+    productCartModel.writeProductJSON(productList);
+  },
+  updateProduct: function (data) {
+    productList = productCartModel.indexProduct();
+    let i = data.id;
+    productList[i].name = data.name;
+    productList[i].price = data.price;
+    productList[i].disc = data.disc;
+    productList[i].descs = data.descs;
+    productList[i].descl = data.descl;
+    productList[i].image = data.image;
+    productCartModel.writeProductJSON(productList);
+  },
+  searchProduct: function (data, query) {
+    //Crea un array vacion para llenarno con los productos que cumplan la condicion de la busqueda.
+    let tempProduct = [];
+    //Recorre el array de productos que viene por el 1er parametro de la funcion, por cada producto
+    data.forEach(product => {
+      //Convierte el nombre del producto en minscula para poder hacer la comparacion y se fija si coincide con la busqueda del usuario.
+      product.name.toLowerCase().includes(query)
+        ? //? es un condicional, en caso que devuelva "true" hace push del objeto al array tempProduct.
+          tempProduct.push(product)
+        : '';
+    });
+    //Finalmente retorna el array tempProduct.
+    return tempProduct;
+  },
+  writeProductJSON: function (data) {
+    let productFile = resolve(__dirname, '../data', 'cartList.json');
+    let update = JSON.stringify(data, null, 2);
+    return writeFileSync(productFile, update);
+  },
+  
+};
+
+module.exports = productCartModel;

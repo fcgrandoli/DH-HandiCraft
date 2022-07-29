@@ -20,7 +20,29 @@ const controllerCart = {
       i: i,
       userLoggedIn: userLoggedIn,
     });
+  },mostrarProductos: (req, res) => {
+    //Llama a la funcion indexProduct() en products.model.js para armar el array de productos en productList.
+    productList = indexProduct();
+    //Llama a la funcion readLoggedUser en products.model.js para armar el array del usuario logueado en users.model (aunque este vacio).
+    userLoggedIn = readLoggedUser();
+    //Retorna la vista "home" junto a las variables declaradas productList y userLoggedIn para que la vista muestre los valores que correspondan.
+    return res.render('home', {
+      productList: productList,
+      userLoggedIn: userLoggedIn,
+    });
   },
+  //TODO falta terminar este metodo
+  agregarProducto: (req, res) => {
+    let productList = indexProduct();
+    let userLoggedIn = readLoggedUser();
+    let i = req.params.id;
+    res.render('products/productCreate', {
+      productList: productList,
+      i: i,
+      userLoggedIn: userLoggedIn,
+    });
+  },
+
 
   crearProducto: (req, res) => {
     let productList = indexProduct();
@@ -33,24 +55,10 @@ const controllerCart = {
     });
   },
 
-  editarProducto: (req, res) => {
-    let productList = indexProduct();
-    let userLoggedIn = readLoggedUser();
-    if (!req.params.id) {
-      res.redirect('/');
-    } else {
-      let i = req.params.id;
-      return res.render('products/productEdit', {
-        productList: productList,
-        i: i,
-        userLoggedIn: userLoggedIn,
-      });
-    }
-  },
 
   eliminarProducto: (req, res) => {
     removeProduct(req.params.id);
-    res.redirect('/');
+    res.redirect('/cart');
   },
 };
 

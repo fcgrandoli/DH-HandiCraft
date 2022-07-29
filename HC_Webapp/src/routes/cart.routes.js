@@ -10,7 +10,7 @@ const {
   updateProduct,
 } = require('../model/cart.model');
 
-router.get('/', controllerCart.mostrarProducto);
+router.get('/', controllerCart.mostrarProductos);
 
 router.get('/:id/mostrar', controllerCart.mostrarProducto);
 
