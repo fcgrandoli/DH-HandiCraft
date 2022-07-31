@@ -3,11 +3,8 @@
   <%- include ('../partials/head') %>
   <link rel="stylesheet" type="text/css" href="../public/css/cart.css" />
   <link rel="stylesheet" type="text/css" href="../public/css/cart-tablet.css" />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="../public/css/cart-desktop.css"
-  />
+  <link rel="stylesheet" type="text/css" href="../public/css/cart-desktop.css"/>
+  <link rel="stylesheet" type="text/css" href="../public/css/home.css" />
   <body>
     <div id="container">
       <%- include ('../partials/header') %>
@@ -20,15 +17,19 @@
 
         <div class="half-2">
           
-            <a
-              class="btn-delete"
-              href="/producto/<%= productList[i].id%>/eliminar"
-              >ELIMINAR</a
-            >
-          </form>
+          <section class="section-prd"> 
+           
+            <%- include ('../partials/productList') %> 
+            <div class="buttons">
+              Eliminar
+              Agregar
+              cantidad
+
+            </div>
           
 
           </div>
+        </section>
             </main>
         </div>
         <%- include ('../partials/footer') %>

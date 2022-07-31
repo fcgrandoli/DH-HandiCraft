@@ -26,7 +26,7 @@ const controllerCart = {
     //Llama a la funcion readLoggedUser en products.model.js para armar el array del usuario logueado en users.model (aunque este vacio).
     userLoggedIn = readLoggedUser();
     //Retorna la vista "home" junto a las variables declaradas productList y userLoggedIn para que la vista muestre los valores que correspondan.
-    return res.render('home', {
+    return res.render('products/cart', {
       productList: productList,
       userLoggedIn: userLoggedIn,
     });
