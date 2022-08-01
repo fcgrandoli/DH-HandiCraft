@@ -75,7 +75,7 @@ const productCartModel = {
   },
   //muestra todos los productos
  
-  createProduct: function (data, imageName) {
+  comprarProduct: function (data, imageName) {
     let products = productCartModel.indexProduct();
     return Object({
       id: products.length,
@@ -87,7 +87,7 @@ const productCartModel = {
       descl: data.descl,
     });
   },
-  removeProduct: function (id) {
+  eliminarProduct: function (id) {
     let productList = productCartModel.indexProduct();
     productList[id].name = 'DELETED';
     productList[id].price = 'DELETED';

@@ -29,8 +29,8 @@ router.post('/crear', uploadProduct.single('image'), (req, res) => {
   } else {
     imageCheck = req.file.filename;
   }
-  productList.push(createProduct(req.body, imageCheck));
-  writeProductJSON(productList);
+  productList.push(comprarProduct(req.body, imageCheck));
+  writeProductJSON(cartList);
   res.redirect('/producto/' + req.body.id + '/mostrar');
 });
 

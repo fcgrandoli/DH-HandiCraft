@@ -30,6 +30,7 @@ router.post('/crear', uploadProduct.single('image'), (req, res) => {
   } else {
     imageCheck = req.file.filename;
   }
+  //TODO aca esta para escribir las cosas en el carrito
   productList.push(createProduct(req.body, imageCheck));
   writeProductJSON(productList);
   res.redirect('/producto/' + req.body.id + '/mostrar');
