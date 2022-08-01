@@ -17,7 +17,7 @@ router.get('/:id/mostrar', controllerCart.mostrarProducto);
 router.put('/editar', (req, res) => {
   updateProduct(req.body);
   res.redirect('/producto/' + req.body.id + '/mostrar');
-});
+}); 
 
 router.get('/crear', controllerCart.crearProducto);
 
