@@ -22,7 +22,7 @@ const productCartModel = {
       cant: data.cant,
     });
   },
-  eliminarProduct: function (id) {
+  eliminarCart: function (id) {
     let productList = productCartModel.indexProduct();
     productList[id].name = 'DELETED';
     productList[id].price = 'DELETED';

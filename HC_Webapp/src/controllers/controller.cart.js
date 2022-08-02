@@ -35,7 +35,7 @@ const controllerCart = {
   },
 
 
-  eliminarProducto: (req, res) => {
+  eliminarCart: (req, res) => {
     removeProduct(req.params.id);
     res.redirect('/cart');
   },

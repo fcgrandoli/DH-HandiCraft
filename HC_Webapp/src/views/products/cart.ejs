@@ -19,36 +19,45 @@
         <h2 class="tituloCart">
           <i class="fa-solid fa-basket-shopping"></i> Tus Compras
         </h2>
-        <%- include ('../partials/cartProductList') %> 
         <div class="cart">
           <section class="firstSectionCart">
-
-            <article>
+      <% for (let i= 1; i< productList.length; i++ ){ %> <% if(productList[i].name != 'DELETED')
+      {%>
+        <article>
               <img
                 class="imagenesCart"
-                src="../public/images/PRD-Carruaje.jpg"
+                src="../public/images/<% productList[i].image %>"
               />
               <div class="contenidoProduct">
-                <h4 class="tituloProducto">Carruaje Navideño</h4>
+                <h4 class="tituloProducto"><% productList[i].name %></h4>
                 <p class="breveDescripcion">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Adipisci ut modi nam porro
+                  <% productList[i].descs %>
                 </p>
                 <div class="padreDiv">
-                  <section class="precioArtCart">$Precio</section>
+                  <section class="precioArtCart"><% productList[i].price %></section>
+                  
                   <section class="botonera">
-                    <a href="/"
-                      ><button class="btnsCart">
-                        <i class="fa-solid fa-trash"></i></button
-                    ></a>
-                    <a href="/"
-                      ><button class="btnsCart">
-                        <i class="fa-solid fa-plus"></i></button
-                    ></a>
-                    <a href="/"
-                      ><button class="btnsCart">
-                        <i class="fa-solid fa-minus"></i></button
-                    ></a>
+                      <a href="/">
+                      <button class="btnsCart">
+                        <form
+              class="fields"
+              method="POST"
+              action="/producto/eliminar?_method=DELETE"
+            >
+              <a
+                class="fa-solid fa-plus"
+                href="/producto/<%= productList[i].id%>/eliminarCart"
+                >eliminar</a>
+            </form></button>
+                        </a>
+                    <a href="/">
+                      <button class="btnsCart">
+                        <i class="fa-solid fa-plus"></i></button>
+                    </a>
+                    <a href="/">
+                      <button class="btnsCart">
+                        <i class="fa-solid fa-minus"></i></butto>
+                    </a>
                     <p class="ctdCart">1</p>
                   </section>
                 </div>
@@ -57,6 +66,8 @@
           </section>
           <section class="secondSectionCart">
             <article>
+              <% } %> <%} %> 
+           
               <h4>
                 <i class="fa-solid fa-file-invoice-dollar"></i> Detalle de
                 Compra
