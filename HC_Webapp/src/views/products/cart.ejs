@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include ('../partials/head') %>
-  <link rel="stylesheet" type="text/css" href="../public/css/cart.css" />
-  <link rel="stylesheet" type="text/css" href="../public/css/cart-tablet.css" />
+  <link rel="stylesheet" type="text/css" href="/css/cart.css" />
+  <link rel="stylesheet" type="text/css" href="/css/cart-tablet.css" />
   <link
     rel="stylesheet"
     type="text/css"
-    href="../public/css/cart-desktop.css"
+    href="/css/cart-desktop.css"
   />
   <body>
       <div id="container">
       <%- include ('../partials/header') %>
       <main class="mainCart">
         <section class="banner">
-          <img src="public/images/Banner.jpg" />
+          <img src="/images/Banner.jpg" />
         </section>
 
         <h2 class="tituloCart">
@@ -26,7 +26,7 @@
         <article>
               <img
                 class="imagenesCart"
-                src="../public/images/<% productList[i].image %>"
+                src="/images/<% productList[i].image %>"
               />
               <div class="contenidoProduct">
                 <h4 class="tituloProducto"><% productList[i].name %></h4>
@@ -46,7 +46,7 @@
             >
               <a
                 class="fa-solid fa-plus"
-                href="/producto/<%= productList[i].id%>/eliminarCart"
+                href="producto/<%= productList[i].id%>/eliminarCart"
                 >eliminar</a>
             </form></button>
                         </a>
@@ -94,8 +94,7 @@
             <article class="botonesFinales">
               <a href="/"><button class="btnCancel">Cancelar Compra</button></a>
               <a href="/"
-                ><button class="btnFinish">Finalizar Compra</button></a
-              >
+                ><button class="btnFinish">Finalizar Compra</button></a>
             </article>
           </section>
         </div>

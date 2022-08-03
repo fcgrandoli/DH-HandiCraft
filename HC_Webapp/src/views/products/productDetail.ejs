@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include ('../partials/head') %>
-  <link rel="stylesheet" type="text/css" href="/public/css/productDetail.css" />
+  <link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
   <link
     rel="stylesheet"
     type="text/css"
-    href="/public/css/productDetail-tablet.css"
+    href="/css/productDetail-tablet.css"
   />
   <link
     rel="stylesheet"
     type="text/css"
-    href="/public/css/productDetail-desktop.css"
+    href="/css/productDetail-desktop.css"
   />
   <%- include ('../partials/header') %>
   <body>
@@ -24,17 +24,9 @@
             <div class="image">
               <img
                 class="preview"
-                src="/public/images/<%= productList[i].image %>"
+                src="/images/<%= productList[i].image %>"
               />
             </div>
-            <div class="description">
-              <div class="estrellas">
-                <i class="fa-solid fa-star estrella"></i>
-                <i class="fa-solid fa-star estrella"></i>
-                <i class="fa-solid fa-star estrella"></i>
-                <i class="fa-solid fa-star estrella"></i>
-                <i class="fa-solid fa-star estrella"></i>
-              </div>
               <p class="disc">
                 <% if(productList[i].disc.length == 0){ %> <%=
                 productList[i].disc %> <% } else{ %> <%= productList[i].disc %>%
@@ -85,7 +77,7 @@
               <div class="image-mini">
                 <img
                   class="preview-mini"
-                  src="/public/images/<%= productList[i].image %>"
+                  src="/images/<%= productList[i].image %>"
                 />
               </div>
               <% } %>

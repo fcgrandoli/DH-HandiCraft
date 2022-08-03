@@ -4,29 +4,29 @@
   <link
     rel="stylesheet"
     type="text/css"
-    href="../public/css/accountDetails.css"
+    href="/css/accountDetails.css"
   />
   <link
     rel="stylesheet"
     type="text/css"
-    href="../public/css/accountDetails-tablet.css"
+    href="/css/accountDetails-tablet.css"
   />
   <link
     rel="stylesheet"
     type="text/css"
-    href="../public/css/accountDetails-desktop.css"
+    href="/css/accountDetails-desktop.css"
   />
   <body>
     <div class="container">
       <%- include ('../partials/header') %>
       <main>
         <div class="banner">
-          <img src="/public/images/banner.jpg" />
+          <img src="/images/banner.jpg" />
         </div>
         <div>
           <img
           class="avatar"
-          src="/public/assets/avatars/<%= userLoggedIn.avatar %>"
+          src="/assets/avatars/<%= userLoggedIn.avatar %>"
         />
         </div>
         <form class="fields" method="POST" action="/login/update" enctype="multipart/form-data">
