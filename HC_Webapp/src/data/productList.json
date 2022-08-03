@@ -79,5 +79,32 @@
     "image": "PRD-FruteraTallada.webp",
     "descs": "Frutera tallada.",
     "descl": "Vesti tu mesa con esta elegante frutera tallada hecha por HandiCraft. Ideal para poner frutas en la mesa de manera delicada. Maravilloso regalo para cuando estas invitado a un acontecimiento y no sabes que llevar."
+  },
+  {
+    "id": 9,
+    "name": "Ballenas",
+    "price": "8000",
+    "disc": "10",
+    "image": "PRD-Ballena1.jpg",
+    "descs": "Figura de cristal hecha a mano en forma de ballenas.",
+    "descl": "Esta preciosa creación de cristal captura la naturaleza alegre y los hermosos colores de las ballenas. Elaborado en su totalidad de cristal, sus 280 facetas brillan en diferentes tonos de colores. Diseñado por HandiCraft, esta decoracion aportará un toque fresco y moderno a la decoración de tu hogar. Ideal para regalar y una pieza imprescindible para los coleccionistas."
+  },
+  {
+    "id": 10,
+    "name": "Caballo",
+    "price": "7000",
+    "disc": "5",
+    "image": "PRD-Caballo1.jpg",
+    "descs": "Figura de cristal hecha a mano en forma de pajaros.",
+    "descl": "Esta decoracion elegante con forma de caballo de HandiCraft, hecha a mano, brillante y brillante al sol, detallada, vívida y realista, nunca se desvanece, una delicada decoración de escritorio. Ideal para agregar un toque decorativo a su oficina, hotel, etc. Maravilloso accesorio para encimeras de cocina, expositores de centro de mesa de comedor."
+  },
+  {
+    "id": 11,
+    "name": "Dragon",
+    "price": "8500",
+    "disc": "10",
+    "image": "image-1659476368618_img.jpg",
+    "descs": "Figura de cristal hecha a mano en forma de dragon",
+    "descl": "Maravilloso accesorio para expositores de centro de mesa de comedor. Este seria un regalo perfecto para inauguración de la casa, Navidad y festejos familiares. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años"
   }
 ]
