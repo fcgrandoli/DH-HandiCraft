@@ -18,22 +18,7 @@
     flex-direction: row;
   }
 
-  .estrellas {
-    display: flex;
-    width: 50%;
-    padding-left: 10px;
-  }
-
-  .estrella {
-    color: rgb(156, 156, 156);
-    font-size: 1.2em;
-    transition-property: color;
-    transition-duration: 00.5ms;
-    padding-right: 10px;
-  }
-  .estrella:hover {
-    color: gold;
-  }
+  
   .image {
     display: flex;
     justify-content: center;
