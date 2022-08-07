@@ -14,6 +14,6 @@ router.get('/', controllerCart.viewProduct);
 
 router.get('/:id/mostrarCart', controllerCart.viewProduct);
 
-router.get('/:id/eliminarCart', controllerProducto.eliminarCart);
+router.get('/:id/eliminarProduct', controllerCart.eliminarProduct);
 
 module.exports = router;

@@ -26,7 +26,7 @@
         <article>
               <img
                 class="imagenesCart"
-                src="/images/<% productList[i].image%>"
+                src="/images/<%= productList[i].image %>"
               />
               <div class="contenidoProduct">
                 <h4 class="tituloProducto"><% productList[i].name %></h4>
@@ -42,11 +42,10 @@
                         <form
               class="fields"
               method="POST"
-              action="/viewProduct/eliminar?_method=DELETE"
-            >
+              action="/viewProduct/eliminar?_method=DELETE">
               <a
                 class="fa-solid fa-plus"
-                href="producto/<%= productList[i].id%>/eliminarCart"
+                href="producto/<%= productList[i].id%>/eliminarProduct"
                 >eliminar</a>
             </form></button>
                         </a>

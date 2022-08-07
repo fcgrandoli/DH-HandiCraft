@@ -27,14 +27,14 @@ const controllerCart = {
     let productList = indexProduct();
     let userLoggedIn = readLoggedUser();
     let i = req.params.id;
-    res.render('products/productCreate', {
+    res.render('products/cart', {
       productList: productList,
       i: i,
       userLoggedIn: userLoggedIn,
     });
   },
 
-  eliminarCart: (req, res) => {
+  eliminarProduct: (req, res) => {
     removeProduct(req.params.id);
     res.redirect('/cart');
   },
