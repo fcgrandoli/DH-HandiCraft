@@ -19,7 +19,7 @@
     "passwd": "123",
     "isAdmin": "",
     "avatar": "blank.jpg",
-    "loggedIn": true
+    "loggedIn": false
   },
   {
     "id": 3,
@@ -32,5 +32,4 @@
     "avatar": "blank.jpg",
     "loggedIn": false
   }
-  
 ]
