@@ -14,11 +14,31 @@
         <form action="userLogin?_method=POST" method="POST">
           <div class="user">
             <label for="user">Nombre de usuario</label>
-            <input class="input-fields" type="text" name="user_name" />
+            <input
+              class="input-fields"
+              type="text"
+              name="user_name"
+              autocomplete="off"
+              placeholder="Username"
+              value="<%= locals.oldData ? oldData.username : null %>"
+            />
+            <% if (locals.errors && errors.username) { %>
+            <p class="msg-error"><%= errors.username.msg %></p>
+            <% } %>
           </div>
           <div class="passwords">
             <label for="password">Ingresar contraseña</label>
-            <input class="input-fields" type="password" name="passwd" />
+            <input
+              class="input-fields"
+              type="password"
+              name="passwd"
+              autocomplete="off"
+              placeholder="Password"
+              value="<%= locals.oldData ? oldData.password : null %>"
+            />
+            <% if (locals.errors && errors.password) { %>
+            <p class="msg-error"><%= errors.password.msg %></p>
+            <% } %>
           </div>
           <div class="buttons">
             <button type="submit" value="enviar">Enviar</button>

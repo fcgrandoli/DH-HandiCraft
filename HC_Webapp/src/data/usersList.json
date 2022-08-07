@@ -5,7 +5,7 @@
     "last_name": "Shlain",
     "user_name": "cshlain",
     "email": "cshlain@hc.com",
-    "passwd": "123",
+    "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
     "isAdmin": "",
     "avatar": "blank.jpg",
     "loggedIn": false
@@ -16,7 +16,7 @@
     "last_name": "Lalo",
     "user_name": "slalo",
     "email": "slalo@hc.com",
-    "passwd": "123",
+    "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
     "isAdmin": "",
     "avatar": "blank.jpg",
     "loggedIn": false
@@ -27,9 +27,9 @@
     "last_name": "Grandoli",
     "user_name": "fgrandoli",
     "email": "fgrandoli@hc.com",
-    "passwd": "123",
+    "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
     "isAdmin": "",
     "avatar": "blank.jpg",
-    "loggedIn": true
+    "loggedIn": false
   }
 ]

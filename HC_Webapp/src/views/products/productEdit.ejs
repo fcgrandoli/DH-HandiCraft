@@ -16,10 +16,9 @@
           method="POST"
           action="/viewProduct/editar?_method=PUT"
         >
-          <label for="">ID: </label>
           <input
             class="input-fields"
-            type="number"
+            type="hidden"
             name="id"
             value="<%= productList[i].id %>"
             readonly="readonly"

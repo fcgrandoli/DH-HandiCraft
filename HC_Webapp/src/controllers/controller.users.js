@@ -4,6 +4,9 @@ const {
   writeLoggedUser,
   writeUserJSON,
 } = require('../model/users.model');
+const { validationResult } = require('express-validator');
+const { hashSync } = require('bcryptjs');
+const { compareSync } = require('bcryptjs');
 
 const controllerLogin = {
   viewLogin: (req, res) => {
@@ -19,24 +22,11 @@ const controllerLogin = {
     });
   },
 
-  updateProfileDetails: (req, res) => {
-    if (!req.file) {
-      controllerLogin.updateUser(req.body);
-    } else {
-      controllerLogin.updateUser(req.body, req.file.filename);
-    }
-    res.redirect('/');
-  },
-
   closeSession: (req, res) => {
     let usersList = indexUser();
     let loggedUser = readLoggedUser();
-    usersList.forEach(user => {
-      if (loggedUser.id == user.id) {
-        user.loggedIn = false;
-        controllerLogin.updateUser(user);
-      }
-    }, usersList);
+    let user = usersList.find(u => u.id == loggedUser.id);
+    user.loggedIn = false;
     let eraseSession = Object({
       id: '',
       first_name: '',
@@ -49,6 +39,7 @@ const controllerLogin = {
       loggedIn: '',
     });
     writeLoggedUser(eraseSession);
+    writeUserJSON(usersList);
     res.redirect('/');
   },
 
@@ -58,58 +49,48 @@ const controllerLogin = {
 
   loginUser: (req, res) => {
     let usersList = indexUser();
-    usersList.forEach(user => {
-      if (
-        req.body.user_name == user.user_name &&
-        req.body.passwd == user.passwd
-      ) {
-        user.loggedIn = true;
-        controllerLogin.updateUser(user);
-        writeLoggedUser(user);
-      }
-    }, usersList);
+    let user = usersList.find(u => u.user_name == req.body.user_name);
+    if (user && compareSync(req.body.passwd, user.passwd)) {
+      user.loggedIn = true;
+      writeLoggedUser(user);
+    }
+    writeUserJSON(usersList);
     res.redirect('/');
   },
-  updateUser: function (actualUser, imageName) {
+
+  updateProfileDetails: (req, res) => {
     let usersList = indexUser();
-    usersList.forEach(function (user, index) {
-      if (user.id == actualUser.id) {
-        this[index].first_name = actualUser.first_name;
-        this[index].last_name = actualUser.last_name;
-        this[index].user_name = actualUser.user_name;
-        this[index].email = actualUser.email;
-        this[index].passwd = actualUser.passwd;
-        //this[index].passwd = hashSync(actualUser.passwd, 10);
-        this[index].isAdmin = '';
-        this[index].avatar = !imageName ? actualUser.avatar : imageName;
-        this[index].loggedIn = actualUser.loggedIn;
-        actualUser.loggedIn == undefined ? (this[index].loggedIn = true) : '';
-        writeLoggedUser(this[index]);
-      }
-    }, usersList);
-    writeUserJSON(usersList);
+    let user = usersList.find(u => u.id == req.body.id);
+    if (user.id == req.body.id) {
+      user.first_name = req.body.first_name;
+      user.last_name = req.body.last_name;
+      user.user_name = req.body.user_name;
+      user.email = req.body.email;
+      user.passwd =
+        req.body.passwd != 0
+          ? (user.passwd = hashSync(req.body.passwd, 10))
+          : (user.passwd = user.passwd);
+      user.isAdmin = '';
+      user.avatar = !req.file ? req.body.avatar : req.file.filename;
+      writeLoggedUser(user);
+      writeUserJSON(usersList);
+    }
+    res.redirect('/user/profile');
   },
 
   registerUser: (req, res) => {
     let usersList = indexUser();
     let tempID = usersList.length;
-    let imageName = '';
     tempID++;
-    if (!req.file) {
-      imageName = 'blank.jpg';
-    } else {
-      imageName = req.file.filename;
-    }
     let tempUser = Object({
       id: tempID,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       user_name: req.body.user_name,
       email: req.body.email,
-      //passwd: hashSync(data.passwd, 10),
-      passwd: req.body.passwd,
+      passwd: hashSync(req.body.passwd, 10),
       isAdmin: '',
-      avatar: imageName,
+      avatar: !req.file ? 'blank.jpg' : req.file.filename,
       loggedIn: true,
     });
     usersList.push(tempUser);

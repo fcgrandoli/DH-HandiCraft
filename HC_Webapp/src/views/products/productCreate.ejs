@@ -17,10 +17,9 @@
           action="/viewProduct/createProduct"
           enctype="multipart/form-data"
         >
-          <label for="">ID: </label>
           <input
             class="input-fields"
-            type="number"
+            type="hidden"
             name="id"
             value="<%= productList.length %>"
             readonly="readonly"
