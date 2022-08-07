@@ -15,5 +15,5 @@
 	> Trabaje como soporte de servidores y aplicaciones, ahora me desempeño como programador hace 6 meses. Espero poder utilizar los conocimientos adquiridos para dedicarme al desarrollo 100%.
 
 + Mi nombre es **_Santiago Paez Toledo_**, tengo 20 años.
-> Desde muy chico quize dedicarme a la programacion, siempre me intereso mucho este tipo de tecnologia y espero poder desarrollar mis conocimientos con este curso.
-> Como nuevo integrante del equipo, llego para aportar lo aprendido durante el curso, servir y poder trabajar en grupo de forma organizada para un buen proyecto.
+   > Desde muy chico quize dedicarme a la programacion, siempre me intereso mucho este tipo de tecnologia y espero poder desarrollar mis conocimientos con este curso.
+   > Como nuevo integrante del equipo, llego para aportar lo aprendido durante el curso, servir y poder trabajar en grupo de forma organizada para un buen proyecto.
