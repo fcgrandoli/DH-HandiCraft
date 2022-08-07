@@ -25,19 +25,84 @@
             readonly="readonly"
           />
           <label for="">Nombre:</label>
-          <input class="input-fields" type="text" name="name" value="" />
+          <input
+            class="input-fields"
+            type="text"
+            name="name"
+            autocomplete="off"
+            placeholder="Nombre del producto"
+            value="<%= locals.oldData ? oldData.name : null %>"
+          />
+          <% if (errors.name) { %>
+          <p class="msg-error"><%= locals.errors.name.msg %></p>
+          <% } %>
+
           <label for="">Descripcion corta:</label>
-          <input class="input-fields" type="text" name="descs" value="" />
+          <input
+            class="input-fields"
+            type="text"
+            name="descs"
+            autocomplete="off"
+            placeholder="Descripcion breve"
+            value="<%= locals.oldData ? oldData.descs : null %>"
+          />
+          <% if (errors.descs) { %>
+          <p class="msg-error"><%= locals.errors.descs.msg %></p>
+          <% } %>
+
           <label for="">Descripcion larga:</label>
-          <input class="input-fields" type="text" name="descl" value="" />
+          <input
+            class="input-fields"
+            type="text"
+            name="descl"
+            autocomplete="off"
+            placeholder="Descripcion larga"
+            value="<%= locals.oldData ? oldData.descl : null %>"
+          />
+
+          <% if (errors.descl) { %>
+          <p class="msg-error"><%= locals.errors.descl.msg %></p>
+          <% } %>
+
           <label for="">Precio:</label>
-          <input class="input-fields" type="number" name="price" value="" />
+          <input
+            class="input-fields"
+            type="number"
+            name="price"
+            autocomplete="off"
+            placeholder="Precio"
+            value="<%= locals.oldData ? oldData.price : null %>"
+          />
+          <% if (errors.price) { %>
+          <p class="msg-error"><%= locals.errors.price.msg %></p>
+          <% } %>
+
           <label for="">Descuento:</label>
-          <input class="input-fields" type="number" name="disc" value="" />
+          <input
+            class="input-fields"
+            type="number"
+            name="disc"
+            autocomplete="off"
+            placeholder="Descuento (opcional)"
+            value="<%= locals.oldData ? oldData.disc : null %>"
+          />
+          <% if (errors.disc) { %>
+          <p class="msg-error"><%= locals.errors.disc.msg %></p>
+          <% } %>
+
           <div class="image-fields-container">
             <label for="image">Foto del producto:</label>
-            <input class="image-upload" type="file" name="image" />
+            <input
+              class="image-upload"
+              type="file"
+              name="image"
+              autocomplete="off"
+              value="<%= locals.oldData ? oldData.image : null %>"
+            />
           </div>
+          <% if (errors.image) { %>
+          <p class="msg-error"><%= locals.errors.image.msg %></p>
+          <% } %>
           <input class="submit" type="submit" value="Crear producto" />
         </form>
       </div>

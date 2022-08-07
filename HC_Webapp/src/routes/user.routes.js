@@ -11,6 +11,7 @@ const {
 } = require('../controllers/controller.users.js');
 const uploadUser = require('../middlewares/userUpload.js');
 const validationLogin = require('../validations/login');
+const validationRegister = require('../validations/register');
 
 router.get('/viewLogin', viewLogin);
 
@@ -24,6 +25,11 @@ router.post('/userLogin', [validationLogin], loginUser);
 
 router.get('/viewRegister', viewRegister);
 
-router.post('/registerUser', uploadUser.single('avatar'), registerUser);
+router.post(
+  '/registerUser',
+  uploadUser.single('avatar'),
+  [validationRegister],
+  registerUser
+);
 
 module.exports = router;

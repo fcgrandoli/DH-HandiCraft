@@ -20,10 +20,10 @@
               name="user_name"
               autocomplete="off"
               placeholder="Username"
-              value="<%= locals.oldData ? oldData.username : null %>"
+              value="<%= locals.oldData ? oldData.user_name : null %>"
             />
-            <% if (locals.errors && errors.username) { %>
-            <p class="msg-error"><%= errors.username.msg %></p>
+            <% if (errors.user_name) { %>
+            <p class="msg-error"><%= locals.errors.user_name.msg %></p>
             <% } %>
           </div>
           <div class="passwords">
@@ -34,10 +34,10 @@
               name="passwd"
               autocomplete="off"
               placeholder="Password"
-              value="<%= locals.oldData ? oldData.password : null %>"
+              value="<%= locals.oldData ? oldData.passwd : null %>"
             />
-            <% if (locals.errors && errors.password) { %>
-            <p class="msg-error"><%= errors.password.msg %></p>
+            <% if (errors.passwd) { %>
+            <p class="msg-error"><%= errors.passwd.msg %></p>
             <% } %>
           </div>
           <div class="buttons">

@@ -1,24 +1,33 @@
 const express = require('express');
 const router = express.Router();
-const controllerProducto = require('../controllers/controller.product.js');
+const {
+  viewProduct,
+  viewEditProduct,
+  viewCreateProduct,
+  createProduct,
+  updateProduct,
+  removeProduct,
+} = require('../controllers/controller.product.js');
 const uploadProduct = require('../middlewares/productUpload.js');
+const validationProduct = require('../validations/product');
 
-router.get('/', controllerProducto.viewProduct);
+router.get('/', viewProduct);
 
-router.get('/:id/mostrar', controllerProducto.viewProduct);
+router.get('/:id/mostrar', viewProduct);
 
-router.get('/:id/editar', controllerProducto.viewEditProduct);
+router.get('/:id/editar', viewEditProduct);
 
-router.put('/editar', controllerProducto.updateProduct);
+router.put('/editar', updateProduct);
 
-router.get('/createProduct', controllerProducto.viewCreateProduct);
+router.get('/createProduct', viewCreateProduct);
 
 router.post(
   '/createProduct',
   uploadProduct.single('image'),
-  controllerProducto.createProduct
+  [validationProduct],
+  createProduct
 );
 
-router.get('/:id/eliminar', controllerProducto.removeProduct);
+router.get('/:id/eliminar', removeProduct);
 
 module.exports = router;

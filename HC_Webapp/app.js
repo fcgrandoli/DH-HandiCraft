@@ -1,4 +1,6 @@
 const express = require('express');
+const cookie = require('cookie-parser');
+const session = require('express-session');
 const app = express();
 const cartRoute = require('./src/routes/cart.routes.js');
 const homeRoute = require('./src/routes/home.routes.js');
@@ -16,6 +18,15 @@ app.use('/images', express.static(__dirname + '/public/images'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(
+  session({
+    secret: 'hc_webapp',
+    saveUninitialized: true,
+    resave: true,
+  })
+);
+app.use(cookie());
+app.use(require('./src/middlewares/user.js'));
 
 app.use('/', homeRoute);
 app.use('/home', homeRoute);

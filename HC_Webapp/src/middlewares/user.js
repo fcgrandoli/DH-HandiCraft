@@ -1,4 +1,5 @@
-const middleware = (req, res, next) => {
+const { indexUser } = require('../model/users.model');
+module.exports = (req, res, next) => {
   let user = null;
 
   if (req.session && req.session.user) {
@@ -9,5 +10,3 @@ const middleware = (req, res, next) => {
 
   return next();
 };
-
-module.exports = middleware;

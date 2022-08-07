@@ -1,69 +1,58 @@
-/* const { body } = require('express-validator');
+const { body } = require('express-validator');
 const { extname, resolve } = require('path');
 const { unlinkSync } = require('fs');
-const { index } = require('../model/products.model');
-const productValidation = [
-  body('nombre')
+const validationProduct = [
+  body('name')
     .notEmpty()
     .withMessage('El nombre no puede quedar vacío')
     .bail()
     .isLength({ min: 2 })
     .withMessage('El nombre debe contener mínimo dos caracteres.')
     .bail(),
-  body('apellido')
+  body('descs')
     .notEmpty()
-    .withMessage('El nombre no puede quedar vacío')
+    .withMessage('La descripcion no puede quedar vacía')
     .bail()
     .isLength({ min: 2 })
-    .withMessage('El nombre debe contener mínimo dos caracteres.')
+    .withMessage('La descripcion debe contener mínimo dos caracteres.')
     .bail(),
-  body('email')
+  body('descl')
     .notEmpty()
-    .withMessage('El email no puede quedar vacío.')
+    .withMessage('La descripcion no puede quedar vacía')
     .bail()
-    .isEmail()
-    .withMessage('El formato de email no es válido.')
-    .bail()
-    .custom(value => {
-      let users = index();
-      users = users.map(u => u.email);
-      if (users.includes(value)) {
-        throw new Error('El email ya esta registrado');
-      }
-      return true;
-    }),
-  body('password')
-    .notEmpty()
-    .withMessage('La contraseña no puede quedar vacía.')
-    .bail()
-    .isLength({ min: 4 })
+    .isLength({ min: 2 })
+    .withMessage('La descripcion debe contener mínimo dos caracteres.')
     .bail(),
-  body('avatar').custom((value, { req }) => {
-    let archivos = req.files;
-    if (!archivos || archivos.length == 0) {
+  body('price')
+    .notEmpty()
+    .withMessage('El precio no puede quedar vacío')
+    .bail()
+    .isLength({ min: 2 })
+    .withMessage('El precio debe contener mínimo dos caracteres.')
+    .bail(),
+  body('image').custom((value, { req }) => {
+    if (!req.file) {
       throw new Error('No se subio ninguna imagen');
     }
+    let archivos = req.file;
     let extensiones = ['.svg', '.png', '.jpg', '.jpeg'];
-    let avatar = archivos[0];
-    let extension = extname(avatar.filename);
-
+    let producto = archivos;
+    let extension = extname(producto.filename);
     if (!extensiones.includes(extension)) {
       unlinkSync(
-        resolve(__dirname, '../../public/assets/', 'avatars', avatar.filename)
+        resolve(__dirname, '../../public/assets/', 'avatars', producto.filename)
       );
       throw new Error('La imagen no tiene una extension valida');
     }
 
-    if (avatar.size > 2097152) {
+    if (producto.size > 2097152) {
       unlinkSync(
-        resolve(__dirname, '../../public/assets/', 'avatars', avatar.filename)
+        resolve(__dirname, '../../public/assets/', 'avatars', producto.filename)
       );
       throw new Error('La imagen supera el peso de 2MB');
     }
-
     return true;
   }),
 ];
 
-module.exports = productValidation;
- */
+module.exports = validationProduct;

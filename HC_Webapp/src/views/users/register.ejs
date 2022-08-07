@@ -27,45 +27,54 @@
         >
           <div class="firstName">
             <label for="user">Nombre:</label>
-            <input class="input-fields" type="text" name="first_name" value="" />
+            <input class="input-fields" type="text" name="first_name" placeholder="First name" value="<%= locals.oldData ? oldData.first_name : null %>">
+            <% if (errors.first_name) { %>
+              <p class="msg-error"><%= locals.errors.first_name.msg %></p>
+              <% } %>
           </div>
           <div class="lastName">
             <label for="user">Apellido:</label>
-            <input class="input-fields" type="text" name="last_name" value="" />
+            <input class="input-fields" type="text" name="last_name" placeholder="Last name" value="<%= locals.oldData ? oldData.last_name : null %>">
+            <% if (errors.last_name) { %>
+              <p class="msg-error"><%= locals.errors.last_name.msg %></p>
+              <% } %>
           </div>
           <div class="user">
             <label for="user">Nombre de usuario:</label>
-            <input class="input-fields" type="text" name="user_name" value="" />
+            <input class="input-fields" type="text" name="user_name" placeholder="Username" value="<%= locals.oldData ? oldData.user_name : null %>">
+            <% if (errors.user_name) { %>
+              <p class="msg-error"><%= locals.errors.user_name.msg %></p>
+              <% } %>
           </div>
           <div class="email">
             <label for="user">Correo electronico:</label>
-            <input class="input-fields" type="email" name="email" value="" />
+            <input class="input-fields" type="email" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
+            <% if (errors.email) { %>
+              <p class="msg-error"><%= locals.errors.email.msg %></p>
+              <% } %>
           </div>
           <div class="passwords">
             <label for="password">Ingresar contraseña:</label>
             <input
               class="input-fields"
               type="password"
-              name="passwd"
-              value=""
-            />
+              name="passwd" placeholder="Password" value="<%= locals.oldData ? oldData.passwd : null %>">
+              <% if (errors.passwd) { %>
+                <p class="msg-error"><%= locals.errors.passwd.msg %></p>
+                <% } %>
           </div>
-          <!--           <div class="passwords">
-            <label for="password">Confirmar contraseña:</label>
-            <input type="password" name="passwd2" value="" />
-          </div> -->
           <div class="image-fields-container">
             <label for="image">Foto de perfil:</label>
             <input class="image-upload" type="file" name="avatar" />
           </div>
           <div class="buttons">
-            <!-- <button type="submit" value="enviar">Registrarme</button> -->
             <input class="submit" type="submit" value="Registrarme" />
             <button class="nav-reset" type="reset" value="reset">Reset</button>
             <div class="show-btn-back">
               <a class="nav-back" href="home">Volver</a>
             </div>
           </div>
+        </form>
         </form>
       </main>
     </div>

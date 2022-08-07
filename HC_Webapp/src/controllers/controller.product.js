@@ -1,9 +1,9 @@
-const { validationResult } = require('express-validator');
 const {
   indexProduct,
   writeProductJSON,
   prepareProduct,
 } = require('../model/products.model');
+const { validationResult } = require('express-validator');
 const { readLoggedUser } = require('../model/users.model');
 
 const controllerProducto = {
@@ -19,6 +19,8 @@ const controllerProducto = {
   },
 
   viewCreateProduct: (req, res) => {
+    let validaciones = validationResult(req);
+    let { errors } = validaciones;
     let productList = indexProduct();
     let userLoggedIn = readLoggedUser();
     let i = req.params.id;
@@ -26,6 +28,7 @@ const controllerProducto = {
       productList: productList,
       i: i,
       userLoggedIn: userLoggedIn,
+      errors: validaciones.mapped(),
     });
   },
 
@@ -45,6 +48,15 @@ const controllerProducto = {
   },
 
   createProduct: (req, res) => {
+    let validaciones = validationResult(req);
+    let { errors } = validaciones;
+    if (errors && errors.length > 0) {
+      return res.render('products/productCreate', {
+        styles: ['products/productCreate'],
+        oldData: req.body,
+        errors: validaciones.mapped(),
+      });
+    }
     let imageCheck = '';
     let productList = indexProduct();
     if (!req.file) {

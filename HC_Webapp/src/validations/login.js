@@ -8,12 +8,10 @@ const login = [
     .notEmpty()
     .withMessage('El usuario no puede quedar vacío.')
     .bail()
-    .isEmail()
-    .withMessage('El formato de usuario no es válido.')
     .bail()
     .custom(value => {
       let users = indexUser();
-      users = users.map(u => u.email);
+      users = users.map(u => u.user_name);
       if (!users.includes(value)) {
         throw new Error('El usuario no esta registrado');
       }
@@ -24,18 +22,17 @@ const login = [
     .notEmpty()
     .withMessage('La contraseña no puede quedar vacía.')
     .bail()
-    .isLength({ min: 4 })
+    .isLength({ min: 3 })
     .bail()
     .custom((value, { req }) => {
-      let { email } = req.body;
       let users = indexUser();
-      let user = users.find(u => u.email === email);
+      let user = users.find(u => u.user_name == req.body.user_name);
 
       if (!user) {
         throw new Error('Usuario no encontrado');
       }
 
-      if (!compareSync(value, user.password)) {
+      if (!compareSync(value, user.passwd)) {
         throw new Error('La contraseña es incorrecta');
       }
 

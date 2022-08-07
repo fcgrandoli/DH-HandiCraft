@@ -10,13 +10,18 @@ const { compareSync } = require('bcryptjs');
 
 const controllerLogin = {
   viewLogin: (req, res) => {
+    let validaciones = validationResult(req);
+    let { errors } = validaciones;
     let userLoggedIn = readLoggedUser();
     return res.render('users/login', {
       userLoggedIn: userLoggedIn,
+      errors: validaciones.mapped(),
     });
   },
   viewProfileDetails: (req, res) => {
     let userLoggedIn = readLoggedUser();
+    req.cookies.username = userLoggedIn.user_name;
+    req.session.username = userLoggedIn.user_name;
     res.render('users/accountDetails', {
       userLoggedIn: userLoggedIn,
     });
@@ -44,18 +49,11 @@ const controllerLogin = {
   },
 
   viewRegister: (req, res) => {
-    res.render('users/register');
-  },
-
-  loginUser: (req, res) => {
-    let usersList = indexUser();
-    let user = usersList.find(u => u.user_name == req.body.user_name);
-    if (user && compareSync(req.body.passwd, user.passwd)) {
-      user.loggedIn = true;
-      writeLoggedUser(user);
-    }
-    writeUserJSON(usersList);
-    res.redirect('/');
+    let validaciones = validationResult(req);
+    let { errors } = validaciones;
+    res.render('users/register', {
+      errors: validaciones.mapped(),
+    });
   },
 
   updateProfileDetails: (req, res) => {
@@ -77,8 +75,36 @@ const controllerLogin = {
     }
     res.redirect('/user/profile');
   },
-
+  loginUser: (req, res) => {
+    let validaciones = validationResult(req);
+    let { errors } = validaciones;
+    if (errors && errors.length > 0) {
+      return res.render('users/login', {
+        styles: ['users/login'],
+        oldData: req.body,
+        errors: validaciones.mapped(),
+      });
+    } else {
+      let usersList = indexUser();
+      let user = usersList.find(u => u.user_name == req.body.user_name);
+      if (user && compareSync(req.body.passwd, user.passwd)) {
+        user.loggedIn = true;
+        writeLoggedUser(user);
+      }
+      writeUserJSON(usersList);
+      return res.redirect('/');
+    }
+  },
   registerUser: (req, res) => {
+    let validaciones = validationResult(req);
+    let { errors } = validaciones;
+    if (errors && errors.length > 0) {
+      return res.render('users/register', {
+        styles: ['users/register'],
+        oldData: req.body,
+        errors: validaciones.mapped(),
+      });
+    }
     let usersList = indexUser();
     let tempID = usersList.length;
     tempID++;
