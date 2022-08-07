@@ -30,6 +30,6 @@
     "passwd": "123",
     "isAdmin": "",
     "avatar": "blank.jpg",
-    "loggedIn": false
+    "loggedIn": true
   }
 ]

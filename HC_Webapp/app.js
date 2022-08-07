@@ -2,12 +2,9 @@ const express = require('express');
 const app = express();
 const cartRoute = require('./src/routes/cart.routes.js');
 const homeRoute = require('./src/routes/home.routes.js');
-const loginRoute = require('./src/routes/login.routes.js');
-const mainRoute = require('./src/routes/main.routes.js');
+const userRoute = require('./src/routes/user.routes.js');
 const productRoute = require('./src/routes/product.routes.js');
-const registerRoute = require('./src/routes/register.routes.js');
 const path = require('path');
-const multer = require('multer');
 const methodOverride = require('method-override');
 
 app.set('view engine', 'ejs');
@@ -22,13 +19,17 @@ app.use(express.json());
 
 app.use('/', homeRoute);
 app.use('/home', homeRoute);
-app.use('/login', loginRoute);
-app.use('/register', registerRoute);
-app.post('/create', registerRoute);
-app.use('/producto', productRoute);
-app.post('/crear', productRoute);
-app.use('/cart', cartRoute);
-app.use('/enconstruccion', mainRoute);
-app.use('/enmantenimiento', mainRoute);
+app.use('/user', userRoute);
+app.post('/user', userRoute);
 
-app.listen(process.env.PORT || 3000, () => console.log('Server runnning'));
+app.post('/registerUser', userRoute);
+
+app.use('/viewProduct', productRoute);
+app.post('/createProduct', productRoute);
+app.use('/cart', cartRoute);
+app.use('/enconstruccion', homeRoute);
+app.use('/enmantenimiento', homeRoute);
+
+app.listen(process.env.PORT || 3000, () =>
+  console.log('Server running (Port: 3000)')
+);

@@ -10,11 +10,10 @@ const {
   updateProduct,
 } = require('../model/cart.model');
 
-router.get('/', controllerCart.mostrarProducto);
+router.get('/', controllerCart.viewProduct);
 
-router.get('/:id/mostrarCart', controllerCart.mostrarProducto);
+router.get('/:id/mostrarCart', controllerCart.viewProduct);
 
 router.get('/:id/eliminarCart', controllerProducto.eliminarCart);
 
 module.exports = router;
-

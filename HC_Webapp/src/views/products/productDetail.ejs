@@ -47,17 +47,17 @@
 
           <div class="half-2">
             <% if(userLoggedIn.user_name){ %>
-            <a class="btn-edit" href="/producto/<%= productList[i].id%>/editar"
+            <a class="btn-edit" href="/viewProduct/<%= productList[i].id%>/editar"
               >EDITAR</a
             >
             <form
               class="fields"
               method="POST"
-              action="/producto/eliminar?_method=DELETE"
+              action="/viewProduct/eliminar?_method=POST"
             >
               <a
                 class="btn-delete"
-                href="/producto/<%= productList[i].id%>/eliminar"
+                href="/viewProduct/<%= productList[i].id%>/eliminar"
                 >ELIMINAR</a
               >
             </form>

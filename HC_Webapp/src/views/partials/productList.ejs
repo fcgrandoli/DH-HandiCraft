@@ -2,7 +2,7 @@
 != 'DELETED'){ %>
 <article class="producto">
   <div class="image">
-    <a href="producto/<%= productList[i].id%>/mostrar"
+    <a href="viewProduct/<%= productList[i].id%>/mostrar"
       ><img class="preview" src="/images/<%= productList[i].image %>"
     /></a>
   </div>
@@ -18,9 +18,7 @@
       <p class="disc">
         <%= productList[i].disc.length == 0 ? productList[i].disc :
         productList[i].disc + "% off" %>
-
       </p>
-    
     </div>
   </div>
 </article>

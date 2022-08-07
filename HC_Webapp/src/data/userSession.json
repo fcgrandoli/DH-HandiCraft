@@ -1,11 +1,11 @@
 {
-  "id": "",
-  "first_name": "",
-  "last_name": "",
-  "user_name": "",
-  "email": "",
-  "passwd": "",
+  "id": 3,
+  "first_name": "Fernando",
+  "last_name": "Grandoli",
+  "user_name": "fgrandoli",
+  "email": "fgrandoli@hc.com",
+  "passwd": "123",
   "isAdmin": "",
-  "avatar": "",
-  "loggedIn": ""
+  "avatar": "blank.jpg",
+  "loggedIn": true
 }

@@ -2,40 +2,23 @@ const express = require('express');
 const router = express.Router();
 const controllerProducto = require('../controllers/controller.product.js');
 const uploadProduct = require('../middlewares/productUpload.js');
-const {
-  indexProduct,
-  createProduct,
-  writeProductJSON,
-  updateProduct,
-} = require('../model/products.model');
 
-router.get('/', controllerProducto.mostrarProducto);
+router.get('/', controllerProducto.viewProduct);
 
-router.get('/:id/mostrar', controllerProducto.mostrarProducto);
+router.get('/:id/mostrar', controllerProducto.viewProduct);
 
-router.get('/:id/editar', controllerProducto.editarProducto);
+router.get('/:id/editar', controllerProducto.viewEditProduct);
 
-router.put('/editar', (req, res) => {
-  updateProduct(req.body);
-  res.redirect('/producto/' + req.body.id + '/mostrar');
-});
+router.put('/editar', controllerProducto.updateProduct);
 
-router.get('/crear', controllerProducto.crearProducto);
+router.get('/createProduct', controllerProducto.viewCreateProduct);
 
-router.post('/crear', uploadProduct.single('image'), (req, res) => {
-  let imageCheck = '';
-  let productList = indexProduct();
-  if (!req.file) {
-    imageCheck = 'noproduct.png';
-  } else {
-    imageCheck = req.file.filename;
-  }
-  //TODO aca esta para escribir las cosas en el carrito
-  productList.push(createProduct(req.body, imageCheck));
-  writeProductJSON(productList);
-  res.redirect('/producto/' + req.body.id + '/mostrar');
-});
+router.post(
+  '/createProduct',
+  uploadProduct.single('image'),
+  controllerProducto.createProduct
+);
 
-router.get('/:id/eliminar', controllerProducto.eliminarProducto);
+router.get('/:id/eliminar', controllerProducto.removeProduct);
 
 module.exports = router;

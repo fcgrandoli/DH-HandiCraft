@@ -12,7 +12,7 @@ const {
 } = require('../model/users.model');
 
 const controllerCart = {
-  mostrarProducto: (req, res) => {
+  viewProduct: (req, res) => {
     let userLoggedIn = readLoggedUser();
     let productList = indexProduct();
     let i = req.params.id;
@@ -33,7 +33,6 @@ const controllerCart = {
       userLoggedIn: userLoggedIn,
     });
   },
-
 
   eliminarCart: (req, res) => {
     removeProduct(req.params.id);
