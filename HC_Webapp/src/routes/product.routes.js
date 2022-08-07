@@ -20,7 +20,7 @@ router.put('/editar', (req, res) => {
   res.redirect('/producto/' + req.body.id + '/mostrar');
 });
 
-router.get('/crear', controllerProducto.crearProducto);
+router.get('/crear', controllerProducto.mainCreateProduct);
 
 router.post('/crear', uploadProduct.single('image'), (req, res) => {
   let imageCheck = '';

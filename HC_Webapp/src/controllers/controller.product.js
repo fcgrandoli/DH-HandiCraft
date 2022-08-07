@@ -22,7 +22,7 @@ const controllerProducto = {
     });
   },
 
-  crearProducto: (req, res) => {
+  mainCreateProduct: (req, res) => {
     let productList = indexProduct();
     let userLoggedIn = readLoggedUser();
     let i = req.params.id;
