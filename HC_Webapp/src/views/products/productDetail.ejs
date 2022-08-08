@@ -16,12 +16,10 @@
   <body>
     <main>
       <div id="container">
-        
         <form
         class="fields"
         method="POST"
         action="/cart/<%= productList[i].id %>/comprarProduct">
-        
         <section class="producto">
           <div class="half-1">
             <div class="prd-name">
@@ -41,13 +39,10 @@
               <div class="price">
                 <p>$<%= productList[i].price %></p>
               </div>
+              <div class="nav-buttons">
+                <input class="fields" type="submit" value="Comprar" />
+                  </div>
             </div>
-            <div class="nav-buttons">
-
-          <input class="fields" type="submit" value="Comprar" />
-        
-            </div>
-          </div>
 
           <div class="half-2">
             <% if(userLoggedIn.user_name){ %>
