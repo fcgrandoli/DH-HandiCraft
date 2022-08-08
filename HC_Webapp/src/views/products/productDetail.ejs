@@ -16,6 +16,12 @@
   <body>
     <main>
       <div id="container">
+        
+        <form
+        class="fields"
+        method="POST"
+        action="/cart/<%= productList[i].id %>/comprarProduct">
+        
         <section class="producto">
           <div class="half-1">
             <div class="prd-name">
@@ -37,9 +43,9 @@
               </div>
             </div>
             <div class="nav-buttons">
-   
-              <a class="cart" href="/cart/<%= productList[i].id%>/mostrarCart">Agregar al carrito</a>
-              <a class="buy" href="/cart">Comprar</a>
+
+          <input class="fields" type="submit" value="Comprar" />
+        
             </div>
           </div>
 
@@ -72,6 +78,7 @@
             
             </div>
           </div>
+        </form>
         </section>
       </div>
     </main>

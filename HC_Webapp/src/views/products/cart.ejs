@@ -21,20 +21,20 @@
         </h2>
         <div class="cart">
           <section class="firstSectionCart">
-      <% for (let i= 1; i< productList.length; i++ ){ %> <% if(productList[i].name != 'DELETED')
+      <% for (let i= 0; i< cartProduct.length; i++ ){ %> <% if(cartProduct[i].name != 'DELETED')
       {%>
         <article>
               <img
                 class="imagenesCart"
-                src="/images/<%= productList[i].image %>"
+                src="/images/<%= cartProduct[i].image %>"
               />
               <div class="contenidoProduct">
-                <h4 class="tituloProducto"><% productList[i].name %></h4>
+                <h4 class="tituloProducto"><% cartProduct[i].name %></h4>
                 <p class="breveDescripcion">
-                  <% productList[i].descs %>
+                  <% cartProduct[i].descs %>
                 </p>
                 <div class="padreDiv">
-                  <section class="precioArtCart"><% productList[i].price %></section>
+                  <section class="precioArtCart"><% cartProduct[i].price %></section>
                   
                   <section class="botonera">
                       <a href="/">
@@ -42,10 +42,10 @@
                         <form
               class="fields"
               method="POST"
-              action="/viewProduct/eliminar?_method=DELETE">
+              action="/viewProduct/eliminar?_method=POST">
               <a
                 class="fa-solid fa-plus"
-                href="producto/<%= productList[i].id%>/eliminarProduct"
+                href="/cart/<%= cartProduct[i].id%>/eliminarProduct"
                 >eliminar</a>
             </form></button>
                         </a>

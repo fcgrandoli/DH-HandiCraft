@@ -64,7 +64,7 @@ const controllerProducto = {
     } else {
       imageCheck = req.file.filename;
     }
-    //TODO aca esta para escribir las cosas en el carrito
+    
     productList.push(prepareProduct(req.body, imageCheck));
     writeProductJSON(productList);
     res.redirect('/viewProduct/' + req.body.id + '/mostrar');

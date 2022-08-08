@@ -38,6 +38,7 @@ app.post('/registerUser', userRoute);
 app.use('/viewProduct', productRoute);
 app.post('/createProduct', productRoute);
 app.use('/cart', cartRoute);
+app.post('/cart', cartRoute);
 app.use('/enconstruccion', homeRoute);
 app.use('/enmantenimiento', homeRoute);
 

@@ -2,47 +2,48 @@ const { readFileSync, writeFileSync } = require('fs');
 const { resolve } = require('path');
 
 const productCartModel = {
-  indexProduct: function () {
+  indexCart: function () {
     let productFile = resolve(__dirname, '../data', 'cartList.json');
     let productJSON = readFileSync(productFile);
     return JSON.parse(productJSON);
   },
   //muestra todos los productos
  
-  comprarProduct: function (data, imageName) {
-    let products = productCartModel.indexProduct();
+  comprarProduct: function (data) {
+    let products = productCartModel.indexCart();
     return Object({
       id: products.length,
       name: data.name,
       price: data.price,
       disc: data.disc,
-      image: imageName,
+      image: data.image,
       descs: data.descs,
       descl: data.descl,
-      cant: data.cant,
+      //cant: data.cant,
     });
   },
+ 
   eliminarProduct: function (id) {
-    let productList = productCartModel.indexProduct();
-    productList[id].name = 'DELETED';
-    productList[id].price = 'DELETED';
-    productList[id].disc = 'DELETED';
-    productList[id].descs = 'DELETED';
-    productList[id].descl = 'DELETED';
-    productList[id].image = 'DELETED';
-    productList[id].cant = 'DELETED';
+    let cartList = productCartModel.indexCart();
+    cartList[id].name = 'DELETED';
+    cartList[id].price = 'DELETED';
+    cartList[id].disc = 'DELETED';
+    cartList[id].descs = 'DELETED';
+    cartList[id].descl = 'DELETED';
+    cartList[id].image = 'DELETED';
+    cartList[id].cant = 'DELETED';
     productCartModel.writeProductJSON(cartList);
   },
   updateProduct: function (data) {
-    productList = productCartModel.indexProduct();
+    cartList = productCartModel.indexCart();
     let i = data.id;
-    productList[i].name = data.name;
-    productList[i].price = data.price;
-    productList[i].disc = data.disc;
-    productList[i].descs = data.descs;
-    productList[i].descl = data.descl;
-    productList[i].image = data.image;
-    productList[i].cant = data.cant;
+    cartList[i].name = data.name;
+    cartList[i].price = data.price;
+    cartList[i].disc = data.disc;
+    cartList[i].descs = data.descs;
+    cartList[i].descl = data.descl;
+    cartList[i].image = data.image;
+    cartList[i].cant = data.cant;
     productCartModel.writeProductJSON(cartList);
   },
   writeProductJSON: function (data) {

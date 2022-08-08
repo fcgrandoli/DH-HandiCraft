@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator');
 const {
-  indexProduct,
+  indexCart,
   writeProductJSON,
   eliminarProduct,
   comprarProduct,
@@ -10,32 +10,39 @@ const {
   readLoggedUser,
   closeSession,
 } = require('../model/users.model');
+const {
+  indexProduct,
+} = require('../model/products.model');
 
 const controllerCart = {
   viewProduct: (req, res) => {
     let userLoggedIn = readLoggedUser();
-    let productList = indexProduct();
+    let cartProduct = indexCart();
     let i = req.params.id;
     res.render('products/cart', {
-      productList: productList,
+      cartProduct: cartProduct,
       i: i,
       userLoggedIn: userLoggedIn,
     });
   },
-  //TODO falta terminar este metodo
+  
   comprarProduct: (req, res) => {
-    let productList = indexProduct();
+    let cartProduct = indexCart();
+    let productList= indexProduct();
     let userLoggedIn = readLoggedUser();
     let i = req.params.id;
+    let productCart = productList.find(p => p.id == i);
+    cartProduct.push(comprarProduct(productCart));
+    writeProductJSON(cartProduct);
     res.render('products/cart', {
-      productList: productList,
+      cartProduct: cartProduct,
       i: i,
       userLoggedIn: userLoggedIn,
     });
   },
-
+  
   eliminarProduct: (req, res) => {
-    removeProduct(req.params.id);
+    eliminarProduct(req.params.id);
     res.redirect('/cart');
   },
 };
