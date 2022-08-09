@@ -31,6 +31,7 @@
                 src="/images/<%= productList[i].image %>"
               />
             </div>
+            <div class="description">
               <p class="disc">
                 <% if(productList[i].disc.length == 0){ %> <%=
                 productList[i].disc %> <% } else{ %> <%= productList[i].disc %>%
@@ -38,10 +39,12 @@
               </p>
               <div class="price">
                 <p>$<%= productList[i].price %></p>
-              </div>
+              </div>        
               <input class="AddCart" type="submit" value="Agregar al carrito" />
               <a class="buy" href="">Comprar</a>
+                  </div>
           </div>
+
           <div class="half-2">
             <% if(userLoggedIn){ %>
             <a class="btn-edit" href="/viewProduct/<%= productList[i].id%>/editar"
@@ -59,6 +62,7 @@
               >
             </form>
             <% } %>
+
             <div class="text">
               <div class="desc-short">
                 <p><%= productList[i].descs %></p>
@@ -66,6 +70,8 @@
               <div class="desc-large">
                 <p><%= productList[i].descl %></p>
               </div>
+            </div>
+            
             </div>
           </div>
         </form>
