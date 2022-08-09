@@ -18,5 +18,93 @@
     "descs": "DELETED",
     "descl": "DELETED",
     "cant": "DELETED"
+  },
+  {
+    "id": 2,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 3,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 4,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 5,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 6,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 7,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 8,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 9,
+    "name": "Flor de Vidrio",
+    "price": "12000",
+    "disc": "",
+    "image": "PRD-AlzadaFlor.png",
+    "descs": "Alzada con pie en forma de flor.",
+    "descl": "Esta decoracion de cristal floral de HandiCraft combina la decoración clásica con el estilo moderno. Inspirada en la tendencia contemporánea de las flores individuales, presenta una flor, elaborada con 130 facetas de cristal de colores, sobre un soporte de cristal con distintos tonos de colores. Este sería el regalo perfecto para cualquier ocasión especial. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años."
+  },
+  {
+    "id": 10,
+    "name": "Estatua de Pajaros",
+    "price": "15000",
+    "disc": "10",
+    "image": "PRD-Pajaros.jpg",
+    "descs": "Figura de cristal hecha a mano en forma de pajaros.",
+    "descl": "Esta preciosa creación de cristal captura la naturaleza alegre y los hermosos colores de los pajaritos. Elaborado en su totalidad de cristal, sus 280 facetas brillan en diferentes tonos de colores, con unos ojos de cristal negro y un pico de cristal rojo. Diseñado por HandiCraft, esta decoracion aportará un toque fresco y moderno a la decoración de tu hogar. Ideal para regalar y una pieza imprescindible para los coleccionistas."
   }
 ]
