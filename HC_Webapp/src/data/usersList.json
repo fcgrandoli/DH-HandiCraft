@@ -8,7 +8,7 @@
     "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
     "isAdmin": "",
     "avatar": "blank.jpg",
-    "loggedIn": false
+    "loggedIn": true
   },
   {
     "id": 2,

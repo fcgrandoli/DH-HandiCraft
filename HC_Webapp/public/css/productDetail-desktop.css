@@ -88,6 +88,12 @@
     color: #39b54a;
   }
 
+  .disc, 
+  .price {
+  position: relative;
+  top:10px
+}
+
   .nav-buttons {
     display: flex;
     align-items: center;

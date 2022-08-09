@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "first_name": "Carolina",
+  "last_name": "Shlain",
+  "user_name": "cshlain",
+  "email": "cshlain@hc.com",
+  "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
+  "isAdmin": "",
+  "avatar": "blank.jpg",
+  "loggedIn": true
+}
