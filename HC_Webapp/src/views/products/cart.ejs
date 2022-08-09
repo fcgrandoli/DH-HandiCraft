@@ -46,22 +46,26 @@
               method="POST"
               action="/viewProduct/eliminar?_method=POST">
               <a href="/cart/<%= cartProduct[i].id%>/eliminarProduct">Eliminar</a>
-            </form></button>
+            </button></a></form>
+            
+                      <button class="btnsCart" >
+<a href="/cart/<%= cartProduct[i].id%>/comprarProduct">
+                        <i class="fa-solid fa-plus">
+                          </i>
                         </a>
-                    <a href="/cart">
-                      <button class="btnsCart">
-                        <i class="fa-solid fa-plus"></i></button>
+                          </button>
                     </a>
-                   
+            
                   </section>
                 </div>
               </div>
             </article>
             <% } %> <%} %>  
-            <a href="/"><button> <i class="fa-solid fa-house-blank home"></i></button></a>
+            <a href="/"><button>Volver</button></a>
         </div>
       </main>
    </section>
     <%- include ('../partials/footer') %>
   </body>
 </html>
+      

@@ -16,5 +16,6 @@ router.get('/:id/mostrarCart', controllerCart.viewProduct);
 router.get('/:id/eliminarProduct', controllerCart.eliminarProduct);
 
 router.post( '/:id/comprarProduct', controllerCart.comprarProduct);
+router.get( '/:id/comprarProduct', controllerCart.comprarProduct);
 
 module.exports = router;
