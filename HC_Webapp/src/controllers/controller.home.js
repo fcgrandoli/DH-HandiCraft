@@ -7,7 +7,6 @@ const controllerHome = {
     //Retorna la vista "home" junto a las variables declaradas productList y userLoggedIn para que la vista muestre los valores que correspondan.
     return res.render('home', {
       productList: productList,
-      userLoggedIn: req.session.user,
     });
   },
   searchProduct: (req, res) => {
@@ -29,7 +28,6 @@ const controllerHome = {
     //Retorna la vista "homeSearch" junto a las variables declaradas (productList, userLoggedIn y tempProduct) para que la vista muestre los valores que correspondan.
     res.render('homeSearch', {
       productList: productList,
-      userLoggedIn: userLoggedIn,
       tempProduct: tempProduct,
     });
   },
