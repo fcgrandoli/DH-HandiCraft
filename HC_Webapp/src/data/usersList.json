@@ -23,6 +23,17 @@
   },
   {
     "id": 3,
+    "first_name": "Santiago",
+    "last_name": "Paez Toledo",
+    "user_name": "spaez",
+    "email": "spaez@hc.com",
+    "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
+    "isAdmin": "",
+    "avatar": "blank.jpg",
+    "loggedIn": true
+  },
+  {
+    "id": 4,
     "first_name": "Fernando",
     "last_name": "Grandoli",
     "user_name": "fgrandoli",

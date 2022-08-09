@@ -1,6 +1,5 @@
 const { indexUser } = require('../model/users.model');
-const remindSession = function (req, res, next) {
-  next();
+function remindSession(req, res, next) {
   if (req.cookies.HC_Cookie != undefined && req.session.user == undefined) {
     let usersList = indexUser();
     let user = usersList.find(u => u.user_name == req.cookies.HC_Cookie);
@@ -8,5 +7,6 @@ const remindSession = function (req, res, next) {
     userLoggedIn = user;
     res.locals.userLoggedIn = userLoggedIn;
   }
-};
+  next();
+}
 module.exports = remindSession;
