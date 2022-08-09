@@ -40,11 +40,9 @@
                 <p>$<%= productList[i].price %></p>
               </div>
               <input class="buy" type="submit" value="Comprar" />
-                  </div>
-            </div>
-
+          </div>
           <div class="half-2">
-            <% if(userLoggedIn.user_name){ %>
+            <% if(userLoggedIn){ %>
             <a class="btn-edit" href="/viewProduct/<%= productList[i].id%>/editar"
               >EDITAR</a
             >
@@ -60,7 +58,6 @@
               >
             </form>
             <% } %>
-
             <div class="text">
               <div class="desc-short">
                 <p><%= productList[i].descs %></p>
@@ -68,8 +65,6 @@
               <div class="desc-large">
                 <p><%= productList[i].descl %></p>
               </div>
-            </div>
-            
             </div>
           </div>
         </form>
