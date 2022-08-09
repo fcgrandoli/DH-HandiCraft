@@ -130,6 +130,11 @@
     color: white;
   }
 
+  .buy{
+    position: relative;
+    left:72px;
+  }
+
   .btn-edit {
     position: absolute;
     width: 90px;
