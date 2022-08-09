@@ -214,4 +214,7 @@
     cursor: pointer;
     font-weight: bold;
   }
+  .home{
+    color: whitesmoke;
+  }
 }

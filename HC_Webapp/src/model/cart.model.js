@@ -19,7 +19,7 @@ const productCartModel = {
       image: data.image,
       descs: data.descs,
       descl: data.descl,
-      //cant: data.cant,
+      cant: data.cant,
     });
   },
  

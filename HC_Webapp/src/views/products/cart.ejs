@@ -29,12 +29,14 @@
                 src="/images/<%= cartProduct[i].image %>"
               />
               <div class="contenidoProduct">
-                <h4 class="tituloProducto"><% cartProduct[i].name %></h4>
+                <h4 class="tituloProducto"><%= cartProduct[i].name %></h4>
                 <p class="breveDescripcion">
                   <% cartProduct[i].descs %>
                 </p>
                 <div class="padreDiv">
-                  <section class="precioArtCart"><% cartProduct[i].price %></section>
+                  <section class="precioArtCart"><%= cartProduct[i].price %></section>
+                  <section class="descsArtCart"><%= cartProduct[i].descs %></section>
+
                   
                   <section class="botonera">
                       <a href="/">
@@ -46,7 +48,7 @@
               <a href="/cart/<%= cartProduct[i].id%>/eliminarProduct">Eliminar</a>
             </form></button>
                         </a>
-                    <a href="/">
+                    <a href="/cart">
                       <button class="btnsCart">
                         <i class="fa-solid fa-plus"></i></button>
                     </a>
@@ -56,7 +58,7 @@
               </div>
             </article>
             <% } %> <%} %>  
-            <h4>Gracias por comprar en HandiCraft</h4>
+            <a href="/"><button> <i class="fa-solid fa-house-blank home"></i></button></a>
         </div>
       </main>
    </section>
