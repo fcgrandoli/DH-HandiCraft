@@ -12,21 +12,29 @@ const {
 const uploadUser = require('../middlewares/userUpload.js');
 const validationLogin = require('../validations/login');
 const validationRegister = require('../validations/register');
+const authMiddleware = require('../middlewares/authMiddleware.js');
+const guestMiddleware = require('../middlewares/guestMiddleware.js');
 
-router.get('/viewLogin', viewLogin);
+router.get('/viewLogin', guestMiddleware, viewLogin);
 
-router.get('/close', closeSession);
+router.get('/close', authMiddleware, closeSession);
 
-router.post('/update', uploadUser.single('avatar'), updateProfileDetails);
+router.post(
+  '/update',
+  authMiddleware,
+  uploadUser.single('avatar'),
+  updateProfileDetails
+);
 
-router.get('/profile', viewProfileDetails);
+router.get('/profile', authMiddleware, viewProfileDetails);
 
-router.post('/userLogin', [validationLogin], loginUser);
+router.post('/userLogin', guestMiddleware, [validationLogin], loginUser);
 
-router.get('/viewRegister', viewRegister);
+router.get('/viewRegister', guestMiddleware, viewRegister);
 
 router.post(
   '/registerUser',
+  guestMiddleware,
   uploadUser.single('avatar'),
   [validationRegister],
   registerUser

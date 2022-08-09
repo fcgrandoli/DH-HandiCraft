@@ -4,11 +4,9 @@ const {
   prepareProduct,
 } = require('../model/products.model');
 const { validationResult } = require('express-validator');
-const { readLoggedUser } = require('../model/users.model');
 
 const controllerProducto = {
   viewProduct: (req, res) => {
-    let userLoggedIn = readLoggedUser();
     let productList = indexProduct();
     let i = req.params.id;
     res.render('products/productDetail', {
@@ -22,7 +20,6 @@ const controllerProducto = {
     let validaciones = validationResult(req);
     let { errors } = validaciones;
     let productList = indexProduct();
-    let userLoggedIn = readLoggedUser();
     let i = req.params.id;
     res.render('products/productCreate', {
       productList: productList,
@@ -34,7 +31,6 @@ const controllerProducto = {
 
   viewEditProduct: (req, res) => {
     let productList = indexProduct();
-    let userLoggedIn = readLoggedUser();
     if (!req.params) {
       res.redirect('/');
     } else {
@@ -64,7 +60,7 @@ const controllerProducto = {
     } else {
       imageCheck = req.file.filename;
     }
-    
+
     productList.push(prepareProduct(req.body, imageCheck));
     writeProductJSON(productList);
     res.redirect('/viewProduct/' + req.body.id + '/mostrar');

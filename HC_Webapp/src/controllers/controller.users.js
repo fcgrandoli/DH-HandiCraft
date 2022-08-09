@@ -1,9 +1,4 @@
-const {
-  indexUser,
-  readLoggedUser,
-  writeLoggedUser,
-  writeUserJSON,
-} = require('../model/users.model');
+const { indexUser, writeUserJSON } = require('../model/users.model');
 const { validationResult } = require('express-validator');
 const { hashSync } = require('bcryptjs');
 const { compareSync } = require('bcryptjs');
@@ -12,39 +7,19 @@ const controllerLogin = {
   viewLogin: (req, res) => {
     let validaciones = validationResult(req);
     let { errors } = validaciones;
-    let userLoggedIn = readLoggedUser();
     return res.render('users/login', {
-      userLoggedIn: userLoggedIn,
       errors: validaciones.mapped(),
     });
   },
   viewProfileDetails: (req, res) => {
-    let userLoggedIn = readLoggedUser();
-    req.cookies.username = userLoggedIn.user_name;
-    req.session.username = userLoggedIn.user_name;
     res.render('users/accountDetails', {
       userLoggedIn: userLoggedIn,
     });
   },
 
   closeSession: (req, res) => {
-    let usersList = indexUser();
-    let loggedUser = readLoggedUser();
-    let user = usersList.find(u => u.id == loggedUser.id);
-    user.loggedIn = false;
-    let eraseSession = Object({
-      id: '',
-      first_name: '',
-      last_name: '',
-      user_name: '',
-      email: '',
-      passwd: '',
-      isAdmin: '',
-      avatar: '',
-      loggedIn: '',
-    });
-    writeLoggedUser(eraseSession);
-    writeUserJSON(usersList);
+    res.clearCookie('HC_Cookie');
+    delete req.session.user;
     res.redirect('/');
   },
 
@@ -70,8 +45,9 @@ const controllerLogin = {
           : (user.passwd = user.passwd);
       user.isAdmin = '';
       user.avatar = !req.file ? req.body.avatar : req.file.filename;
-      writeLoggedUser(user);
       writeUserJSON(usersList);
+      req.session.user = user;
+      userLoggedIn = req.session.user;
     }
     res.redirect('/user/profile');
   },
@@ -89,7 +65,11 @@ const controllerLogin = {
       let user = usersList.find(u => u.user_name == req.body.user_name);
       if (user && compareSync(req.body.passwd, user.passwd)) {
         user.loggedIn = true;
-        writeLoggedUser(user);
+        req.session.user = user;
+        userLoggedIn = req.session.user;
+      }
+      if (req.body.remindme) {
+        res.cookie('HC_Cookie', user.user_name, { maxAge: 60000 });
       }
       writeUserJSON(usersList);
       return res.redirect('/');
@@ -120,8 +100,8 @@ const controllerLogin = {
       loggedIn: true,
     });
     usersList.push(tempUser);
-    writeLoggedUser(tempUser);
     writeUserJSON(usersList);
+    req.session.user = userLoggedIn = tempUser;
     res.redirect('/');
   },
 };

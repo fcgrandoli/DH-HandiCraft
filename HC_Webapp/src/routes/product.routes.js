@@ -10,24 +10,27 @@ const {
 } = require('../controllers/controller.product.js');
 const uploadProduct = require('../middlewares/productUpload.js');
 const validationProduct = require('../validations/product');
+const authMiddleware = require('../middlewares/authMiddleware.js');
+const guestMiddleware = require('../middlewares/guestMiddleware.js');
 
 router.get('/', viewProduct);
 
 router.get('/:id/mostrar', viewProduct);
 
-router.get('/:id/editar', viewEditProduct);
+router.get('/:id/editar', authMiddleware, viewEditProduct);
 
-router.put('/editar', updateProduct);
+router.put('/editar', authMiddleware, updateProduct);
 
-router.get('/createProduct', viewCreateProduct);
+router.get('/createProduct', authMiddleware, viewCreateProduct);
 
 router.post(
   '/createProduct',
+  authMiddleware,
   uploadProduct.single('image'),
   [validationProduct],
   createProduct
 );
 
-router.get('/:id/eliminar', removeProduct);
+router.get('/:id/eliminar', authMiddleware, removeProduct);
 
 module.exports = router;

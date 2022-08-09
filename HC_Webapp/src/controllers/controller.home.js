@@ -1,23 +1,18 @@
 const { indexProduct } = require('../model/products.model');
-const { readLoggedUser } = require('../model/users.model');
 
 const controllerHome = {
   mostrarHome: (req, res) => {
     //Llama a la funcion indexProduct() en products.model.js para armar el array de productos en productList.
     productList = indexProduct();
-    //Llama a la funcion readLoggedUser en products.model.js para armar el array del usuario logueado en users.model (aunque este vacio).
-    userLoggedIn = readLoggedUser();
     //Retorna la vista "home" junto a las variables declaradas productList y userLoggedIn para que la vista muestre los valores que correspondan.
     return res.render('home', {
       productList: productList,
-      userLoggedIn: userLoggedIn,
+      userLoggedIn: req.session.user,
     });
   },
   searchProduct: (req, res) => {
     //Llama a la funcion indexProduct() en products.model.js para armar el array de productos en productList.
     productList = indexProduct();
-    //Llama a la funcion readLoggedUser en products.model.js para armar el array del usuario logueado en users.model (aunque este vacio).
-    userLoggedIn = readLoggedUser();
     //Crea un array vacion para llenarno con los productos que cumplan la condicion de la busqueda.
     let tempProduct = [];
     //Es el contenido de la busquda (string) que hace el usuario en la barra de busqueda y lo convierte todo a minuscula para hacer la comparacion.

@@ -30,17 +30,6 @@
     "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
     "isAdmin": "",
     "avatar": "blank.jpg",
-    "loggedIn": false
-  },
-  {
-    "id": 4,
-    "first_name": "123",
-    "last_name": "123",
-    "user_name": "123",
-    "email": "1231@gmail.com",
-    "passwd": "$2a$10$TM6Iw5hPqEgV7fMClmPV7.8DKfiZLgSqKHxXmOagadvxShJLN2upa",
-    "isAdmin": "",
-    "avatar": "blank.jpg",
-    "loggedIn": false
+    "loggedIn": true
   }
 ]

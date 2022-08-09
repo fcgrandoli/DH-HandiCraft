@@ -5,18 +5,10 @@ const {
   eliminarProduct,
   comprarProduct,
 } = require('../model/cart.model');
-const {
-  indexUser,
-  readLoggedUser,
-  closeSession,
-} = require('../model/users.model');
-const {
-  indexProduct,
-} = require('../model/products.model');
+const { indexProduct } = require('../model/products.model');
 
 const controllerCart = {
   viewProduct: (req, res) => {
-    let userLoggedIn = readLoggedUser();
     let cartProduct = indexCart();
     let i = req.params.id;
     res.render('products/cart', {
@@ -25,11 +17,10 @@ const controllerCart = {
       userLoggedIn: userLoggedIn,
     });
   },
-  
+
   comprarProduct: (req, res) => {
     let cartProduct = indexCart();
-    let productList= indexProduct();
-    let userLoggedIn = readLoggedUser();
+    let productList = indexProduct();
     let i = req.params.id;
     let productCart = productList.find(p => p.id == i);
     cartProduct.push(comprarProduct(productCart));
@@ -40,7 +31,7 @@ const controllerCart = {
       userLoggedIn: userLoggedIn,
     });
   },
-  
+
   eliminarProduct: (req, res) => {
     eliminarProduct(req.params.id);
     res.redirect('/cart');
