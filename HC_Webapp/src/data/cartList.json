@@ -164,5 +164,25 @@
     "image": "PRD-CanastoFlor.webp",
     "descs": "Canasto de flores tallado en vidrio.",
     "descl": "Esta decoracion elegante forma de canasta de flores de HandiCraft, hecha a mano, brillante y brillante al sol, detallada, vívida y realista, nunca se desvanece, una delicada decoración de mesa. Ideal para agregar un toque decorativo a su hogar, oficina, hotel, etc. Maravilloso accesorio para encimeras de cocina, expositores de centro de mesa de comedor. Este seria un regalo perfecto para aniversarios de bodas, inauguración de la casa, cumpleaños, Navidad, etc."
+  },
+  {
+    "id": 17,
+    "name": "Platos Hondos",
+    "price": "5500",
+    "disc": "10",
+    "image": "PRD-PlatosHondos.jpg",
+    "descs": "Platos hondos tallados x 6 unidades.",
+    "descl": "Vestí tu mesa con estos elegantes platos para uso diario, super practicos y de muy buen tamaño. De vidrio transparente, con diseño estético. Fabricados por la reconocida marca HandiCraft, Industria Argentina.",
+    "cant": ""
+  },
+  {
+    "id": 18,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
   }
 ]

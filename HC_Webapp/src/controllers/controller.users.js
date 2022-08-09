@@ -12,9 +12,7 @@ const controllerLogin = {
     });
   },
   viewProfileDetails: (req, res) => {
-    res.render('users/accountDetails', {
-      userLoggedIn: userLoggedIn,
-    });
+    res.render('users/accountDetails', {});
   },
 
   closeSession: (req, res) => {

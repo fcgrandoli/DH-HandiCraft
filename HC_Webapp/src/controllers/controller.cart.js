@@ -14,7 +14,6 @@ const controllerCart = {
     res.render('products/cart', {
       cartProduct: cartProduct,
       i: i,
-      userLoggedIn: userLoggedIn,
     });
   },
 
@@ -28,7 +27,6 @@ const controllerCart = {
     res.render('products/cart', {
       cartProduct: cartProduct,
       i: i,
-      userLoggedIn: userLoggedIn,
     });
   },
 

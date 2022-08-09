@@ -12,7 +12,6 @@ const controllerProducto = {
     res.render('products/productDetail', {
       productList: productList,
       i: i,
-      userLoggedIn: userLoggedIn,
     });
   },
 
@@ -24,7 +23,6 @@ const controllerProducto = {
     res.render('products/productCreate', {
       productList: productList,
       i: i,
-      userLoggedIn: userLoggedIn,
       errors: validaciones.mapped(),
     });
   },
@@ -38,7 +36,6 @@ const controllerProducto = {
       return res.render('products/productEdit', {
         productList: productList,
         i: i,
-        userLoggedIn: userLoggedIn,
       });
     }
   },
