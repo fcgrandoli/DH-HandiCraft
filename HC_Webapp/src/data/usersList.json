@@ -42,5 +42,16 @@
     "isAdmin": "",
     "avatar": "blank.jpg",
     "loggedIn": true
+  },
+  {
+    "id": 5,
+    "first_name": "Fernando",
+    "last_name": "Grandoli",
+    "user_name": "fgrandolii",
+    "email": "fcgrandoli@gmail.com",
+    "passwd": "$2a$10$Vx8f6NElGj.dpABXfO3bxeTk90jylrcE.CU6t2EN8tWybwdVnUu5e",
+    "isAdmin": "",
+    "avatar": "avatar-1660095942744_img.jpg",
+    "loggedIn": true
   }
 ]

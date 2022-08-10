@@ -14,20 +14,9 @@
     color: rgb(252, 252, 252);
   }
 
-  #alert-msg {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 5vh;
-    width: 100vw;
-    background-color: rgb(48, 36, 220);
+  .submit {
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: rgb(252, 252, 252);
-  }
-  #alert-msg h2 {
-    text-transform: capitalize;
   }
 
   body {
@@ -62,7 +51,7 @@
   .user,
   .passwords {
     margin: auto;
-    width: 40%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
