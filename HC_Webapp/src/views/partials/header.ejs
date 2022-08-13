@@ -23,18 +23,18 @@
     </div>
     <div class="nav-user-style">
       <nav class="nav-user">
-        <% if(!userLoggedIn.user_name){ %>
+        <% if(!userLoggedIn){ %>
         <div>
-          <a href="/register">Registrarme</a>
+          <a href="/user/viewRegister">Registrarme</a>
         </div>
         <div>
-          <a href="/login">Cuenta</a>
+          <a href="/user/viewLogin">Cuenta</a>
         </div>
 
         <% } else{ %>
 
         <div>
-          <a class="profile-name" href="/login/user"><%= userLoggedIn.user_name %></a>
+          <a class="profile-name" href="/user/profile"><%= userLoggedIn.user_name %></a>
         </div>
 
         <% } %>

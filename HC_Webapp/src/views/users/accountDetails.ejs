@@ -29,12 +29,11 @@
           src="/assets/avatars/<%= userLoggedIn.avatar %>"
         />
         </div>
-        <form class="fields" method="POST" action="/login/update" enctype="multipart/form-data">
-      <!--   <form  action="/login/update?_method=PUT" method="POST"> -->
+        <form class="fields" method="POST" action="/user/update" enctype="multipart/form-data">
+      <!--   <form  action="/viewLogin/update?_method=PUT" method="POST"> -->
           <div class="id">
-            <label for="id">ID:</label>
             <input class="input-fields" 
-              type="number"
+              type="hidden"
               name="id"
               value="<%= userLoggedIn.id %>"
               readonly="readonly"
@@ -74,7 +73,7 @@
         </div>
         <div class="passwords">
           <label for="password">Contraseña:</label>
-          <input class="input-fields" type="password" name="passwd" value="<%= userLoggedIn.passwd %>" />
+          <input class="input-fields" type="password" name="passwd" placeholder="******" />
         </div>
         <div class="image-fields-container">
           <label for="image">Actualizar foto de perfil:</label>
@@ -83,8 +82,8 @@
         </div>
         <div class="buttons">
           <input class="submit" type="submit" value="Actualizar datos" />
-          <form class="" method="POST" action="/login/close?_method=PUT">
-          <a class="btn-close" href="/login/close">Cerrar sesión</a>
+          <form class="" method="POST" action="/user/close?_method=PUT">
+          <a class="btn-close" href="/user/close">Cerrar sesión</a>
           </form>
           <div class="show-btn-back">
           <a class="nav-back" href="/">Volver</a>

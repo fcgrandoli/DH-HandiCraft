@@ -5,6 +5,19 @@
     box-sizing: border-box;
     font-family: 'Calibri';
   }
+  .msg-error {
+    flex-basis: 100%;
+    padding: 0.25rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    background-color: hsl(4, 72%, 50%);
+    color: rgb(252, 252, 252);
+  }
+
+  .submit {
+    display: flex;
+    align-items: center;
+  }
 
   body {
     background-color: #87a6ab;
@@ -38,7 +51,7 @@
   .user,
   .passwords {
     margin: auto;
-    width: 40%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

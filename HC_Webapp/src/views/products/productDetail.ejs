@@ -16,6 +16,10 @@
   <body>
     <main>
       <div id="container">
+        <form
+        class="fields"
+        method="POST"
+        action="/cart/<%= productList[i].id %>/comprarProduct">
         <section class="producto">
           <div class="half-1">
             <div class="prd-name">
@@ -27,6 +31,7 @@
                 src="/images/<%= productList[i].image %>"
               />
             </div>
+            <div class="description">
               <p class="disc">
                 <% if(productList[i].disc.length == 0){ %> <%=
                 productList[i].disc %> <% } else{ %> <%= productList[i].disc %>%
@@ -34,30 +39,24 @@
               </p>
               <div class="price">
                 <p>$<%= productList[i].price %></p>
-              </div>
-            </div>
-            <div class="nav-buttons">
-              <i class="fa-solid fa-heart"></i>
-            <!-- let i = req.params.id;-->
-
-              <a class="cart" href="/cart/<%= productList[i].id%>">Agregar al carrito</a>
-              <a class="buy" href="/cart">Comprar</a>
-            </div>
+              </div>        
+              <input class="AddCart" type="submit" value="Agregar al carrito" />
+              <a class="buy" href="">Comprar</a>
+                  </div>
           </div>
-
           <div class="half-2">
-            <% if(userLoggedIn.user_name){ %>
-            <a class="btn-edit" href="/producto/<%= productList[i].id%>/editar"
+            <% if(userLoggedIn){ %>
+            <a class="btn-edit" href="/viewProduct/<%= productList[i].id%>/editar"
               >EDITAR</a
             >
             <form
               class="fields"
               method="POST"
-              action="/producto/eliminar?_method=DELETE"
+              action="/viewProduct/eliminar?_method=POST"
             >
               <a
                 class="btn-delete"
-                href="/producto/<%= productList[i].id%>/eliminar"
+                href="/viewProduct/<%= productList[i].id%>/eliminar"
                 >ELIMINAR</a
               >
             </form>
@@ -74,6 +73,7 @@
             
             </div>
           </div>
+        </form>
         </section>
       </div>
     </main>

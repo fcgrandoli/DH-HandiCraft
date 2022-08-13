@@ -4,6 +4,8 @@ const controllerHome = require('../controllers/controller.home.js');
 
 router.get('/', controllerHome.mostrarHome);
 
-router.get('/buscar', controllerHome.buscarProducto);
+router.get('/enConstruccion', controllerHome.mostrarConstruccion);
+
+router.get('/buscar', controllerHome.searchProduct);
 
 module.exports = router;

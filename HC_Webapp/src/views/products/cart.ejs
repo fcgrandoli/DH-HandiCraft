@@ -21,20 +21,22 @@
         </h2>
         <div class="cart">
           <section class="firstSectionCart">
-      <% for (let i= 1; i< productList.length; i++ ){ %> <% if(productList[i].name != 'DELETED')
+      <% for (let i= 0; i< cartProduct.length; i++ ){ %> <% if(cartProduct[i].name != 'DELETED')
       {%>
         <article>
               <img
                 class="imagenesCart"
-                src="/images/<% productList[i].image%>"
+                src="/images/<%= cartProduct[i].image %>"
               />
               <div class="contenidoProduct">
-                <h4 class="tituloProducto"><% productList[i].name %></h4>
+                <h4 class="tituloProducto"><%= cartProduct[i].name %></h4>
                 <p class="breveDescripcion">
-                  <% productList[i].descs %>
+                  <% cartProduct[i].descs %>
                 </p>
                 <div class="padreDiv">
-                  <section class="precioArtCart"><% productList[i].price %></section>
+                  <section class="precioArtCart"><%= cartProduct[i].price %></section>
+                  <section class="descsArtCart"><%= cartProduct[i].descs %></section>
+
                   
                   <section class="botonera">
                       <a href="/">
@@ -42,64 +44,28 @@
                         <form
               class="fields"
               method="POST"
-              action="/producto/eliminar?_method=DELETE"
-            >
-              <a
-                class="fa-solid fa-plus"
-                href="producto/<%= productList[i].id%>/eliminarCart"
-                >eliminar</a>
-            </form></button>
+              action="/viewProduct/eliminar?_method=POST">
+              <a href="/cart/<%= cartProduct[i].id%>/eliminarProduct">Eliminar</a>
+            </button></a></form>
+            
+                      <button class="btnsCart" >
+<a href="/cart/<%= cartProduct[i].id%>/comprarProduct">
+                        <i class="fa-solid fa-plus">
+                          </i>
                         </a>
-                    <a href="/">
-                      <button class="btnsCart">
-                        <i class="fa-solid fa-plus"></i></button>
+                          </button>
                     </a>
-                    <a href="/">
-                      <button class="btnsCart">
-                        <i class="fa-solid fa-minus"></i></butto>
-                    </a>
-                    <p class="ctdCart">1</p>
+            
                   </section>
                 </div>
               </div>
             </article>
-          </section>
-          <section class="secondSectionCart">
-            <article>
-              <% } %> <%} %> 
-           
-              <h4>
-                <i class="fa-solid fa-file-invoice-dollar"></i> Detalle de
-                Compra
-              </h4>
-              <div class="detalleCompra">
-                <div class="detalleColumna1">
-                  <p>CTD Items</p>
-                  <p>SubTotal</p>
-                  <p>Descuento</p>
-                  <p>Envío</p>
-
-                  <h3>Total</h3>
-                </div>
-                <div class="detalleColumna2">
-                  <p>4</p>
-                  <p>$ Subtotal</p>
-                  <p>10%</p>
-                  <p>$ Envío</p>
-
-                  <h3>$ Total compra</h3>
-                </div>
-              </div>
-            </article>
-            <article class="botonesFinales">
-              <a href="/"><button class="btnCancel">Cancelar Compra</button></a>
-              <a href="/"
-                ><button class="btnFinish">Finalizar Compra</button></a>
-            </article>
-          </section>
+            <% } %> <%} %>  
+            <a href="/"><button>Volver</button></a>
         </div>
       </main>
-    </div>
+   </section>
     <%- include ('../partials/footer') %>
   </body>
 </html>
+      

@@ -34,11 +34,11 @@ button:hover {
 
 .buttons {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 25px 50px;
   font-size: 14px;
   background-color: #87a6ab;
-  width: 60%;
+  width: 25%;
   margin: auto;
 }
 

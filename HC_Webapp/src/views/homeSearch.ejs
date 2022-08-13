@@ -12,10 +12,9 @@
           <img src="/images/banner.jpg" />
         </div>
         <section class="section-prd">
-          <%- include ('./partials/productSearch') %> <%
-          if(userLoggedIn.user_name){ %>
+          <%- include ('./partials/productSearch') %> <% if(userLoggedIn){ %>
           <div>
-            <a class="btn-create" href="../producto/crear">+</a>
+            <a class="btn-create" href="../viewProduct/createProduct">+</a>
           </div>
           <% } %>
         </section>

@@ -1,41 +1,36 @@
 const express = require('express');
 const router = express.Router();
-const controllerProducto = require('../controllers/controller.product.js');
-const uploadProduct = require('../middlewares/productUpload.js');
 const {
-  indexProduct,
+  viewProduct,
+  viewEditProduct,
+  viewCreateProduct,
   createProduct,
-  writeProductJSON,
   updateProduct,
-} = require('../model/products.model');
+  removeProduct,
+} = require('../controllers/controller.product.js');
+const uploadProduct = require('../middlewares/productUpload.js');
+const validationProduct = require('../validations/product');
+const authMiddleware = require('../middlewares/authMiddleware.js');
+const guestMiddleware = require('../middlewares/guestMiddleware.js');
 
-router.get('/', controllerProducto.mostrarProducto);
+router.get('/', viewProduct);
 
-router.get('/:id/mostrar', controllerProducto.mostrarProducto);
+router.get('/:id/mostrar', viewProduct);
 
-router.get('/:id/editar', controllerProducto.editarProducto);
+router.get('/:id/editar', authMiddleware, viewEditProduct);
 
-router.put('/editar', (req, res) => {
-  updateProduct(req.body);
-  res.redirect('/producto/' + req.body.id + '/mostrar');
-});
+router.put('/editar', authMiddleware, updateProduct);
 
-router.get('/crear', controllerProducto.mainCreateProduct);
+router.get('/createProduct', authMiddleware, viewCreateProduct);
 
-router.post('/crear', uploadProduct.single('image'), (req, res) => {
-  let imageCheck = '';
-  let productList = indexProduct();
-  if (!req.file) {
-    imageCheck = 'noproduct.png';
-  } else {
-    imageCheck = req.file.filename;
-  }
-  //TODO aca esta para escribir las cosas en el carrito
-  productList.push(createProduct(req.body, imageCheck));
-  writeProductJSON(productList);
-  res.redirect('/producto/' + req.body.id + '/mostrar');
-});
+router.post(
+  '/createProduct',
+  authMiddleware,
+  uploadProduct.single('image'),
+  [validationProduct],
+  createProduct
+);
 
-router.get('/:id/eliminar', controllerProducto.eliminarProducto);
+router.get('/:id/eliminar', authMiddleware, removeProduct);
 
 module.exports = router;

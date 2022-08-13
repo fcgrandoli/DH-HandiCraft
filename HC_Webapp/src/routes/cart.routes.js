@@ -5,16 +5,17 @@ const controllerProducto = require('../controllers/controller.cart.js');
 const uploadProduct = require('../middlewares/productUpload.js');
 const {
   indexProduct,
-  createProduct,
   writeProductJSON,
   updateProduct,
 } = require('../model/cart.model');
 
-router.get('/', controllerCart.mostrarProducto);
+router.get('/', controllerCart.viewProduct);
 
-router.get('/:id/mostrarCart', controllerCart.mostrarProducto);
+router.get('/:id/mostrarCart', controllerCart.viewProduct);
 
-router.get('/:id/eliminarCart', controllerProducto.eliminarCart);
+router.get('/:id/eliminarProduct', controllerCart.eliminarProduct);
+
+router.post( '/:id/comprarProduct', controllerCart.comprarProduct);
+router.get( '/:id/comprarProduct', controllerCart.comprarProduct);
 
 module.exports = router;
-
