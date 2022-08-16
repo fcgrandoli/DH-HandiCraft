@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": 0,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 1,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 2,
+    "name": "DELETED",
+    "price": "DELETED",
+    "disc": "DELETED",
+    "image": "DELETED",
+    "descs": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 3,
+    "name": "Tortera Tallada",
+    "price": "3000",
+    "disc": "10",
+    "image": "PRD-TorteraTallada.webp",
+    "descs": "Tortera tallada.",
+    "descl": "Vesti tu mesa con esta elegante tortera tallada hecha por HandiCraft. Ideal para presentar tus tortas, masas y mucho mas. Maravilloso regalo para cuando estas invitado a un acontecimiento y no sabes que llevar.",
+    "cant": ""
+  }
+]
