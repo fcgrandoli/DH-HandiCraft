@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "test": "node app.js",
+    "sq-i": "sequelize init"
   },
   "keywords": [],
   "author": "",
