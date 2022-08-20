@@ -1,4 +1,4 @@
-const { indexUser, writeUserJSON } = require('../model/users.model');
+const { User } = require('../database/models/index');
 const { validationResult } = require('express-validator');
 const { hashSync } = require('bcryptjs');
 const { compareSync } = require('bcryptjs');

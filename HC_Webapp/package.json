@@ -4,7 +4,9 @@
   "main": "app.js",
   "scripts": {
     "test": "node app.js",
-    "sq-i": "sequelize init"
+    "sq-i": "sequelize init",
+    "sq-ms": "sequelize init:migrations && sequelize init:seeders",
+    "sq-mg": "sequelize migration:generate --name users"
   },
   "keywords": [],
   "author": "",
