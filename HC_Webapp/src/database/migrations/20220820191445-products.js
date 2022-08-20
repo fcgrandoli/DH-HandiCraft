@@ -18,6 +18,21 @@ module.exports = {
         },
         description: {
           type: Sequelize.INTEGER
+        },
+        disc :{
+          type: Sequelize.INTEGER
+        },
+        image :{
+          type: Sequelize.INTEGER
+        },
+        descs :{
+          type: Sequelize.INTEGER
+        },
+        cant :{
+          type: Sequelize.INTEGER
+        },
+        descl :{
+          type: Sequelize.INTEGER
         }
       });
     } catch (error) {

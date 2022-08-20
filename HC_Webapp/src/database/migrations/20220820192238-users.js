@@ -18,7 +18,8 @@ module.exports = {
         },
         avatar: {
           type: DataTypes.INTEGER,
-          references: { model: "images", key: "id" }
+          references: { model: "images", key: "id" },
+          allowNull:true
         },
         isAdmin: {
           type: DataTypes.BOOLEAN,
