@@ -1,10 +1,10 @@
-module.exports = (sequelize, DataTypes) => {
+  module.exports = (sequelize, DataTypes) => {
     let alias = "users";
     let cols={
         id:{
             allowNull: false,
             autoIncrement: true,
-            primaryKey : true,
+           primaryKey : true,
             type: DataTypes.INTEGER
         },
         username: {
@@ -30,4 +30,4 @@ module.exports = (sequelize, DataTypes) => {
 
     const User = sequelize.define(alias, cols, config)
     return User;
-}
+} 

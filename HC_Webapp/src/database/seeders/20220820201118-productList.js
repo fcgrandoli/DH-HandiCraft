@@ -1,5 +1,5 @@
 'use strict';
-const { indexProduct }= require('../../model/products.model.js');
+const { indexProduct } = require('../../model/products.model');
 module.exports = {
   async up (queryInterface, Sequelize) {
    

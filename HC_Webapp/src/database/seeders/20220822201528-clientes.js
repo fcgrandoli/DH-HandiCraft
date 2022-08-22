@@ -3,13 +3,13 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     
-      await queryInterface.bulkInsert('clientes', clientes, {});
+      await queryInterface.bulkInsert('clients', clients, {});
     
   },
 
   async down (queryInterface, Sequelize) {
     
-      await queryInterface.bulkDelete('clientes', null, {});
+      await queryInterface.bulkDelete('clients', null, {});
      
   }
 };

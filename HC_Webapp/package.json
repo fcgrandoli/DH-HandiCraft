@@ -6,8 +6,8 @@
     "test": "node app.js",
     "sq-i": "sequelize init",
     "sq-ms": "sequelize init:migrations && sequelize init:seeders",
-    "sq-mg": "sequelize migration:generate --name carrito",
-    "sq-sg": "sequelize seed:generate --name carrito",
+    "sq-mg": "sequelize migration:generate --name sales",
+    "sq-sg": "sequelize seed:generate --name sales",
     "sq-db": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "s-db": "sequelize db:seed:all --debug"
   },

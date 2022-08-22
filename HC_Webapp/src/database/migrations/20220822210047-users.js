@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up (queryInterface, Sequelize) {
     try {
-      await queryInterface.createTable('users', {
+      await queryInterface.createTable('users',{
         id: {
           allowNull: false,
           autoIncrement: true,
@@ -17,9 +17,11 @@ module.exports = {
           type: DataTypes.TEXT
         },
         avatar: {
-          type: DataTypes.INTEGER,
-          references: { model: "images", key: "id" },
-          allowNull:true
+          type: Sequelize.INTEGER,
+          allowNull:true,
+          references:{
+            model:'images',
+            key:'id'}
         },
         isAdmin: {
           type: DataTypes.BOOLEAN,
@@ -29,9 +31,12 @@ module.exports = {
     } catch (error) {
       console.log(error)
     }
+     
   },
 
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('users');
+  async down (queryInterface, Sequelize) {
+    
+      await queryInterface.dropTable('users');
+     
   }
 };
