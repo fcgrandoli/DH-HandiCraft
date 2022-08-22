@@ -3,16 +3,13 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     
-      await queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-      isBetaMember: false
-      }], {});
+      await queryInterface.bulkInsert('ventasDetalle', ventasDetalle, {});
     
   },
 
   async down (queryInterface, Sequelize) {
     
-      await queryInterface.bulkDelete('People', null, {});
+      await queryInterface.bulkDelete('ventasDetalle', null, {});
      
   }
 };

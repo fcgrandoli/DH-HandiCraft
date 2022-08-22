@@ -2,17 +2,27 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
+    
+      await queryInterface.createTable('carrito', { 
+        id:{ 
+          type:Sequelize.INTEGER 
+        },
+        idCliente: {
+          type:Sequelize.INTEGER 
+        },
+        idProducto: {
+          type:Sequelize.INTEGER 
+        },
+        cantidad: {
+          type:Sequelize.INTEGER 
+        }
+      });
+     
   },
 
   async down (queryInterface, Sequelize) {
     
-      await queryInterface.dropTable('users');
+      await queryInterface.dropTable('carrito');
      
   }
 };
