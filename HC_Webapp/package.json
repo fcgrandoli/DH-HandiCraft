@@ -6,8 +6,8 @@
     "test": "node app.js",
     "sq-i": "sequelize init",
     "sq-ms": "sequelize init:migrations && sequelize init:seeders",
-    "sq-mg": "sequelize migration:generate --name sales",
-    "sq-sg": "sequelize seed:generate --name sales",
+    "sq-mg": "sequelize migration:generate --name usersList",
+    "sq-sg": "sequelize seed:generate --name usersList",
     "sq-db": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "s-db": "sequelize db:seed:all --debug"
   },
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "2": "^3.0.0",
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.8",

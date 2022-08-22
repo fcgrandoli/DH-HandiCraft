@@ -1,9 +1,11 @@
 'use strict';
+
 const { indexProduct } = require('../../model/products.model');
+
 module.exports = {
-  async up (queryInterface, Sequelize) {
+   async up (queryInterface, Sequelize) {
    
-      await queryInterface.bulkInsert('products', indexProduct(), {});
+     await queryInterface.bulkInsert('products', indexProduct(), {});
     
   },
 

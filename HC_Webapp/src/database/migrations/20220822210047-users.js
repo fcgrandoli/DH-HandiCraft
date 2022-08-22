@@ -10,11 +10,20 @@ module.exports = {
           primaryKey: true,
           type: DataTypes.INTEGER
         },
-        username: {
+        first_name: {
           type: DataTypes.STRING
         },
-        password: {
+        last_name: {
           type: DataTypes.TEXT
+        },
+        user_name: {
+          type: DataTypes.STRING
+        },
+        email : {
+          type: DataTypes.STRING
+        },
+        passwd : {
+          type: DataTypes.STRING
         },
         avatar: {
           type: Sequelize.INTEGER,

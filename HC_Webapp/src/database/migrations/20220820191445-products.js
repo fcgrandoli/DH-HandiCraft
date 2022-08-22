@@ -16,7 +16,7 @@ module.exports = {
         price: {
           type:  Sequelize.INTEGER
         },
-        description: {
+        descl: {
           type: Sequelize.TEXT
         },
         disc :{
@@ -30,9 +30,6 @@ module.exports = {
         },
         cant :{
           type: Sequelize.INTEGER
-        },
-        descl :{
-          type: Sequelize.TEXT
         }
       });
     } catch (error) {

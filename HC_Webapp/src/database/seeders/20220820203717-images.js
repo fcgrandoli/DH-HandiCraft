@@ -1,5 +1,7 @@
 'use strict';
+
 const { indexProduct }= require('../../model/products.model.js');
+
 module.exports = {
   async up (queryInterface, Sequelize) {
     let images = indexProduct().map(product => {
