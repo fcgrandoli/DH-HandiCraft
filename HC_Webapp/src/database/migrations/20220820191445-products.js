@@ -11,28 +11,28 @@ module.exports = {
           type: Sequelize.INTEGER,
         },
         name: {
-          type:  Sequelize.INTEGER
+          type:  Sequelize.STRING
         },
         price: {
           type:  Sequelize.INTEGER
         },
         description: {
-          type: Sequelize.INTEGER
+          type: Sequelize.TEXT
         },
         disc :{
           type: Sequelize.INTEGER
         },
         image :{
-          type: Sequelize.INTEGER
+          type: Sequelize.TEXT
         },
         descs :{
-          type: Sequelize.INTEGER
+          type: Sequelize.TEXT
         },
         cant :{
           type: Sequelize.INTEGER
         },
         descl :{
-          type: Sequelize.INTEGER
+          type: Sequelize.TEXT
         }
       });
     } catch (error) {
