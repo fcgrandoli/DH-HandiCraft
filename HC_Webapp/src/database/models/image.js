@@ -1,14 +1,14 @@
-module.exports = (sequelize, DataTypes) => {
-    let alias = "image";
+ module.exports = (sequelize, DataTypes) => {
+    let alias = "images";
     let cols = {
         id:{
             allowNull: false,
             autoIncrement:true,
             primaryKey:true,
-            type: Sequelize.INTEGER,
+            type: sequelize.INTEGER,
           },
           path: {
-            type:  Sequelize.TEXT
+            type:  sequelize.TEXT
           }
     }
     let config = {
@@ -27,4 +27,4 @@ module.exports = (sequelize, DataTypes) => {
     return images
 
 
-}
+} 

@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
-const { extname, resolve } = require('path');
-const { unlinkSync } = require('fs');
-const { indexUser } = require('../model/users.model');
+//const { extname, resolve } = require('path');
+//const { unlinkSync } = require('fs');
+const { User } = require('../database/models/users');
 
 const register = [
   body('first_name')
@@ -25,8 +25,8 @@ const register = [
     .isLength({ min: 2 })
     .withMessage('El usuario debe contener mínimo dos caracteres.')
     .bail()
-    .custom((value, { req }) => {
-      let users = indexUser();
+    .custom(async(value, { req }) => {
+      let users = await User.findAll();
       let user = users.find(u => u.user_name == req.body.user_name);
 
       if (user) {
@@ -41,8 +41,8 @@ const register = [
     .isEmail()
     .withMessage('El formato de email no es válido.')
     .bail()
-    .custom(value => {
-      let users = indexUser();
+    .custom(async(value) => {
+      let users = await User.findAll();
       users = users.map(u => u.email);
       if (users.includes(value)) {
         throw new Error('El email ya esta registrado');
@@ -55,7 +55,7 @@ const register = [
     .bail()
     .isLength({ min: 4 })
     .bail(),
-  body('avatar').custom((value, { req }) => {
+  body('avatar').custom( async (value, { req }) => {
     if (!req.file) {
       return true;
     } else {
