@@ -60,7 +60,7 @@ const controllerLogin = {
         errors: validaciones.mapped(),
       });
     } else {
-      let usersList = User.findAll();
+      let usersList = indexUser();
       let user = usersList.find(u => u.user_name == req.body.user_name);
       if (user && compareSync(req.body.passwd, user.passwd)) {
         user.loggedIn = true;
