@@ -1,6 +1,7 @@
 const { body } = require('express-validator');
-const { User } = require('../database/models/users');
+// const { User } = require('../database/models/users'); 
 const { compareSync } = require('bcryptjs');
+const { indexUser } = require('../model/users.model');
 
 const login = [
   // Email
@@ -10,7 +11,7 @@ const login = [
     .bail()
     .bail()
     .custom(async (value) => {
-      let users = await User.findAll();
+      let users = indexUser();
       users = users.map(u => u.user_name);
       if (!users.includes(value)) {
         throw new Error('El usuario no esta registrado');
@@ -25,7 +26,7 @@ const login = [
     .isLength({ min: 3 })
     .bail()
     .custom(async(value, { req }) => {
-      let users = await User.findAll();
+      let users = indexUser();
       let user = users.find(u => u.user_name == req.body.user_name);
 
       if (!user) {

@@ -1,7 +1,8 @@
-const { User } = require('../database/models/users');
+//const {  User } = require('../database/models/users');
 const { validationResult } = require('express-validator');
 const { hashSync } = require('bcryptjs');
 const { compareSync } = require('bcryptjs');
+const { indexUser } = require('../model/users.model');
 
 const controllerLogin = {
   viewLogin: async (req, res) => {
@@ -85,13 +86,13 @@ const controllerLogin = {
     }
     // req.body.passwd = hashSync(req.body.passwd, 10); ya esta hasheado 
 
-req.body.isAdmin = string(req.body.user_name).toLocaleLowerCase().includes('@hc') //verificamos si es ADMIN
+//req.body.isAdmin = string(req.body.user_name).toLocaleLowerCase().includes('@hc') //verificamos si es ADMIN
 
-await User-create(req.body);
+// await User.create(req.body);
 
 
 
-    let usersList = indexUser();
+let usersList = indexUser();
     let tempID = usersList.length;
     tempID++;
     let tempUser = Object({
@@ -106,7 +107,7 @@ await User-create(req.body);
       loggedIn: true,
     });
     usersList.push(tempUser);
-    writeUserJSON(usersList);
+   // writeUserJSON(usersList);
     req.session.user = userLoggedIn = tempUser;
     res.redirect('/');
   },
