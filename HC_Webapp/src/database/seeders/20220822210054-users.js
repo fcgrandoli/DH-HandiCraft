@@ -1,9 +1,9 @@
 'use strict';
-const { usersModel }= require('../../model/users.model.js');
+const { indexUser }= require('../../model/users.model.js');
 module.exports = {
   async up (queryInterface, Sequelize) {
     
-      await queryInterface.bulkInsert('users', usersModel(), {});
+      await queryInterface.bulkInsert('users', indexUser(), {});
     
   },
 

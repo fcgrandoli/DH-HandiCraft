@@ -1,11 +1,11 @@
 'use strict';
-
+const { indexUser }= require('../../model/users.model.js');
 module.exports = {
- /* async up (queryInterface, Sequelize) {
+  async up (queryInterface, Sequelize) {
     
-      await queryInterface.bulkInsert('clients', clients, {});
+      await queryInterface.bulkInsert('clients', indexUser(), {});
     
-  },*/
+  },
 
   async down (queryInterface, Sequelize) {
     

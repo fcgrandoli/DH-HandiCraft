@@ -1,5 +1,6 @@
 'use strict';
 
+
 const { indexProduct } = require('../../model/products.model');
 
 module.exports = {
