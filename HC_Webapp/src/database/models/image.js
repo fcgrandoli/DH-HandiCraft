@@ -1,9 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
     let alias = "image";
     let cols = {
-        name :{
-        type: DataTypes.STRING
-    }
+        id:{
+            allowNull: false,
+            autoIncrement:true,
+            primaryKey:true,
+            type: Sequelize.INTEGER,
+          },
+          path: {
+            type:  Sequelize.TEXT
+          }
     }
     let config = {
         timestamps:false,
