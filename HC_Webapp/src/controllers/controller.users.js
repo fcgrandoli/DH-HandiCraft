@@ -1,27 +1,28 @@
-const { indexUser, writeUserJSON } = require('../model/users.model');
+//const {  User } = require('../database/models/users');
 const { validationResult } = require('express-validator');
 const { hashSync } = require('bcryptjs');
 const { compareSync } = require('bcryptjs');
+const { indexUser } = require('../model/users.model');
 
 const controllerLogin = {
-  viewLogin: (req, res) => {
+  viewLogin: async (req, res) => {
     let validaciones = validationResult(req);
     let { errors } = validaciones;
     return res.render('users/login', {
       errors: validaciones.mapped(),
     });
   },
-  viewProfileDetails: (req, res) => {
+  viewProfileDetails: async (req, res) => {
     res.render('users/accountDetails', {});
   },
 
-  closeSession: (req, res) => {
+  closeSession: async (req, res) => {
     res.clearCookie('HC_Cookie');
     delete req.session.user;
     res.redirect('/');
   },
 
-  viewRegister: (req, res) => {
+  viewRegister: async (req, res) => {
     let validaciones = validationResult(req);
     let { errors } = validaciones;
     res.render('users/register', {
@@ -29,7 +30,7 @@ const controllerLogin = {
     });
   },
 
-  updateProfileDetails: (req, res) => {
+  updateProfileDetails: async (req, res) => {
     let usersList = indexUser();
     let user = usersList.find(u => u.id == req.body.id);
     if (user.id == req.body.id) {
@@ -49,7 +50,7 @@ const controllerLogin = {
     }
     res.redirect('/user/profile');
   },
-  loginUser: (req, res) => {
+  loginUser: async (req, res) => {
     let validaciones = validationResult(req);
     let { errors } = validaciones;
     if (errors && errors.length > 0) {
@@ -73,7 +74,7 @@ const controllerLogin = {
       return res.redirect('/');
     }
   },
-  registerUser: (req, res) => {
+  registerUser: async (req, res) => {
     let validaciones = validationResult(req);
     let { errors } = validaciones;
     if (errors && errors.length > 0) {
@@ -83,7 +84,15 @@ const controllerLogin = {
         errors: validaciones.mapped(),
       });
     }
-    let usersList = indexUser();
+    // req.body.passwd = hashSync(req.body.passwd, 10); ya esta hasheado 
+
+//req.body.isAdmin = string(req.body.user_name).toLocaleLowerCase().includes('@hc') //verificamos si es ADMIN
+
+// await User.create(req.body);
+
+
+
+let usersList = indexUser();
     let tempID = usersList.length;
     tempID++;
     let tempUser = Object({
@@ -98,10 +107,12 @@ const controllerLogin = {
       loggedIn: true,
     });
     usersList.push(tempUser);
-    writeUserJSON(usersList);
+   // writeUserJSON(usersList);
     req.session.user = userLoggedIn = tempUser;
     res.redirect('/');
   },
 };
+
+
 
 module.exports = controllerLogin;
