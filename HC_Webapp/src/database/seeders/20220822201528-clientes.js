@@ -12,4 +12,4 @@ module.exports = {
       await queryInterface.bulkDelete('clients', null, {});
      
   }
-};
+}; 

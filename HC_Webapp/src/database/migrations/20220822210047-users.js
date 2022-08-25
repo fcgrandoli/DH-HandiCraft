@@ -8,22 +8,22 @@ module.exports = {
           allowNull: false,
           autoIncrement: true,
           primaryKey: true,
-          type: DataTypes.INTEGER
+          type: Sequelize.INTEGER
         },
         first_name: {
-          type: DataTypes.STRING
+          type: Sequelize.STRING
         },
         last_name: {
-          type: DataTypes.TEXT
+          type: Sequelize.TEXT
         },
         user_name: {
-          type: DataTypes.STRING
+          type: Sequelize.STRING
         },
         email : {
-          type: DataTypes.STRING
+          type: Sequelize.STRING
         },
         passwd : {
-          type: DataTypes.STRING
+          type: Sequelize.STRING
         },
         avatar: {
           type: Sequelize.INTEGER,
@@ -33,7 +33,7 @@ module.exports = {
             key:'id'}
         },
         isAdmin: {
-          type: DataTypes.BOOLEAN,
+          type: Sequelize.BOOLEAN,
           defaultValue: false
         }
       });
