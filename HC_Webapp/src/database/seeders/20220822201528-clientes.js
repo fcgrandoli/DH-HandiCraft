@@ -1,10 +1,19 @@
 'use strict';
-const { indexUser }= require('../../model/users.model.js');
+// const { indexUser }= require('../../model/users.model.js');
 module.exports = {
   async up (queryInterface, Sequelize) {
-    
-      await queryInterface.bulkInsert('clients', indexUser(), {});
-    
+    try {
+      await queryInterface.bulkInsert('clients', [{
+        idCliente: "EduCABJ",
+        firstName: 'Eduardo',
+        lastName: 'Virgilio',
+        idUsuario : "1",
+        cuit : "20-20302202-2",
+        dni : "20302202"
+      }], {});
+    } catch (error) {
+      console.log(error)
+    }
   },
 
   async down (queryInterface, Sequelize) {
@@ -13,3 +22,5 @@ module.exports = {
      
   }
 }; 
+
+//todavia no generarla ya que no existe una data de clientes

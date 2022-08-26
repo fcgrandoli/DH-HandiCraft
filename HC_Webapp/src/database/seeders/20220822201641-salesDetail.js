@@ -2,9 +2,15 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    
-      await queryInterface.bulkInsert('sales detail', salesDetail, {});
-    
+    try {
+      await queryInterface.bulkInsert('sales detail', [{
+        idVenta:"1",
+        idProducto: "7" ,
+        cantidad: "2"
+      }], {});
+    } catch (error) {
+      console.log(error)
+    }
   },
 
   async down (queryInterface, Sequelize) {

@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -10,10 +10,10 @@ module.exports = {
           primaryKey:true,
           type: Sequelize.INTEGER
         },
-        nombre : {
+        firstName : {
           type: Sequelize.STRING
         },
-        apellido : {
+        lastName : {
           type: Sequelize.STRING
         },
         idUsuario : {
@@ -36,3 +36,5 @@ module.exports = {
      
   }
 };
+
+//todavia no generarla ya que no existe una data de clientes

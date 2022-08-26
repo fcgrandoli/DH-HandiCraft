@@ -19,22 +19,22 @@ module.exports = {
         user_name: {
           type: Sequelize.STRING
         },
-        email : {
+        email: {
           type: Sequelize.STRING
         },
-        passwd : {
+        passwd: {
           type: Sequelize.STRING
-        },
-        avatar: {
-          type: Sequelize.INTEGER,
-          allowNull:true,
-          references:{
-            model:'images',
-            key:'id'}
         },
         isAdmin: {
           type: Sequelize.BOOLEAN,
           defaultValue: false
+        },
+        avatar: {
+          type: Sequelize.TEXT,
+          allowNull:true
+        },
+        loggedIn: {
+          type: Sequelize.BOOLEAN
         }
       });
     } catch (error) {

@@ -7,7 +7,7 @@
     "email": "cshlain@hc.com",
     "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
     "isAdmin": "",
-    "avatar": "blank.jpg",
+    "avatar": "Caro.jpg",
     "loggedIn": true
   },
   {
@@ -18,7 +18,7 @@
     "email": "slalo@hc.com",
     "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
     "isAdmin": "",
-    "avatar": "blank.jpg",
+    "avatar": "Shirel.jpg",
     "loggedIn": false
   },
   {
@@ -29,7 +29,7 @@
     "email": "spaez@hc.com",
     "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
     "isAdmin": "",
-    "avatar": "blank.jpg",
+    "avatar": "Santi.jpg",
     "loggedIn": true
   },
   {
@@ -40,7 +40,7 @@
     "email": "fgrandoli@hc.com",
     "passwd": "$2a$10$j//KDxNCYfFxHyn4C2sCM.FvMAIRwq868/ZR7U0mBhDtDJmtHrAue",
     "isAdmin": "",
-    "avatar": "blank.jpg",
+    "avatar": "Fer.jpg",
     "loggedIn": true
   }
 ]

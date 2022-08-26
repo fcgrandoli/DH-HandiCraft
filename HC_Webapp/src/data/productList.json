@@ -1,15 +1,5 @@
 [
   {
-    "id": "",
-    "name": "",
-    "price": "",
-    "disc": "",
-    "image": "",
-    "descs": "",
-    "descl": "",
-    "cant": ""
-  },
-  {
     "id": 1,
     "name": "Flor de Vidrio",
     "price": "12000",
@@ -26,7 +16,8 @@
     "disc": "15",
     "image": "PRD-CanastoFlor.webp",
     "descs": "Canasto de flores tallado en vidrio.",
-    "descl": "Esta decoracion elegante forma de canasta de flores de HandiCraft, hecha a mano, brillante y brillante al sol, detallada, vívida y realista, nunca se desvanece, una delicada decoración de mesa. Ideal para agregar un toque decorativo a su hogar, oficina, hotel, etc. Maravilloso accesorio para encimeras de cocina, expositores de centro de mesa de comedor. Este seria un regalo perfecto para aniversarios de bodas, inauguración de la casa, cumpleaños, Navidad, etc."
+    "descl": "Esta decoracion elegante forma de canasta de flores de HandiCraft, hecha a mano, brillante y brillante al sol, detallada, vívida y realista, nunca se desvanece, una delicada decoración de mesa. Ideal para agregar un toque decorativo a su hogar, oficina, hotel, etc. Maravilloso accesorio para encimeras de cocina, expositores de centro de mesa de comedor. Este seria un regalo perfecto para aniversarios de bodas, inauguración de la casa, cumpleaños, Navidad, etc.",
+    "cant": ""
   },
   {
     "id": 3,
