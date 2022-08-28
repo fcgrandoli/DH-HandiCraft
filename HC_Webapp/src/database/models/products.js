@@ -1,5 +1,5 @@
-  module.exports = (sequelize, DataTypes) => {
-    let alias = "User";
+module.exports = (sequelize, DataTypes) => {
+    let alias = "Product";
     let cols={
         id: {
             allowNull: false,
@@ -7,45 +7,45 @@
             primaryKey: true,
             type: DataTypes.INTEGER
           },
-          first_name: {
+          name: {
+            allowNull: false,
             type: DataTypes.STRING
           },
-          last_name: {
-            type: DataTypes.TEXT
+         price: {
+            allowNull: false,
+            type: DataTypes.DECIMAL
           },
-          user_name: {
+          descl: {
+            allowNull: false,
             type: DataTypes.STRING
           },
-          email : {
+          descs : {
+            allowNull: false,
             type: DataTypes.STRING
           },
-          passwd : {
-            type: DataTypes.STRING
+          cant : {
+            allowNull: true,
+            type: DataTypes.INTEGER
           },
           avatar: {
             type: Sequelize.INTEGER,
-            allowNull:true,
+            allowNull:false,
             references:{
               model:'images',
               key:'id'}
-          },
-          isAdmin: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false
           }
-
     };
     let config = {
         timestamps:false,
         deletedAt: false
     };
 
-    const User = sequelize.define(alias, cols, config);
-    User.associate = function (models){
-        User.belongsTo(models.image,{ 
+    const Product = sequelize.define(alias, cols, config);
+    Product.associate = function (models){
+        Product.belongsTo(models.image,{ 
             as: "avatar",
             foreignKey: "avatar_id"
         })
     }
-    return User;
+    return Product;
 } 
