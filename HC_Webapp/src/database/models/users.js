@@ -41,11 +41,6 @@
     };
 
     const User = sequelize.define(alias, cols, config);
-    User.associate = function (models){
-        User.belongsTo(models.image,{ 
-            as: "avatar",
-            foreignKey: "avatar_id"
-        })
-    }
+  
     return User;
 } 
