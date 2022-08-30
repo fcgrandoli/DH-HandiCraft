@@ -3,17 +3,17 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     
-      await queryInterface.bulkInsert('venta',[{
-        idVenta: "1" ,
-        fecha:"26/08/2022",
-        idUsuario: "1"
+      await queryInterface.bulkInsert('Sale',[{
+        saleId: "1" ,
+        date: "2022-08-26",
+        userId: "1"
       }] ,{});
     
   },
 
   async down (queryInterface, Sequelize) {
    
-     await queryInterface.bulkDelete('venta', null, {});
+     await queryInterface.bulkDelete('Sale', null, {});
      
   }
 };
