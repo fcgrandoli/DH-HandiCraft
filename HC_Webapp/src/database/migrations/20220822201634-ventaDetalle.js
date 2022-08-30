@@ -3,26 +3,26 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     
-     await queryInterface.createTable('venta detalle', { 
-      idVenta:{ 
+    await queryInterface.createTable('Sale Detail', { 
+      saleId:{ 
         allowNull: false,
           autoIncrement:true,
           primaryKey:true,
         type: Sequelize.INTEGER
       },
-      idProducto: {
+      productId: {
         type: Sequelize.INTEGER
       },
-      cantidad: {
+      amount: {
          type: Sequelize.INTEGER
         }  
         });
      
   },
-
   async down (queryInterface, Sequelize) {
-    
-      await queryInterface.dropTable('venta detalle');
+      
+      await queryInterface.dropTable('Sale Detail');
     
   }
-};
+  };
+  
