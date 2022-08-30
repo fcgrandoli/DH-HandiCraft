@@ -68,9 +68,9 @@ const controllerProducto = {
     let i = req.body.id;
     productList[i].name = req.body.name;
     productList[i].price = req.body.price;
-    productList[i].disc = req.body.disc;
-    productList[i].descs = req.body.descs;
-    productList[i].descl = req.body.descl;
+    productList[i].discount = req.body.discount;
+    productList[i].descShort = req.body.descShort;
+    productList[i].descLarge = req.body.descLarge;
     productList[i].image = req.body.image;
     writeProductJSON(productList);
     return res.redirect('/viewProduct/' + req.body.id + '/mostrar');
@@ -81,9 +81,9 @@ const controllerProducto = {
     let i = req.params.id;
     productList[i].name = 'DELETED';
     productList[i].price = 'DELETED';
-    productList[i].disc = 'DELETED';
-    productList[i].descs = 'DELETED';
-    productList[i].descl = 'DELETED';
+    productList[i].discount = 'DELETED';
+    productList[i].descShort = 'DELETED';
+    productList[i].descLarge = 'DELETED';
     productList[i].image = 'DELETED';
     writeProductJSON(productList);
     res.redirect('/');

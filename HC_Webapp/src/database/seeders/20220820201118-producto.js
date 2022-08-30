@@ -7,7 +7,7 @@ module.exports = {
   
   async up (queryInterface, Sequelize) {
    try {
-     await queryInterface.bulkInsert('Producto', indexProduct(), {});
+     await queryInterface.bulkInsert('Products', indexProduct(), {});
     
   } catch (error) {
     console.log(error)
@@ -16,7 +16,7 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     
-      await queryInterface.bulkDelete('Producto', null, {});
+      await queryInterface.bulkDelete('Products', null, {});
      
   }
 };

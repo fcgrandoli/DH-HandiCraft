@@ -8,26 +8,26 @@ module.exports = {
           allowNull: false,
           autoIncrement: true,
           primaryKey: true,
-          type: DataTypes.INTEGER
+          type: Sequelize.INTEGER
         },
         nombre: {
-          type: DataTypes.STRING
+          type: Sequelize.STRING
         },
         apellido: {
-          type: DataTypes.TEXT
+          type: Sequelize.TEXT
         },
         nombreUsuario: {
-          type: DataTypes.STRING
+          type: Sequelize.STRING
         },
         contraseña: {
-          type: DataTypes.STRING
+          type: Sequelize.STRING
         },
         isAdmin: {
-          type: DataTypes.BOOLEAN,
+          type: Sequelize.BOOLEAN,
           defaultValue: false
         },
         avatar: {
-          type: DataTypes.TEXT,
+          type: Sequelize.TEXT,
           allowNull:true
         }
       });
