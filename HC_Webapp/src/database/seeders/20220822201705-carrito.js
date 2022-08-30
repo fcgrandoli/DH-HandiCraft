@@ -6,9 +6,9 @@ module.exports = {
     try   {
       await queryInterface.bulkInsert('carrito', [{
         id:"1",
-        idUsuario:"1" ,
-        idProducto: "7",
-        cantidad: "2"
+        userID:"1" ,
+        productID: "7",
+        amount: "2"
       }], {});
     } catch (error) {
       console.log(error)

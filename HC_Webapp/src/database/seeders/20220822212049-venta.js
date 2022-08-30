@@ -4,9 +4,9 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     
       await queryInterface.bulkInsert('Sale',[{
-        saleId: "1" ,
+        saleID: "1" ,
         date: "2022-08-26",
-        userId: "1"
+        userID: "1"
       }] ,{});
     
   },

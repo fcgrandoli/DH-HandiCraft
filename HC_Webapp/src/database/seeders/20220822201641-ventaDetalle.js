@@ -5,7 +5,7 @@ module.exports = {
     try {
       await queryInterface.bulkInsert('Sale Detail', [{
         saleId:"1",
-        productId: "7" ,
+        productID: "7" ,
         amount: "2"
       }], {});
     } catch (error) {

@@ -10,13 +10,13 @@ module.exports = {
           primaryKey:true,
           type:Sequelize.INTEGER 
         },
-        idUsuario: {
+        userID: {
           type:Sequelize.INTEGER 
         },
-        idProducto: {
+        productID: {
           type:Sequelize.INTEGER 
         },
-        cantidad: {
+        amount: {
           type:Sequelize.INTEGER 
         }
       });
