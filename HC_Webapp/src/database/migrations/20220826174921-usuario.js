@@ -3,23 +3,26 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     try {
-      await queryInterface.createTable('Usuario',{
+      await queryInterface.createTable('User',{
         id: {
           allowNull: false,
           autoIncrement: true,
           primaryKey: true,
           type: Sequelize.INTEGER
         },
-        nombre: {
+        firstName: {
           type: Sequelize.STRING
         },
-        apellido: {
+        lastName: {
           type: Sequelize.TEXT
         },
-        nombreUsuario: {
+        userName: {
           type: Sequelize.STRING
         },
-        contraseña: {
+        email: {
+          type: Sequelize.STRING
+        },
+        passwd: {
           type: Sequelize.STRING
         },
         isAdmin: {
@@ -29,6 +32,9 @@ module.exports = {
         avatar: {
           type: Sequelize.TEXT,
           allowNull:true
+        },
+        loggedIn: {
+          type: Sequelize.BOOLEAN
         }
       });
     } catch (error) {
@@ -36,10 +42,10 @@ module.exports = {
     }
      
   },
-
+  
   async down (queryInterface, Sequelize) {
     
-      await queryInterface.dropTable('Usuario');
+      await queryInterface.dropTable('User');
      
   }
 };
