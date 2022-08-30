@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER
           },
           
-          idCliente: {
+          idUsuario: {
             type: DataTypes.TEXT
           },
           idProducto: {
@@ -24,6 +24,14 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const Carrito = sequelize.define(alias, cols, config);
+
+    Carrito.associate= function(models){
+      Carrito.hasMany(models.Producto,{
+        foreingKey: idProducto,
+        as: 'Carrito'
+      })
+
+     }
   
     return Carrito;
 } 
