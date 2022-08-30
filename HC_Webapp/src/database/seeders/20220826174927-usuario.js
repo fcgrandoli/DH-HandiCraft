@@ -4,13 +4,13 @@
     module.exports = {
       async up (queryInterface, Sequelize) {
        
-          await queryInterface.bulkInsert('users', indexUser(), {});
+          await queryInterface.bulkInsert('Usuario', indexUser(), {});
         
       },
     
       async down (queryInterface, Sequelize) {
         
-          await queryInterface.bulkDelete('users', null, {});
+          await queryInterface.bulkDelete('Usuario', null, {});
      
   }
 };

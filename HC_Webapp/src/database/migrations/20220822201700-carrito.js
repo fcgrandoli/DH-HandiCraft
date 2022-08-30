@@ -3,14 +3,14 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     
-      await queryInterface.createTable('shopping cart', { 
+      await queryInterface.createTable('Carrito', { 
         id:{ 
           allowNull: false,
           autoIncrement:true,
           primaryKey:true,
           type:Sequelize.INTEGER 
         },
-        idCliente: {
+        idUsuario: {
           type:Sequelize.INTEGER 
         },
         idProducto: {
@@ -25,7 +25,7 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     
-      await queryInterface.dropTable('shopping cart');
+      await queryInterface.dropTable('Carrito');
      
   }
 };
