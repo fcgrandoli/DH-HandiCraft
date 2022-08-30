@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Sale";
+    let alias = "VentaDetalle";
     let cols={
         idVenta: {
             allowNull: false,
@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             type: DataTypes.INTEGER
           },
-         fecha: {
+         idProducto: {
             type: DataTypes.DATE
           },
-          idCliente: {
+          cantidad: {
             type: DataTypes.TEXT
           }
     };
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: false
     };
 
-    const Sale = sequelize.define(alias, cols, config);
+    const saleDetail = sequelize.define(alias, cols, config);
   
-    return Sale;
+    return saleDetail;
 } 

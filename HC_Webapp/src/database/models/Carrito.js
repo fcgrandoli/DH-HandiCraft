@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Cart";
+    let alias = "Carrito";
     let cols={
         id: {
             allowNull: false,
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: false
     };
 
-    const Cart = sequelize.define(alias, cols, config);
+    const Carrito = sequelize.define(alias, cols, config);
   
-    return Cart;
+    return Carrito;
 } 

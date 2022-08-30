@@ -1,5 +1,5 @@
   module.exports = (sequelize, DataTypes) => {
-    let alias = "User";
+    let alias = "Usuario";
     let cols={
         id: {
           allowNull: false,
@@ -7,19 +7,16 @@
           primaryKey: true,
           type: DataTypes.INTEGER
         },
-        first_name: {
+        nombre: {
           type: DataTypes.STRING
         },
-        last_name: {
+        apellido: {
           type: DataTypes.TEXT
         },
-        user_name: {
+        nombreUsuario: {
           type: DataTypes.STRING
         },
-        email: {
-          type: DataTypes.STRING
-        },
-        passwd: {
+        contraseña: {
           type: DataTypes.STRING
         },
         isAdmin: {
@@ -29,9 +26,6 @@
         avatar: {
           type: DataTypes.TEXT,
           allowNull:true
-        },
-        loggedIn: {
-          type: DataTypes.BOOLEAN
         }
 
     };
@@ -40,7 +34,7 @@
         deletedAt: false
     };
 
-    const User = sequelize.define(alias, cols, config);
+    const Usuario = sequelize.define(alias, cols, config);
   
-    return User;
+    return Usuario;
 } 
