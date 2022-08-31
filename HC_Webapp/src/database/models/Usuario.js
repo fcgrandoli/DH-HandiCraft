@@ -24,7 +24,7 @@
             type: DataTypes.STRING
           },
           avatar: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull:true,
             references:{
               model:'images',

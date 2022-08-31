@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER
           },
           urlImagen: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull:false,
             type: DataTypes.STRING
           }
@@ -46,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Producto.associate= function(models){
       Producto.hasMany(models.ventaDetalle,{
-        foreingKey: idProducto,
+        foreingKey: Producto.id,
         as: 'VentaDetalle'
       })
       Producto.hasMany(models.Carrito,{

@@ -7,7 +7,7 @@ const { validationResult } = require('express-validator');
 
 const controllerProducto = {
   viewProduct: (req, res) => {
-    let productList = await product.findAll();
+    //let productList = await product.findAll();
     let i = req.params.id;
     res.render('products/productDetail', {
       productList: productList,
@@ -18,7 +18,7 @@ const controllerProducto = {
   viewCreateProduct: (req, res) => {
     let validaciones = validationResult(req);
     let { errors } = validaciones;
-    let productList = await product.findAll();
+    //let productList = await product.findAll();
     let i = req.params.id;
     res.render('products/productCreate', {
       productList: productList,
@@ -28,7 +28,7 @@ const controllerProducto = {
   },
 
   viewEditProduct: (req, res) => {
-    let productList = await product.findAll();
+   // let productList = await product.findAll();
     if (!req.params) {
       res.redirect('/');
     } else {
@@ -51,7 +51,7 @@ const controllerProducto = {
       });
     }
     let imageCheck = '';
-    let productList = await product.findAll();
+    //let productList = await product.findAll();
     if (!req.file) {
       imageCheck = 'noproduct.png';
     } else {
@@ -64,7 +64,7 @@ const controllerProducto = {
   },
 
   updateProduct: (req, res) => {
-    productList = await product.findAll();
+   // productList = await product.findAll();
     let i = req.body.id;
     productList[i].name = req.body.name;
     productList[i].price = req.body.price;
@@ -77,7 +77,7 @@ const controllerProducto = {
   },
 
   removeProduct: (req, res) => {
-    let productList = await product.findAll();
+    //let productList = await product.findAll();
     let i = req.params.id;
     productList[i].name = 'DELETED';
     productList[i].price = 'DELETED';
