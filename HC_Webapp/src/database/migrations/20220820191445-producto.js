@@ -20,7 +20,7 @@ module.exports = {
         },
         descLarge: {
           allowNull: false,
-          type: Sequelize.STRING
+          type: Sequelize.TEXT
         },
         descShort: {
           allowNull: false,
@@ -35,7 +35,6 @@ module.exports = {
           type: Sequelize.INTEGER
         },
         image: {
-          type: Sequelize.INTEGER,
           allowNull:false,
           type: Sequelize.STRING
         }

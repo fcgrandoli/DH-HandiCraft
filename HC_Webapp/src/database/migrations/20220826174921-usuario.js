@@ -3,7 +3,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     try {
-      await queryInterface.createTable('User',{
+      await queryInterface.createTable('Users',{
         id: {
           allowNull: false,
           autoIncrement: true,
@@ -32,9 +32,6 @@ module.exports = {
         avatar: {
           type: Sequelize.TEXT,
           allowNull:true
-        },
-        loggedIn: {
-          type: Sequelize.BOOLEAN
         }
       });
     } catch (error) {
@@ -45,7 +42,7 @@ module.exports = {
   
   async down (queryInterface, Sequelize) {
     
-      await queryInterface.dropTable('User');
+      await queryInterface.dropTable('Users');
      
   }
 };

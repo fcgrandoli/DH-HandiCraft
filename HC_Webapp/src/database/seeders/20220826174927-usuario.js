@@ -4,7 +4,14 @@ const { indexUser } = require('../../model/users.model');
 module.exports = {
   async up(queryInterface, Sequelize) {
     try {
-      await queryInterface.bulkInsert('User', indexUser(), {});
+      let users = indexUser().map(function (user) {
+        delete user.loggedIn
+        
+        return Object({
+          ...user,isAdmin: false 
+        })
+      } )
+      await queryInterface.bulkInsert('Users', users, {});
 
     } catch (error) {
       console.log(error)
@@ -13,7 +20,7 @@ module.exports = {
 
   async down(queryInterface, Sequelize) {
 
-    await queryInterface.bulkDelete('User', null, {});
+    await queryInterface.bulkDelete('Users', null, {});
 
   }
 };
