@@ -23,10 +23,10 @@ module.exports = (sequelize, DataTypes) => {
   
     saleDetail.associate= function(models){
       saleDetail.hasMany(models.Producto,{
-        foreingKey: idProducto,
+        foreignKey: idProducto,
         as: 'Producto'
       })
-      
+
     }
    
     return saleDetail;
