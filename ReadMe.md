@@ -4,5 +4,5 @@
 2. [Equipo.](https://github.com/fcgrandoli/DH-HandiCraft/blob/main/Documentos/Equipo.md)&nbsp;
 3. [Referencias.](https://github.com/fcgrandoli/DH-HandiCraft/blob/main/Documentos/Referencias.md)&nbsp;
 4. [Wireframes.](https://www.figma.com/file/ViI9vj9TC50W1D5ijqmKCB/%2FSitio?node-id=47%3A118)&nbsp;
-5. [Tablero de Trabajo.](https://trello.com/proyectointegradorhandicraft)&nbsp;
-    -Sprint 1 y 2: (https://trello.com/b/GiNlghEB/handicraft-sprint-1-y-2)&nbsp;
+5. [Tablero de Trabajo.](https://trello.com/proyectointegradorhandicraft)<br />
+    -Sprint 1 y 2: (https://trello.com/b/GiNlghEB/handicraft-sprint-1-y-2)<br />
