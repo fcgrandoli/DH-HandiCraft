@@ -5,3 +5,4 @@
 3. [Referencias.](https://github.com/fcgrandoli/DH-HandiCraft/blob/main/Documentos/Referencias.md)
 4. [Wireframes.](https://www.figma.com/file/ViI9vj9TC50W1D5ijqmKCB/%2FSitio?node-id=47%3A118)
 5. [Tablero de Trabajo.](https://trello.com/proyectointegradorhandicraft)
+    -Sprint 1 y 2: (https://trello.com/b/GiNlghEB/handicraft-sprint-1-y-2)
