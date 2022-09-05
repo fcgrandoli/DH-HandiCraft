@@ -11,13 +11,13 @@
       <p><%= productList[i].name %></p>
     </div>
     <div class="desc">
-      <p><%= productList[i].descs %></p>
+      <p><%= productList[i].descShort %></p>
     </div>
     <div class="price">
       <p>$<%= productList[i].price %></p>
       <p class="disc">
-        <%= productList[i].disc.length == 0 ? productList[i].disc :
-        productList[i].disc + "% off" %>
+        <%= productList[i].discount.length == 0 ? productList[i].discount :
+        productList[i].discount + "% off" %>
       </p>
     </div>
   </div>

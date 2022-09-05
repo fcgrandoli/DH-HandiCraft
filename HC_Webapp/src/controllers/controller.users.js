@@ -84,7 +84,7 @@ const controllerLogin = {
         errors: validaciones.mapped(),
       });
     }
-    // req.body.passwd = hashSync(req.body.passwd, 10); ya esta hasheado 
+
 
 //req.body.isAdmin = string(req.body.user_name).toLocaleLowerCase().includes('@hc') //verificamos si es ADMIN
 
