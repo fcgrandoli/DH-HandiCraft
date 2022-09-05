@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
 
     const Producto = sequelize.define(alias, cols, config);
 
-    Producto.associate= function(models){
+  /*   Producto.associate= function(models){
       Producto.hasMany(models.ventaDetalle,{
         foreingKey: Producto.id,
         as: 'VentaDetalle'
@@ -52,9 +52,9 @@ module.exports = (sequelize, DataTypes) => {
       Producto.hasMany(models.Carrito,{
         foreignKey: idProducto,
         as: 'Carrito'
-      })
-
+      }) */
+      return Producto; 
     }
    
-    return Producto; 
-} 
+    
+// } 

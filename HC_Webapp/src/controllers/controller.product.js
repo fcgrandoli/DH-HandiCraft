@@ -1,14 +1,15 @@
-const {
+/* const {
   indexProduct,
   writeProductJSON,
   prepareProduct,
-} = require('../model/products.model');
+} = require('../model/products.model'); */
+const {Producto} = require('../database/models/index')
 const { validationResult } = require('express-validator');
 
 const controllerProducto = {
-  viewProduct: (req, res) => {
-    //let productList = await product.findAll();
-    let productList = indexProduct();
+  viewProduct: async (req, res) => {
+    let productList = await Producto.findAll();
+    
     let i = req.params.id;
     res.render('products/productDetail', {
       productList: productList,
@@ -16,11 +17,11 @@ const controllerProducto = {
     });
   },
 
-  viewCreateProduct: (req, res) => {
+  viewCreateProduct: async (req, res) => {
     let validaciones = validationResult(req);
     let { errors } = validaciones;
-    //let productList = await product.findAll();
-    let productList = indexProduct();
+    let productList = await Producto.findAll();
+    
     let i = req.params.id;
     res.render('products/productCreate', {
       productList: productList,
@@ -29,9 +30,9 @@ const controllerProducto = {
     });
   },
 
-  viewEditProduct: (req, res) => {
-   // let productList = await product.findAll();
-   let productList = indexProduct();
+  viewEditProduct: async (req, res) => {
+   let productList = await Producto.findAll();
+   
     if (!req.params) {
       res.redirect('/');
     } else {
@@ -43,7 +44,7 @@ const controllerProducto = {
     }
   },
 
-  createProduct: (req, res) => {
+  createProduct: async (req, res) => {
     let validaciones = validationResult(req);
     let { errors } = validaciones;
     if (errors && errors.length > 0) {
@@ -54,8 +55,8 @@ const controllerProducto = {
       });
     }
     let imageCheck = '';
-    //let productList = await product.findAll();
-    let productList = indexProduct();
+    let productList = await Producto.findAll();
+    
     if (!req.file) {
       imageCheck = 'noproduct.png';
     } else {
@@ -67,9 +68,9 @@ const controllerProducto = {
     res.redirect('/viewProduct/' + req.body.id + '/mostrar');
   },
 
-  updateProduct: (req, res) => {
-   // productList = await product.findAll();
-   let productList = indexProduct();
+  updateProduct: async(req, res) => {
+    productList = await Producto.findAll();
+   
     let i = req.body.id;
     productList[i].name = req.body.name;
     productList[i].price = req.body.price;
@@ -81,9 +82,9 @@ const controllerProducto = {
     return res.redirect('/viewProduct/' + req.body.id + '/mostrar');
   },
 
-  removeProduct: (req, res) => {
-    //let productList = await product.findAll();
-    let productList = indexProduct();
+  removeProduct: async (req, res) => {
+    let productList = await Producto.findAll();
+    
     let i = req.params.id;
     productList[i].name = 'DELETED';
     productList[i].price = 'DELETED';
