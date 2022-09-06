@@ -5,21 +5,21 @@ const { unlinkSync } = require('fs');
 const { indexUser } = require('../model/users.model');
 
 const register = [
-  body('first_name')
+  body('firstName')
     .notEmpty()
     .withMessage('El nombre no puede quedar vacío')
     .bail()
     .isLength({ min: 2 })
     .withMessage('El nombre debe contener mínimo dos caracteres.')
     .bail(),
-  body('last_name')
+  body('lastName')
     .notEmpty()
     .withMessage('El apellido no puede quedar vacío')
     .bail()
     .isLength({ min: 2 })
     .withMessage('El apellido debe contener mínimo dos caracteres.')
     .bail(),
-  body('user_name')
+  body('userName')
     .notEmpty()
     .withMessage('El usuario no puede quedar vacío')
     .bail()
@@ -28,7 +28,7 @@ const register = [
     .bail()
     .custom(async(value, { req }) => {
       let users = indexUser();
-      let user = users.find(u => u.user_name == req.body.user_name);
+      let user = users.find(u => u.userName == req.body.userName);
 
       if (user) {
         throw new Error('El nombre de usuario no esta disponible.');

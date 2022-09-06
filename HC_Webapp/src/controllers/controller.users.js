@@ -30,13 +30,13 @@ const controllerLogin = {
     });
   },
 
-  updateProfileDetails: async (req, res) => {
+  updateProfileDetails: (req, res) => {
     let usersList = indexUser();
     let user = usersList.find((u) => u.id == req.body.id);
     if (user.id == req.body.id) {
-      user.first_name = req.body.first_name;
-      user.last_name = req.body.last_name;
-      user.user_name = req.body.user_name;
+      user.firstNameame = req.body.firstNameame;
+      user.lastName = req.body.lastName;
+      user.userName = req.body.userName;
       user.email = req.body.email;
       user.passwd =
         req.body.passwd != 0
@@ -61,20 +61,20 @@ const controllerLogin = {
       });
     } else {
       let usersList = indexUser();
-      let user = usersList.find((u) => u.user_name == req.body.user_name);
+      let user = usersList.find((u) => u.userName == req.body.userName);
       if (user && compareSync(req.body.passwd, user.passwd)) {
         user.loggedIn = true;
         req.session.user = user;
         userLoggedIn = req.session.user;
       }
       if (req.body.remindme) {
-        res.cookie("HC_Cookie", user.user_name, { maxAge: 60000 });
+        res.cookie("HC_Cookie", user.userName, { maxAge: 60000 });
       }
       writeUserJSON(usersList); */
 
     let users = await user.findAll();
     // return res.redirect("/");
-    res.send(users);
+    
   },
   registerUser: async (req, res) => {
     let validaciones = validationResult(req);
@@ -87,7 +87,7 @@ const controllerLogin = {
       });
     }
 
-    //req.body.isAdmin = string(req.body.user_name).toLocaleLowerCase().includes('@hc') //verificamos si es ADMIN
+    //req.body.isAdmin = string(req.body.userName).toLocaleLowerCase().includes('@hc') //verificamos si es ADMIN
 
      await user.create(req.body);
 
@@ -96,9 +96,9 @@ const controllerLogin = {
     tempID++;
     let tempUser = Object({
       id: tempID,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      user_name: req.body.user_name,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      userName: req.body.userName,
       email: req.body.email,
       passwd: hashSync(req.body.passwd, 10),
       isAdmin: "",
@@ -109,6 +109,7 @@ const controllerLogin = {
     // writeUserJSON(usersList);
     req.session.user = userLoggedIn = tempUser;
     res.redirect("/");
+ // res.send(req.body)
   },
 };
 
