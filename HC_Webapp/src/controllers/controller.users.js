@@ -89,7 +89,7 @@ const controllerLogin = {
 
     //req.body.isAdmin = string(req.body.user_name).toLocaleLowerCase().includes('@hc') //verificamos si es ADMIN
 
-    // await User.create(req.body);
+     await user.create(req.body);
 
     let usersList = indexUser();
     let tempID = usersList.length;
