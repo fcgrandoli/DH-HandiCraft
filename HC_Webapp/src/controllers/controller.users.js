@@ -34,7 +34,7 @@ const controllerLogin = {
     let usersList = indexUser();
     let user = usersList.find((u) => u.id == req.body.id);
     if (user.id == req.body.id) {
-      user.firstNameame = req.body.firstNameame;
+      user.firstName = req.body.firstName;
       user.lastName = req.body.lastName;
       user.userName = req.body.userName;
       user.email = req.body.email;
@@ -51,7 +51,7 @@ const controllerLogin = {
     res.redirect("/user/profile");
   },
   loginUser: async (req, res) => {
-    /*     let validaciones = validationResult(req);
+    let validaciones = validationResult(req);
     let { errors } = validaciones;
     if (errors && errors.length > 0) {
       return res.render("users/login", {
@@ -60,7 +60,7 @@ const controllerLogin = {
         errors: validaciones.mapped(),
       });
     } else {
-      let usersList = indexUser();
+      let usersList = indexUser()
       let user = usersList.find((u) => u.userName == req.body.userName);
       if (user && compareSync(req.body.passwd, user.passwd)) {
         user.loggedIn = true;
@@ -70,11 +70,11 @@ const controllerLogin = {
       if (req.body.remindme) {
         res.cookie("HC_Cookie", user.userName, { maxAge: 60000 });
       }
-      writeUserJSON(usersList); */
+  //    writeUserJSON(usersList); 
 
-    let users = await user.findAll();
-    // return res.redirect("/");
-    
+  //  let users = await user.findAll();
+    return res.redirect("/");
+  }
   },
   registerUser: async (req, res) => {
     let validaciones = validationResult(req);
