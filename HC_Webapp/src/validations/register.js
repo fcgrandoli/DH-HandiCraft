@@ -54,14 +54,14 @@ const register = [
     .notEmpty()
     .withMessage('La contraseña no puede quedar vacía.')
     .bail()
-    .isLength({ min: 4 })
+    .isLength({ min: 8 })
     .bail(),
   body('avatar').custom( async (value, { req }) => {
     if (!req.file) {
       return true;
     } else {
       let archivos = req.file;
-      let extensiones = ['.svg', '.png', '.jpg', '.jpeg'];
+      let extensiones = ['.svg', '.png', '.jpg', '.jpeg', '.GIF'];
       let avatar = archivos;
       let extension = extname(avatar.filename);
 

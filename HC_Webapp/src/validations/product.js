@@ -6,8 +6,8 @@ const validationProduct = [
     .notEmpty()
     .withMessage("El nombre no puede quedar vacío")
     .bail()
-    .isLength({ min: 2 })
-    .withMessage("El nombre debe contener mínimo dos caracteres.")
+    .isLength({ min: 5 })
+    .withMessage("El nombre debe contener mínimo cinco caracteres.")
     .bail(),
   body("descShort")
     .notEmpty()
@@ -20,8 +20,8 @@ const validationProduct = [
     .notEmpty()
     .withMessage("La descripcion no puede quedar vacía")
     .bail()
-    .isLength({ min: 2 })
-    .withMessage("La descripcion debe contener mínimo dos caracteres.")
+    .isLength({ min: 20 })
+    .withMessage("La descripcion debe contener mínimo veinte caracteres.")
     .bail(),
   body("price")
     .notEmpty()
@@ -35,7 +35,7 @@ const validationProduct = [
       throw new Error("No se subio ninguna imagen");
     }
     let archivos = req.file;
-    let extensiones = [".svg", ".png", ".jpg", ".jpeg"];
+    let extensiones = [".svg", ".png", ".jpg", ".jpeg", '.GIF'];
     let producto = archivos;
     let extension = extname(producto.filename);
     if (!extensiones.includes(extension)) {
