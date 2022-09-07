@@ -3,6 +3,7 @@ const { validationResult } = require("express-validator");
 const { hashSync } = require("bcryptjs");
 const { compareSync } = require("bcryptjs");
 const { indexUser } = require("../model/users.model");
+const { Op } = require("sequelize");
 
 const controllerLogin = {
   viewLogin: async (req, res) => {
@@ -13,7 +14,7 @@ const controllerLogin = {
     });
   },
   viewProfileDetails: async (req, res) => {
-    res.render("users/accountDetails", {});
+    res.render("users/accountDetails", { userLoggedIn: userLoggedIn });
   },
 
   closeSession: async (req, res) => {
@@ -31,7 +32,17 @@ const controllerLogin = {
   },
 
   updateProfileDetails: async (req, res) => {
-    let usersList = indexUser();
+    let userToUpdate = await user.findByPk(req.body.id);
+
+    await user
+      .update(req.body, {
+        where: {
+          id: req.body.id,
+        },
+      })
+      .then((req.session.user = userLoggedIn = userToUpdate));
+
+    /*    let usersList = indexUser();
     let user = usersList.find((u) => u.id == req.body.id);
     if (user.id == req.body.id) {
       user.firstName = req.body.firstName;
@@ -47,11 +58,12 @@ const controllerLogin = {
       //   writeUserJSON(usersList);
       req.session.user = user;
       userLoggedIn = req.session.user;
-    }
+    } */
+    //res.send(req.session.user);
     res.redirect("/");
   },
   loginUser: async (req, res) => {
-    let validaciones = validationResult(req);
+    /*     let validaciones = validationResult(req);
     let { errors } = validaciones;
     if (errors && errors.length > 0) {
       return res.render("users/login", {
@@ -59,24 +71,24 @@ const controllerLogin = {
         oldData: req.body,
         errors: validaciones.mapped(),
       });
-    } else {
-      let usersList = indexUser()
-      let user = usersList.find((u) => u.userName == req.body.userName);
-      if (user && compareSync(req.body.passwd, user.passwd)) {
-        user.loggedIn = true;
-        req.session.user = user;
-        userLoggedIn = req.session.user;
-      }
-      if (req.body.remindme) {
-        res.cookie("HC_Cookie", user.userName, { maxAge: 60000 });
-      }
-      await indexUser();
-
-      //    writeUserJSON(usersList); 
-
-      //  let users = await user.findAll();
-      return res.redirect("/");
+    } else { */
+    let usersList = await user.findAll({
+      include: {
+        all: true,
+      },
+      where: {
+        userName: {
+          [Op.like]: `%${req.body.userName}%`,
+        },
+      },
+    });
+    req.session.user = userLoggedIn = usersList;
+    if (req.body.remindme) {
+      res.cookie("HC_Cookie", usersList.userName, { maxAge: 60000 });
     }
+    res.send(userLoggedIn);
+    //return res.redirect("/");
+    //}
   },
   registerUser: async (req, res) => {
     let validaciones = validationResult(req);
@@ -105,7 +117,6 @@ const controllerLogin = {
       passwd: hashSync(req.body.passwd, 10),
       isAdmin: "",
       avatar: !req.file ? "blank.jpg" : req.file.filename,
-      loggedIn: true,
     });
     usersList.push(tempUser);
     // writeUserJSON(usersList);
