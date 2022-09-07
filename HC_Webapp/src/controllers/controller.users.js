@@ -30,7 +30,7 @@ const controllerLogin = {
     });
   },
 
-  updateProfileDetails: (req, res) => {
+  updateProfileDetails: async (req, res) => {
     let usersList = indexUser();
     let user = usersList.find((u) => u.id == req.body.id);
     if (user.id == req.body.id) {
@@ -44,11 +44,11 @@ const controllerLogin = {
           : (user.passwd = user.passwd);
       user.isAdmin = "";
       user.avatar = !req.file ? req.body.avatar : req.file.filename;
-      writeUserJSON(usersList);
+      //   writeUserJSON(usersList);
       req.session.user = user;
       userLoggedIn = req.session.user;
     }
-    res.redirect("/user/profile");
+    res.redirect("/");
   },
   loginUser: async (req, res) => {
     let validaciones = validationResult(req);
@@ -70,11 +70,13 @@ const controllerLogin = {
       if (req.body.remindme) {
         res.cookie("HC_Cookie", user.userName, { maxAge: 60000 });
       }
-  //    writeUserJSON(usersList); 
+      await indexUser();
 
-  //  let users = await user.findAll();
-    return res.redirect("/");
-  }
+      //    writeUserJSON(usersList); 
+
+      //  let users = await user.findAll();
+      return res.redirect("/");
+    }
   },
   registerUser: async (req, res) => {
     let validaciones = validationResult(req);
@@ -89,7 +91,7 @@ const controllerLogin = {
 
     //req.body.isAdmin = string(req.body.userName).toLocaleLowerCase().includes('@hc') //verificamos si es ADMIN
 
-     await user.create(req.body);
+    await user.create(req.body);
 
     let usersList = indexUser();
     let tempID = usersList.length;
@@ -109,7 +111,7 @@ const controllerLogin = {
     // writeUserJSON(usersList);
     req.session.user = userLoggedIn = tempUser;
     res.redirect("/");
- // res.send(req.body)
+    // res.send(req.body)
   },
 };
 
