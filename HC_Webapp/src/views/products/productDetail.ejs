@@ -2,11 +2,7 @@
 <html lang="en">
   <%- include ('../partials/head') %>
   <link rel="stylesheet" type="text/css" href="/css/productDetail.css" />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="/css/productDetail-tablet.css"
-  />
+  <link rel="stylesheet" type="text/css" href="/css/productDetail-tablet.css" />
   <link
     rel="stylesheet"
     type="text/css"
@@ -16,64 +12,67 @@
   <body>
     <main>
       <div id="container">
-        <form
-        class="fields"
-        method="POST"
-        action="/cart/<%= productList[i].id %>/comprarProduct">
         <section class="producto">
           <div class="half-1">
             <div class="prd-name">
-              <p><%= productList[i].name %></p>
+              <p><%= productList.name %></p>
             </div>
             <div class="image">
               <img
                 class="preview"
-                src="/images/<%= productList[i].image %>"
+                src="/images/<%= productList.images[0].path %>"
               />
             </div>
             <div class="description">
-              <p class="disc">
-                <% if(productList[i].disc.length == 0){ %> <%=
-                productList[i].disc %> <% } else{ %> <%= productList[i].disc %>%
-                off <% } %>
+              <p class="discount">
+                <% if(productList.discount.length == 0){ %> <%=
+                productList.discount %> <% } else{ %> <%= productList.discount
+                %>% off <% } %>
               </p>
               <div class="price">
-                <p>$<%= productList[i].price %></p>
-              </div>        
-              <input class="AddCart" type="submit" value="Agregar al carrito" />
+                <p>$<%= productList.price %></p>
+              </div>
+              <form
+                class="fields"
+                method="POST"
+                action="/cart/<%= productList.id %>/comprarProduct"
+              >
+                <input
+                  class="AddCart"
+                  type="submit"
+                  value="Agregar al carrito"
+                />
+              </form>
               <a class="buy" href="">Comprar</a>
-                  </div>
+            </div>
           </div>
           <div class="half-2">
             <% if(userLoggedIn){ %>
-            <a class="btn-edit" href="/viewProduct/<%= productList[i].id%>/editar"
+            <a class="btn-edit" href="/viewProduct/<%= productList.id%>/editar"
               >EDITAR</a
             >
             <form
               class="fields"
               method="POST"
-              action="/viewProduct/eliminar?_method=POST"
+              action="/deleteProduct/<%= productList.id%>"
             >
-              <a
+              <input class="btn-delete" type="submit" value="ELIMINAR" />
+              <!--        <a
                 class="btn-delete"
-                href="/viewProduct/<%= productList[i].id%>/eliminar"
+                href="/viewProduct/<%= productList.id%>/eliminar"
                 >ELIMINAR</a
-              >
+              > -->
             </form>
             <% } %>
-
             <div class="text">
               <div class="desc-short">
-                <p><%= productList[i].descs %></p>
+                <p><%= productList.descShort %></p>
               </div>
               <div class="desc-large">
-                <p><%= productList[i].descl %></p>
+                <p><%= productList.descLarge %></p>
               </div>
             </div>
-            
-            </div>
           </div>
-        </form>
         </section>
       </div>
     </main>

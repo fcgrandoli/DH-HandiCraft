@@ -12,15 +12,16 @@
       </div>
       <div id="container">
         <form
-          class="fields"
+          action="/viewProduct/edit"
           method="POST"
-          action="/viewProduct/editar?_method=PUT"
+          class="fields"
+          enctype="multipart/form-data"
         >
           <input
             class="input-fields"
             type="hidden"
             name="id"
-            value="<%= productList[i].id %>"
+            value="<%= productList.id %>"
             readonly="readonly"
           />
           <label for="">Nombre: </label>
@@ -29,43 +30,59 @@
             class="input"
             type="text"
             name="name"
-            value="<%= productList[i].name %>"
+            value="<%= productList.name %>"
           />
+
           <label for="">Descripcion corta:</label>
           <input
             class="input-fields"
             type="text"
-            name="descs"
-            value="<%= productList[i].descs %>"
+            name="descShort"
+            value="<%= productList.descShort %>"
           />
+
           <label for="">Descripcion larga:</label>
           <input
             class="input-fields"
             type="text"
-            name="descl"
-            value="<%= productList[i].descl %>"
+            name="descLarge"
+            value="<%= productList.descLarge %>"
           />
+
           <label for="">Precio:</label>
           <input
             class="input-fields"
             type="number"
             name="price"
-            value="<%= productList[i].price %>"
+            value="<%= productList.price %>"
           />
+
           <label for="">Descuento:</label>
           <input
             class="input-fields"
             type="number"
-            name="disc"
-            value="<%= productList[i].disc %>"
+            name="discount"
+            value="<%= productList.discount %>"
           />
-          <label for="">Imagen:</label>
+
+          <label for="">Stock:</label>
           <input
             class="input-fields"
-            type="text"
-            name="image"
-            value="<%= productList[i].image %>"
+            type="number"
+            name="stock"
+            value="<%= productList.stock %>"
           />
+
+          <div class="image-fields-container">
+            <label for="image">Cambiar foto del producto:</label>
+            <input
+              class="image-upload"
+              type="file"
+              name="image"
+              id="image"
+              autocomplete="off"
+            />
+          </div>
           <input class="submit" type="submit" value="Actualizar datos" />
         </form>
       </div>
