@@ -31,7 +31,8 @@ const validationProduct = [
     .withMessage("El precio debe contener mínimo dos caracteres.")
     .bail(),
   body("image").custom((value, { req }) => {
-    if (!req.file) {
+    if (!req.file && req.body.imagepath) {
+      return true;
       throw new Error("No se subio ninguna imagen");
     }
     let archivos = req.file;
