@@ -28,6 +28,10 @@ module.exports = {
         stock: {
           type: Sequelize.INTEGER,
         },
+        collection: {
+          type: Sequelize.STRING,
+        },
+
       });
     } catch (error) {
       console.log(error);

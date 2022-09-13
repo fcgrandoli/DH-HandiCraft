@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  let alias = "product";
+  let alias = 'product';
   let cols = {
     id: {
       type: DataTypes.INTEGER,
@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
     stock: {
       type: DataTypes.INTEGER,
     },
+    collection: {
+      type: DataTypes.STRING,
+    },
   };
 
   let config = {
@@ -35,8 +38,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Product.associate = ({ image }) => {
     Product.belongsToMany(image, {
-      through: "imagesProducts",
-      foreignKey: "product",
+      through: 'imagesProducts',
+      foreignKey: 'product',
     });
   };
   return Product;

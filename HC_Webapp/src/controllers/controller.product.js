@@ -62,10 +62,17 @@ const controllerProducto = {
   },
 
   updateProduct: async (req, res) => {
+    let productList = await product.findByPk(req.params.id, {
+      include: {
+        all: true,
+      },
+    });
     let validaciones = validationResult(req);
     let { errors } = validaciones;
     if (errors && errors.length > 0) {
-    return res.redirect("/viewProduct/" + req.body.id + "/mostrar", {
+      return res.render("products/productEdit", {
+        styles: ["products/productEdit"],
+        productList: productList,
         errors: validaciones.mapped(),
       });
     }
