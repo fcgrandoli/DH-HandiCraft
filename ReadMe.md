@@ -10,3 +10,5 @@
 -Sprint 4: (https://trello.com/b/CyBooe23/handicraft-sprint-4)<br />
 -Sprint 5: (https://trello.com/b/Vyrv6mtf/handicraft-sprint-5)<br />
 -Sprint 6: (https://trello.com/b/H2PsMjNB/handicraft-sprint-6)<br />
+-Sprint 6: (https://trello.com/b/H2PsMjNB/handicraft-sprint-6)<br />
+-Sprint 7: (https://trello.com/b/iIkyuMWK/handicraft-sprint-7)<br />
