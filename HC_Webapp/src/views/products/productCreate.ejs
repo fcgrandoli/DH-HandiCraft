@@ -4,6 +4,7 @@
   <link rel="stylesheet" type="text/css" href="/css/productEdit.css" />
   <link rel="stylesheet" type="text/css" href="/css/productEdit-tablet.css" />
   <link rel="stylesheet" type="text/css" href="/css/productEdit-desktop.css" />
+  <script src="/validationsFront/productCreate.js"></script>
   <%- include ('../partials/header') %>
   <body>
     <main>
@@ -11,6 +12,9 @@
         <img src="/images/banner.jpg" />
       </div>
       <div class="container">
+        <div class = "errores">
+             <ul></ul>
+        </div>
         <form
           action="/viewProduct/createProduct"
           method="post"
@@ -26,7 +30,7 @@
           /> -->
           <label for="">Nombre:</label>
           <input
-            class="input-fields"
+            class="input-fields name" 
             type="text"
             name="name"
             autocomplete="off"
@@ -52,7 +56,7 @@
 
           <label for="">Descripcion larga:</label>
           <input
-            class="input-fields"
+            class="input-fields descLarge"
             type="text"
             name="descLarge"
             autocomplete="off"
