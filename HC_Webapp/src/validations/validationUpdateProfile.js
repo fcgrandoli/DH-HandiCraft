@@ -25,12 +25,13 @@ const register = [
     .isLength({ min: 2 })
     .withMessage('El usuario debe contener mínimo dos caracteres.')
     .bail()
-    .custom(async value => {
+    .custom(async (value, { req }) => {
       let users = await user.findOne({ where: { userName: value } })
-      if (users) {
+      if (users.id == req.body.id) {
+        return true;
+       }else {
         throw new Error('El nombre de usuario no esta disponible.');
       }
-      return true;
     }),
   body('email')
     .notEmpty()
@@ -39,12 +40,13 @@ const register = [
     .isEmail()
     .withMessage('El formato de email no es válido.')
     .bail()
-    .custom(async value => {
+    .custom(async (value, { req }) => {
       let users = await user.findOne({ where: { email: value } })
-      if (users) {
-        throw new Error('El email ya esta registrado');
+      if (users && users.id != req.body.id) {
+        throw new Error('El email no esta disponible.');
+      } else {
+        return true;
       }
-      return true;
     }),
   body('passwd')
     .notEmpty()

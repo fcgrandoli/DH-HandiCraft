@@ -22,7 +22,7 @@
         <form
           class="fields"
           method="POST"
-          action="/registerUser"
+          action="/registerUser?_method=POST"
           enctype="multipart/form-data"
         >
           <div class="firstName">
@@ -66,7 +66,11 @@
           <div class="image-fields-container">
             <label for="image">Foto de perfil:</label>
             <input class="image-upload" type="file" name="avatar" />
+                      <% if (errors.avatar) { %>
+            <p class="msg-error"><%= locals.errors.avatar.msg %></p>
+            <% } %>
           </div>
+
           <div class="buttons">
             <input class="submit" type="submit" value="Registrarme" />
             <button class="nav-reset" type="reset" value="reset">Reset</button>

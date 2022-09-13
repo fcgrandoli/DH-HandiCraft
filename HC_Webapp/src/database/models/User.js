@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  let alias = "user";
+  let alias = 'user';
   let cols = {
     id: {
       allowNull: false,
@@ -30,8 +30,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: "images",
-        key: "id",
+        model: 'images',
+        key: 'id',
       },
     },
   };

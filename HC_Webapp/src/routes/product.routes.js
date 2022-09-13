@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const {
   viewProduct,
@@ -7,36 +7,36 @@ const {
   createProduct,
   updateProduct,
   removeProduct,
-} = require("../controllers/controller.product.js");
-const uploadProduct = require("../middlewares/productUpload.js");
-const validationProduct = require("../validations/product");
-const authMiddleware = require("../middlewares/authMiddleware.js");
-const guestMiddleware = require("../middlewares/guestMiddleware.js");
+} = require('../controllers/controller.product.js');
+const uploadProduct = require('../middlewares/productUpload.js');
+const validationProduct = require('../validations/product');
+const authMiddleware = require('../middlewares/authMiddleware.js');
+const guestMiddleware = require('../middlewares/guestMiddleware.js');
 
-router.get("/", viewProduct);
+router.get('/', viewProduct);
 
-router.get("/:id/mostrar", viewProduct);
+router.get('/:id/mostrar', viewProduct);
 
-router.get("/:id/editar", authMiddleware, validationProduct, viewEditProduct);
+router.get('/:id/editar', authMiddleware, validationProduct, viewEditProduct);
 
 router.post(
-  "/edit",
+  '/edit',
   authMiddleware,
   validationProduct,
-  uploadProduct.single("image"),
+  uploadProduct.single('image'),
   updateProduct
 );
 
-router.get("/createProduct", authMiddleware, viewCreateProduct);
+router.get('/createProduct', authMiddleware, viewCreateProduct);
 
 router.post(
-  "/createProduct",
+  '/createProduct',
   authMiddleware,
-  /*validationProduct,*/
-  uploadProduct.single("image"),
+  uploadProduct.single('image'),
+  validationProduct,
   createProduct
 );
 
-router.post("/:id", /*authMiddleware,*/ removeProduct);
+router.post('/:id', /*authMiddleware,*/ removeProduct);
 
 module.exports = router;

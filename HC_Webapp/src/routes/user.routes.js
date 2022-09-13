@@ -11,6 +11,7 @@ const {
 } = require('../controllers/controller.users.js');
 const uploadUser = require('../middlewares/userUpload.js');
 const validationLogin = require('../validations/login');
+const validationUpdateProfile = require('../validations/validationUpdateProfile');
 const validationRegister = require('../validations/register');
 const authMiddleware = require('../middlewares/authMiddleware.js');
 const guestMiddleware = require('../middlewares/guestMiddleware.js');
@@ -23,12 +24,13 @@ router.post(
   '/update',
   authMiddleware,
   uploadUser.single('avatar'),
+  validationUpdateProfile,
   updateProfileDetails
 );
 
 router.get('/profile', authMiddleware, viewProfileDetails);
 
-router.post('/userLogin', guestMiddleware, [validationLogin], loginUser);
+router.post('/userLogin', guestMiddleware, validationLogin, loginUser);
 
 router.get('/viewRegister', guestMiddleware, viewRegister);
 
@@ -36,7 +38,7 @@ router.post(
   '/registerUser',
   guestMiddleware,
   uploadUser.single('avatar'),
-  [validationRegister],
+  validationRegister,
   registerUser
 );
 
