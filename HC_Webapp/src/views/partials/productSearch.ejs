@@ -1,25 +1,22 @@
-<% for (let i = 0; i < tempProduct.length; i++) { %>
+<% for (let i = 0; i < productList.length; i++) { %>
 <article class="producto">
   <div class="image">
-    <a href="viewProduct/<%= productList[tempProduct[i].id].id%>/mostrar"
-      ><img
-        class="preview"
-        src="/images/<%= productList[tempProduct[i].id].image %>"
+    <a href="viewProduct/<%= productList[i].id%>/mostrar"
+      ><img class="preview" src="/images/<%= productList[i].images[0].path %>"
     /></a>
   </div>
   <div class="prd-container">
     <div class="prd-name">
-      <p><%= productList[tempProduct[i].id].name %></p>
+      <p><%= productList[i].name %></p>
     </div>
     <div class="desc">
-      <p><%= productList[tempProduct[i].id].descs %></p>
+      <p><%= productList[i].descShort %></p>
     </div>
     <div class="price">
-      <p>$<%= productList[tempProduct[i].id].price %></p>
-      <p class="disc">
-        <%= productList[tempProduct[i].id].disc.length == 0 ?
-        productList[tempProduct[i].id].disc :
-        productList[tempProduct[i].id].disc + "% off" %>
+      <p>$<%= productList[i].price %></p>
+      <p class="discount">
+        <%= productList[i].discount.length == 0 ? productList[i].discount :
+        productList[i].discount + "% off" %>
       </p>
     </div>
   </div>

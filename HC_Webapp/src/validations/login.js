@@ -1,18 +1,20 @@
 const { body } = require('express-validator');
-const { indexUser } = require('../model/users.model');
+const { user } = require('../database/models/index');
 const { compareSync } = require('bcryptjs');
 
 const login = [
-  // Email
-  body('user_name')
+  // User
+  body('userName')
     .notEmpty()
     .withMessage('El usuario no puede quedar vacío.')
     .bail()
-    .bail()
-    .custom(value => {
-      let users = indexUser();
-      users = users.map(u => u.user_name);
-      if (!users.includes(value)) {
+    .custom(async (value, { req }) => {
+      let users = await user.findOne({
+        where: {
+          userName: req.body.userName,
+        },
+      });
+      if (!users) {
         throw new Error('El usuario no esta registrado');
       }
       return true;
@@ -24,18 +26,18 @@ const login = [
     .bail()
     .isLength({ min: 3 })
     .bail()
-    .custom((value, { req }) => {
-      let users = indexUser();
-      let user = users.find(u => u.user_name == req.body.user_name);
-
-      if (!user) {
+    .custom(async (value, { req }) => {
+      let users = await user.findOne({
+                where: {
+          userName: req.body.userName,
+        },
+      });
+      if (!users) {
         throw new Error('Usuario no encontrado');
       }
-
-      if (!compareSync(value, user.passwd)) {
+      if (!compareSync(req.body.passwd, users.passwd)) {
         throw new Error('La contraseña es incorrecta');
       }
-
       return true;
     }),
 ];

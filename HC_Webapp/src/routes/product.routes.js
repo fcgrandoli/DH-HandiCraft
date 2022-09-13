@@ -9,7 +9,8 @@ const {
   removeProduct,
 } = require('../controllers/controller.product.js');
 const uploadProduct = require('../middlewares/productUpload.js');
-const validationProduct = require('../validations/product');
+const validationProduct = require('../validations/productCreate');
+const validationProductEdit = require('../validations/productEdit');
 const authMiddleware = require('../middlewares/authMiddleware.js');
 const guestMiddleware = require('../middlewares/guestMiddleware.js');
 
@@ -19,7 +20,13 @@ router.get('/:id/mostrar', viewProduct);
 
 router.get('/:id/editar', authMiddleware, viewEditProduct);
 
-router.put('/editar', authMiddleware, updateProduct);
+router.post(
+  '/edit',
+  authMiddleware,
+  uploadProduct.single('image'),
+  validationProductEdit,
+  updateProduct
+);
 
 router.get('/createProduct', authMiddleware, viewCreateProduct);
 
@@ -27,10 +34,10 @@ router.post(
   '/createProduct',
   authMiddleware,
   uploadProduct.single('image'),
-  [validationProduct],
+  validationProduct,
   createProduct
 );
 
-router.get('/:id/eliminar', authMiddleware, removeProduct);
+router.post('/:id', /*authMiddleware,*/ removeProduct);
 
 module.exports = router;

@@ -11,63 +11,127 @@
         <img src="/images/banner.jpg" />
       </div>
       <div id="container">
-        <form
-          class="fields"
-          method="POST"
-          action="/viewProduct/editar?_method=PUT"
-        >
-          <input
-            class="input-fields"
-            type="hidden"
-            name="id"
-            value="<%= productList[i].id %>"
-            readonly="readonly"
-          />
-          <label for="">Nombre: </label>
-          <input
-            class="input-fields"
-            class="input"
-            type="text"
-            name="name"
-            value="<%= productList[i].name %>"
-          />
-          <label for="">Descripcion corta:</label>
-          <input
-            class="input-fields"
-            type="text"
-            name="descs"
-            value="<%= productList[i].descs %>"
-          />
-          <label for="">Descripcion larga:</label>
-          <input
-            class="input-fields"
-            type="text"
-            name="descl"
-            value="<%= productList[i].descl %>"
-          />
-          <label for="">Precio:</label>
-          <input
-            class="input-fields"
-            type="number"
-            name="price"
-            value="<%= productList[i].price %>"
-          />
-          <label for="">Descuento:</label>
-          <input
-            class="input-fields"
-            type="number"
-            name="disc"
-            value="<%= productList[i].disc %>"
-          />
-          <label for="">Imagen:</label>
-          <input
-            class="input-fields"
-            type="text"
-            name="image"
-            value="<%= productList[i].image %>"
-          />
-          <input class="submit" type="submit" value="Actualizar datos" />
-        </form>
+        <div class="half1">
+          <div class="image">
+            <img
+              class="preview"
+              src="/images/<%= productList.images[0].path %>"
+            />
+          </div>
+        </div>
+        <div class="half2">
+          <form
+            action="/viewProduct/edit"
+            method="POST"
+            class="fields"
+            enctype="multipart/form-data"
+          >
+            <input
+              class="input-fields"
+              type="hidden"
+              name="id"
+              value="<%= productList.id %>"
+              readonly="readonly"
+            />
+
+            <label for="">Nombre: </label>
+            <input
+              class="input-fields"
+              class="input"
+              type="text"
+              name="name"
+              value="<%= productList.name %>"
+            />
+
+            <% if (errors.name) { %>
+            <p class="msg-error"><%= locals.errors.name.msg %></p>
+            <% } %>
+
+            <label for="">Descripcion corta:</label>
+            <input
+              class="input-fields"
+              type="text"
+              name="descShort"
+              value="<%= productList.descShort %>"
+            />
+
+            <% if (errors.descShort) { %>
+            <p class="msg-error"><%= locals.errors.descShort.msg %></p>
+            <% } %>
+
+            <label for="">Descripcion larga:</label>
+            <input
+              class="input-fields"
+              type="text"
+              name="descLarge"
+              value="<%= productList.descLarge %>"
+            />
+
+            <% if (errors.descLarge) { %>
+            <p class="msg-error"><%= locals.errors.descLarge.msg %></p>
+            <% } %>
+
+            <label for="">Precio:</label>
+            <input
+              class="input-fields"
+              type="number"
+              name="price"
+              value="<%= productList.price %>"
+            />
+
+            <% if (errors.price) { %>
+            <p class="msg-error"><%= locals.errors.price.msg %></p>
+            <% } %>
+
+            <label for="">Descuento:</label>
+            <input
+              class="input-fields"
+              type="number"
+              name="discount"
+              value="<%= productList.discount %>"
+            />
+
+            <% if (errors.discount) { %>
+            <p class="msg-error"><%= locals.errors.discount.msg %></p>
+            <% } %>
+
+            <label for="">Stock:</label>
+            <input
+              class="input-fields"
+              type="number"
+              name="stock"
+              value="
+          <%= productList.stock %>"
+            />
+            <% if (errors.discount) { %>
+            <p class="msg-error"><%= locals.errors.stock.msg %></p>
+            <% } %>
+
+            <input
+              class="input-fields"
+              type="hidden"
+              name="imagepath"
+              value="
+          <%= productList.images[0].path %>"
+              readonly
+            />
+
+            <div class="image-fields-container">
+              <label for="image">Cambiar foto del producto:</label>
+              <input
+                class="image-upload"
+                type="file"
+                name="image"
+                id="image"
+                autocomplete="off"
+              />
+            </div>
+            <% if (errors.image) { %>
+            <p class="msg-error"><%= locals.errors.image.msg %></p>
+            <% } %>
+            <input class="submit" type="submit" value="Actualizar datos" />
+          </form>
+        </div>
       </div>
     </main>
   </body>

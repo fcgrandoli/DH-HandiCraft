@@ -22,28 +22,28 @@
         <form
           class="fields"
           method="POST"
-          action="/registerUser"
+          action="/registerUser?_method=POST"
           enctype="multipart/form-data"
         >
           <div class="firstName">
             <label for="user">Nombre:</label>
-            <input class="input-fields" type="text" name="first_name" placeholder="First name" value="<%= locals.oldData ? oldData.first_name : null %>">
-            <% if (errors.first_name) { %>
-              <p class="msg-error"><%= locals.errors.first_name.msg %></p>
+            <input class="input-fields" type="text" name="firstName" placeholder="First name" value="<%= locals.oldData ? oldData.firstName : null %>">
+            <% if (errors.firstName) { %>
+              <p class="msg-error"><%= locals.errors.firstName.msg %></p>
               <% } %>
           </div>
           <div class="lastName">
             <label for="user">Apellido:</label>
-            <input class="input-fields" type="text" name="last_name" placeholder="Last name" value="<%= locals.oldData ? oldData.last_name : null %>">
-            <% if (errors.last_name) { %>
-              <p class="msg-error"><%= locals.errors.last_name.msg %></p>
+            <input class="input-fields" type="text" name="lastName" placeholder="Last name" value="<%= locals.oldData ? oldData.lastName : null %>">
+            <% if (errors.lastName) { %>
+              <p class="msg-error"><%= locals.errors.lastName.msg %></p>
               <% } %>
           </div>
           <div class="user">
             <label for="user">Nombre de usuario:</label>
-            <input class="input-fields" type="text" name="user_name" placeholder="Username" value="<%= locals.oldData ? oldData.user_name : null %>">
-            <% if (errors.user_name) { %>
-              <p class="msg-error"><%= locals.errors.user_name.msg %></p>
+            <input class="input-fields" type="text" name="userName" placeholder="Username" value="<%= locals.oldData ? oldData.userName : null %>">
+            <% if (errors.userName) { %>
+              <p class="msg-error"><%= locals.errors.userName.msg %></p>
               <% } %>
           </div>
           <div class="email">
@@ -66,7 +66,11 @@
           <div class="image-fields-container">
             <label for="image">Foto de perfil:</label>
             <input class="image-upload" type="file" name="avatar" />
+                      <% if (errors.avatar) { %>
+            <p class="msg-error"><%= locals.errors.avatar.msg %></p>
+            <% } %>
           </div>
+
           <div class="buttons">
             <input class="submit" type="submit" value="Registrarme" />
             <button class="nav-reset" type="reset" value="reset">Reset</button>

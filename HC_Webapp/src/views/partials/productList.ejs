@@ -1,9 +1,9 @@
-<% for (let i = 1; i < productList.length; i++) { %> <% if(productList[i].name
+<% for (let i = 0; i < productList.length; i++) { %> <% if(productList[i].name
 != 'DELETED'){ %>
 <article class="producto">
   <div class="image">
     <a href="viewProduct/<%= productList[i].id%>/mostrar"
-      ><img class="preview" src="/images/<%= productList[i].image %>"
+      ><img class="preview" src="/images/<%= productList[i].images[0].path %>"
     /></a>
   </div>
   <div class="prd-container">
@@ -11,13 +11,13 @@
       <p><%= productList[i].name %></p>
     </div>
     <div class="desc">
-      <p><%= productList[i].descs %></p>
+      <p><%= productList[i].descShort %></p>
     </div>
     <div class="price">
       <p>$<%= productList[i].price %></p>
-      <p class="disc">
-        <%= productList[i].disc.length == 0 ? productList[i].disc :
-        productList[i].disc + "% off" %>
+      <p class="discount">
+        <%= productList[i].discount.length == 0 ? productList[i].discount :
+        productList[i].discount + "% off" %>
       </p>
     </div>
   </div>
