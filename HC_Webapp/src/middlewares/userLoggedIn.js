@@ -1,12 +1,20 @@
-module.exports = (req, res, next) => {
-  let userLoggedIn = req.session.user;
+const { user } = require('../database/models/index');
 
-  if (req.cookies && req.cookies.user_name) {
-    userLoggedIn = req.session.user;
-  }
-  /*if (req.session && req.session.user) {
-    userLoggedIn = req.session.user;
-  }*/
+module.exports = async (req, res, next) => {
+  let userLoggedIn = null;
   res.locals.userLoggedIn = userLoggedIn;
+  if (req.cookies && req.cookies.HC) {
+    let users = await user.findOne({
+      where: {
+        userName: req.cookies.HC,
+      },
+    });
+    req.session.user = users;
+  }
+  if (req.session && req.session.user) {
+    userLoggedIn = req.session.user
+  }
+  res.locals.userLoggedIn = userLoggedIn;
+  
   return next();
 };

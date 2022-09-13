@@ -26,6 +26,7 @@ app.use(
   })
 );
 app.use(cookie());
+
 app.use(require('./src/middlewares/userLoggedIn.js'));
 
 app.use('/', homeRoute);
