@@ -8,9 +8,11 @@ const login = [
     .notEmpty()
     .withMessage('El usuario no puede quedar vacío.')
     .bail()
-    .custom(async value => {
+    .custom(async (value, { req }) => {
       let users = await user.findOne({
-        'userName': value,
+        where: {
+          userName: req.body.userName,
+        },
       });
       if (!users) {
         throw new Error('El usuario no esta registrado');
@@ -24,14 +26,16 @@ const login = [
     .bail()
     .isLength({ min: 3 })
     .bail()
-    .custom(async value => {
+    .custom(async (value, { req }) => {
       let users = await user.findOne({
-        'userName': value,
+                where: {
+          userName: req.body.userName,
+        },
       });
       if (!users) {
         throw new Error('Usuario no encontrado');
       }
-      if (!compareSync(value, users.passwd)) {
+      if (!compareSync(req.body.passwd, users.passwd)) {
         throw new Error('La contraseña es incorrecta');
       }
       return true;

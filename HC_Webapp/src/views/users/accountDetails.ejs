@@ -85,7 +85,7 @@
         </div>
         <div class="passwords">
           <label for="password">Contraseña:</label>
-          <input class="input-fields" type="password" name="passwd" value="<%= userLoggedIn.passwd %>" />
+          <input class="input-fields" type="password" name="passwd" placeholder="******" value="" />
           <% if (errors.passwd) { %>
             <p class="msg-error"><%= locals.errors.passwd.msg %></p>
             <% } %>

@@ -23,6 +23,8 @@ const controllerProducto = {
     if (!req.params) {
       res.redirect("/");
     } else {
+      let validaciones = validationResult(req);
+      let { errors } = validaciones;
       let productList = await product.findByPk(req.params.id, {
         include: {
           all: true,
@@ -30,6 +32,7 @@ const controllerProducto = {
       });
       return res.render("products/productEdit", {
         productList: productList,
+        errors: validaciones.mapped(),
       });
     }
   },
@@ -59,6 +62,13 @@ const controllerProducto = {
   },
 
   updateProduct: async (req, res) => {
+    let validaciones = validationResult(req);
+    let { errors } = validaciones;
+    if (errors && errors.length > 0) {
+    return res.redirect("/viewProduct/" + req.body.id + "/mostrar", {
+        errors: validaciones.mapped(),
+      });
+    }
     await product.update(req.body, {
       where: {
         id: req.body.id,
@@ -76,7 +86,7 @@ const controllerProducto = {
         }
       );
     }
-    return res.redirect("/viewProduct/" + req.body.id + "/mostrar");
+    res.redirect("/viewProduct/" + req.body.id + "/mostrar");
   },
 
   removeProduct: async (req, res) => {

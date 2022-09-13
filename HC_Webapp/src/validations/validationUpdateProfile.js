@@ -48,12 +48,12 @@ const register = [
         return true;
       }
     }),
-  body('passwd')
+  /*body('passwd')
     .notEmpty()
     .withMessage('La contraseña no puede quedar vacía.')
     .bail()
     .isLength({ min: 4 })
-    .bail(),
+    .bail(),*/
   body('avatar').custom((value, { req }) => {
     if (!req.file) {
       return true;

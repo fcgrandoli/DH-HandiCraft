@@ -46,14 +46,29 @@ const controllerLogin = {
       });
     } else {
       let userIMG = await user.findByPk(req.body.id);
+      if(req.body.passwd != 0){
+        let tempUser = await Object({
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          userName: req.body.userName,
+          email: req.body.email,
+          passwd: hashSync(req.body.passwd, 10),
+          isAdmin: '',
+          avatar: !req.file ? userIMG.avatar : req.file.filename,
+        });
+        await user.update(tempUser, {
+          where: {
+            id: req.body.id,
+          },
+        });
+        req.session.user = await user.findByPk(req.body.id);
+        res.redirect('/');
+      } else {
       let tempUser = await Object({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         userName: req.body.userName,
         email: req.body.email,
-        passwd: (req.body.passwd = 0
-          ? userIMG.passwd
-          : hashSync(req.body.passwd, 10)),
         isAdmin: '',
         avatar: !req.file ? userIMG.avatar : req.file.filename,
       });
@@ -65,6 +80,7 @@ const controllerLogin = {
       });
       req.session.user = await user.findByPk(req.body.id);
       res.redirect('/');
+    }
     }
   },
   loginUser: async (req, res) => {

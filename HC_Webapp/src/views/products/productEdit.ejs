@@ -24,6 +24,7 @@
             value="<%= productList.id %>"
             readonly="readonly"
           />
+
           <label for="">Nombre: </label>
           <input
             class="input-fields"
@@ -33,6 +34,10 @@
             value="<%= productList.name %>"
           />
 
+          <% if (errors.name) { %>
+          <p class="msg-error"><%= locals.errors.name.msg %></p>
+          <% } %>
+
           <label for="">Descripcion corta:</label>
           <input
             class="input-fields"
@@ -40,6 +45,10 @@
             name="descShort"
             value="<%= productList.descShort %>"
           />
+
+          <% if (errors.descShort) { %>
+          <p class="msg-error"><%= locals.errors.descShort.msg %></p>
+          <% } %>
 
           <label for="">Descripcion larga:</label>
           <input
@@ -49,6 +58,10 @@
             value="<%= productList.descLarge %>"
           />
 
+          <% if (errors.descLarge) { %>
+          <p class="msg-error"><%= locals.errors.descLarge.msg %></p>
+          <% } %>
+
           <label for="">Precio:</label>
           <input
             class="input-fields"
@@ -56,6 +69,10 @@
             name="price"
             value="<%= productList.price %>"
           />
+
+          <% if (errors.price) { %>
+          <p class="msg-error"><%= locals.errors.price.msg %></p>
+          <% } %>
 
           <label for="">Descuento:</label>
           <input
@@ -65,13 +82,16 @@
             value="<%= productList.discount %>"
           />
 
+          <% if (errors.discount) { %>
+          <p class="msg-error"><%= locals.errors.discount.msg %></p>
+          <% } %>
+
           <label for="">Stock:</label>
-          <input
-            class="input-fields"
-            type="number"
-            name="stock"
-            value="<%= productList.stock %>"
-          />
+          <input class="input-fields" type="number" name="stock" value="
+          <%= productList.stock %>" /> <% if
+          (errors.discount) { %>
+          <p class="msg-error"><%= locals.errors.stock.msg %></p>
+          <% } %>
 
           <div class="image-fields-container">
             <label for="image">Cambiar foto del producto:</label>
@@ -83,6 +103,9 @@
               autocomplete="off"
             />
           </div>
+          <% if (errors.image) { %>
+          <p class="msg-error"><%= locals.errors.image.msg %></p>
+          <% } %>
           <input class="submit" type="submit" value="Actualizar datos" />
         </form>
       </div>

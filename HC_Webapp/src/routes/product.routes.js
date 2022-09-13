@@ -22,8 +22,8 @@ router.get('/:id/editar', authMiddleware, validationProduct, viewEditProduct);
 router.post(
   '/edit',
   authMiddleware,
-  validationProduct,
   uploadProduct.single('image'),
+  validationProduct,
   updateProduct
 );
 
