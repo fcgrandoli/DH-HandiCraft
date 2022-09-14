@@ -85,7 +85,7 @@ inputs.lastName.addEventListener('input', function (e) {
 
 })
 
-    
+
 inputs.userName.addEventListener('input', function (e) {     /* userName no obligatorio */
     let field = e.target.parentElement;
     let value = e.target.value;
@@ -94,7 +94,7 @@ inputs.userName.addEventListener('input', function (e) {     /* userName no obli
     let validmsg = field.querySelector('.feed-valid');        /* Variable validmsg seleccionando el elemento .feed-valid ya que el "valid" no me me tomaba el elemento, ni msj  ni el css) */
     if (!validator.isLength(value, { min: 2 })) {
         msg = 'El nombre de usuario debe contener mínimo dos caracteres.'
-    }else {
+    } else {
         validmsg = 'El campo es correcto.'
     }
     if (msg) {
@@ -113,7 +113,7 @@ inputs.userName.addEventListener('input', function (e) {     /* userName no obli
 
 
 
-    inputs.email.addEventListener('focus', function (e) {
+inputs.email.addEventListener('focus', function (e) {
     let field = e.target.parentElement;
     let value = e.target.value;
     let feed = field.querySelector('.feed');
@@ -174,7 +174,7 @@ inputs.passwd.addEventListener('focus', function (e) {
         feed.innerText = msg
     }
 }
-); 
+);
 
 
 
@@ -184,26 +184,26 @@ inputs.passwd.addEventListener('input', function (e) {
     let value = e.target.value;
     let feed = field.querySelector('.feed');
     let msg = null;
-    let validmsg = field.querySelector('.feed-valid');  
+    let validmsg = field.querySelector('.feed-valid');
     let config = {
         minLength: 8, minLowercase: 2, minUppercase: 2, minNumbers: 1, minSymbols: 1
     }      /* Variable validmsg seleccionando el elemento .feed-valid ya que el "valid" no me me tomaba el elemento, ni msj  ni el css) */
     if (!validator.isLength(value, { min: 8 })) {
         msg = 'El nombre debe contener mínimo ocho caracteres.'
-    } else if (!validator.isStrongPassword(value, config))  {
+    } else if (!validator.isStrongPassword(value, config)) {
         msg = 'El nombre debe 2 letras mayúsculas, 2 minúsculas, un número y un carácter especial.'
-    }else {
+    } else {
         validmsg = 'El campo es correcto.'
     }
-    
+
     if (msg) {
         feed.innerText = msg
-    } else
-    {
-            field.classList.remove('invalid');
-            field.classList.add('valid');
-            feed.innerText = validmsg
-        }});
+    } else {
+        field.classList.remove('invalid');
+        field.classList.add('valid');
+        feed.innerText = validmsg
+    }
+});
 
 
 
@@ -215,10 +215,10 @@ inputs.avatar.addEventListener('input', function (e) {
     let feed = field.querySelector('.feed');
     let msg = null;
     let validmsg = field.querySelector('.feed-valid');
-    if(files.length == 0){
-        msg = 'El campo de avatar esta vacio.' 
+    if (files.length == 0) {
+        msg = 'El campo de avatar esta vacio.'
     }
-   else if (!['jpg', 'jpeg', 'png', 'gif'].includes(files[0].type.split('/')[1])) {
+    else if (!['jpg', 'jpeg', 'png', 'gif'].includes(files[0].type.split('/')[1])) {
         msg = 'No es un formato de imagen valida.'
     } else {
         validmsg = 'El campo es correcto'
