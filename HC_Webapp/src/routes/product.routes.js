@@ -21,7 +21,7 @@ router.get('/:id/mostrar', viewProduct);
 router.get('/:id/editar', authMiddleware, viewEditProduct);
 
 router.post(
-  '/edit',
+  '/update',
   authMiddleware,
   uploadProduct.single('image'),
   validationProductEdit,
@@ -38,6 +38,6 @@ router.post(
   createProduct
 );
 
-router.post('/:id', /*authMiddleware,*/ removeProduct);
+router.post('/:id/delete', /*authMiddleware,*/ removeProduct);
 
 module.exports = router;

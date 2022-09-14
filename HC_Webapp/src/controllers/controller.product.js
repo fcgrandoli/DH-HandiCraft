@@ -98,7 +98,7 @@ const controllerProducto = {
   },
 
   removeProduct: async (req, res) => {
-    let productRemove = await product.findByPk(req.params.id);
+  let productRemove = await product.findByPk(req.params.id);
     if (!productRemove) {
       return res.redirect("/");
     } else {
@@ -106,7 +106,7 @@ const controllerProducto = {
         await image.destroy({ where: { id: req.params.id } }),
         await product.destroy({ where: { id: req.params.id } });
       return res.redirect("/");
-    }
+    } 
   },
 };
 
