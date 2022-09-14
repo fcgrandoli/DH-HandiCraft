@@ -88,34 +88,39 @@
     /* color: black;
      background-color: green; */
      text-align: center;
-     font-size: 30px;
+     font-size: 21px;
      display: block;
+     border-radius: 5px;
    }
- 
+  /* 8da38e
+   62909a
+   87a6ab
+   7cc6b0
+   79a49a*/
    .firstName.invalid .feed {
-     background-color: red;
-     color: aqua;
+     background-color: #A94832;
+     color:  white;             /* #7cc6b0; si no aceptan el aqua, este   */
    }
    .firstName.invalid .feed {
        display: block;
    }
 
    .valid .feed {
-     color: blue;
-     background-color: blueviolet
+     background-color: #7cc6b0;
+     color: white ;
    }
 
 
    .invalid .feed {                 /* agregado porque la passwd no me toma su clase */
-     background-color: red;
-     color: aqua;
+    background-color: #A94832;
+    color:  white;  
    }
    
 
  
    .lastName.invalid .feed {
-     background-color: red;
-     color: aqua;
+    background-color: #A94832;
+    color:  white; 
    }
    .lastName.invalid .feed {
        display: block;
@@ -125,8 +130,8 @@
 
  
    .userName.invalid .feed {
-     background-color: red;
-     color: aqua;
+    background-color: #A94832;
+    color:  white; 
    }
    .userName.invalid .feed {
        display: block;
@@ -137,8 +142,8 @@
 
  
    .email.invalid .feed {
-     background-color: red;
-     color: aqua;
+    background-color: #A94832;
+    color: white; 
    }
    .email.invalid .feed {
        display: block;
@@ -148,8 +153,8 @@
 
  
    .passwd.invalid .feed {
-     background-color: red;
-     color: aqua;
+    background-color: #A94832;
+    color:  white;  
    }
    .passwds.invalid .feed  {
        display: block;
@@ -160,16 +165,16 @@
    
  
    .avatar.invalid .feed {
-     background-color: red;
-     color: aqua;
+    background-color: #A94832;
+    color: white; 
    }
    .avatar.invalid .feed  {
        display: block;
    }
 
    .avatar.valid .feed{
-     color: blue;
-     background-color: blueviolet;
+    background-color: #7cc6b0;
+    color: white ;
      display: block;
    }
 
