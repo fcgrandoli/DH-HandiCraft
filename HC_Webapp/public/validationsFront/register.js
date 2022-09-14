@@ -207,7 +207,7 @@ inputs.passwd.addEventListener('input', function (e) {
 
 
 
-/* Seguir con en el avatar */
+
 
 inputs.avatar.addEventListener('input', function (e) {
     let field = e.target.parentElement;
@@ -221,17 +221,18 @@ inputs.avatar.addEventListener('input', function (e) {
    else if (!['jpg', 'jpeg', 'png', 'gif'].includes(files[0].type.split('/')[1])) {
         msg = 'No es un formato de imagen valida.'
     } else {
-        validmsg = 'El campo es correcto.'
+        validmsg = 'El campo es correcto'
     }
     if (msg) {
         field.classList.remove('valid');
         field.classList.add('invalid');
         feed.innerText = msg
     } else {
+        field.classList.remove('invalid');
+        field.classList.add('valid');
         feed.innerText = validmsg
     }
 })
-
 
 
 /* inputs.forms.addEventListener('submit', function (e) {
