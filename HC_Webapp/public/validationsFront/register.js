@@ -84,44 +84,35 @@ inputs.lastName.addEventListener('input', function (e) {
     }
 
 })
-/*   userName dejarlo para lo ultimo, no es olbigatorio
-userName.addEventListener('focus', function (e) {
+
+    
+inputs.userName.addEventListener('input', function (e) {     /* userName no obligatorio */
     let field = e.target.parentElement;
     let value = e.target.value;
     let feed = field.querySelector('.feed');
     let msg = null;
-    if (validator.isEmpty(value)) {
-        msg = 'El usuario no puede quedar vacío.'
+    let validmsg = field.querySelector('.feed-valid');        /* Variable validmsg seleccionando el elemento .feed-valid ya que el "valid" no me me tomaba el elemento, ni msj  ni el css) */
+    if (!validator.isLength(value, { min: 2 })) {
+        msg = 'El nombre de usuario debe contener mínimo dos caracteres.'
+    }else {
+        validmsg = 'El campo es correcto.'
     }
     if (msg) {
         field.classList.remove('valid');
         field.classList.add('invalid');
         feed.innerText = msg
     }
-}
-)
-
-userName.addEventListener('input', function (e) {
-    let field = e.target.parentElement;
-    let value = e.target.value;
-    let feed = field.querySelector('.feed');
-    let msg = null;
-    let validmsg = field.querySelector('.feed-valid');         Variable validmsg seleccionando el elemento .feed-valid ya que el "valid" no me me tomaba el elemento, ni msj  ni el css) 
-    if (!validator.isLength(value, { min: 3 })) {
-        msg = 'El nombre de usuario debe contener mínimo tres caracteres.'
-    }
     else {
-         validmsg = 'El campo es correcto.'
-    }
-    if (msg) {
-        feed.innerText = msg
-    } else {
         field.classList.remove('invalid');
         field.classList.add('valid');
         feed.innerText = validmsg
     }
-    
-    });           */
+
+})
+
+
+
+
     inputs.email.addEventListener('focus', function (e) {
     let field = e.target.parentElement;
     let value = e.target.value;
@@ -243,29 +234,34 @@ inputs.avatar.addEventListener('input', function (e) {
 
 
 
-/* forms.addEventListener('submit', function (e) {
+/* inputs.forms.addEventListener('submit', function (e) {
     e.preventDefault();
     let isCorrect = false
 
-    if (e.target.querySelectorAll('.field.valid').length === 1 ) {
+    if (!e.target.querySelectorAll('.field-valid').length ==5 ) {
         isCorrect = true
     }
 
     if (isCorrect) {
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+          )
         e.target.sumbit()
     } else {
         Swal.fire({
             title: 'OJO!!',
-            text: 'Volve y completa todos los campos.',
+            text: 'Volve y completa los campos obligatorios.',
             imageUrl: 'https://thumbs.dreamstime.com/b/emoji-emoticon-pulling-his-finger-one-lower-eyelid-further-down-meaning-alertness-be-watchful-you-do-not-fool-me-my-eye-168543578.jpg',
             imageWidth: 1000,
             imageHeight: 500,
             imageAlt: 'Custom image',
         })
     }
-}) */      // No es obligatorio, si sobra tiempo hacerlo, como el userName.
+})       // No es obligatorio, si sobra tiempo hacerlo, como el userName.
 
-
+*/
 
 
 

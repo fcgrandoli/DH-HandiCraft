@@ -88,7 +88,7 @@
     /* color: black;
      background-color: green; */
      text-align: center;
-     font-size: 21px;
+     font-size: 20px;
      display: block;
      border-radius: 5px;
    }
@@ -98,7 +98,7 @@
    7cc6b0
    79a49a*/
    .firstName.invalid .feed {
-     background-color: #A94832;
+     background-color: hsl(4, 72%, 50%);
      color:  white;             /* #7cc6b0; si no aceptan el aqua, este   */
    }
    .firstName.invalid .feed {
@@ -112,14 +112,14 @@
 
 
    .invalid .feed {                 /* agregado porque la passwd no me toma su clase */
-    background-color: #A94832;
+    background-color: hsl(4, 72%, 50%);
     color:  white;  
    }
    
 
  
    .lastName.invalid .feed {
-    background-color: #A94832;
+    background-color: hsl(4, 72%, 50%);
     color:  white; 
    }
    .lastName.invalid .feed {
@@ -130,7 +130,7 @@
 
  
    .userName.invalid .feed {
-    background-color: #A94832;
+    background-color: hsl(4, 72%, 50%);
     color:  white; 
    }
    .userName.invalid .feed {
@@ -142,7 +142,7 @@
 
  
    .email.invalid .feed {
-    background-color: #A94832;
+    background-color: hsl(4, 72%, 50%);
     color: white; 
    }
    .email.invalid .feed {
@@ -153,7 +153,7 @@
 
  
    .passwd.invalid .feed {
-    background-color: #A94832;
+    background-color: hsl(4, 72%, 50%);
     color:  white;  
    }
    .passwds.invalid .feed  {
@@ -165,7 +165,7 @@
    
  
    .avatar.invalid .feed {
-    background-color: #A94832;
+    background-color: hsl(4, 72%, 50%);
     color: white; 
    }
    .avatar.invalid .feed  {

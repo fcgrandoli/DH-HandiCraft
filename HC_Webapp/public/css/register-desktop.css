@@ -13,6 +13,7 @@
     border-radius: 0.25rem;
     background-color: hsl(4, 72%, 50%);
     color: rgb(252, 252, 252);
+    text-align: center;
   }
 
   #alert-msg {
