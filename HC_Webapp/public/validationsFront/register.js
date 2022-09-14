@@ -22,7 +22,7 @@ inputs.firstName.addEventListener('focus', function (e) {
 
 
 
-firstName.addEventListener('input', function (e) {
+inputs.firstName.addEventListener('input', function (e) {
     let field = e.target.parentElement;
     let value = e.target.value;
     let feed = field.querySelector('.feed');
@@ -44,7 +44,7 @@ firstName.addEventListener('input', function (e) {
 
 })
 
-lastName.addEventListener('focus', function (e) {
+inputs.lastName.addEventListener('focus', function (e) {
     let field = e.target.parentElement;
     let value = e.target.value;
     let feed = field.querySelector('.feed');
@@ -63,7 +63,7 @@ lastName.addEventListener('focus', function (e) {
 
 
 
-lastName.addEventListener('input', function (e) {
+inputs.lastName.addEventListener('input', function (e) {
     let field = e.target.parentElement;
     let value = e.target.value;
     let feed = field.querySelector('.feed');
@@ -122,7 +122,7 @@ userName.addEventListener('input', function (e) {
     }
     
     });           */
-email.addEventListener('focus', function (e) {
+    inputs.email.addEventListener('focus', function (e) {
     let field = e.target.parentElement;
     let value = e.target.value;
     let feed = field.querySelector('.feed');
@@ -142,7 +142,7 @@ email.addEventListener('focus', function (e) {
 
 
 
-email.addEventListener('input', function (e) {
+inputs.email.addEventListener('input', function (e) {
     let field = e.target.parentElement;
     let value = e.target.value;
     let feed = field.querySelector('.feed');
@@ -169,7 +169,7 @@ email.addEventListener('input', function (e) {
 
 
 
- passwd.addEventListener('focus', function (e) {
+inputs.passwd.addEventListener('focus', function (e) {
     let field = e.target.parentElement;
     let value = e.target.value;
     let feed = field.querySelector('.feed');
@@ -188,7 +188,7 @@ email.addEventListener('input', function (e) {
 
 
 
-passwd.addEventListener('input', function (e) {
+inputs.passwd.addEventListener('input', function (e) {
     let field = e.target.parentElement;
     let value = e.target.value;
     let feed = field.querySelector('.feed');
@@ -218,7 +218,7 @@ passwd.addEventListener('input', function (e) {
 
 /* Seguir con en el avatar */
 
-avatar.addEventListener('input', function (e) {
+inputs.avatar.addEventListener('input', function (e) {
     let field = e.target.parentElement;
     let files = e.target.files;
     let feed = field.querySelector('.feed');
