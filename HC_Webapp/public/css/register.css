@@ -22,7 +22,7 @@
     flex-direction: column;
   }
 
-  .input-fields {
+  .field {
     padding: 10px 10px;
     border-radius: 5px;
     text-decoration: none;
@@ -82,4 +82,113 @@
     background-color: #7cc6b0;
     color: white;
   }
+
+
+  .feed{
+    /* color: black;
+     background-color: green; */
+     text-align: center;
+     font-size: 30px;
+     display: block;
+   }
+ 
+   .firstName.invalid .feed {
+     background-color: red;
+     color: aqua;
+   }
+   .firstName.invalid .feed {
+       display: block;
+   }
+
+   .valid .feed {
+     color: blue;
+     background-color: blueviolet
+   }
+
+
+   .invalid .feed {                 /* agregado porque la passwd no me toma su clase */
+     background-color: red;
+     color: aqua;
+   }
+   
+
+ 
+   .lastName.invalid .feed {
+     background-color: red;
+     color: aqua;
+   }
+   .lastName.invalid .feed {
+       display: block;
+   }
+
+
+
+ 
+   .userName.invalid .feed {
+     background-color: red;
+     color: aqua;
+   }
+   .userName.invalid .feed {
+       display: block;
+   }
+
+ 
+
+
+ 
+   .email.invalid .feed {
+     background-color: red;
+     color: aqua;
+   }
+   .email.invalid .feed {
+       display: block;
+   }
+
+
+
+ 
+   .passwd.invalid .feed {
+     background-color: red;
+     color: aqua;
+   }
+   .passwds.invalid .feed  {
+       display: block;
+   }
+
+
+
+   
+ 
+   .avatar.invalid .feed {
+     background-color: red;
+     color: aqua;
+   }
+   .avatar.invalid .feed  {
+       display: block;
+   }
+
+   .avatar.valid .feed{
+     color: blue;
+     background-color: blueviolet;
+     display: block;
+   }
+
+   .aclaracion {
+     display: flex;
+     margin-top: 20px;
+     position:relative;
+     right: 105px;
+   }
+ 
+   
+   .actions {
+     margin: auto;
+     width: 80%;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     padding: 12px 15px;
+   }
+
+
 }
