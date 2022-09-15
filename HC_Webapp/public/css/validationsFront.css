@@ -1,0 +1,112 @@
+
+  .feed{
+    /* color: black;
+     background-color: green; */
+     text-align: center;
+     font-size: 20px;
+     display: block;
+     border-radius: 5px;
+   }
+  /* 8da38e
+   62909a
+   87a6ab
+   7cc6b0
+   79a49a*/
+   .firstName.invalid .feed {
+     background-color: hsl(4, 72%, 50%);
+     color:  white;             /* #7cc6b0; si no aceptan el aqua, este   */
+   }
+   .firstName.invalid .feed {
+       display: block;
+   }
+
+   .valid .feed {
+     background-color: #7cc6b0;
+     color: white ;
+   }
+
+
+   .invalid .feed {                 /* agregado porque la passwd no me toma su clase */
+    background-color: hsl(4, 72%, 50%);
+    color:  white;  
+   }
+   
+
+ 
+   .lastName.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white; 
+   }
+   .lastName.invalid .feed {
+       display: block;
+   }
+
+
+
+ 
+   .userName.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white; 
+   }
+   .userName.invalid .feed {
+       display: block;
+   }
+
+ 
+
+
+ 
+   .email.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color: white; 
+   }
+   .email.invalid .feed {
+       display: block;
+   }
+
+
+
+ 
+   .passwd.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white;  
+   }
+   .passwds.invalid .feed  {
+       display: block;
+   }
+
+
+
+   
+ 
+   .avatar.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color: white; 
+   }
+   .avatar.invalid .feed  {
+       display: block;
+   }
+
+   .avatar.valid .feed{
+    background-color: #7cc6b0;
+    color: white ;
+     display: block;
+   }
+
+   .aclaracion {
+     display: flex;
+     margin-top: 20px;
+     position:relative;
+     right: 105px;
+   }
+ 
+   
+   .actions {
+     margin: auto;
+     width: 80%;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     padding: 12px 15px;
+   }
+
