@@ -12,7 +12,6 @@ const uploadProduct = require('../middlewares/productUpload.js');
 const validationProduct = require('../validations/productCreate');
 const validationProductEdit = require('../validations/productEdit');
 const authMiddleware = require('../middlewares/authMiddleware.js');
-const guestMiddleware = require('../middlewares/guestMiddleware.js');
 
 router.get('/', viewProduct);
 
