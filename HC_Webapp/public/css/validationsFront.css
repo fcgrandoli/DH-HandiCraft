@@ -110,3 +110,66 @@
      padding: 12px 15px;
    }
 
+   .name.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white;            
+  }
+  .name.invalid .feed {
+      display: block;
+  }
+  .valid .feed {
+    background-color: #7cc6b0;
+    color: white ;
+  }
+  .invalid .feed {               
+   background-color: hsl(4, 72%, 50%);
+   color:  white;  
+  }
+
+  .descShort.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white;            
+  }
+  .descShort.invalid .feed {
+      display: block;
+  }
+  .valid .feed {
+    background-color: #7cc6b0;
+    color: white ;
+  }
+  .invalid .feed {               
+   background-color: hsl(4, 72%, 50%);
+   color:  white;  
+  }
+
+  .descLarge.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white;            
+  }
+  .descLarge.invalid .feed {
+      display: block;
+  }
+  .valid .feed {
+    background-color: #7cc6b0;
+    color: white ;
+  }
+  .invalid .feed {               
+   background-color: hsl(4, 72%, 50%);
+   color:  white;  
+  }
+
+  .price.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white;            
+  }
+  .price.invalid .feed {
+      display: block;
+  }
+  .valid .feed {
+    background-color: #7cc6b0;
+    color: white ;
+  }
+  .invalid .feed {               
+   background-color: hsl(4, 72%, 50%);
+   color:  white;  
+  }
