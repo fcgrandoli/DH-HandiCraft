@@ -4,7 +4,9 @@
   <link rel="stylesheet" type="text/css" href="/css/productCreate.css" />
   <link rel="stylesheet" type="text/css" href="/css/productCreate-tablet.css" />
   <link rel="stylesheet" type="text/css" href="/css/productCreate-desktop.css" />
-  <script src="/validationsFront/productCreate.js"></script>
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>   
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="/validationsFront/productCreate.js"></script>
   <%- include ('../partials/header') %>
   <body>
     <main>
@@ -15,97 +17,98 @@
         <div class = "errores">
              <ul></ul>
         </div>
-        <form
-          action="/viewProduct/createProduct"
-          method="post"
-          class="fields"
-          id="create"
-          enctype="multipart/form-data"
+        <form action="/viewProduct/createProduct" method="post" class="fields" id="news" enctype="multipart/form-data"
         >
-          <!--           <input
-            class="input-fields"
-            type="text"
-            name="id"
-            readonly="readonly"
-          /> -->
-          <label for="">Nombre:</label>
+   <div class="name">
+          <label for="name">Nombre:</label>
           <input
-            class="input-fields name" 
+            class="input-field" 
             type="text"
             name="name"
             autocomplete="off"
             placeholder="Nombre del producto"
             value="<%= locals.oldData ? oldData.name : null %>"
           />
+          <p class="feed" ></p>
           <% if (errors.name) { %>
           <p class="msg-error"><%= locals.errors.name.msg %></p>
           <% } %>
-
-          <label for="">Descripcion corta:</label>
+        </div>
+        <div class="descShort">
+          <label for="descShort">Descripcion corta:</label>
           <input
-            class="input-fields"
+            class="input-field"
             type="text"
             name="descShort"
             autocomplete="off"
             placeholder="Descripcion breve"
             value="<%= locals.oldData ? oldData.descShort : null %>"
           />
+          <p class="feed" ></p>
           <% if (errors.descShort) { %>
           <p class="msg-error"><%= locals.errors.descShort.msg %></p>
           <% } %>
-
-          <label for="">Descripcion larga:</label>
+        </div>
+        <div class="descLarge">
+          <label for="descLarge">Descripcion larga:</label>
           <input
-            class="input-fields descLarge"
+            class="input-field"
             type="text"
             name="descLarge"
             autocomplete="off"
             placeholder="Descripcion larga"
             value="<%= locals.oldData ? oldData.descLarge : null %>"
           />
-
+          <p class="feed" ></p>
           <% if (errors.descLarge) { %>
           <p class="msg-error"><%= locals.errors.descLarge.msg %></p>
           <% } %>
-
-          <label for="">Precio:</label>
+        </div>
+        <div class="price">
+          <label for="price">Precio:</label>
           <input
-            class="input-fields"
+            class="input-field"
             type="number"
             name="price"
             autocomplete="off"
             placeholder="Precio"
             value="<%= locals.oldData ? oldData.price : null %>"
           />
+          <p class="feed" ></p>
           <% if (errors.price) { %>
           <p class="msg-error"><%= locals.errors.price.msg %></p>
           <% } %>
-
-          <label for="">Descuento:</label>
+        </div>
+        <div class="discount">
+          <label for="discount">Descuento:</label>
           <input
-            class="input-fields"
+            class="input-field"
             type="number"
             name="discount"
             autocomplete="off"
             placeholder="Descuento (opcional)"
             value="<%= locals.oldData ? oldData.discount : null %>"
           />
+          <p class="feed" ></p>
           <% if (errors.discount) { %>
           <p class="msg-error"><%= locals.errors.discount.msg %></p>
           <% } %>
-          <label for="">Stock:</label>
+        </div>
+        <div class="stock">
+          <label for="stock">Stock:</label>
           <input
-            class="input-fields"
+            class="input-field"
             type="number"
             name="stock"
             autocomplete="off"
             placeholder="Cantidad de stock (opcional)"
             value="<%= locals.oldData ? oldData.stock : null %>"
           />
+          <p class="feed" ></p>
           <% if (errors.discount) { %>
           <p class="msg-error"><%= locals.errors.stock.msg %></p>
           <% } %>
-
+        </div>
           <div class="image-fields-container">
             <label for="image">Foto del producto:</label>
             <input
@@ -116,6 +119,7 @@
               autocomplete="off"
             />
           </div>
+          <p class="feed" ></p>
           <% if (errors.image) { %>
           <p class="msg-error"><%= locals.errors.image.msg %></p>
           <% } %>
