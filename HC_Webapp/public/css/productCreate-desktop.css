@@ -71,7 +71,6 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    
     margin: auto;
     margin-top: 50px;
   }
@@ -87,13 +86,13 @@
     border: none;
   }
 
-  .input-fields {
+  .input-field {
     text-align: left;
     font-size: 16px;
     height: 40px;
     top: 26px;
     left: 5px;
-    padding: 5px 5px;
+    padding: 26px 56px;
     color: black;
     border-radius: 0.25rem;
     border: none;
