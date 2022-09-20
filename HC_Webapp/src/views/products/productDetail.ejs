@@ -54,16 +54,11 @@
             <form
               class="fields"
               method="POST"
-              action="/deleteProduct/<%= productList.id%>"
+              action="/viewProduct/<%= productList.id%>/delete"
             >
               <input class="btn-delete" type="submit" value="ELIMINAR" />
-              <!--        <a
-                class="btn-delete"
-                href="/viewProduct/<%= productList.id%>/eliminar"
-                >ELIMINAR</a
-              > -->
+              <% } %>
             </form>
-            <% } %>
             <div class="text">
               <div class="desc-short">
                 <p><%= productList.descShort %></p>

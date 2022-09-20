@@ -12,7 +12,6 @@ const uploadProduct = require('../middlewares/productUpload.js');
 const validationProduct = require('../validations/productCreate');
 const validationProductEdit = require('../validations/productEdit');
 const authMiddleware = require('../middlewares/authMiddleware.js');
-const guestMiddleware = require('../middlewares/guestMiddleware.js');
 
 router.get('/', viewProduct);
 
@@ -21,7 +20,7 @@ router.get('/:id/mostrar', viewProduct);
 router.get('/:id/editar', authMiddleware, viewEditProduct);
 
 router.post(
-  '/edit',
+  '/update',
   authMiddleware,
   uploadProduct.single('image'),
   validationProductEdit,
@@ -38,6 +37,6 @@ router.post(
   createProduct
 );
 
-router.post('/:id', /*authMiddleware,*/ removeProduct);
+router.post('/:id/delete', authMiddleware, removeProduct);
 
 module.exports = router;

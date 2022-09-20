@@ -1,88 +1,3 @@
-@media only screen and (min-width: 361px) {
-  * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Calibri';
-  }
-
-  body {
-    background-color: #87a6ab;
-    min-height: 90vh;
-    margin-top: 0px;
-  }
-
-  main {
-    margin-top: 5px;
-  }
-
-  .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .field {
-    padding: 10px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    border: none;
-  }
-
-  .image-fields-container {
-    margin: auto;
-    width: 40%;
-    display: flex;
-    justify-content: flex-start;
-    padding: 12px 15px;
-  }
-  .image-upload {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
-  label[for='user'],
-  label[for='password'],
-  label[for='firstName'],
-  label[for='lastName'],
-  label[for='image'],
-  label[for='email'] {
-    text-align: center;
-    font-size: 16px;
-    top: 26px;
-    left: 5px;
-    padding-bottom: 10px;
-    color: white;
-  }
-
-  .user,
-  .passwords,
-  .firstName,
-  .email,
-  .lastName {
-    margin: auto;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 12px 15px;
-  }
-
-  label {
-    padding-left: 10px;
-  }
-
-  .submit {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px 10px;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    background-color: #7cc6b0;
-    color: white;
-  }
-
 
   .feed{
     /* color: black;
@@ -195,5 +110,66 @@
      padding: 12px 15px;
    }
 
+   .name.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white;            
+  }
+  .name.invalid .feed {
+      display: block;
+  }
+  .valid .feed {
+    background-color: #7cc6b0;
+    color: white ;
+  }
+  .invalid .feed {               
+   background-color: hsl(4, 72%, 50%);
+   color:  white;  
+  }
 
-}
+  .descShort.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white;            
+  }
+  .descShort.invalid .feed {
+      display: block;
+  }
+  .valid .feed {
+    background-color: #7cc6b0;
+    color: white ;
+  }
+  .invalid .feed {               
+   background-color: hsl(4, 72%, 50%);
+   color:  white;  
+  }
+
+  .descLarge.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white;            
+  }
+  .descLarge.invalid .feed {
+      display: block;
+  }
+  .valid .feed {
+    background-color: #7cc6b0;
+    color: white ;
+  }
+  .invalid .feed {               
+   background-color: hsl(4, 72%, 50%);
+   color:  white;  
+  }
+
+  .price.invalid .feed {
+    background-color: hsl(4, 72%, 50%);
+    color:  white;            
+  }
+  .price.invalid .feed {
+      display: block;
+  }
+  .valid .feed {
+    background-color: #7cc6b0;
+    color: white ;
+  }
+  .invalid .feed {               
+   background-color: hsl(4, 72%, 50%);
+   color:  white;  
+  }

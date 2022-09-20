@@ -13,8 +13,8 @@ const validationProduct = [
     .notEmpty()
     .withMessage("La descripcion no puede quedar vacía")
     .bail()
-    .isLength({ min: 2 })
-    .withMessage("La descripcion debe contener mínimo dos caracteres.")
+    .isLength({ min: 5 })
+    .withMessage("La descripcion debe contener mínimo cinco caracteres.")
     .bail(),
   body("descLarge")
     .notEmpty()

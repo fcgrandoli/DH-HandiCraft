@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include ('../partials/head') %>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>   
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="/validationsFront/userLogin.js"></script>
+   <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
   <link rel="stylesheet" type="text/css" href="/css/login.css" />
   <link rel="stylesheet" type="text/css" href="/css/login-tablet.css" />
   <link rel="stylesheet" type="text/css" href="/css/login-desktop.css" />
@@ -11,17 +15,18 @@
         <div class="banner">
           <img src="/images/banner.jpg" />
         </div>
-        <form action="userLogin?_method=POST" method="POST">
+        <form class="fields" action="userLogin?_method=POST" method="POST" id = "news">
           <div class="user">
             <label for="user">Nombre de usuario</label>
             <input
-              class="input-fields"
+              class="input-field"
               type="text"
               name="userName"
               autocomplete="off"
               placeholder="Username"
               value="<%= locals.oldData ? oldData.userName : null %>"
             />
+            <p class="feed" ></p>
             <% if (errors.userName) { %>
             <p class="msg-error"><%= locals.errors.userName.msg %></p>
             <% } %>
@@ -29,13 +34,14 @@
           <div class="passwords">
             <label for="password">Ingresar contraseña</label>
             <input
-              class="input-fields"
+              class="input-field"
               type="password"
               name="passwd"
               autocomplete="off"
               placeholder="Password"
               value="<%= locals.oldData ? oldData.passwd : null %>"
             />
+            <p class="feed" ></p>
             <% if (errors.passwd) { %>
             <p class="msg-error"><%= errors.passwd.msg %></p>
             <% } %>

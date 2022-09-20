@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include ('../partials/head') %>
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>   
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="/validationsFront/register.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/register.css" />
   <link
     rel="stylesheet"
@@ -22,33 +25,38 @@
         <form
           class="fields"
           method="POST"
+          id = "news"
           action="/registerUser?_method=POST"
           enctype="multipart/form-data"
         >
           <div class="firstName">
             <label for="user">Nombre:</label>
-            <input class="input-fields" type="text" name="firstName" placeholder="First name" value="<%= locals.oldData ? oldData.firstName : null %>">
+            <input class="field" type="text" name="firstName" placeholder="First name" value="<%= locals.oldData ? oldData.firstName : null %>">
+            <p class="feed" ></p>
             <% if (errors.firstName) { %>
               <p class="msg-error"><%= locals.errors.firstName.msg %></p>
               <% } %>
           </div>
           <div class="lastName">
             <label for="user">Apellido:</label>
-            <input class="input-fields" type="text" name="lastName" placeholder="Last name" value="<%= locals.oldData ? oldData.lastName : null %>">
+            <input class="field" type="text" name="lastName" placeholder="Last name" value="<%= locals.oldData ? oldData.lastName : null %>">
+            <p class="feed" ></p>
             <% if (errors.lastName) { %>
               <p class="msg-error"><%= locals.errors.lastName.msg %></p>
               <% } %>
           </div>
           <div class="user">
             <label for="user">Nombre de usuario:</label>
-            <input class="input-fields" type="text" name="userName" placeholder="Username" value="<%= locals.oldData ? oldData.userName : null %>">
+            <input class="field" type="text" name="userName" placeholder="Username" value="<%= locals.oldData ? oldData.userName : null %>">
+            <p class="feed" ></p>
             <% if (errors.userName) { %>
               <p class="msg-error"><%= locals.errors.userName.msg %></p>
               <% } %>
           </div>
           <div class="email">
             <label for="user">Correo electronico:</label>
-            <input class="input-fields" type="email" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
+            <input class="field" type="email" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
+            <p class="feed" ></p>
             <% if (errors.email) { %>
               <p class="msg-error"><%= locals.errors.email.msg %></p>
               <% } %>
@@ -56,16 +64,18 @@
           <div class="passwords">
             <label for="password">Ingresar contraseña:</label>
             <input
-              class="input-fields"
+              class="field"
               type="password"
               name="passwd" placeholder="Password" value="<%= locals.oldData ? oldData.passwd : null %>">
+              <p class="feed" ></p>
               <% if (errors.passwd) { %>
                 <p class="msg-error"><%= locals.errors.passwd.msg %></p>
                 <% } %>
           </div>
           <div class="image-fields-container">
             <label for="image">Foto de perfil:</label>
-            <input class="image-upload" type="file" name="avatar" />
+            <input class="image-upload" type="file" name="avatar" id="avatar"/>
+            <p class="feed" ></p>
                       <% if (errors.avatar) { %>
             <p class="msg-error"><%= locals.errors.avatar.msg %></p>
             <% } %>
