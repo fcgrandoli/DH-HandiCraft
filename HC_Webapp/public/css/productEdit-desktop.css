@@ -38,18 +38,18 @@
     margin-top: 95px;
   }
 
-  #container {
+  .container {
     position: relative;
     display: flex;
-       }
+  }
 
-  .half1{
+  .half1 {
     display: flex;
-    justify-content:  flex-end;
+    justify-content: flex-end;
     align-items: center;
     width: 50vw;
   }
-  .half2{
+  .half2 {
     display: flex;
     justify-content: flex-start;
     width: 50vw;

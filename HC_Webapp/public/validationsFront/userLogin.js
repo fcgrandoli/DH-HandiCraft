@@ -1,7 +1,6 @@
 let forms = document.forms.news     /* traer formularios */;
 
 let inputs = forms.elements      /* traer los inputs de formularios */;
-console.log(inputs);
 
 inputs.userName.addEventListener('input', function (e) {     /* userName no obligatorio */
     let field = e.target.parentElement;

@@ -97,7 +97,7 @@ inputs.price.addEventListener('input', function (e) {
     }
 
 })
-inputs.avatar.addEventListener('input', function (e) {
+inputs.image.addEventListener('input', function (e) {
     let field = e.target.parentElement;
     let files = e.target.files;
     let feed = field.querySelector('.feed');

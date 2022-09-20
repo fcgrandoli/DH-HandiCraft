@@ -119,11 +119,11 @@
               id="image"
               autocomplete="off"
             />
+            <p class="feed" ></p>
+            <% if (errors.image) { %>
+            <p class="msg-error"><%= locals.errors.image.msg %></p>
+            <% } %>
           </div>
-          <p class="feed" ></p>
-          <% if (errors.image) { %>
-          <p class="msg-error"><%= locals.errors.image.msg %></p>
-          <% } %>
           <input class="submit" type="submit" value="Crear producto" />
         </form>
       </div>
