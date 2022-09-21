@@ -8,6 +8,9 @@ const userRoute = require('./src/routes/user.routes.js');
 const productRoute = require('./src/routes/product.routes.js');
 const path = require('path');
 const methodOverride = require('method-override');
+const cors = require('cors');
+
+app.use('/api/users', require ('./src/routes/apis/usersRoutes'));
 
 app.set('view engine', 'ejs');
 
@@ -26,6 +29,7 @@ app.use(
   })
 );
 app.use(cookie());
+app.use(cors())
 
 app.use(require('./src/middlewares/userLoggedIn.js'));
 
