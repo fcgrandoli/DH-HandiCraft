@@ -23,18 +23,6 @@
     background-color: #62909a;
   }
 
-  .banner {
-    width: 90%;
-    height: 75px;
-    background-color: whitesmoke;
-    margin: auto;
-  }
-
-  .banner img {
-    width: 100%;
-    height: 75px;
-  }
-
   .logo {
     display: flex;
     align-items: center;
