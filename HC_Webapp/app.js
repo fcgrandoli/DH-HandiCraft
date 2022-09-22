@@ -11,6 +11,7 @@ const methodOverride = require('method-override');
 const cors = require('cors');
 
 app.use('/api/users', require ('./src/routes/apis/usersRoutes'));
+app.use('/api/products', require ('./src/routes/apis/apiproduct.routes.js'));
 
 app.set('view engine', 'ejs');
 
