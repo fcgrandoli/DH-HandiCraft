@@ -35,8 +35,8 @@ const controllerHome = {
         all: true,
       },
       where: {
-        categoria: {
-          [Op.like]: `%${req.query.categoria}%`,
+       collection: {
+          [Op.like]: `%${req.query.collection}%`,
         },
       },
     });
@@ -44,12 +44,52 @@ const controllerHome = {
       productList: productList,
     });
   },
- categorias:(req, res) =>{
+ collection: (req, res) =>{/*async (req, res) =>{
+  let collections = [...new Set(count.map(data => data.collection))];
+  for (collection of collections) {
+    const products = await product.findAll({
+      include: {
+        all: true,
+      },
+      where: {
+        collection: {
+          [Op.like]: collection,
+        },
+      },
+    });
+    result.push({
+      Count: products.length,
+      Categoria: collection,
+      products,
+    });
+  }*/
    return res.render("collectionList");
   },
   mostrarMantenimiento: (req, res) => {
     return res.render("enMantenimiento");
   },
+  
 };
 
 module.exports = controllerHome;
+/*
+ let collections = [...new Set(count.map(data => data.collection))];
+
+      for (collection of collections) {
+        const products = await product.findAll({
+          include: {
+            all: true,
+          },
+          where: {
+            collection: {
+              [Op.like]: collection,
+            },
+          },
+        });
+        result.push({
+          Count: products.length,
+          Categoria: collection,
+          products,
+        });
+      }
+       */

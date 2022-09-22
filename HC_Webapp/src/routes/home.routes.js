@@ -8,7 +8,7 @@ router.get("/enMantenimiento", controllerHome.mostrarMantenimiento);
 
 router.get("/buscar", controllerHome.searchProduct);
 
-router.get("/collectionList", controllerHome.categorias); 
+router.get("/collectionList", controllerHome.collection); 
 
 router.get("/categorias", controllerHome.searchProductByCollection);   
 
