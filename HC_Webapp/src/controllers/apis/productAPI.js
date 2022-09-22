@@ -27,12 +27,18 @@ const productApi = {
             },
           },
         });
+        products.forEach((product, index, products) => {
+          let path = products[index].images[0].path;
+          products[index].images[0].path =
+            'http://localhost:3000/images/' + path;
+        });
         result.push({
           Count: products.length,
           Categoria: collection,
           products,
         });
       }
+
       if (result) {
         return res.status(200).json(result);
       } else {
