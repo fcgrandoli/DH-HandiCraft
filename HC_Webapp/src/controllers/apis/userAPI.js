@@ -1,17 +1,25 @@
 const { user, image } = require('../../database/models');
 const { Op } = require("sequelize");
-const {hashSync} = require("bcryptjs");
 
 
 const userApi = {
     list: async (req, res) => {
       try {
+        let result = [];
         let users = await user.findAll({
             include: {
                 all: true
             }
         });
-        return res.status(200).json(users);
+        result.push({
+          'Cantidad total de usuarios': users.length,
+          Usuarios: users
+        });
+        if (result) {
+          return res.status(200).json(result);
+        } else {
+          return res.status(404).json('No hay usuarios.');
+        }
       } catch (error) {
         return res.status(500).json(error);
       }
