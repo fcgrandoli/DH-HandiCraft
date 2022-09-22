@@ -4,8 +4,12 @@ const controllerHome = require("../controllers/controller.home.js");
 
 router.get("/", controllerHome.mostrarHome);
 
-router.get("/enConstruccion", controllerHome.mostrarConstruccion);
+router.get("/enMantenimiento", controllerHome.mostrarMantenimiento);
 
 router.get("/buscar", controllerHome.searchProduct);
+
+router.get("/collectionList", controllerHome.categorias); 
+
+router.get("/categorias", controllerHome.searchProductByCollection);   
 
 module.exports = router;

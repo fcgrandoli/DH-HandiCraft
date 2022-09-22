@@ -29,8 +29,23 @@ const controllerHome = {
       productList: productList,
     });
   },
-  mostrarConstruccion: (req, res) => {
-    return res.render("enConstruccion");
+  searchProductByCollection: async (req, res) => {
+        let productList = await product.findAll({
+      include: {
+        all: true,
+      },
+      where: {
+        categoria: {
+          [Op.like]: `%${req.query.categoria}%`,
+        },
+      },
+    });
+    return res.render("categorias", {
+      productList: productList,
+    });
+  },
+ categorias:(req, res) =>{
+   return res.render("collectionList");
   },
   mostrarMantenimiento: (req, res) => {
     return res.render("enMantenimiento");

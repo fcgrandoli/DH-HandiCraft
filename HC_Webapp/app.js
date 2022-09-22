@@ -40,8 +40,9 @@ app.use('/viewProduct', productRoute);
 app.post('/createProduct', productRoute);
 app.use('/cart', cartRoute);
 app.post('/cart', cartRoute);
-app.use('/enconstruccion', homeRoute);
-app.use('/enmantenimiento', homeRoute);
+app.use('/collectionList', homeRoute);
+app.use('/categorias', homeRoute);
+app.use('/enMantenimiento', homeRoute);
 
 app.listen(process.env.PORT || 3000, () =>
   console.log('Server running (Port: 3000)')

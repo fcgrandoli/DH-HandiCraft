@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./partials/head') %>
+  <link rel="stylesheet" type="text/css" href="/css/home.css" />
+  <link rel="stylesheet" type="text/css" href="/css/home-tablet.css" />
+  <link rel="stylesheet" type="text/css" href="/css/home-desktop.css" />
+  <body>
+    <div id="container">
+      <%- include ('./partials/header') %>
+      <main>
+        <div class="banner">
+          <img src="/images/Banner.jpg" />
+        </div>
+        <section class="section-prd">
+            <a class="nav-button" href="/categorias">Disney</a>
+            <a class="nav-button" href="/categorias">Flores</a>
+            <a class="nav-button" href="/categorias">Pajaros</a>
+            <a class="nav-button" href="/categorias">vajilla</a>
+        </section>
+      </main>
+    </div>
+    <%- include ('./partials/footer') %>
+  </body>
+</html>
