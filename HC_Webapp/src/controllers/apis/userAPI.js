@@ -16,10 +16,10 @@ const userApi = {
         result.push({
           'Cantidad total de usuarios': count.length,
           Usuarios: count.map(function(element){
-    return `Id: ${element.id}   Nombre: ${element.firstName}     Email: ${element.email}`
+    return `[Id: ${element.id}]   [Nombre: ${element.firstName}]     [Email: ${element.email}]`
 }),
 detalle: count.map(function(element){
-  return `${element.email}     Para mas detalle   =>   http://localhost:3000/api/users/${element.id}`
+  return `[${element.email}]   =>    Para mas detalle   =>   http://localhost:3000/api/users/${element.id}`
         }),})
 
         if (result) {
