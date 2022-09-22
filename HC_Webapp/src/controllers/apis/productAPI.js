@@ -27,6 +27,7 @@ const productApi = {
             },
           },
         });
+
         products.forEach((product, index, products) => {
           let path = products[index].images[0].path;
           products[index].images[0].path =
@@ -53,6 +54,8 @@ const productApi = {
       let productList = await product.findByPk(req.params.id, {
         include: { all: true },
       });
+      let image = productList.images[0].path;
+      productList.images[0].path = 'http://localhost:3000/images/' + image;
       if (productList) {
         return res.status(200).json(productList);
       } else {
