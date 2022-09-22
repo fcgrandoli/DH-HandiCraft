@@ -6,15 +6,22 @@ const userApi = {
     list: async (req, res) => {
       try {
         let result = [];
-        let users = await user.findAll({
+        let count = await user.findAll({
             include: {
                 all: true
-            }
-        });
+            },
+        })
+       
+
         result.push({
-          'Cantidad total de usuarios': users.length,
-          Usuarios: users
-        });
+          'Cantidad total de usuarios': count.length,
+          Usuarios: count.map(function(element){
+    return `Id: ${element.id}   Nombre: ${element.firstName}     Email: ${element.email}`
+}),
+detalle: count.map(function(element){
+  return `${element.email}     Para mas detalle   =>   http://localhost:3000/api/users/${element.id}`
+        }),})
+
         if (result) {
           return res.status(200).json(result);
         } else {
