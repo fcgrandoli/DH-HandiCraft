@@ -27,8 +27,7 @@ module.exports = {
         },
         isAdmin: {
           type: Sequelize.BOOLEAN,
-          defaultValue: false
-        },
+         },
         avatar: {
           type: Sequelize.TEXT,
           allowNull:true

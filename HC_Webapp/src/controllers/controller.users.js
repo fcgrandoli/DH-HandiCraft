@@ -53,7 +53,6 @@ const controllerLogin = {
           userName: req.body.userName,
           email: req.body.email,
           passwd: hashSync(req.body.passwd, 10),
-          isAdmin: '',
           avatar: !req.file ? userIMG.avatar : req.file.filename,
         });
         await user.update(tempUser, {
@@ -122,7 +121,7 @@ const controllerLogin = {
         userName: req.body.userName,
         email: req.body.email,
         passwd: hashSync(req.body.passwd, 10),
-        isAdmin: '',
+        isAdmin: false,
         avatar: !req.file ? 'blank.jpg' : req.file.filename,
       });
       //req.body.isAdmin = string(req.body.userName).toLocaleLowerCase().includes('@hc') //verificamos si es ADMIN

@@ -8,7 +8,7 @@ module.exports = {
         delete user.loggedIn
         
         return Object({
-          ...user,isAdmin: false 
+          ...user
         })
       } )
       await queryInterface.bulkInsert('Users', users, {});
