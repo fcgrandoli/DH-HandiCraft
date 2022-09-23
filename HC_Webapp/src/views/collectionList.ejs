@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./partials/head') %>
+  <link rel="stylesheet" type="text/css" href="/css/home.css" />
+  <link rel="stylesheet" type="text/css" href="/css/home-tablet.css" />
+  <link rel="stylesheet" type="text/css" href="/css/home-desktop.css" />
+  <body>
+    <div id="container">
+      <%- include ('./partials/header') %>
+      <main>
+        <section class="section-prd">
+          <% for (let i = 0; i < collections.length; i++) { %>
+            <form action="/categorias" method="GET">
+              <input
+                type="hidden"
+                name="collection"
+                value= "<%= collections[i] %>"
+                 />
+              <input type="submit" value= "<%= collections[i] %>"  />
+            </form>
+            <% } %>
+        </section>
+      </main>
+    </div>
+    <%- include ('./partials/footer') %>
+  </body>  
+</html>

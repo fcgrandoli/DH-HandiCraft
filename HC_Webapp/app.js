@@ -45,7 +45,8 @@ app.use('/viewProduct', productRoute);
 app.post('/createProduct', productRoute);
 app.use('/cart', cartRoute);
 app.post('/cart', cartRoute);
-app.use('/enconstruccion', homeRoute);
+app.use('/collectionList', homeRoute);
+app.use('/categorias', homeRoute);
 app.use('/enmantenimiento', homeRoute);
 
 app.listen(process.env.PORT || 3000, () =>

@@ -49,7 +49,7 @@ const productApi = {
       }
 
       if (result) {
-        return res.status(200).json({result});
+        return res.status(200).json(collections.length);
       } else {
         return res.status(404).json('No hay productos.');
       }

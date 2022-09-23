@@ -1,6 +1,6 @@
-const { indexProduct } = require("../model/products.model");
-const { product } = require("../database/models/index");
-const { Op } = require("sequelize");
+const { indexProduct } = require('../model/products.model');
+const { product } = require('../database/models/index');
+const { Op } = require('sequelize');
 
 const controllerHome = {
   mostrarHome: async (req, res) => {
@@ -10,7 +10,7 @@ const controllerHome = {
       },
     });
 
-    return res.render("home", {
+    return res.render('home', {
       productList: productList,
     });
   },
@@ -25,15 +25,41 @@ const controllerHome = {
         },
       },
     });
-    return res.render("homeSearch", {
+    return res.render('homeSearch', {
       productList: productList,
     });
   },
-  mostrarConstruccion: (req, res) => {
-    return res.render("enConstruccion");
+  searchProductByCollection: async (req, res) => {
+    let productList = await product.findAll({
+      include: {
+        all: true,
+      },
+      where: {
+        collection: {
+          [Op.like]: `%${req.query.collection}%`,
+        },
+      },
+    });
+    return res.render('home', {
+      productList: productList,
+    });
+  },
+  collection: async (req, res) => {
+    let productList = await product.findAll({
+      include: {
+        all: true,
+      },
+    });
+
+    let collections = [...new Set(productList.map(data => data.collection))];
+    //  return res.render("collectionList");
+    //res.send(collections.length);
+    return res.render('collectionList', {
+      collections: collections,
+    });
   },
   mostrarMantenimiento: (req, res) => {
-    return res.render("enMantenimiento");
+    return res.render('enMantenimiento');
   },
 };
 
