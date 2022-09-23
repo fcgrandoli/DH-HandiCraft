@@ -44,7 +44,7 @@ const userApi = {
         data.id = result.id;
         data.firstName = result.firstName;
         data.userName = result.userName;
-        data.avatar = "http://localhost:3000/assets/avatars/" + result.avatar[0].path
+        data.avatar = "http://localhost:3000/assets/avatars/" + result.avatar
         if (data) {
           return res.status(200).json(data);
        } else {
