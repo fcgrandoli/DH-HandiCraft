@@ -12,10 +12,16 @@
           <img src="/images/Banner.jpg" />
         </div>
         <section class="section-prd">
-            <a class="nav-button" href="/categorias">Disney</a>
-            <a class="nav-button" href="/categorias">Flores</a>
-            <a class="nav-button" href="/categorias">Pajaros</a>
-            <a class="nav-button" href="/categorias">vajilla</a>
+          <% for (let i = 0; i < collections.length; i++) { %>
+            <form action="/categorias" method="GET">
+              <input
+                type="hidden"
+                name="collection"
+                value= "<%= collections[i] %>"
+                 />
+              <input type="submit" value= "<%= collections[i] %>"  />
+            </form>
+            <% } %>
         </section>
       </main>
     </div>

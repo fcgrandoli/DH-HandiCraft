@@ -40,34 +40,29 @@ const controllerHome = {
         },
       },
     });
-    return res.render("categorias", {
+    return res.render("home", {
       productList: productList,
     });
   },
- collection: (req, res) =>{/*async (req, res) =>{
-  let collections = [...new Set(count.map(data => data.collection))];
-  for (collection of collections) {
-    const products = await product.findAll({
-      include: {
-        all: true,
-      },
-      where: {
-        collection: {
-          [Op.like]: collection,
-        },
-      },
-    });
-    result.push({
-      Count: products.length,
-      Categoria: collection,
-      products,
-    });
-  }*/
-   return res.render("collectionList");
+ collection:async (req, res) =>{
+  let productList = await product.findAll({
+    include: {
+      all: true,
+    },
+  })
+ 
+  let collections = [...new Set(productList.map(data => data.collection))];
+   //  return res.render("collectionList");
+   //res.send(collections.length);
+   return res.render("collectionList", {
+    collections: collections
+  });
   },
+  
   mostrarMantenimiento: (req, res) => {
     return res.render("enMantenimiento");
   },
+
   
 };
 
