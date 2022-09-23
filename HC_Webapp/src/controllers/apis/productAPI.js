@@ -27,21 +27,29 @@ const productApi = {
             },
           },
         });
-
-        products.forEach((product, index, products) => {
-          let path = products[index].images[0].path;
-          products[index].images[0].path =
-            'http://localhost:3000/images/' + path;
+        let Productos = products.map(product => {
+          return Object({
+            ID: product.id,
+            Nombre: product.name,
+            Precio: product.price,
+            Descuento: product.discount,
+            'Descripcion Corta': product.descShort,
+            'Descripcion Larga': product.descLarge,
+            Stock: product.stock,
+            Categoria: product.collection,
+            Imagen: `http://localhost:3000/images/${product.images[0].path}`,
+            'Detalle de Producto': `http://localhost:3000/viewProduct/${product.id}/mostrar`,
+          });
         });
         result.push({
-          Count: products.length,
           Categoria: collection,
-          products,
+          Count: products.length,
+          Productos,
         });
       }
 
       if (result) {
-        return res.status(200).json(result);
+        return res.status(200).json({result});
       } else {
         return res.status(404).json('No hay productos.');
       }
@@ -54,10 +62,21 @@ const productApi = {
       let productList = await product.findByPk(req.params.id, {
         include: { all: true },
       });
-      let image = productList.images[0].path;
-      productList.images[0].path = 'http://localhost:3000/images/' + image;
-      if (productList) {
-        return res.status(200).json(productList);
+
+     const result = new Object({
+          "ID": productList.id,
+           "Nombre": productList.name,
+          "Precio": productList.price,
+          "Descuento": productList.discount,
+          'Descripcion Corta': productList.descShort,
+          'Descripcion Larga': productList.descLarge,
+          "Stock": productList.stock,
+          "Categoria": productList.collection,
+          "Imagen": `http://localhost:3000/images/${productList.images[0].path}`,
+          'Detalle de Producto': `http://localhost:3000/viewProduct/${productList.id}/mostrar`, 
+        });
+      if (result) {
+        return res.status(200).json({result});
       } else {
         return res.status(404).json('Producto inválido.');
       }
