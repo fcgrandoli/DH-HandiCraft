@@ -24,15 +24,6 @@ const userApi = {
     Usuarios : data
   })
 
-//         result.push({
-//           'Cantidad total de usuarios': count.length,
-//           Usuarios: count.map(function(element){
-//     return `[Id: ${element.id}]   [Nombre: ${element.firstName}]     [Email: ${element.email}]`
-// }),
-// detalle: count.map(function(element){
-//   return `[${element.email}]   =>    Para mas detalle   =>   http://localhost:3000/api/users/${element.id}`
-//         }),})
-
         if (result) {
           return res.status(200).json(result);
         } else {
@@ -53,8 +44,8 @@ const userApi = {
         data.id = result.id;
         data.firstName = result.firstName;
         data.userName = result.userName;
-        data.avatar = "http://localhost:3030/assets/avatar" + result.avatar[0].path
-        if (result) {
+        data.avatar = "http://localhost:3000/assets/avatars/" + result.avatar[0].path
+        if (data) {
           return res.status(200).json(data);
        } else {
           return res.status(404).json("Este usuario no existe.");
