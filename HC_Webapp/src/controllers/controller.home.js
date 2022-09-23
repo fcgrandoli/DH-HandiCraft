@@ -25,7 +25,7 @@ const controllerHome = {
         },
       },
     });
-    return res.render('homeSearch', {
+    return res.render('home', {
       productList: productList,
     });
   },
@@ -52,8 +52,6 @@ const controllerHome = {
     });
 
     let collections = [...new Set(productList.map(data => data.collection))];
-    //  return res.render("collectionList");
-    //res.send(collections.length);
     return res.render('collectionList', {
       collections: collections,
     });

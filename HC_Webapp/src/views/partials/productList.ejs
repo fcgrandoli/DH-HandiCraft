@@ -1,5 +1,4 @@
-<% for (let i = 0; i < productList.length; i++) { %> <% if(productList[i].name
-!= 'DELETED'){ %>
+<% for (let i = 0; i < productList.length; i++) { %>
 <article class="producto">
   <div class="image">
     <a href="viewProduct/<%= productList[i].id%>/mostrar"
@@ -22,4 +21,4 @@
     </div>
   </div>
 </article>
-<% } %> <% } %>
+<% } %>
