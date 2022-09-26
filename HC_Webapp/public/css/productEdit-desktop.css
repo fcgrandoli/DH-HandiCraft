@@ -45,6 +45,15 @@
     }
   }
 
+   .title{
+    position: absolute;
+    color: #62909a;
+    top: 5vh;
+    left: 7.5vw;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+  }
+
   .fields {
     position: relative;
     width: 30vw;

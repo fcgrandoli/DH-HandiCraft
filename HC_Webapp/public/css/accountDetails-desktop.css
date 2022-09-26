@@ -35,6 +35,15 @@
     }
   }
 
+  .title{
+    position: absolute;
+    color: #62909a;
+    top: 4vh;
+    left: 8vw;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+  }
+
   .box {
     display: flex;
     justify-content: space-evenly;

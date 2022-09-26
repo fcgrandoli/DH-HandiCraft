@@ -29,7 +29,7 @@
     overflow-wrap: break-word;
   }
 
-  .msg-error.hide{
+  .msg-error.hide {
     display: none;
   }
 
@@ -49,6 +49,15 @@
     100% {
       background-position: 0% 50%;
     }
+  }
+
+  .title {
+    position: absolute;
+    color: #62909a;
+    top: 2vh;
+    left: 7.5vw;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .fields {
