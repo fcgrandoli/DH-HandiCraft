@@ -6,7 +6,7 @@ module.exports = async (req, res, next) => {
   if (req.cookies && req.cookies.HC) {
     let users = await user.findOne({
       where: {
-        userName: req.cookies.HC,
+        id: req.cookies.HC,
       },
     });
     req.session.user = users;

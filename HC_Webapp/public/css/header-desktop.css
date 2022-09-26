@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 900px) {
   * {
     margin: 0px;
     padding: 0px;
@@ -6,29 +6,29 @@
     font-family: 'Calibri';
   }
 
-
   .header-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
     position: fixed;
     z-index: 2;
     top: 0;
-    width: 100%;
+    width: 100vw;
     padding-bottom: 5px;
-    border-bottom: 5px solid whitesmoke;
+    border-bottom: 3px solid whitesmoke;
     background-color: #62909a;
+    
   }
 
   .logo {
     display: flex;
     align-items: center;
-    width: 15%;
+    justify-self: flex-start;
+    width: 20vw;
+    flex-shrink: 1;
   }
 
   .logo-image {
-    width: 30%;
     height: 80px;
     padding: 10px 10px;
   }
@@ -36,40 +36,69 @@
   .logo-text {
     display: flex;
     align-items: baseline;
-    font-size: 25px;
+    font-size: 35px;
     font-family: 'Lucida Sans';
     font-style: italic;
-    color: whitesmoke
+    color: whitesmoke;
+    flex-shrink: 1;
+    overflow-wrap:break-word;
   }
 
   .nav-site-container {
     display: flex;
     justify-content: space-evenly;
-    width: 15%;
+    width: 20vw;
+  }
+
+  .nav-button {
+    display: flex;
+    text-align: center;
+    overflow-wrap:break-word;
+    flex-shrink: 1;
+  }
+
+  .nav-user-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20vw;
+  }
+  .nav-user {
+    display: flex;
+    text-align: center;
+    overflow-wrap:break-word;
+    flex-shrink: 1;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .profile-name {
+    font-weight: bold;
   }
 
   .nav-site-container a,
   .nav-user-container a {
     margin: 5px 10px;
-    padding: 5px 15px;
+    padding: 3px 15px;
     display: block;
-    border: 2px solid whitesmoke;
+    border: 2.5px solid whitesmoke;
     border-radius: 15px;
-    
-  }
-
-  .nav-button {
   }
 
   .nav-search {
     display: flex;
     padding: 15px 15px;
+    width: 20vw;
+    flex-shrink: 1;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
   .search-form {
     display: flex;
-    position: relative;
+    width: 100%;
+    position: absolute;
   }
 
   .search-bar {
@@ -78,7 +107,7 @@
     border-radius: 10px;
     background-color: white;
     height: 35px;
-    width: 20rem;
+    width: 100%;
     font-size: 18px;
     padding-left: 10px;
   }
@@ -93,21 +122,7 @@
     font-size: 16px;
   }
 
-  .nav-user-container {
-    display: flex;
-  }
-  .nav-user {
-    display: flex;
-    width: 35%;
-  }
 
-  .nav-menu {
-    display: none;
-  }
-
-  .profile-name {
-    font-weight: bold;
-  }
 
   a:link {
     color: whitesmoke;

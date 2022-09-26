@@ -3,7 +3,7 @@ const { user } = require('../database/models/index');
 const { extname, resolve } = require('path');
 const { unlinkSync } = require('fs');
 
-const register = [
+const validationUpdateProfile = [
   body('firstName')
     .notEmpty()
     .withMessage('El nombre no puede quedar vacío')
@@ -26,10 +26,12 @@ const register = [
     .withMessage('El usuario debe contener mínimo dos caracteres.')
     .bail()
     .custom(async (value, { req }) => {
-      let users = await user.findOne({ where: { userName: value } })
-      if (users.id == req.body.id) {
+      let users = await user.findOne({ where: { userName: value } });
+      if (!users) {
         return true;
-       }else {
+      } else if (users.id == req.body.id) {
+        return true;
+      } else {
         throw new Error('El nombre de usuario no esta disponible.');
       }
     }),
@@ -41,7 +43,7 @@ const register = [
     .withMessage('El formato de email no es válido.')
     .bail()
     .custom(async (value, { req }) => {
-      let users = await user.findOne({ where: { email: value } })
+      let users = await user.findOne({ where: { email: value } });
       if (users && users.id != req.body.id) {
         throw new Error('El email no esta disponible.');
       } else {
@@ -59,7 +61,7 @@ const register = [
       return true;
     } else {
       let archivos = req.file;
-      let extensiones = ['.svg', '.png', '.jpg', '.jpeg'];
+      let extensiones = ['.svg', '.png', '.jpg', '.jpeg', '.GIF', '.webp'];
       let avatar = archivos;
       let extension = extname(avatar.filename);
 
@@ -81,5 +83,4 @@ const register = [
   }),
 ];
 
-module.exports = register;
-module.exports = register;
+module.exports = validationUpdateProfile;

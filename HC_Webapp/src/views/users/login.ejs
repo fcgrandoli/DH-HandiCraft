@@ -1,56 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include ('../partials/head') %>
-    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>   
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script defer src="/validationsFront/userLogin.js"></script>
-   <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
+  <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
   <link rel="stylesheet" type="text/css" href="/css/login.css" />
   <link rel="stylesheet" type="text/css" href="/css/login-tablet.css" />
   <link rel="stylesheet" type="text/css" href="/css/login-desktop.css" />
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="/validationsFront/userLogin.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
   <body>
     <div class="container">
+      <div class="errores">
+        <ul></ul>
+      </div>
       <%- include ('../partials/header') %>
       <main>
-        <form class="fields" action="userLogin?_method=POST" method="POST" id = "news">
+        <form
+          class="fields"
+          action="userLogin?_method=POST"
+          method="POST"
+          id="news"
+        >
           <div class="user">
-            <label for="user">Nombre de usuario</label>
             <input
               class="input-field"
               type="text"
               name="userName"
               autocomplete="off"
-              placeholder="Username"
+              placeholder="Nombre de usuario"
               value="<%= locals.oldData ? oldData.userName : null %>"
             />
-            <p class="feed" ></p>
+            <i class="fa-sharp fa-solid fa-user"></i>
+          </div>
+          <div class="errors">
+            <p class="feed"></p>
             <% if (errors.userName) { %>
             <p class="msg-error"><%= locals.errors.userName.msg %></p>
             <% } %>
           </div>
           <div class="passwords">
-            <label for="password">Ingresar contraseña</label>
             <input
               class="input-field"
               type="password"
               name="passwd"
               autocomplete="off"
-              placeholder="Password"
+              placeholder="Ingresar contraseña"
               value="<%= locals.oldData ? oldData.passwd : null %>"
             />
-            <p class="feed" ></p>
+            <i class="fa-sharp fa-solid fa-lock"></i>
+          </div>
+          <div class="errors">
+            <p class="feed"></p>
             <% if (errors.passwd) { %>
             <p class="msg-error"><%= errors.passwd.msg %></p>
             <% } %>
           </div>
 
           <div class="buttons">
-            <button type="submit" value="enviar">Enviar</button>
-            <div class="checkbox">
-              <input type="checkbox" name="remindme" />
-              <label for="">Recordame</label>
+            <div class="submit-container">
+              <button class="submit" type="submit" value="enviar">
+                Enviar
+              </button>
             </div>
-            <div class="show-btn-back">
+            <div class="checkbox-container">
+              <input class="checkbox" type="checkbox" name="remindme" />
+              <label class="check-box-text" for="">Recordame</label>
+            </div>
+            <div class="nav-back-container">
               <a class="nav-back" href="/">Volver</a>
             </div>
           </div>

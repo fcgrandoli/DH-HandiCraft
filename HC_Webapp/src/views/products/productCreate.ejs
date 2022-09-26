@@ -3,126 +3,179 @@
   <%- include ('../partials/head') %>
   <link rel="stylesheet" type="text/css" href="/css/productCreate.css" />
   <link rel="stylesheet" type="text/css" href="/css/productCreate-tablet.css" />
-  <link rel="stylesheet" type="text/css" href="/css/productCreate-desktop.css" />
-  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>   
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="/css/productCreate-desktop.css"
+  />
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script defer src="/validationsFront/productCreate.js"></script>
+  <script src="/scripts.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
-  <%- include ('../partials/header') %>
+
   <body>
+    <div class="errores">
+      <ul></ul>
+    </div>
+    <%- include ('../partials/header') %>
     <main>
       <div class="container">
-        <div class = "errores">
-             <ul></ul>
-        </div>
-        <form action="/viewProduct/createProduct" method="post" class="fields" id="news" enctype="multipart/form-data"
-        >
-   <div class="name">
-          <label for="name">Nombre:</label>
-          <input
-            class="input-field" 
-            type="text"
-            name="name"
-            autocomplete="off"
-            placeholder="Nombre del producto"
-            value="<%= locals.oldData ? oldData.name : null %>"
-          />
-          <p class="feed" ></p>
-          <% if (errors.name) { %>
-          <p class="msg-error"><%= locals.errors.name.msg %></p>
-          <% } %>
-        </div>
-        <div class="descShort">
-          <label for="descShort">Descripcion corta:</label>
-          <input
-            class="input-field"
-            type="text"
-            name="descShort"
-            autocomplete="off"
-            placeholder="Descripcion breve"
-            value="<%= locals.oldData ? oldData.descShort : null %>"
-          />
-          <p class="feed" ></p>
-          <% if (errors.descShort) { %>
-          <p class="msg-error"><%= locals.errors.descShort.msg %></p>
-          <% } %>
-        </div>
-        <div class="descLarge">
-          <label for="descLarge">Descripcion larga:</label>
-          <input
-            class="input-field"
-            type="text"
-            name="descLarge"
-            autocomplete="off"
-            placeholder="Descripcion larga"
-            value="<%= locals.oldData ? oldData.descLarge : null %>"
-          />
-          <p class="feed" ></p>
-          <% if (errors.descLarge) { %>
-          <p class="msg-error"><%= locals.errors.descLarge.msg %></p>
-          <% } %>
-        </div>
-        <div class="price">
-          <label for="price">Precio:</label>
-          <input
-            class="input-field"
-            type="number"
-            name="price"
-            autocomplete="off"
-            placeholder="Precio"
-            value="<%= locals.oldData ? oldData.price : null %>"
-          />
-          <p class="feed" ></p>
-          <% if (errors.price) { %>
-          <p class="msg-error"><%= locals.errors.price.msg %></p>
-          <% } %>
-        </div>
-        <div class="discount">
-          <label for="discount">Descuento:</label>
-          <input
-            class="input-field"
-            type="number"
-            name="discount"
-            autocomplete="off"
-            placeholder="Descuento (opcional)"
-            value="<%= locals.oldData ? oldData.discount : null %>"
-          />
-          <p class="feed" ></p>
-          <% if (errors.discount) { %>
-          <p class="msg-error"><%= locals.errors.discount.msg %></p>
-          <% } %>
-        </div>
-        <div class="stock">
-          <label for="stock">Stock:</label>
-          <input
-            class="input-field"
-            type="number"
-            name="stock"
-            autocomplete="off"
-            placeholder="Cantidad de stock (opcional)"
-            value="<%= locals.oldData ? oldData.stock : null %>"
-          />
-          <p class="feed" ></p>
-          <% if (errors.discount) { %>
-          <p class="msg-error"><%= locals.errors.stock.msg %></p>
-          <% } %>
-        </div>
-          <div class="image-fields-container">
-            <label for="image">Foto del producto:</label>
-            <input
-              class="image-upload"
-              type="file"
-              name="image"
-              id="image"
-              autocomplete="off"
-            />
-            <p class="feed" ></p>
-            <% if (errors.image) { %>
-            <p class="msg-error"><%= locals.errors.image.msg %></p>
-            <% } %>
+        <div class="box">
+          <div class="half1">
+            <div class="image">
+              <img class="preview" src="/images/newproduct.png" />
+            </div>
           </div>
-          <input class="submit" type="submit" value="Crear producto" />
-        </form>
+          <div class="half2">
+            <form
+              action="/viewProduct/createProduct"
+              method="post"
+              class="fields"
+              id="news"
+              enctype="multipart/form-data"
+            >
+              <div class="name">
+                <input
+                  class="input-field"
+                  type="text"
+                  name="name"
+                  autocomplete="off"
+                  placeholder="Nombre del producto"
+                  value="<%= locals.oldData ? oldData.name : null %>"
+                />
+                <i class="fa-regular fa-keyboard"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.name) { %>
+                  <p class="msg-error"><%= locals.errors.name.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="descShort">
+                <input
+                  class="input-field"
+                  type="text"
+                  name="descShort"
+                  autocomplete="off"
+                  placeholder="Descripcion breve"
+                  value="<%= locals.oldData ? oldData.descShort : null %>"
+                />
+                <i class="fa-regular fa-keyboard"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.descShort) { %>
+                  <p class="msg-error"><%= locals.errors.descShort.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="descLarge">
+                <textarea
+                  class="input-field"
+                  name="descLarge"
+                  autocomplete="off"
+                  placeholder="Descripcion larga"
+                  value=""
+                  rows="1"
+                  cols="50"
+                >
+<%= locals.oldData ? oldData.descLarge : null %></textarea
+                >
+                <i class="fa-regular fa-keyboard"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.descLarge) { %>
+                  <p class="msg-error"><%= locals.errors.descLarge.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="price">
+                <input
+                  class="input-field"
+                  type="number"
+                  name="price"
+                  autocomplete="off"
+                  placeholder="Precio"
+                  value="<%= locals.oldData ? oldData.price : null %>"
+                />
+                <i class="fa-regular fa-hashtag"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.price) { %>
+                  <p class="msg-error"><%= locals.errors.price.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="discount">
+                <input
+                  class="input-field"
+                  type="number"
+                  name="discount"
+                  autocomplete="off"
+                  placeholder="Descuento (opcional)"
+                  value="<%= locals.oldData ? oldData.discount : null %>"
+                />
+                <i class="fa-regular fa-hashtag"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.discount) { %>
+                  <p class="msg-error"><%= locals.errors.discount.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="stock">
+                <input
+                  class="input-field"
+                  type="number"
+                  name="stock"
+                  autocomplete="off"
+                  placeholder="Cantidad de stock (opcional)"
+                  value="<%= locals.oldData ? oldData.stock : null %>"
+                />
+                <i class="fa-regular fa-hashtag"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.discount) { %>
+                  <p class="msg-error"><%= locals.errors.stock.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="image-fields-container">
+                <input
+                  class="image-upload"
+                  type="file"
+                  name="image"
+                  id="image"
+                  autocomplete="off"
+                  onchange="loadFile(event)"
+                />
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.image) { %>
+                  <p class="msg-error"><%= locals.errors.image.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="buttons">
+                <div class="submit-container">
+                  <input class="submit" type="submit" value="Crear producto" />
+                </div>
+                <div class="reset-container">
+                  <button class="nav-reset" type="reset" value="reset">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </main>
   </body>

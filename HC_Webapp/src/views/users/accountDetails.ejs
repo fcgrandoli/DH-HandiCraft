@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include ('../partials/head') %>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="/css/accountDetails.css"
-  />
+  <link rel="stylesheet" type="text/css" href="/css/accountDetails.css" />
   <link
     rel="stylesheet"
     type="text/css"
@@ -16,93 +12,148 @@
     type="text/css"
     href="/css/accountDetails-desktop.css"
   />
+  <script src="/scripts.js"></script>
   <body>
-    <div class="container">
-      <%- include ('../partials/header') %>
-      <main>
-        <div>
-          <img
-          class="avatar"
-          src="/assets/avatars/<%= userLoggedIn.avatar %>"
-        />
-        </div>
-        <form class="fields" method="POST" action="/user/update?_method=POST" enctype="multipart/form-data">
-      <!--   <form  action="/viewLogin/update?_method=PUT" method="POST"> -->
-          <div class="id">
-            <input class="input-fields" 
-              type="hidden"
-              name="id"
-              value="<%= userLoggedIn.id %>"
-              readonly="readonly"
-            />
+    <%- include ('../partials/header') %>
+    <main>
+      <div class="container">
+        <div class="box">
+          <div class="half1">
+            <div class="image">
+              <img
+                class="preview"
+                src="/assets/avatars/<%= userLoggedIn.avatar %>"
+              />
+            </div>
           </div>
-        <div class="firstName">
-          <label for="user">Nombre:</label>
-          <input class="input-fields" 
-            type="text"
-            name="firstName"
-            value="<%= userLoggedIn.firstName %>"
-          />
-          <% if (errors.firstName) { %>
-            <p class="msg-error"><%= locals.errors.firstName.msg %></p>
-            <% } %>
-        </div>
-        <div class="lastName">
-          <label for="user">Apellido:</label>
-          <input class="input-fields" 
-            type="text"
-            name="lastName"
-            value="<%= userLoggedIn.lastName %>"
-          />
-          <% if (errors.lastName) { %>
-            <p class="msg-error"><%= locals.errors.lastName.msg %></p>
-            <% } %>
-        </div>
-        <div class="user">
-          <label for="user">Nombre de usuario:</label>
-          <input class="input-fields" 
-            type="text"
-            name="userName"
-            value="<%= userLoggedIn.userName %>"
-          />
-          <% if (errors.userName) { %>
-            <p class="msg-error"><%= locals.errors.userName.msg %></p>
-            <% } %>
-        </div>
-        <div class="email">
-          <label for="email">E-mail:</label>
-          <input class="input-fields" 
-            type="email"
-            name="email"
-            value="<%= userLoggedIn.email %>"
-          />
-          <% if (errors.email) { %>
-            <p class="msg-error"><%= locals.errors.email.msg %></p>
-            <% } %>
-        </div>
-        <div class="passwords">
-          <label for="password">Contraseña:</label>
-          <input class="input-fields" type="password" name="passwd" placeholder="******" value="" />
-          <% if (errors.passwd) { %>
-            <p class="msg-error"><%= locals.errors.passwd.msg %></p>
-            <% } %>
-        </div>
-        <div class="image-fields-container">
-          <label for="image">Actualizar foto de perfil:</label>
-          <input type="hidden" name="avatar" value="<%= userLoggedIn.avatar %>" />
-          <input class="image-upload" type="file" name="avatar"/>
-        </div>
-        <div class="buttons">
-          <input class="submit" type="submit" value="Actualizar datos" />
-          <form class="" method="POST" action="/user/close?_method=PUT">
-          <a class="btn-close" href="/user/close">Cerrar sesión</a>
-          </form>
-          <div class="show-btn-back">
-          <a class="nav-back" href="/">Volver</a>
+          <div class="half2">
+            <form
+              class="fields"
+              method="POST"
+              action="/user/update?_method=POST"
+              enctype="multipart/form-data"
+            >
+              <div class="id">
+                <input
+                  class="input-field"
+                  type="hidden"
+                  name="id"
+                  value="<%= userLoggedIn.id %>"
+                  readonly="readonly"
+                />
+              </div>
+              <div class="firstName">
+                <label for="user">Nombre:</label>
+                <input
+                  class="input-field"
+                  type="text"
+                  name="firstName"
+                  value="<%= userLoggedIn.firstName %>"
+                />
+                <i class="fa-solid fa-id-card"></i>
+              </div>
+              <div class="errors">
+                <% if (errors.firstName) { %>
+                <p class="msg-error"><%= locals.errors.firstName.msg %></p>
+                <% } %>
+              </div>
+              <div class="lastName">
+                <label for="user">Apellido:</label>
+                <input
+                  class="input-field"
+                  type="text"
+                  name="lastName"
+                  value="<%= userLoggedIn.lastName %>"
+                />
+                <i class="fa-solid fa-id-card"></i>
+              </div>
+              <div class="errors">
+                <% if (errors.lastName) { %>
+                <p class="msg-error"><%= locals.errors.lastName.msg %></p>
+                <% } %>
+              </div>
+              <div class="userName">
+                <label for="user">Nombre de usuario:</label>
+                <input
+                  class="input-field"
+                  type="text"
+                  name="userName"
+                  value="<%= userLoggedIn.userName %>"
+                />
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="errors">
+                <% if (errors.userName) { %>
+                <p class="msg-error"><%= locals.errors.userName.msg %></p>
+                <% } %>
+              </div>
+              <div class="email">
+                <label for="email">E-mail:</label>
+                <input
+                  class="input-field"
+                  type="email"
+                  name="email"
+                  value="<%= userLoggedIn.email %>"
+                />
+                <i class="fa-solid fa-at"></i>
+              </div>
+              <div class="errors">
+                <% if (errors.email) { %>
+                <p class="msg-error"><%= locals.errors.email.msg %></p>
+                <% } %>
+              </div>
+              <div class="passwd">
+                <label for="password">Contraseña:</label>
+                <input
+                  class="input-field"
+                  type="password"
+                  name="passwd"
+                  placeholder="******"
+                  value=""
+                />
+                <i class="fa-solid fa-key"></i>
+              </div>
+              <div class="errors">
+                <% if (errors.passwd) { %>
+                <p class="msg-error"><%= locals.errors.passwd.msg %></p>
+                <% } %>
+              </div>
+              <div class="image-fields-container">
+                <label for="image">Actualizar foto de perfil:</label>
+                <input
+                  class="image-upload"
+                  type="file"
+                  name="avatar"
+                  id="image"
+                  autocomplete="off"
+                  onchange="loadFile(event)"
+                />
+              </div>
+              <div class="errors">
+                <% if (errors.avatar) { %>
+                <p class="msg-error"><%= locals.errors.avatar.msg %></p>
+                <% } %>
+              </div>
+              <div class="buttons">
+                <div class="submit-container">
+                  <input
+                    class="submit"
+                    type="submit"
+                    value="Actualizar datos"
+                  />
+                </div>
+                <div class="btn-close-container">
+                  <a class="btn-close" href="/user/close">Cerrar sesión</a>
+                </div>
+                <div class="btn-back-container">
+                  <a class="btn-back" href="/">Volver</a>
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
-      </main>
-    </div>
-    <%- include ('../partials/footer') %>
+        </div>
+      </div>
+    </main>
   </body>
+  <%- include ('../partials/footer') %>
 </html>

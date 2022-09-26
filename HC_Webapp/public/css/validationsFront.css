@@ -1,106 +1,45 @@
 
   .feed{
-    /* color: black;
-     background-color: green; */
      text-align: center;
+     transition: 0.4s;
      font-size: 20px;
      display: block;
      border-radius: 5px;
    }
-  /* 8da38e
-   62909a
-   87a6ab
-   7cc6b0
-   79a49a*/
-   .firstName.invalid .feed {
-     background-color: hsl(4, 72%, 50%);
-     color:  white;             /* #7cc6b0; si no aceptan el aqua, este   */
-   }
-   .firstName.invalid .feed {
-       display: block;
-   }
 
    .valid .feed {
-     background-color: #7cc6b0;
-     color: white ;
-   }
-
-
-   .invalid .feed {                 /* agregado porque la passwd no me toma su clase */
-    background-color: hsl(4, 72%, 50%);
-    color:  white;  
-   }
-   
-
- 
-   .lastName.invalid .feed {
-    background-color: hsl(4, 72%, 50%);
-    color:  white; 
-   }
-   .lastName.invalid .feed {
-       display: block;
-   }
-
-
-
- 
-   .userName.invalid .feed {
-    background-color: hsl(4, 72%, 50%);
-    color:  white; 
-   }
-   .userName.invalid .feed {
-       display: block;
-   }
-
- 
-
-
- 
-   .email.invalid .feed {
-    background-color: hsl(4, 72%, 50%);
-    color: white; 
-   }
-   .email.invalid .feed {
-       display: block;
-   }
-
-
-
- 
-   .passwd.invalid .feed {
-    background-color: hsl(4, 72%, 50%);
-    color:  white;  
-   }
-   .passwds.invalid .feed  {
-       display: block;
-   }
-
-
-
-   
- 
-   .avatar.invalid .feed {
-    background-color: hsl(4, 72%, 50%);
-    color: white; 
-   }
-   .avatar.invalid .feed  {
-       display: block;
-   }
-
-   .avatar.valid .feed{
+    display: flex;
+    flex-shrink: 1;
+    height: auto;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 2px 5px;
     background-color: #7cc6b0;
-    color: white ;
-     display: block;
-   }
+    color: rgb(252, 252, 252);
+    transition: 0.4s;
+    overflow-wrap: break-word;
 
-   .aclaracion {
+   }
+   .invalid .feed {                 /* agregado porque la passwd no me toma su clase */
+    display: flex;
+    flex-shrink: 1;
+    height: auto;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 2px 5px;
+    background-color: hsla(4, 72%, 50%, 0.7);
+    color: rgb(252, 252, 252);
+    transition: 0.4s;
+    overflow-wrap: break-word;
+   }
+    
+ .aclaracion {
      display: flex;
      margin-top: 20px;
      position:relative;
      right: 105px;
    }
- 
-   
+    
    .actions {
      margin: auto;
      width: 80%;
@@ -109,67 +48,3 @@
      justify-content: flex-start;
      padding: 12px 15px;
    }
-
-   .name.invalid .feed {
-    background-color: hsl(4, 72%, 50%);
-    color:  white;            
-  }
-  .name.invalid .feed {
-      display: block;
-  }
-  .valid .feed {
-    background-color: #7cc6b0;
-    color: white ;
-  }
-  .invalid .feed {               
-   background-color: hsl(4, 72%, 50%);
-   color:  white;  
-  }
-
-  .descShort.invalid .feed {
-    background-color: hsl(4, 72%, 50%);
-    color:  white;            
-  }
-  .descShort.invalid .feed {
-      display: block;
-  }
-  .valid .feed {
-    background-color: #7cc6b0;
-    color: white ;
-  }
-  .invalid .feed {               
-   background-color: hsl(4, 72%, 50%);
-   color:  white;  
-  }
-
-  .descLarge.invalid .feed {
-    background-color: hsl(4, 72%, 50%);
-    color:  white;            
-  }
-  .descLarge.invalid .feed {
-      display: block;
-  }
-  .valid .feed {
-    background-color: #7cc6b0;
-    color: white ;
-  }
-  .invalid .feed {               
-   background-color: hsl(4, 72%, 50%);
-   color:  white;  
-  }
-
-  .price.invalid .feed {
-    background-color: hsl(4, 72%, 50%);
-    color:  white;            
-  }
-  .price.invalid .feed {
-      display: block;
-  }
-  .valid .feed {
-    background-color: #7cc6b0;
-    color: white ;
-  }
-  .invalid .feed {               
-   background-color: hsl(4, 72%, 50%);
-   color:  white;  
-  }

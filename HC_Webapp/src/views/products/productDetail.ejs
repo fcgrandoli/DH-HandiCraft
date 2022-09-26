@@ -8,27 +8,68 @@
     type="text/css"
     href="/css/productDetail-desktop.css"
   />
-  <%- include ('../partials/header') %>
+  <script src="/scripts.js"></script>
   <body>
+    <%- include ('../partials/header') %>
     <main>
-      <div id="container">
-        <section class="producto">
+      <div class="container">
+        <div class="box">
+          <% if(userLoggedIn){ %>
+          <div class="buttons">
+            <div class="btn-edit-container">
+              <a
+                class="btn-edit"
+                href="/viewProduct/<%= productList.id%>/editar"
+                >EDITAR</a
+              >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+            <div class="btn-delete-container">
+              <form
+                class="fields"
+                method="POST"
+                action="/viewProduct/<%= productList.id%>/delete"
+              >
+                <input class="btn-delete" type="submit" value="ELIMINAR" />
+                <i class="fa-solid fa-trash"></i>
+              </form>
+            </div>
+          </div>
+          <% } %>
           <div class="half-1">
             <div class="prd-name">
               <p><%= productList.name %></p>
             </div>
             <div class="image">
+              <% if(productList.discount == ""){ %>
+              <div class="corner-text-wrapper-hidden">
+                <div class="corner-text-hidden">
+                  <span class="span-hidden"></span>
+                </div>
+              </div>
+              <% } else{ %>
+              <div class="corner-text-wrapper">
+                <div class="corner-text">
+                  <span><%= productList.discount %>% off </span>
+                </div>
+              </div>
+              <% } %>
               <img
                 class="preview"
                 src="/images/<%= productList.images[0].path %>"
               />
             </div>
+          </div>
+          <div class="half-2">
+            <div class="text">
+              <div class="desc-short">
+                <p><%= productList.descShort %></p>
+              </div>
+              <div class="desc-large">
+                <p><%= productList.descLarge %></p>
+              </div>
+            </div>
             <div class="description">
-              <p class="discount">
-                <% if(productList.discount.length == 0){ %> <%=
-                productList.discount %> <% } else{ %> <%= productList.discount
-                %>% off <% } %>
-              </p>
               <div class="price">
                 <p>$<%= productList.price %></p>
               </div>
@@ -38,37 +79,15 @@
                 action="/cart/<%= productList.id %>/comprarProduct"
               >
                 <input
-                  class="AddCart"
+                  class="btn-cart"
                   type="submit"
                   value="Agregar al carrito"
                 />
               </form>
-              <a class="buy" href="">Comprar</a>
+              <a class="btn-buy" href="">Comprar</a>
             </div>
           </div>
-          <div class="half-2">
-            <% if(userLoggedIn){ %>
-            <a class="btn-edit" href="/viewProduct/<%= productList.id%>/editar"
-              >EDITAR</a
-            >
-            <form
-              class="fields"
-              method="POST"
-              action="/viewProduct/<%= productList.id%>/delete"
-            >
-              <input class="btn-delete" type="submit" value="ELIMINAR" />
-              <% } %>
-            </form>
-            <div class="text">
-              <div class="desc-short">
-                <p><%= productList.descShort %></p>
-              </div>
-              <div class="desc-large">
-                <p><%= productList.descLarge %></p>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
     </main>
   </body>

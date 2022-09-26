@@ -98,7 +98,7 @@ const controllerLogin = {
         },
       });
       if (req.body.remindme) {
-        res.cookie('HC', usersList.userName, { maxAge: 6000000 });
+        res.cookie('HC', usersList.id, { maxAge: 6000000 });
       }
       req.session.user = usersList;
       res.redirect('/');

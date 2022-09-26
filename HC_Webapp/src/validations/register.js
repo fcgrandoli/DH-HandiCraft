@@ -57,7 +57,7 @@ const register = [
       return true;
     } else {
       let archivos = req.file;
-      let extensiones = ['.svg', '.png', '.jpg', '.jpeg'];
+      let extensiones = [".svg", ".png", ".jpg", ".jpeg", ".GIF", ".webp"];
       let avatar = archivos;
       let extension = extname(avatar.filename);
 
@@ -79,5 +79,4 @@ const register = [
   }),
 ];
 
-module.exports = register;
 module.exports = register;

@@ -4,50 +4,50 @@ const { unlinkSync } = require("fs");
 const validationProduct = [
   body("name")
     .notEmpty()
-    .withMessage("El nombre no puede quedar vacío")
+    .withMessage("Este campo no puede quedar vacío")
     .bail()
     .isLength({ min: 5 })
-    .withMessage("El nombre debe contener mínimo cinco caracteres.")
+    .withMessage("Este campo debe contener mínimo cinco caracteres")
     .bail(),
   body("descShort")
     .notEmpty()
-    .withMessage("La descripcion no puede quedar vacía")
+    .withMessage("Este campo no puede quedar vacío")
     .bail()
-    .isLength({ min: 5 })
-    .withMessage("La descripcion debe contener mínimo cinco caracteres.")
+    .isLength({ min: 10 })
+    .withMessage("Este campo debe contener mínimo 10 caracteres")
     .bail(),
   body("descLarge")
     .notEmpty()
-    .withMessage("La descripcion no puede quedar vacía")
+    .withMessage("Este campo no puede quedar vacío")
     .bail()
     .isLength({ min: 20 })
-    .withMessage("La descripcion debe contener mínimo veinte caracteres.")
+    .withMessage("Este campo debe contener mínimo 20 caracteres")
     .bail(),
   body("price")
     .notEmpty()
-    .withMessage("El precio no puede quedar vacío")
+    .withMessage("Este campo no puede quedar vacío")
     .bail()
-    .isLength({ min: 2 })
-    .withMessage("El precio debe contener mínimo dos caracteres.")
+    .isLength({ min: 1 })
+    .withMessage("Este campo debe contener mínimo 1 caracter")
     .bail(),
   body("image").custom((value, { req }) => {
     if (!req.file) {
       throw new Error("No se subio ninguna imagen");
     }
     let archivos = req.file;
-    let extensiones = [".svg", ".png", ".jpg", ".jpeg", '.GIF'];
+    let extensiones = [".svg", ".png", ".jpg", ".jpeg", ".GIF", ".webp"];
     let producto = archivos;
     let extension = extname(producto.filename);
     if (!extensiones.includes(extension)) {
       unlinkSync(
-        resolve(__dirname, "../../public/assets/", "avatars", producto.filename)
+        resolve(__dirname, "../../public/", "images", producto.filename)
       );
       throw new Error("La imagen no tiene una extension valida");
     }
 
     if (producto.size > 2097152) {
       unlinkSync(
-        resolve(__dirname, "../../public/assets/", "avatars", producto.filename)
+        resolve(__dirname, "../../public/", "images", producto.filename)
       );
       throw new Error("La imagen supera el peso de 2MB");
     }
