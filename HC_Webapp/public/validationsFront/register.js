@@ -11,7 +11,7 @@ inputs.firstName.addEventListener('input', function (e) {
   let validmsg = field.querySelector('.feed-valid');
   if (!validator.isLength(value, { min: 5 })) {
     feed.style.display = 'flex';
-    msg = 'El nombre debe contener mínimo cinco caracteres.';
+    msg = 'El nombre debe contener mínimo cinco caracteres';
     setRedBorder(inputs.firstName);
     msghandler(feed, msgBackend, value);
   } else {
@@ -39,7 +39,7 @@ inputs.lastName.addEventListener('input', function (e) {
   let validmsg = field.querySelector('.feed-valid');
   if (!validator.isLength(value, { min: 5 })) {
     feed.style.display = 'flex';
-    msg = 'El nombre debe contener mínimo cinco caracteres.';
+    msg = 'El apellido debe contener mínimo cinco caracteres';
     setRedBorder(inputs.lastName);
     msghandler(feed, msgBackend, value);
   } else {
@@ -67,7 +67,7 @@ inputs.userName.addEventListener('input', function (e) {
   let validmsg = field.querySelector('.feed-valid');
   if (!validator.isLength(value, { min: 5 })) {
     feed.style.display = 'flex';
-    msg = 'El usuario debe contener mínimo cinco caracteres.';
+    msg = 'El usuario debe contener mínimo cinco caracteres';
     setRedBorder(inputs.userName);
     msghandler(feed, msgBackend, value);
   } else {
@@ -95,7 +95,7 @@ inputs.email.addEventListener('input', function (e) {
   let validmsg = field.querySelector('.feed-valid');
   if (!validator.isEmail(value)) {
     feed.style.display = 'flex';
-    msg = 'No es un email valido.';
+    msg = 'No es un email valido';
     setRedBorder(inputs.email);
     msghandler(feed, msgBackend, value);
   } else {
@@ -130,7 +130,7 @@ inputs.passwd.addEventListener('input', function (e) {
   };
   if (!validator.isLength(value, { min: 8 })) {
     feed.style.display = 'flex';
-    msg = 'La contraseña debe contener mínimo ocho caracteres.';
+    msg = 'La contraseña debe contener mínimo ocho caracteres';
     setRedBorder(inputs.name);
     msghandler(feed, msgBackend, value);
   } else if (!validator.isStrongPassword(value, config)) {
@@ -169,14 +169,14 @@ inputs.avatar.addEventListener('input', function (e) {
   let validmsg = field.querySelector('.feed-valid');
   if (files.length == 0) {
     feed.style.display = 'flex';
-    msg = 'El campo de avatar esta vacio.';
+    msg = 'El campo de avatar esta vacio';
     setRedBackground(imageBackground);
     msghandler(feed, msgBackend, files);
   } else if (
     !['jpg', 'jpeg', 'png', 'gif'].includes(files[0].type.split('/')[1])
   ) {
     feed.style.display = 'flex';
-    msg = 'No es un formato de imagen valida.';
+    msg = 'No es un formato de imagen valida';
     setRedBackground(imageBackground);
     msghandler(feed, msgBackend, files);
   } else {

@@ -182,7 +182,8 @@
   .fa-solid {
     position: absolute;
     color: #62909a;
-    right: 3vw;
+    top: 1.5rem;
+    right: 10%;
     font-size: 20px;
     transition: 0.4s;
   }

@@ -6,7 +6,7 @@ const login = [
   // User
   body('userName')
     .notEmpty()
-    .withMessage('El usuario no puede quedar vacío.')
+    .withMessage('El usuario no puede quedar vacío')
     .bail()
     .custom(async (value, { req }) => {
       let users = await user.findOne({
@@ -22,7 +22,7 @@ const login = [
   // Password
   body('passwd')
     .notEmpty()
-    .withMessage('La contraseña no puede quedar vacía.')
+    .withMessage('La contraseña no puede quedar vacía')
     .bail()
     .isLength({ min: 3 })
     .bail()

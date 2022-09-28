@@ -9,40 +9,40 @@ const register = [
     .withMessage('El nombre no puede quedar vacío')
     .bail()
     .isLength({ min: 5 })
-    .withMessage('El nombre debe contener mínimo cinco caracteres.')
+    .withMessage('El nombre debe contener mínimo cinco caracteres')
     .bail(),
   body('lastName')
     .notEmpty()
     .withMessage('El apellido no puede quedar vacío')
     .bail()
     .isLength({ min: 5 })
-    .withMessage('El apellido debe contener mínimo cinco caracteres.')
+    .withMessage('El apellido debe contener mínimo cinco caracteres')
     .bail(),
   body('userName')
     .notEmpty()
     .withMessage('El usuario no puede quedar vacío')
     .bail()
     .isLength({ min: 5 })
-    .withMessage('El usuario debe contener mínimo cinco caracteres.')
+    .withMessage('El usuario debe contener mínimo cinco caracteres')
     .bail()
     .custom(async value => {
       let users = await user.findOne({ where: { userName: value } })
       if (users) {
-        throw new Error('El nombre de usuario no esta disponible.');
+        throw new Error('El nombre de usuario no esta disponible');
       }
       return true;
     }),
   body('email')
     .notEmpty()
-    .withMessage('El email no puede quedar vacío.')
+    .withMessage('El email no puede quedar vacío')
     .bail()
     .isEmail()
-    .withMessage('El formato de email no es válido.')
+    .withMessage('El formato de email no es válido')
     .bail()
     .custom(async value => {
       let users = await user.findOne({ where: { email: value } })
       if (users) {
-        throw new Error('El email ya esta registrado');
+        throw new Error('El email no esta disponible');
       }
       return true;
     }),
@@ -65,7 +65,7 @@ const register = [
         unlinkSync(
           resolve(__dirname, '../../public/assets/', 'avatars', avatar.filename)
         );
-        throw new Error('La imagen no tiene una extension valida');
+        throw new Error('No es un formato de imagen valida');
       }
 
       if (avatar.size > 2097152) {

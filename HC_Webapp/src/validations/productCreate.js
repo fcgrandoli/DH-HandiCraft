@@ -32,7 +32,7 @@ const validationProduct = [
     .bail(),
   body("image").custom((value, { req }) => {
     if (!req.file) {
-      throw new Error("No se subio ninguna imagen");
+      throw new Error("No se subió ninguna imagen");
     }
     let archivos = req.file;
     let extensiones = [".svg", ".png", ".jpg", ".jpeg", ".GIF", ".webp"];
@@ -42,7 +42,7 @@ const validationProduct = [
       unlinkSync(
         resolve(__dirname, "../../public/", "images", producto.filename)
       );
-      throw new Error("La imagen no tiene una extension valida");
+      throw new Error("No es un formato de imagen valida");
     }
 
     if (producto.size > 2097152) {

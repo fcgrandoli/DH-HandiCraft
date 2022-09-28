@@ -11,10 +11,12 @@ inputs.userName.addEventListener('input', function (e) {
   let validmsg = field.querySelector('.feed-valid');
   if (!validator.isLength(value, { min: 5 })) {
     feed.style.display = 'flex';
-    msg = 'El nombre de usuario debe contener mínimo cinco caracteres.';
+    msg = 'El usuario debe contener mínimo cinco caracteres';
+    setRedBorder(inputs.userName);
     msghandler(feed, msgBackend, value);
   } else {
-    validmsg = 'El campo es correcto.';
+    validmsg = 'El campo es correcto';
+    setGreenBorder(inputs.userName);
     msghandler(feed, msgBackend, value);
   }
   if (msg) {

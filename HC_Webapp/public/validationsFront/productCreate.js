@@ -15,7 +15,7 @@ inputs.name.addEventListener('input', function (e) {
     setRedBorder(inputs.name);
     msghandler(feed, msgBackend, value);
   } else {
-    validmsg = 'El campo es correcto.';
+    validmsg = 'El campo es correcto';
     setGreenBorder(inputs.name);
     msghandler(feed, msgBackend, value);
   }
@@ -43,7 +43,7 @@ inputs.descShort.addEventListener('input', function (e) {
     setRedBorder(inputs.descShort);
     msghandler(feed, msgBackend, value);
   } else {
-    validmsg = 'El campo es correcto.';
+    validmsg = 'El campo es correcto';
     setGreenBorder(inputs.descShort);
     msghandler(feed, msgBackend, value);
   }
@@ -71,7 +71,7 @@ inputs.descLarge.addEventListener('input', function (e) {
     setRedBorder(inputs.descLarge);
     msghandler(feed, msgBackend, value);
   } else {
-    validmsg = 'El campo es correcto.';
+    validmsg = 'El campo es correcto';
     setGreenBorder(inputs.descLarge);
     msghandler(feed, msgBackend, value);
   }
@@ -99,7 +99,7 @@ inputs.price.addEventListener('input', function (e) {
     setRedBorder(inputs.price);
     msghandler(feed, msgBackend, value);
   } else {
-    validmsg = 'El campo es correcto.';
+    validmsg = 'El campo es correcto';
     setGreenBorder(inputs.price);
     msghandler(feed, msgBackend, value);
   }
@@ -123,7 +123,7 @@ inputs.image.addEventListener('input', function (e) {
   let validmsg = field.querySelector('.feed-img-valid');
   if (files.length == 0) {
     feed.style.display = 'flex';
-    msg = 'El campo de imagen está vacio';
+    msg = 'No se subió ninguna imagen';
     setRedBackground(imageBackground);
     msghandler(feed, msgBackend, files);
   } else if (

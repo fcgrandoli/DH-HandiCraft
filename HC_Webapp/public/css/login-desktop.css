@@ -35,7 +35,7 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 0.5rem;
-    width: 30vw;
+    width: 32vw;
     padding: 30px 20px;
     margin: 15vh auto;
     box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
@@ -51,7 +51,7 @@
 
   .input-field {
     background: rgba(255, 255, 255, 0);
-    width: 80%;
+    width:70%;
     margin: auto;
     border: none;
     border-bottom: 3px solid #62909a;
@@ -97,8 +97,8 @@
   .fa-sharp {
     position: absolute;
     color: #62909a;
-    top: 25px;
-    right: 65px;
+    top: 1.5rem;
+    right: 15%;
     font-size: 20px;
     transition: 0.4s;
   }
