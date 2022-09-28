@@ -1,94 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include ('../partials/head') %>
-  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>   
+  <link rel="stylesheet" type="text/css" href="/css/register.css" />
+  <link rel="stylesheet" type="text/css" href="/css/register-tablet.css" />
+  <link rel="stylesheet" type="text/css" href="/css/register-desktop.css" />
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script defer src="/validationsFront/register.js"></script>
-  <link rel="stylesheet" type="text/css" href="/css/register.css" />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="/css/register-tablet.css"
-  />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="/css/register-desktop.css"
-  />
-  <%- include ('../partials/header') %>
-  <body>  
-      <main>
-        <div class="container"></div>
-        <form
-          class="fields"
-          method="POST"
-          id = "news"
-          action="/registerUser?_method=POST"
-          enctype="multipart/form-data"
-        >
-          <div class="firstName">
-            <label for="user">Nombre:</label>
-            <input class="field" type="text" name="firstName" placeholder="First name" value="<%= locals.oldData ? oldData.firstName : null %>">
-            <p class="feed" ></p>
-            <% if (errors.firstName) { %>
-              <p class="msg-error"><%= locals.errors.firstName.msg %></p>
-              <% } %>
+  <script src="/scripts.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
+  <body>
+    <div class="errores">
+      <ul></ul>
+    </div>
+    <%- include ('../partials/header') %>
+    <main>
+      <div class="container">
+        <div class="box">
+          <div class="title">
+            <h1>Registro de usuario</h1>
           </div>
-          <div class="lastName">
-            <label for="user">Apellido:</label>
-            <input class="field" type="text" name="lastName" placeholder="Last name" value="<%= locals.oldData ? oldData.lastName : null %>">
-            <p class="feed" ></p>
-            <% if (errors.lastName) { %>
-              <p class="msg-error"><%= locals.errors.lastName.msg %></p>
-              <% } %>
-          </div>
-          <div class="user">
-            <label for="user">Nombre de usuario:</label>
-            <input class="field" type="text" name="userName" placeholder="Username" value="<%= locals.oldData ? oldData.userName : null %>">
-            <p class="feed" ></p>
-            <% if (errors.userName) { %>
-              <p class="msg-error"><%= locals.errors.userName.msg %></p>
-              <% } %>
-          </div>
-          <div class="email">
-            <label for="user">Correo electronico:</label>
-            <input class="field" type="email" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
-            <p class="feed" ></p>
-            <% if (errors.email) { %>
-              <p class="msg-error"><%= locals.errors.email.msg %></p>
-              <% } %>
-          </div>
-          <div class="passwords">
-            <label for="password">Ingresar contraseña:</label>
-            <input
-              class="field"
-              type="password"
-              name="passwd" placeholder="Password" value="<%= locals.oldData ? oldData.passwd : null %>">
-              <p class="feed" ></p>
-              <% if (errors.passwd) { %>
-                <p class="msg-error"><%= locals.errors.passwd.msg %></p>
-                <% } %>
-          </div>
-          <div class="image-fields-container">
-            <label for="image">Foto de perfil:</label>
-            <input class="image-upload" type="file" name="avatar" id="avatar"/>
-            <p class="feed" ></p>
-                      <% if (errors.avatar) { %>
-            <p class="msg-error"><%= locals.errors.avatar.msg %></p>
-            <% } %>
-          </div>
-
-          <div class="buttons">
-            <input class="submit" type="submit" value="Registrarme" />
-            <button class="nav-reset" type="reset" value="reset">Reset</button>
-            <div class="show-btn-back">
-              <a class="nav-back" href="/">Volver</a>
+          <div class="half1">
+            <div class="image">
+              <img class="preview" src="/assets/avatars/blank.jpg" />
             </div>
           </div>
-        </form>
-        </form>
-      </main>
-    </div>
-    <%- include ('../partials/footer') %>
+          <div class="half2">
+            <form
+              action="/registerUser?_method=POST"
+              method="POST"
+              class="fields"
+              id="news"
+              enctype="multipart/form-data"
+            >
+              <div class="firstName">
+                <input
+                  class="input-field"
+                  type="text"
+                  name="firstName"
+                  autocomplete="off"
+                  placeholder="Nombre"
+                  value="<%= locals.oldData ? oldData.firstName : null %>"
+                />
+                <i class="fa-solid fa-id-card"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.firstName) { %>
+                  <p class="msg-error"><%= locals.errors.firstName.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+              <div class="lastName">
+                <input
+                  class="input-field"
+                  type="text"
+                  name="lastName"
+                  autocomplete="off"
+                  placeholder="Apellido"
+                  value="<%= locals.oldData ? oldData.lastName : null %>"
+                />
+                <i class="fa-solid fa-id-card"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.lastName) { %>
+                  <p class="msg-error"><%= locals.errors.lastName.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+              <div class="userName">
+                <input
+                  class="input-field"
+                  type="text"
+                  name="userName"
+                  autocomplete="off"
+                  placeholder="Nombre de usuario"
+                  value="<%= locals.oldData ? oldData.userName : null %>"
+                />
+                <i class="fa-solid fa-user"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.userName) { %>
+                  <p class="msg-error"><%= locals.errors.userName.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+              <div class="email">
+                <input
+                  class="input-field"
+                  type="email"
+                  name="email"
+                  autocomplete="off"
+                  placeholder="Correo electronico"
+                  value="<%= locals.oldData ? oldData.email : null %>"
+                />
+                <i class="fa-solid fa-at"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.email) { %>
+                  <p class="msg-error"><%= locals.errors.email.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="passwd">
+                <input
+                  class="input-field"
+                  type="password"
+                  name="passwd"
+                  autocomplete="off"
+                  placeholder="Contraseña"
+                  value="<%= locals.oldData ? oldData.passwd : null %>"
+                />
+                <i class="fa-solid fa-key"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.passwd) { %>
+                  <p class="msg-error"><%= locals.errors.passwd.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="image-fields-container">
+                <label for="image">Actualizar foto de perfil:</label>
+                <input
+                  class="image-upload"
+                  type="file"
+                  name="avatar"
+                  autocomplete="off"
+                  id="image"
+                  autocomplete="off"
+                  onchange="loadFile(event)"
+                />
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.avatar) { %>
+                  <p class="msg-error"><%= locals.errors.avatar.msg %></p>
+                  <% } %>
+                </div>
+              </div>
+
+              <div class="buttons">
+                <div class="submit-container">
+                  <input class="submit" type="submit" value="Registrarme" />
+                </div>
+                <div class="reset-container">
+                  <button class="nav-reset" type="reset" value="reset">
+                    Reset
+                  </button>
+                </div>
+                <div class="btn-back-container">
+                  <a class="btn-back" href="/">Volver</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
+  <%- include ('../partials/footer') %>
 </html>

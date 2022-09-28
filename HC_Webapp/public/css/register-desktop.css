@@ -6,102 +6,241 @@
     font-family: 'Calibri';
   }
 
-  .msg-error {
-    flex-basis: 100%;
-    padding: 0.25rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
-    background-color: hsl(4, 72%, 50%);
-    color: rgb(252, 252, 252);
-    text-align: center;
-  }
-
-  #alert-msg {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 5vh;
-    width: 100vw;
-    background-color: rgb(48, 36, 220);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(252, 252, 252);
-  }
-  #alert-msg h2 {
-    text-transform: capitalize;
-  }
-
   body {
-    background-color: #87a6ab;
-    min-height: 91vh;
-    margin-top: 95px;
+    background: linear-gradient(150deg, #79a49a, #87a6ab, #62909a, #7cc6b0);
+    background-size: 1000% 200%;
+    animation: gradient 15s ease infinite;
   }
 
-  .container {
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .title {
+    position: absolute;
+    color: #62909a;
+    top: 4vh;
+    left: 8vw;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 0.5rem;
+    width: 60vw;
+    padding: 50px;
+    margin: 5vh auto;
+    box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  }
+
+  .half-1 {
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+  .half-2 {
     position: relative;
     display: flex;
     flex-direction: column;
   }
 
-  .input-fields {
-    padding: 10px 10px;
-    border-radius: 5px;
-    text-decoration: none;
+  .preview {
+    width: 350px;
+    height: 350px;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
+    border: solid 5px #62909a;
+  }
+
+  .fields {
+    width: 30vw;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+  }
+
+  .input-field {
+    background: rgba(255, 255, 255, 0);
+    width: 80%;
+    margin: auto;
     border: none;
+    border-bottom: 3px solid #62909a;
+    padding: 5px 0px;
+    outline: none;
+    transition: 0.4s;
+    font-size: 18px;
+    color: #62909a;
+    overflow-wrap: break-word;
+  }
+
+  .input-field:focus {
+    transition: 0.4s;
+    border-bottom: 3px solid #7cc6b0;
+  }
+  .input-field:focus + .fa-solid {
+    color: #7cc6b0;
+  }
+
+  label {
+    transition: 0.4s;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 3vw;
+  }
+
+  [placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.8s 0.4s ease;
+    text-indent: -100%;
+    opacity: 1;
+  }
+
+  ::placeholder {
+    color: #62909a;
+    transition: 0.4s;
+    opacity: 1;
+  }
+
+  .firstName,
+  .lastName,
+  .userName,
+  .email,
+  .passwd {
+    display: flex;
+    flex-direction: column;
+    color: #62909a;
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: 20px 0px;
   }
 
   .image-fields-container {
     margin: auto;
-    width: 40%;
-    display: flex;
-    justify-content: flex-start;
-    padding: 12px 15px;
-  }
-  .image-upload {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
-  label[for='user'],
-  label[for='password'],
-  label[for='firstName'],
-  label[for='lastName'],
-  label[for='image'],
-  label[for='email'] {
-    text-align: left;
-    font-size: 16px;
-    top: 26px;
-    left: 5px;
-    padding-bottom: 10px;
-    color: white;
-  }
-
-  .user,
-  .passwords,
-  .firstName,
-  .email,
-  .lastName {
-    margin: auto;
-    width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 12px 15px;
+    align-items: center;
+    padding: 5px 0px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #62909a;
+    color: white;
+    font-size: 18px;
+    transition: 0.4s;
+    width: 25vw;
+    margin-top: 10px;
+    z-index: -1;
+   }
+
+  label[for='image'] {
+    font-size: 15px;
+    text-align: center;
   }
 
-  label {
-    padding-left: 10px;
+  .image-upload {
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .image-fields-container:hover {
+    background-color: #7cc6b0;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .fa-solid {
+    position: absolute;
+    color: #62909a;
+    top: 25px;
+    right: 65px;
+    font-size: 20px;
+    transition: 0.4s;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+    transition: 0.4s;
   }
 
   .submit {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px 10px;
-    border-radius: 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    outline: none;
     border: none;
-    font-weight: bold;
-    background-color: #7cc6b0;
+    cursor: pointer;
+    background-color: #26b400;
     color: white;
+    font-size: 18px;
+    transition: 0.4s;
+  }
+
+  .nav-reset {
+    padding: 5px 10px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #de2700;
+    color: white;
+    font-size: 18px;
+    transition: 0.4s;
+  }
+
+  .btn-back {
+    padding: 5px 10px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #62909a;
+    color: white;
+    font-size: 18px;
+    transition: 0.4s;
+  }
+
+  .btn-back:link {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  .btn-back:visited{
+    color: whitesmoke;
+  }
+
+  .submit:hover,
+  .btn-back:hover{
+    background-color: #7cc6b0;
+    color: whitesmoke;
+    cursor: pointer;
+  }
+
+  .nav-reset:hover {
+    background-color: red;
+    color: whitesmoke;
+    cursor: pointer;
   }
 }

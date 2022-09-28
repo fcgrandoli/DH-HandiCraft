@@ -13,7 +13,6 @@
   <script defer src="/validationsFront/productCreate.js"></script>
   <script src="/scripts.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
-
   <body>
     <div class="errores">
       <ul></ul>
@@ -33,7 +32,7 @@
           <div class="half2">
             <form
               action="/viewProduct/createProduct"
-              method="post"
+              method="POST"
               class="fields"
               id="news"
               enctype="multipart/form-data"
@@ -47,7 +46,7 @@
                   placeholder="Nombre del producto"
                   value="<%= locals.oldData ? oldData.name : null %>"
                 />
-                <i class="fa-regular fa-keyboard"></i>
+                <i class="fa-solid fa-keyboard"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.name) { %>
@@ -65,7 +64,7 @@
                   placeholder="Descripcion breve"
                   value="<%= locals.oldData ? oldData.descShort : null %>"
                 />
-                <i class="fa-regular fa-keyboard"></i>
+                <i class="fa-solid fa-keyboard"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.descShort) { %>
@@ -86,7 +85,7 @@
                 >
 <%= locals.oldData ? oldData.descLarge : null %></textarea
                 >
-                <i class="fa-regular fa-keyboard"></i>
+                <i class="fa-solid fa-keyboard"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.descLarge) { %>
@@ -104,7 +103,7 @@
                   placeholder="Precio"
                   value="<%= locals.oldData ? oldData.price : null %>"
                 />
-                <i class="fa-regular fa-hashtag"></i>
+                <i class="fa-solid fa-hashtag"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.price) { %>
@@ -122,7 +121,7 @@
                   placeholder="Descuento (opcional)"
                   value="<%= locals.oldData ? oldData.discount : null %>"
                 />
-                <i class="fa-regular fa-hashtag"></i>
+                <i class="fa-solid fa-hashtag"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.discount) { %>
@@ -140,7 +139,7 @@
                   placeholder="Cantidad de stock (opcional)"
                   value="<%= locals.oldData ? oldData.stock : null %>"
                 />
-                <i class="fa-regular fa-hashtag"></i>
+                <i class="fa-solid fa-hashtag"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.discount) { %>

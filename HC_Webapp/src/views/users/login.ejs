@@ -9,22 +9,24 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script defer src="/validationsFront/userLogin.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
+  <script src="/scripts.js"></script>
   <body>
-    <div class="container">
+ 
       <div class="errores">
         <ul></ul>
       </div>
       <%- include ('../partials/header') %>
       <main>
+        <div class="container">
         <form
           class="fields"
           action="userLogin?_method=POST"
           method="POST"
           id="news"
         >
-        <div class="title">
-          <h1>Iniciar Sesión</h1>
-        </div>
+          <div class="title">
+            <h1>Iniciar Sesión</h1>
+          </div>
           <div class="user">
             <input
               class="input-field"
@@ -35,13 +37,14 @@
               value="<%= locals.oldData ? oldData.userName : null %>"
             />
             <i class="fa-sharp fa-solid fa-user"></i>
+            <div class="errors">
+                <p class="feed"></p>
+                <% if (errors.userName) { %>
+                <p class="msg-error"><%= locals.errors.userName.msg %></p>
+                <% } %>
+                 </div>
           </div>
-          <div class="errors">
-            <p class="feed"></p>
-            <% if (errors.userName) { %>
-            <p class="msg-error"><%= locals.errors.userName.msg %></p>
-            <% } %>
-          </div>
+
           <div class="passwords">
             <input
               class="input-field"
@@ -52,12 +55,12 @@
               value="<%= locals.oldData ? oldData.passwd : null %>"
             />
             <i class="fa-sharp fa-solid fa-lock"></i>
-          </div>
-          <div class="errors">
-            <p class="feed"></p>
-            <% if (errors.passwd) { %>
-            <p class="msg-error"><%= errors.passwd.msg %></p>
-            <% } %>
+            <div class="errors">
+              <p class="feed"></p>
+              <% if (errors.passwd) { %>
+              <p class="msg-error"><%= errors.passwd.msg %></p>
+              <% } %>
+            </div>
           </div>
 
           <div class="buttons">
