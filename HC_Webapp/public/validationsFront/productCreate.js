@@ -117,10 +117,10 @@ inputs.image.addEventListener('input', function (e) {
   let imageBackground = document.querySelector('.image-fields-container');
   let field = e.target.parentElement;
   let files = e.target.files;
-  let feed = field.querySelector('.feed');
-  let msgBackend = field.querySelector('.msg-error');
+  let feed = field.querySelector('.feed-img');
+  let msgBackend = field.querySelector('.msg-error-img');
   let msg = null;
-  let validmsg = field.querySelector('.feed-valid');
+  let validmsg = field.querySelector('.feed-img-valid');
   if (files.length == 0) {
     feed.style.display = 'flex';
     msg = 'El campo de imagen está vacio';
