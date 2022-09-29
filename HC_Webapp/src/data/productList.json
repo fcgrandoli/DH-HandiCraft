@@ -119,5 +119,161 @@
     "descLarge": "Maravilloso accesorio para expositores de centro de mesa de comedor. Este seria un regalo perfecto para inauguración de la casa, Navidad y festejos familiares. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años",
     "stock": "",
     "collection": "decoracion"
+  },
+  {
+    "id": 12,
+    "name": "Periquito",
+    "price": "20000",
+    "discount": "",
+    "image": "periquito_lechee.png",
+    "descShort": "Periquito amarillo Lechee - MULTICOLOR",
+    "descLarge": "Este diseño nuevo y divertido está inspirado en el periquito amarillo, una especie de loro brillante e iridiscente que habita la mayor parte del hemisferio sur. Elaborado completamente en cristal, sus 280 facetas brillan en tonos amarillos, con ojos de cristal negro y un pico de cristal azul. Ideal para regalar o para darle un divertido toque de color a tu propia casa, Lechee el periquito combina a la perfección con otras piezas de HandiCraft. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 13,
+    "name": "Osito",
+    "price": "8500",
+    "discount": "10",
+    "image": "osito.png",
+    "descShort": "My Little Kris Bear Portarretratos",
+    "descLarge": "El Oso Kris cuida de tu fotografía o tarjeta. Elaborado en resplandeciente cristal transparente, rosa y azul, su pose realista, representada en 627 brillantes facetas, hará que te encariñes con él de inmediato. La cuerda del globo, hecha de metal pulido, estabiliza la figura, mientras que un clip sujeta la fotografía en su sitio. Un encantador regalo para los padres y una figura imprescindible para los entusiastas del Oso Kris. La pieza es un objeto decorativo, no un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "Disney"
+  },
+  {
+    "id": 14,
+    "name": "Loro",
+    "price": "15000",
+    "discount": "",
+    "image": "loro.png",
+    "descShort":"Aladdin Iago - ROJO",
+    "descLarge": "Esta divertida pieza, que forma parte de nuestra primera colección de Aladdín de Disney, le da vida al cuento con esta representación del loro Iago. Iago, el ambicioso y característico secuaz del villano Jafar, está elaborado en 87 facetas de cristal coloridas y vibrantes. Una pieza imprescindible para los fans de Disney. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "Disney"
+  },
+  {
+    "id": 15,
+    "name": "Hedwig",
+    "price": "18000",
+    "discount": "",
+    "image": "hedwin.png",
+    "descShort": "Harry Potter Hedwig",
+    "descLarge": "Una pieza imprescindible para los amantes de Harry Potter, una bonita representación de Hedwig que trae la magia de un mundo mágico a tu hogar. El brillo de 336 facetas de cristal tallado por expertos , un diseño que presenta al búho de la nieve, compañero de Harry Potter, sentado sobre una pila de libros sujetando una carta en su pico. Con el carácter sabio, leal y entrañable que caracteriza a Hedwig, es un regalo cargado de significado. Es un objeto decorativo. No es un juguete. No apto para niños menores de 15.",
+    "stock": "",
+    "collection": "Disney"
+  },
+
+  {
+    "id": 16,
+    "name": "Genio",
+    "price": "15000",
+    "discount": "10",
+    "image": "genio.png",
+    "descShort": "Aladdin Genio - AZUL",
+    "descLarge": "Una pieza imprescindible para los fans de Aladdín de Disney, esta alegre representación del Genio le dará vida al clásico cuento en tu hogar. Elaborado en 307 facetas de cristal azul, rojo, amarillo, negro y blanco talladas por expertos, este diseño refleja a la perfección el carácter divertido del Genio. El regalo perfecto para los fans de la película Disney. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "Disney"
+  },
+
+  {
+    "id": 17,
+    "name": "Periquito rosa",
+    "price": "10000",
+    "discount": "",
+    "image": "periquito_rosa.png",
+    "descShort": "Periquito Rosa Cha Cha - MULTICOLOR",
+    "descLarge": "Esta preciosa creación de cristal captura la naturaleza alegre y los hermosos colores pastel del periquito. Elaborado en su totalidad de cristal, sus 280 facetas brillan en diferentes tonos de rosa, con unos ojos de cristal negro y un pico de cristal azul. Diseñado por Martin Zendron, Cha Cha aportará un toque fresco y moderno a la decoración de tu hogar. Ideal para regalar y una pieza imprescindible para los coleccionistas. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 18,
+    "name": "Guacamayo",
+    "price": "20000",
+    "discount": "10",
+    "image": "guacamayo.png",
+    "descShort": "Guacamayo Verde Banjo - VERDE",
+    "descLarge": "Esta preciosa creación de cristal captura la alegre y divertida naturaleza del guacamayo verde, una especie en peligro de extinción originaria de los bosques tropicales de Sudamérica. Elaborado en su totalidad de cristal con 458 facetas, brilla gracias a su vibrante paleta de colores con su pico rojo intenso, cuerpo verde y cola azul. Diseñado por Martin Zendron, el ave se erige sobre un pilar de cristal transparente. Una maravillosa idea de regalo para los amantes de la vida salvaje o una forma brillante de añadir un estilo fresco y moderno a tu propio hogar. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 19,
+    "name": "Florero",
+    "price": "15000",
+    "discount": "10",
+    "image": "PRD-Dragon1.jpg",
+    "descShort": "Flores Magnéticas multicolor - Grande",
+    "descLarge": "Inspirada en la alegre primavera, esta gran hoja de cristal verde añade un toque de color divertido a cualquier espacio o atuendo. Puede fijarse a cualquier superficie magnética o llevarse como broche gracias a su discreto pasador. Esta llamativa pieza cuenta con 69 facetas de cristal verde talladas con destreza y ha sido diseñada por Martin Zendron. Una gran idea de regalo o el complemento perfecto para cualquier colección inspirada en la naturaleza. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 20,
+    "name": "Ananás",
+    "price": "18000",
+    "discount": "5",
+    "image": "anana.png",
+    "descShort": "Ananás Magnético - Grande",
+    "descLarge": "Esta gran y divertida piña de cristal es una celebración de la alegría y los colores de la naturaleza tropical. Diseñada por Martin Zendron, puede fijarse a cualquier superficie magnética o llevarse como broche gracias a su discreto pasador. El diseño, exquisitamente elaborado, presenta 64 facetas de cristal amarillo. Una maravillosa idea de regalo o un complemento elegante para cualquier colección inspirada en la naturaleza. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 21,
+    "name": "Caja decorativa",
+    "price": "24000",
+    "discount": "5",
+    "image": "PRD-Dragon1.jpg",
+    "descShort": "Caja decorativa Andoki, Verde claro ",
+    "descLarge": "La piña, símbolo por excelencia del verano y del trópico, sirve de inspiración para esta moderna caja decorativa. Con 164 facetas brillantes y una elegante combinación de cristal verde, vidrio lacado en verde y detalles metálicos en tono dorado, añadirá frescura y vitalidad a cualquier interior. El cristal verde cuenta con nuestro efecto especial Shimmer para un brillo extra. Una idea de regalo divertida y funcional para cualquier ocasión. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 22,
+    "name": "Campana de cristal",
+    "price": "18000",
+    "discount": "",
+    "image": "PRD-Dragon1.jpg",
+    "descShort": "Campana de cristal Rosa, Pequeña - ROJO",
+    "descLarge": "Esta campana de cristal floral combina la decoración clásica con el estilo moderno. Inspirada en la tendencia contemporánea de las flores individuales, presenta una rosa, elaborada con 122 facetas de cristal rojo, sobre un soporte de metal en tono dorado champán dentro de una elegante campana de cristal. Este sería el regalo perfecto para cualquier ocasión especial y una forma tradicional de decir «Te quiero». Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 23,
+    "name": "Florero",
+    "price": "15000",
+    "discount": "5",
+    "image": "PRD-Dragon1.jpg",
+    "descShort": "Florero moderno Rosa - ROJO",
+    "descLarge": " Inspirada en la tendencia de decoración con jarrones de una sola flor, esta preciosa creación de cristal representa una romántica rosa. Brilla gracias a sus 123 facetas de cristal rojo, las líneas suaves de sus pétalos y el tallo de metal cepillado en tono dorado hacen gala de un estilo moderno y minimalista. Esta rosa, una forma clásica de decir «te amo», es el regalo perfecto para cualquier ocasión especial. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 24,
+    "name": "Campana de cristal",
+    "price": "18000",
+    "discount": "",
+    "image": "PRD-Dragon1.jpg",
+    "descShort": "Campana de cristal Hibisco, Pequeña - MORADO",
+    "descLarge": "Opta por una versión moderna del estilo clásico con esta campana de cristal floral. Inspirada en la tendencia contemporánea de las flores individuales, presenta una flor de hibisco sobre un soporte de metal en tono dorado champán dentro de una elegante campana de cristal. La flor de hibisco, que simboliza la juventud, el éxito, la feminidad y la sabiduría, está elaborada con 385 facetas de cristal morado y amarillo claro. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 25,
+    "name": "Rinoceronte",
+    "price": "18000",
+    "discount": "5",
+    "image": "rinoceronte.png",
+    "descShort": "Baby Animals Rocky el Rinoceronte - AZUL",
+    "descLarge": "Prepárate para enamorarte de esta adorable representación de Rocky el rinoceronte, elaborada con 221 facetas de cristal azul, gris, rosa y negro. Un símbolo de fuerza y resistencia, este rinoceronte bebé es una idea de regalo ideal. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "Disney"
   }
 ]
