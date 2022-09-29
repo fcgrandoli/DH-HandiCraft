@@ -4,7 +4,11 @@
   <link rel="stylesheet" type="text/css" href="/css/productEdit.css" />
   <link rel="stylesheet" type="text/css" href="/css/productEdit-tablet.css" />
   <link rel="stylesheet" type="text/css" href="/css/productEdit-desktop.css" />
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="/validationsFront/productEdit.js"></script>
   <script src="/scripts.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
   <body>
     <div class="errores">
       <ul></ul>
@@ -50,6 +54,7 @@
                 />
                 <i class="fa-regular fa-keyboard"></i>
                 <div class="errors">
+                  <p class="feed"></p>
                   <% if (errors.name) { %>
                   <p class="msg-error"><%= locals.errors.name.msg %></p>
                   <% } %>
@@ -66,6 +71,7 @@
                 />
                 <i class="fa-regular fa-keyboard"></i>
                 <div class="errors">
+                  <p class="feed"></p>
                   <% if (errors.descShort) { %>
                   <p class="msg-error"><%= locals.errors.descShort.msg %></p>
                   <% } %>
@@ -85,6 +91,7 @@
                 >
                 <i class="fa-regular fa-keyboard"></i>
                 <div class="errors">
+                  <p class="feed"></p>
                   <% if (errors.descLarge) { %>
                   <p class="msg-error"><%= locals.errors.descLarge.msg %></p>
                   <% } %>
@@ -101,6 +108,7 @@
                 />
                 <i class="fa-regular fa-hashtag"></i>
                 <div class="errors">
+                  <p class="feed"></p>
                   <% if (errors.price) { %>
                   <p class="msg-error"><%= locals.errors.price.msg %></p>
                   <% } %>

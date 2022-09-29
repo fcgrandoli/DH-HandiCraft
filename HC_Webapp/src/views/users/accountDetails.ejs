@@ -12,7 +12,11 @@
     type="text/css"
     href="/css/accountDetails-desktop.css"
   />
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="/validationsFront/updateUser.js"></script>
   <script src="/scripts.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/validationsFront.css" />
   <body>
     <div class="errores">
       <ul></ul>
@@ -36,6 +40,7 @@
             <form
               class="fields"
               method="POST"
+              id="news"
               action="/user/update?_method=POST"
               enctype="multipart/form-data"
             >
@@ -57,12 +62,14 @@
                   value="<%= userLoggedIn.firstName %>"
                 />
                 <i class="fa-solid fa-id-card"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.firstName) { %>
+                  <p class="msg-error"><%= locals.errors.firstName.msg %></p>
+                  <% } %>
+                </div>
               </div>
-              <div class="errors">
-                <% if (errors.firstName) { %>
-                <p class="msg-error"><%= locals.errors.firstName.msg %></p>
-                <% } %>
-              </div>
+
               <div class="lastName">
                 <label for="user">Apellido:</label>
                 <input
@@ -72,12 +79,14 @@
                   value="<%= userLoggedIn.lastName %>"
                 />
                 <i class="fa-solid fa-id-card"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.lastName) { %>
+                  <p class="msg-error"><%= locals.errors.lastName.msg %></p>
+                  <% } %>
+                </div>
               </div>
-              <div class="errors">
-                <% if (errors.lastName) { %>
-                <p class="msg-error"><%= locals.errors.lastName.msg %></p>
-                <% } %>
-              </div>
+
               <div class="userName">
                 <label for="user">Nombre de usuario:</label>
                 <input
@@ -87,12 +96,14 @@
                   value="<%= userLoggedIn.userName %>"
                 />
                 <i class="fa-solid fa-user"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.userName) { %>
+                  <p class="msg-error"><%= locals.errors.userName.msg %></p>
+                  <% } %>
+                </div>
               </div>
-              <div class="errors">
-                <% if (errors.userName) { %>
-                <p class="msg-error"><%= locals.errors.userName.msg %></p>
-                <% } %>
-              </div>
+
               <div class="email">
                 <label for="email">E-mail:</label>
                 <input
@@ -102,12 +113,14 @@
                   value="<%= userLoggedIn.email %>"
                 />
                 <i class="fa-solid fa-at"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.email) { %>
+                  <p class="msg-error"><%= locals.errors.email.msg %></p>
+                  <% } %>
+                </div>
               </div>
-              <div class="errors">
-                <% if (errors.email) { %>
-                <p class="msg-error"><%= locals.errors.email.msg %></p>
-                <% } %>
-              </div>
+
               <div class="passwd">
                 <label for="password">Contraseña:</label>
                 <input

@@ -2,7 +2,7 @@ function authMiddleware(req, res, next) {
   if (req.session.user != undefined) {
     next();
   } else {
-    res.redirect('viewRegister')
+    res.redirect('/user/viewRegister')
   }
 }
 module.exports = authMiddleware;

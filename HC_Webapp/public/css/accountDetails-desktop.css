@@ -1,20 +1,9 @@
-@media only screen and (min-width: 1200px) {
+ @media only screen and (min-width: 1200px) {
   * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Calibri';
-  }
-  .msg-error {
-    width: 60%;
-    height: 25px;
-    margin: auto;
-    font-size: 18px;
-    text-align: center;
-    border-radius: 10px;
-    background-color: hsla(4, 72%, 50%, 0.7);
-    color: rgb(252, 252, 252);
-    transition: 0.4s;
   }
 
   body {
@@ -35,13 +24,13 @@
     }
   }
 
-  .title{
+  .title {
     position: absolute;
     color: #62909a;
     top: 4vh;
     left: 8vw;
-    white-space:nowrap;
-    text-overflow:ellipsis;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .box {
@@ -142,8 +131,6 @@
     color: #62909a;
     position: relative;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     margin: auto;
     padding: 20px 0px;
   }
@@ -151,6 +138,7 @@
   .image-fields-container {
     margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 5px 0px;
     border-radius: 15px;
@@ -162,7 +150,9 @@
     font-size: 18px;
     transition: 0.4s;
     width: 25vw;
-  }
+    margin-top: 10px;
+    z-index: -1;
+   }
 
   label[for='image'] {
     font-size: 15px;
@@ -240,3 +230,4 @@
     cursor: pointer;
   }
 }
+

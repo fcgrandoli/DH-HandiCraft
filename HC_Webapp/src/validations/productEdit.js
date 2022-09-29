@@ -27,8 +27,8 @@ const validationProduct = [
     .notEmpty()
     .withMessage("Este campo no puede quedar vacío")
     .bail()
-    .isLength({ min: 1 })
-    .withMessage("Este campo debe contener mínimo 1 caracter")
+    .isLength({ min: 2 })
+    .withMessage("Este campo debe contener mínimo 2 caracteres")
     .bail(),
   body("image").custom((value, { req }) => {
     if (!req.file && req.body.imagepath) {
