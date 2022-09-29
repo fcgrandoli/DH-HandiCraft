@@ -49,6 +49,63 @@ module.exports = {
           product: 11,
           image: 11,
         },
+        {
+          product: 12,
+          image: 12,
+        },
+        {
+          product: 13,
+          image: 13,
+        },
+        {
+          product: 14,
+          image: 14,
+        },
+        {
+          product: 15,
+          image: 15,
+        },
+        {
+          product: 16,
+          image: 16,
+        },
+        {
+          product: 17,
+          image: 17,
+        },
+        {
+          product: 18,
+          image: 18,
+        },
+        {
+          product: 19,
+          image: 19,
+        },
+        {
+          product: 20,
+          image: 20,
+        },
+        {
+          product: 21,
+          image: 21,
+        },
+        {
+          product: 22,
+          image: 22,
+        },
+        {
+          product: 23,
+          image: 23,
+        },
+        {
+          product: 24,
+          image: 24,
+        },
+        {
+          product: 25,
+          image: 25,
+        },
+
       ],
       {}
     );
