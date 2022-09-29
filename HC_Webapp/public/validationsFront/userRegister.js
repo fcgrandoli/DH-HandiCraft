@@ -1,7 +1,6 @@
 let forms = document.forms.news;
 
 let inputs = forms.elements;
-
 fieldInputEvent('input', inputs.firstName, 5)
 fieldInputEvent('input', inputs.lastName, 5)
 fieldInputEvent('input', inputs.userName, 5)

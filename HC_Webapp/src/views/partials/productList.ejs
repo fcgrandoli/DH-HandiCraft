@@ -20,5 +20,27 @@
       </p>
     </div>
   </div>
+<% if(userLoggedIn && userLoggedIn.isAdmin == true){ %>
+    <div class="buttons">
+      <div class="btn-edit-container">
+        <a
+          class="btn-edit"
+          href="/viewProduct/<%= productList[i].id%>/editar"
+          >EDITAR</a
+        >
+        <i class="fa-solid fa-pen-to-square"></i>
+      </div>
+      <div class="btn-delete-container">
+        <form
+          class="fields"
+          method="POST"
+          action="/viewProduct/<%= productList[i].id%>/delete"
+        >
+          <input class="btn-delete" type="submit" value="ELIMINAR" />
+          <i class="fa-solid fa-trash"></i>
+        </form>
+      </div>
+    </div>
+    <% } %>
 </article>
 <% } %>

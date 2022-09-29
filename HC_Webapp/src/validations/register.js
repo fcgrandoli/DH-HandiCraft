@@ -26,7 +26,7 @@ const register = [
     .withMessage('El usuario debe contener mínimo cinco caracteres')
     .bail()
     .custom(async value => {
-      let users = await user.findOne({ where: { userName: value } })
+      let users = await user.findOne({ where: { userName: value } });
       if (users) {
         throw new Error('El nombre de usuario no esta disponible');
       }
@@ -40,24 +40,36 @@ const register = [
     .withMessage('El formato de email no es válido')
     .bail()
     .custom(async value => {
-      let users = await user.findOne({ where: { email: value } })
+      let users = await user.findOne({ where: { email: value } });
       if (users) {
         throw new Error('El email no esta disponible');
       }
       return true;
     }),
-  body('passwd')
+  body(
+    'passwd',
+    "La contraseña debe tener: \n 2 mayúsculas \n 2 minúsculas \n 1 número \n 1 carácter especial"
+  )
     .notEmpty()
-    .withMessage('La contraseña no puede quedar vacía.')
+    .withMessage('La contraseña no puede quedar vacía')
     .bail()
-    .isLength({ min: 4 })
-    .bail(),
+    .isString()
+    .isLength({ min: 8 })
+    .bail()
+    .not()
+    .isLowercase({ min: 2 })
+    .not()
+    .bail()
+    .isUppercase({ min: 2 })
+    .not()
+    .bail()
+    .isNumeric({ min: 1 }),
   body('avatar').custom((value, { req }) => {
     if (!req.file) {
       return true;
     } else {
       let archivos = req.file;
-      let extensiones = [".svg", ".png", ".jpg", ".jpeg", ".GIF", ".webp"];
+      let extensiones = ['.svg', '.png', '.jpg', '.jpeg', '.GIF', '.webp'];
       let avatar = archivos;
       let extension = extname(avatar.filename);
 

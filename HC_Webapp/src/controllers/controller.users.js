@@ -68,7 +68,6 @@ const controllerLogin = {
         lastName: req.body.lastName,
         userName: req.body.userName,
         email: req.body.email,
-        isAdmin: '',
         avatar: !req.file ? userIMG.avatar : req.file.filename,
       });
       

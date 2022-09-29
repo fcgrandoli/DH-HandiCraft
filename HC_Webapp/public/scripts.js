@@ -1,5 +1,6 @@
 'use strict';
 //VALIDATIONS FRONT HANDLER
+
 const fieldInputEvent = function (type, inputName, charlimit) {
   switch (type) {
     case 'focus':
@@ -22,7 +23,6 @@ const fieldInputEvent = function (type, inputName, charlimit) {
         } else {
           field.classList.remove('invalid');
           field.classList.add('valid');
-          feed.innerText = validmsg;
         }
       });
       break;
@@ -103,12 +103,12 @@ const fieldInputEvent = function (type, inputName, charlimit) {
         };
         if (!validator.isLength(value, { min: 8 })) {
           feed.style.display = 'flex';
-          msg = 'La contraseña debe contener mínimo ocho caracteres';
+          msg = 'La contraseña debe contener mínimo 8 caracteres';
           setRedBorder(inputName);
           msghandler(feed, msgBackend, value);
         } else if (!validator.isStrongPassword(value, config)) {
           feed.style.display = 'flex';
-          msg = `La contraseña debe tener:
+          msg = `La contraseña debe tener al menos:
           2 mayúsculas
           2 minúsculas
           1 número 
