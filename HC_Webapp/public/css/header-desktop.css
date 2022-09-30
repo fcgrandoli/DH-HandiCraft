@@ -40,27 +40,26 @@
     font-family: 'Lucida Sans';
     font-style: italic;
     color: whitesmoke;
-    flex-shrink: 1;
-    overflow-wrap:break-word;
+    overflow-wrap:normal;
+    width: 100%;
   }
 
   .nav-site-container {
     display: flex;
     justify-content: space-evenly;
-    width: 20vw;
+    flex-wrap: wrap;
   }
 
   .nav-button {
     display: flex;
     text-align: center;
-    overflow-wrap:break-word;
-    flex-shrink: 1;
+    overflow-wrap: break-word;
   }
 
   .nav-user-container {
     display: flex;
     justify-content: space-evenly;
-    width: 20vw;
+    flex-wrap: wrap;
   }
   .nav-user {
     display: flex;

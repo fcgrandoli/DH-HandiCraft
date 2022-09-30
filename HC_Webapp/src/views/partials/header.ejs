@@ -6,14 +6,14 @@
     </div>
     <nav class="nav-site-container">
       <div>
-      <a class="nav-button" href="/">Home</a>
-    </div>
-    <div>
-      <a class="nav-button" href="/collectionList">Colecciones</a>
-    </div>
-    <div>
-      <a class="nav-button" href="/enConstruccion">Noticias</a>
-    </div>
+        <a class="nav-button" href="/">Home</a>
+      </div>
+      <div>
+        <a class="nav-button" href="/collectionList">Colecciones</a>
+      </div>
+      <div>
+        <a class="nav-button" href="/enConstruccion">Noticias</a>
+      </div>
     </nav>
     <div class="nav-search">
       <form class="search-form" action="/buscar" method="GET">
@@ -25,32 +25,33 @@
         />
         <input class="search-bar-submit" type="submit" value="&#128269" />
       </form>
-     <!--  <i class="fa-solid fa-magnifying-glass"></i> -->
     </div>
 
-      <nav class="nav-user-container">
-        <% if(!userLoggedIn){ %>
-        <div>
-          <a class="nav-user" href="/user/viewRegister">Registrarme</a>
-        </div>
-        <div>
-          <a class="nav-user" href="/user/viewLogin">Cuenta</a>
-        </div>
+    <nav class="nav-user-container">
+      <% if(!userLoggedIn){ %>
+      <div>
+        <a class="nav-user" href="/user/viewRegister">Registrarme</a>
+      </div>
+      <div>
+        <a class="nav-user" href="/user/viewLogin">Cuenta</a>
+      </div>
 
-        <% } else{ %>
+      <% } else{ %>
 
-        <div>
-          <a class="nav-user" class="profile-name" href="/user/profile"><%= userLoggedIn.userName %></a> 
-        </div>
+      <div>
+        <a class="nav-user" class="profile-name" href="/user/profile"
+          ><%= userLoggedIn.userName %></a
+        >
+      </div>
 
-        <% } %>
+      <% } %>
 
-        <div>
-          <a class="nav-user" href="/cart">Carrito</a>
-        </div>
-      </nav>
-      <nav class="nav-menu">
-        <i class="fas fa-bars"></i>
-      </nav>
+      <div>
+        <a class="nav-user" href="/cart">Carrito</a>
+      </div>
+    </nav>
+    <nav class="nav-menu">
+      <i class="fas fa-bars"></i>
+    </nav>
   </div>
 </header>
