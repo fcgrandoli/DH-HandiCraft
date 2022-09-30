@@ -4,6 +4,7 @@ import './App.css'
 import { Routes, Route, Link } from "react-router-dom"
 import Products from './pages/Products.jsx'
 import Users from './pages/Users.jsx'
+import Error from './pages/Error.jsx'
 
 function App() {
 
@@ -18,8 +19,9 @@ function App() {
 
 
     <Routes>
-    <Route  path="*" element= { <Products/>}  >  </Route> 
+    <Route  path="/products" element= { <Products/>}  >  </Route> 
     <Route  path="/users" element= { <Users/>}  >  </Route> 
+    <Route  path="*" element= { <Error/>}  >  </Route> 
     </Routes>
    
     </>
