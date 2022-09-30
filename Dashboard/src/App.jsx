@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom"
 import Products from './pages/Products.jsx'
 import Users from './pages/Users.jsx'
 import Error from './pages/Error.jsx'
+import { Outlet } from "react-router-dom"
 
 function App() {
 
@@ -19,8 +20,8 @@ function App() {
 
 
     <Routes>
-    <Route  path="/products" element= { <Products/>}  >  </Route> 
-    <Route  path="/users" element= { <Users/>}  >  </Route> 
+    <Route  path="/products" element= {<> <Products/><Outlet/></>}  >  </Route> 
+    <Route  path="/users" element= {<> <Users/> <Outlet/></>}  > </Route> 
     <Route  path="*" element= { <Error/>}  >  </Route> 
     </Routes>
    
