@@ -151,7 +151,7 @@ const fieldInputEvent = function (type, inputName, charlimit) {
           !['jpg', 'jpeg', 'png', 'gif'].includes(files[0].type.split('/')[1])
         ) {
           feed.style.display = 'flex';
-          msg = 'No es un formato de imagen valida';
+          msg = 'Formato inválido';
           setRedBackground(imageBackground);
           msghandler(feed, msgBackend, files);
         } else {

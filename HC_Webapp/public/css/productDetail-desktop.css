@@ -210,7 +210,7 @@
     display: flex;
     position: absolute;
     align-items: center;
-    transition: 0.4s;
+    transition: 0.5s ease;
     top: 10px;
     right: 0px;
   }
@@ -247,7 +247,7 @@
     border: 2.5px solid whitesmoke;
     color: white;
     font-size: 18px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .btn-delete-container {
@@ -264,14 +264,14 @@
     background-color: #de2700;
     color: white;
     font-size: 18px;
-     transition: 0.4s;
+     transition: 0.5s ease;
   }
 
   .btn-delete:hover {
     color: whitesmoke;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .btn-edit-container {
@@ -279,7 +279,7 @@
     padding: 5px 10px;
     border-radius: 15px;
     background-color: #26b400;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   a.btn-edit {
@@ -290,7 +290,7 @@
     color: white;
     font-size: 18px;
     
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   a.btn-edit:hover {

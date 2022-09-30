@@ -100,14 +100,14 @@
     border-bottom: 3px solid #62909a;
     padding: 2px 0px;
     outline: none;
-    transition: 0.4s;
+    transition: 0.5s ease;
     font-size: 18px;
     color: #62909a;
     overflow-wrap: break-word;
   }
 
   .input-field:focus {
-    transition: 0.4s;
+    transition: 0.5s ease;
     border-bottom: 3px solid #7cc6b0;
   }
   .input-field:focus + .labelName {
@@ -118,7 +118,7 @@
   }
 
   label {
-    transition: 0.4s;
+    transition: 0.5s ease;
     text-align: left;
     font-size: 18px;
     font-weight: bold;
@@ -127,7 +127,7 @@
 
   ::placeholder {
     color: #62909a;
-    transition: 0.4s;
+    transition: 0.5s ease;
     opacity: 1;
   }
 
@@ -159,7 +159,7 @@
     background-color: #62909a;
     color: white;
     font-size: 18px;
-    transition: 0.4s;
+    transition: 0.5s ease;
     width: 25vw;
     margin-top: 10px;
   }
@@ -171,14 +171,14 @@
 
   .image-upload {
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.5s ease;
     position: relative;
   }
 
   .image-fields-container:hover {
     background-color: #7cc6b0;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .fa-regular {
@@ -186,7 +186,7 @@
     color: #62909a;
     right: 3vw;
     font-size: 20px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .buttons {
@@ -194,7 +194,7 @@
     justify-content: space-evenly;
     align-items: center;
     margin-top: 30px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .submit {
@@ -206,7 +206,7 @@
     background-color: #26b400;
     color: white;
     font-size: 18px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .submit:hover {
@@ -225,7 +225,7 @@
     color: white;
     font-size: 18px;
     font-weight: bold;
-    transition: 0.4s;
+    transition: 0.5s ease;
     position: absolute;
     bottom: 52px;
     right: 25px;

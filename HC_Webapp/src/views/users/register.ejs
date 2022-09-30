@@ -121,7 +121,13 @@
               </div>
 
               <div class="image-fields-container">
-                <label for="image">Actualizar foto de perfil:</label>
+                <label for="image">Seleccionar imagen de perfil</label>
+                <div class="errors">
+                  <p class="feed-img"></p>
+                  <% if (errors.avatar) { %>
+                  <p class="msg-error-img"><%= locals.errors.avatar.msg %></p>
+                  <% } %>
+                </div>
                 <input
                   class="image-upload"
                   type="file"
@@ -130,13 +136,8 @@
                   id="image"
                   autocomplete="off"
                   onchange="loadFile(event)"
+                  hidden
                 />
-                <div class="errors">
-                  <p class="feed-img"></p>
-                  <% if (errors.avatar) { %>
-                  <p class="msg-error-img"><%= locals.errors.avatar.msg %></p>
-                  <% } %>
-                </div>
               </div>
 
               <div class="buttons">

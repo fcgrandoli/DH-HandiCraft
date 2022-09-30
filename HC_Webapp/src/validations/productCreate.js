@@ -42,7 +42,7 @@ const validationProduct = [
       unlinkSync(
         resolve(__dirname, "../../public/", "images", producto.filename)
       );
-      throw new Error("No es un formato de imagen valida");
+      throw new Error("Formato inválido");
     }
 
     if (producto.size > 2097152) {

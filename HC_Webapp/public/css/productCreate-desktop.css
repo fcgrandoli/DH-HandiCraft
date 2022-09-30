@@ -99,14 +99,14 @@
     border-bottom: 3px solid #62909a;
     padding: 5px 0px;
     outline: none;
-    transition: 0.4s;
+    transition: 0.5s ease;
     font-size: 18px;
     color: #62909a;
     overflow-wrap: break-word;
   }
 
   .input-field:focus {
-    transition: 0.4s;
+    transition: 0.5s ease;
     border-bottom: 3px solid #7cc6b0;
   }
   .input-field:focus + .fa-regular {
@@ -121,7 +121,7 @@
 
   ::placeholder {
     color: #62909a;
-    transition: 0.4s;
+    transition: 0.5s ease;
     opacity: 1;
   }
 
@@ -153,7 +153,7 @@
     background-color: #62909a;
     color: white;
     font-size: 18px;
-    transition: 0.4s;
+    transition: 0.5s ease;
     width: 25vw;
     margin-top: 10px;
   }
@@ -165,14 +165,14 @@
 
   .image-upload {
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.5s ease;
     position: relative;
   }
 
   .image-fields-container:hover {
     background-color: #7cc6b0;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .fa-solid {
@@ -181,7 +181,7 @@
     top: 1.5rem;
     right: 10%;
     font-size: 20px;
-    transition: 0.4s;
+    transition: 0.5s ease;
     background: #d9e4e3;
   }
 
@@ -190,7 +190,7 @@
     justify-content: space-evenly;
     align-items: center;
     margin-top: 30px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .submit {
@@ -202,7 +202,7 @@
     background-color: #62909a;
     color: white;
     font-size: 18px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .submit:hover {
@@ -220,7 +220,7 @@
     background-color: #de2700;
     color: white;
     font-size: 18px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .nav-reset:hover {

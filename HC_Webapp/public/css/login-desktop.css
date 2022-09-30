@@ -57,14 +57,14 @@
     border-bottom: 3px solid #62909a;
     padding: 5px 0px;
     outline: none;
-    transition: 0.4s;
+    transition: 0.5s ease;
     font-size: 18px;
     color: #62909a;
     overflow-wrap: break-word;
   }
 
   .input-field:focus {
-    transition: 0.4s;
+    transition: 0.5s ease;
     border-bottom: 3px solid #7cc6b0;
   }
   .input-field:focus + .fa-sharp {
@@ -79,7 +79,7 @@
 
   ::placeholder {
     color: #62909a;
-    transition: 0.4s;
+    transition: 0.5s ease;
     opacity: 1;
   }
 
@@ -100,7 +100,7 @@
     top: 1.5rem;
     right: 15%;
     font-size: 20px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .buttons {
@@ -108,7 +108,7 @@
     justify-content: space-evenly;
     align-items: center;
     margin-top: 15px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .submit {
@@ -120,7 +120,7 @@
     background-color: #62909a;
     color: white;
     font-size: 18px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .checkbox-container {
@@ -130,7 +130,7 @@
     background-color: #62909a;
     padding: 5px 10px;
     border-radius: 15px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .checkbox {
@@ -140,14 +140,14 @@
     accent-color: whitesmoke;
     border: none;
     clip-path: circle(46% at 50% 50%);
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .check-box-text {
     font-size: 18px;
     padding-left: 5px;
     color: whitesmoke;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .nav-back {
@@ -159,7 +159,7 @@
     background-color: #62909a;
     color: white;
     font-size: 18px;
-    transition: 0.4s;
+    transition: 0.5s ease;
   }
 
   .nav-back:link {

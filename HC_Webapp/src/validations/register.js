@@ -77,7 +77,7 @@ const register = [
         unlinkSync(
           resolve(__dirname, '../../public/assets/', 'avatars', avatar.filename)
         );
-        throw new Error('No es un formato de imagen valida');
+        throw new Error('Formato inválido');
       }
 
       if (avatar.size > 2097152) {

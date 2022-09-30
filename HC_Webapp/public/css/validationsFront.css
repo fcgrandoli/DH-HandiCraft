@@ -11,7 +11,7 @@
   padding: 0px 10px;
   color: rgb(252, 252, 252);
   overflow-wrap: break-word;
-  width: 70%;
+  width: 60%;
  
 }
 
@@ -36,7 +36,6 @@
   transition: 0.5s ease;
 }
 .valid .feed-img {
-  width: 25%;
   background-color: #7cc6b0;
   transition: 0.5s ease;
 }
