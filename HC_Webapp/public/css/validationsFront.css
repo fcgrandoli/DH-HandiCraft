@@ -12,6 +12,7 @@
   color: rgb(252, 252, 252);
   overflow-wrap: break-word;
   width: 70%;
+ 
 }
 
 .feed-img {
@@ -32,15 +33,18 @@
 .valid .feed {
   width: 50%;
   background-color: #7cc6b0;
+  transition: 0.5s ease;
 }
 .valid .feed-img {
   width: 25%;
   background-color: #7cc6b0;
+  transition: 0.5s ease;
 }
 
 .invalid .feed,
 .invalid .feed-img {
   background-color: hsla(4, 72%, 50%, 0.75);
+  transition: 0.5s ease;
 }
 
 .aclaracion {

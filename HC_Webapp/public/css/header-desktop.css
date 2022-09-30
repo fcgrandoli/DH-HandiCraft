@@ -17,14 +17,13 @@
     padding-bottom: 5px;
     border-bottom: 3px solid whitesmoke;
     background-color: #62909a;
-    
   }
 
   .logo {
     display: flex;
     align-items: center;
     justify-self: flex-start;
-    width: 20vw;
+    min-width: 15vw;
     flex-shrink: 1;
   }
 
@@ -40,13 +39,14 @@
     font-family: 'Lucida Sans';
     font-style: italic;
     color: whitesmoke;
-    overflow-wrap:normal;
+    overflow-wrap: normal;
     width: 100%;
   }
 
   .nav-site-container {
+    min-width: 15vw;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 
@@ -57,14 +57,15 @@
   }
 
   .nav-user-container {
+    min-width: 15vw;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
   .nav-user {
     display: flex;
     text-align: center;
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
     flex-shrink: 1;
   }
 
@@ -81,7 +82,7 @@
     margin: 5px 10px;
     padding: 3px 15px;
     display: block;
-    border: 2.5px solid whitesmoke;
+    outline: 2.5px solid whitesmoke;
     border-radius: 15px;
   }
 
@@ -100,39 +101,78 @@
     position: absolute;
   }
 
+  [placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 1s 0.5s ease;
+    color: #62909a;
+    text-indent: -100%;
+    opacity: 1;
+  }
+  [placeholder]:hover::-webkit-input-placeholder {
+    transition: text-indent 1s 0.5s ease;
+    color: #62909a;
+    text-indent: -100%;
+    opacity: 1;
+  }
+
+  ::placeholder {
+    transition: 1s 0.5s ease;
+    color: whitesmoke;
+    transition: 0.3s;
+    opacity: 1;
+  }
+
   .search-bar {
     display: flex;
     border: none;
-    border-radius: 10px;
-    background-color: white;
-    height: 35px;
+    border-radius: 15px;
+    background-color: #62909a;
+    outline: 3px solid whitesmoke;
+    height: 26px;
     width: 100%;
     font-size: 18px;
-    padding-left: 10px;
+    padding-left: 12px;
+    color: whitesmoke;
+    transition: ease 0.4s;
+  }
+  .search-bar:focus,
+  .search-bar:hover {
+    background-color: whitesmoke;
+    transition: ease 0.4s;
+    color: #62909a;
+  }
+
+  .search-bar:focus + .search-bar-submit,
+  .search-bar:hover + .search-bar-submit {
+    color: #62909a;
+    font-weight: bold;
+    transition: ease 0.4s;
   }
 
   .search-bar-submit {
     display: flex;
     border: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     position: absolute;
     top: 0.4rem;
     right: 0.5rem;
     font-size: 16px;
+    color: whitesmoke;
+    cursor: pointer;
   }
-
-
 
   a:link {
     color: whitesmoke;
     text-decoration: none;
+    transition: ease 0.25s;
   }
 
   a:visited {
     color: whitesmoke;
+    transition: ease 0.25s;
   }
 
   a:hover {
+    transition: ease 0.25s;
     background-color: whitesmoke;
     color: #62909a;
     cursor: pointer;

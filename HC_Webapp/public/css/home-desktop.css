@@ -31,10 +31,10 @@
     margin: auto;
   }
   .section-prd {
-    margin: 5vh;
+    margin: 4vh;
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto;
-    gap: 25px 25px;
+    gap: 25px 30px;
   }
   .preview {
     height: 100%;
