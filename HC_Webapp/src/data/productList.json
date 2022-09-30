@@ -15,7 +15,7 @@
     "name": "Canasto de Vidrio",
     "price": "9000",
     "discount": "15",
-    "image": "PRD-CanastoFlor.webp",
+    "image": "PRD-CanastoFlor.png",
     "descShort": "Canasto de flores tallado en vidrio.",
     "descLarge": "Esta decoracion elegante forma de canasta de flores de HandiCraft, hecha a mano, brillante y brillante al sol, detallada, vívida y realista, nunca se desvanece, una delicada decoración de mesa. Ideal para agregar un toque decorativo a su hogar, oficina, hotel, etc. Maravilloso accesorio para encimeras de cocina, expositores de centro de mesa de comedor. Este seria un regalo perfecto para aniversarios de bodas, inauguración de la casa, cumpleaños, Navidad, etc.",
     "stock": "",
@@ -23,17 +23,6 @@
   },
   {
     "id": 3,
-    "name": "Carruaje Navideño",
-    "price": "15000",
-    "discount": "10",
-    "image": "PRD-Carruaje.webp",
-    "descShort": "Figura de cristal hecha a mano en forma de carruaje navideño.",
-    "descLarge": "Una decoracion muy fina con forma de carruaje navideño hecha a mano por HandiCraft, Ideal para la decoracion de hogar. Maravilloso accesorio para expositores de centro de mesa de comedor. Este seria un regalo perfecto para inauguración de la casa, Navidad y festejos familiares. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
-    "stock": "",
-    "collection": "decoracion"
-  },
-  {
-    "id": 4,
     "name": "Estatua de Pajaros",
     "price": "15000",
     "discount": "10",
@@ -44,73 +33,18 @@
     "collection": "decoracion"
   },
   {
-    "id": 5,
-    "name": "Platos Hondos",
-    "price": "5500",
-    "discount": "10",
-    "image": "PRD-PlatosHondos.jpg",
-    "descShort": "Platos hondos tallados x 6 unidades.",
-    "descLarge": "Vestí tu mesa con estos elegantes platos para uso diario, super practicos y de muy buen tamaño. De vidrio transparente, con diseño estético. Fabricados por la reconocida marca HandiCraft, Industria Argentina.",
-    "stock": "",
-    "collection": "vajilla"
-  },
-  {
-    "id": 6,
-    "name": "Platos playos",
-    "price": "5550",
-    "discount": "10",
-    "image": "PRD-PlatosPlayos.webp",
-    "descShort": "Platos playos tallados x 6 unidades.",
-    "descLarge": "Vestí tu mesa con estos elegantes platos para uso diario, super practicos y de muy buen tamaño. De vidrio transparente, con diseño estético. Fabricados por la reconocida marca HandiCraft, Industria Argentina.",
-    "stock": "",
-    "collection": "vajilla"
-  },
-  {
-    "id": 7,
-    "name": "Tortera Tallada",
-    "price": "3000",
-    "discount": "10",
-    "image": "PRD-TorteraTallada.webp",
-    "descShort": "Tortera tallada.",
-    "descLarge": "Vesti tu mesa con esta elegante tortera tallada hecha por HandiCraft. Ideal para presentar tus tortas, masas y mucho mas. Maravilloso regalo para cuando estas invitado a un acontecimiento y no sabes que llevar.",
-    "stock": "",
-    "collection": "vajilla"
-  },
-  {
-    "id": 8,
-    "name": "Frutera Tallada",
-    "price": "3500",
-    "discount": "10",
-    "image": "PRD-FruteraTallada.webp",
-    "descShort": "Frutera tallada.",
-    "descLarge": "Vesti tu mesa con esta elegante frutera tallada hecha por HandiCraft. Ideal para poner frutas en la mesa de manera delicada. Maravilloso regalo para cuando estas invitado a un acontecimiento y no sabes que llevar.",
-    "stock": "",
-    "collection": "vajilla"
-  },
-  {
-    "id": 9,
-    "name": "Ballena",
-    "price": "8000",
-    "discount": "10",
-    "image": "PRD-Ballena.webp",
-    "descShort": "Figura de cristal hecha a mano en forma de ballenas.",
-    "descLarge": "Esta preciosa creación de cristal captura la naturaleza alegre y los hermosos colores de las ballenas. Elaborado en su totalidad de cristal, sus 280 facetas brillan en diferentes tonos de colores. Diseñado por HandiCraft, esta decoracion aportará un toque fresco y moderno a la decoración de tu hogar. Ideal para regalar y una pieza imprescindible para los coleccionistas.",
-    "stock": "",
-    "collection": "decoracion"
-  },
-  {
-    "id": 10,
+    "id": 4,
     "name": "Caballo",
     "price": "7000",
     "discount": "5",
-    "image": "PRD-Caballo.webp",
+    "image": "PRD-Caballo.png",
     "descShort": "Figura de cristal hecha a mano en forma de pajaros.",
     "descLarge": "Esta decoracion elegante con forma de caballo de HandiCraft, hecha a mano, brillante y brillante al sol, detallada, vívida y realista, nunca se desvanece, una delicada decoración de escritorio. Ideal para agregar un toque decorativo a su oficina, hotel, etc. Maravilloso accesorio para encimeras de cocina, expositores de centro de mesa de comedor.",
     "stock": "",
     "collection": "decoracion"
   },
   {
-    "id": 11,
+    "id": 5,
     "name": "Dragon",
     "price": "8500",
     "discount": "10",
@@ -121,7 +55,7 @@
     "collection": "decoracion"
   },
   {
-    "id": 12,
+    "id": 6,
     "name": "Periquito",
     "price": "20000",
     "discount": "",
@@ -132,7 +66,7 @@
     "collection": "decoracion"
   },
   {
-    "id": 13,
+    "id": 7,
     "name": "Osito",
     "price": "8500",
     "discount": "10",
@@ -143,18 +77,18 @@
     "collection": "Disney"
   },
   {
-    "id": 14,
+    "id": 8,
     "name": "Loro",
     "price": "15000",
     "discount": "",
     "image": "PRD-Loro.png",
-    "descShort":"Aladdin Iago - ROJO",
+    "descShort": "Aladdin Iago - ROJO",
     "descLarge": "Esta divertida pieza, que forma parte de nuestra primera colección de Aladdín de Disney, le da vida al cuento con esta representación del loro Iago. Iago, el ambicioso y característico secuaz del villano Jafar, está elaborado en 87 facetas de cristal coloridas y vibrantes. Una pieza imprescindible para los fans de Disney. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
     "stock": "",
     "collection": "Disney"
   },
   {
-    "id": 15,
+    "id": 9,
     "name": "Hedwig",
     "price": "18000",
     "discount": "",
@@ -164,9 +98,52 @@
     "stock": "",
     "collection": "Disney"
   },
-
   {
-    "id": 16,
+    "id": 10,
+    "name": "Ananás",
+    "price": "18000",
+    "discount": "5",
+    "image": "PRD-Anana.png",
+    "descShort": "Ananás Magnético - Grande",
+    "descLarge": "Esta gran y divertida piña de cristal es una celebración de la alegría y los colores de la naturaleza tropical. Diseñada por Martin Zendron, puede fijarse a cualquier superficie magnética o llevarse como broche gracias a su discreto pasador. El diseño, exquisitamente elaborado, presenta 64 facetas de cristal amarillo. Una maravillosa idea de regalo o un complemento elegante para cualquier colección inspirada en la naturaleza. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 11,
+    "name": "Campana de cristal",
+    "price": "18000",
+    "discount": "",
+    "image": "PRD-CampanaMorada.png",
+    "descShort": "Campana de cristal Rosa, Pequeña - ROJO",
+    "descLarge": "Esta campana de cristal floral combina la decoración clásica con el estilo moderno. Inspirada en la tendencia contemporánea de las flores individuales, presenta una rosa, elaborada con 122 facetas de cristal rojo, sobre un soporte de metal en tono dorado champán dentro de una elegante campana de cristal. Este sería el regalo perfecto para cualquier ocasión especial y una forma tradicional de decir «Te quiero». Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 12,
+    "name": "Florero",
+    "price": "15000",
+    "discount": "10",
+    "image": "PRD-Florero.png",
+    "descShort": "Flores Magnéticas multicolor - Grande",
+    "descLarge": "Inspirada en la alegre primavera, esta gran hoja de cristal verde añade un toque de color divertido a cualquier espacio o atuendo. Puede fijarse a cualquier superficie magnética o llevarse como broche gracias a su discreto pasador. Esta llamativa pieza cuenta con 69 facetas de cristal verde talladas con destreza y ha sido diseñada por Martin Zendron. Una gran idea de regalo o el complemento perfecto para cualquier colección inspirada en la naturaleza. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 13,
+    "name": "Florero",
+    "price": "15000",
+    "discount": "5",
+    "image": "PRD-Florero.png",
+    "descShort": "Florero moderno Rosa - ROJO",
+    "descLarge": " Inspirada en la tendencia de decoración con jarrones de una sola flor, esta preciosa creación de cristal representa una romántica rosa. Brilla gracias a sus 123 facetas de cristal rojo, las líneas suaves de sus pétalos y el tallo de metal cepillado en tono dorado hacen gala de un estilo moderno y minimalista. Esta rosa, una forma clásica de decir «te amo», es el regalo perfecto para cualquier ocasión especial. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 14,
     "name": "Genio",
     "price": "15000",
     "discount": "10",
@@ -178,7 +155,7 @@
   },
 
   {
-    "id": 17,
+    "id": 15,
     "name": "Periquito rosa",
     "price": "10000",
     "discount": "",
@@ -189,7 +166,7 @@
     "collection": "decoracion"
   },
   {
-    "id": 18,
+    "id": 16,
     "name": "Guacamayo",
     "price": "20000",
     "discount": "10",
@@ -199,30 +176,9 @@
     "stock": "",
     "collection": "decoracion"
   },
+
   {
-    "id": 19,
-    "name": "Florero",
-    "price": "15000",
-    "discount": "10",
-    "image": "PRD-Florero.png",
-    "descShort": "Flores Magnéticas multicolor - Grande",
-    "descLarge": "Inspirada en la alegre primavera, esta gran hoja de cristal verde añade un toque de color divertido a cualquier espacio o atuendo. Puede fijarse a cualquier superficie magnética o llevarse como broche gracias a su discreto pasador. Esta llamativa pieza cuenta con 69 facetas de cristal verde talladas con destreza y ha sido diseñada por Martin Zendron. Una gran idea de regalo o el complemento perfecto para cualquier colección inspirada en la naturaleza. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
-    "stock": "",
-    "collection": "decoracion"
-  },
-  {
-    "id": 20,
-    "name": "Ananás",
-    "price": "18000",
-    "discount": "5",
-    "image": "PRD-Anana.png",
-    "descShort": "Ananás Magnético - Grande",
-    "descLarge": "Esta gran y divertida piña de cristal es una celebración de la alegría y los colores de la naturaleza tropical. Diseñada por Martin Zendron, puede fijarse a cualquier superficie magnética o llevarse como broche gracias a su discreto pasador. El diseño, exquisitamente elaborado, presenta 64 facetas de cristal amarillo. Una maravillosa idea de regalo o un complemento elegante para cualquier colección inspirada en la naturaleza. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
-    "stock": "",
-    "collection": "decoracion"
-  },
-  {
-    "id": 21,
+    "id": 17,
     "name": "Caja decorativa",
     "price": "24000",
     "discount": "5",
@@ -232,30 +188,9 @@
     "stock": "",
     "collection": "decoracion"
   },
+
   {
-    "id": 22,
-    "name": "Campana de cristal",
-    "price": "18000",
-    "discount": "",
-    "image": "PRD-CampanaMorada.png",
-    "descShort": "Campana de cristal Rosa, Pequeña - ROJO",
-    "descLarge": "Esta campana de cristal floral combina la decoración clásica con el estilo moderno. Inspirada en la tendencia contemporánea de las flores individuales, presenta una rosa, elaborada con 122 facetas de cristal rojo, sobre un soporte de metal en tono dorado champán dentro de una elegante campana de cristal. Este sería el regalo perfecto para cualquier ocasión especial y una forma tradicional de decir «Te quiero». Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
-    "stock": "",
-    "collection": "decoracion"
-  },
-  {
-    "id": 23,
-    "name": "Florero",
-    "price": "15000",
-    "discount": "5",
-    "image": "PRD-Florero.png",
-    "descShort": "Florero moderno Rosa - ROJO",
-    "descLarge": " Inspirada en la tendencia de decoración con jarrones de una sola flor, esta preciosa creación de cristal representa una romántica rosa. Brilla gracias a sus 123 facetas de cristal rojo, las líneas suaves de sus pétalos y el tallo de metal cepillado en tono dorado hacen gala de un estilo moderno y minimalista. Esta rosa, una forma clásica de decir «te amo», es el regalo perfecto para cualquier ocasión especial. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
-    "stock": "",
-    "collection": "decoracion"
-  },
-  {
-    "id": 24,
+    "id": 18,
     "name": "Campana de cristal",
     "price": "18000",
     "discount": "",
@@ -266,7 +201,7 @@
     "collection": "decoracion"
   },
   {
-    "id": 25,
+    "id": 19,
     "name": "Rinoceronte",
     "price": "18000",
     "discount": "5",
@@ -275,5 +210,71 @@
     "descLarge": "Prepárate para enamorarte de esta adorable representación de Rocky el rinoceronte, elaborada con 221 facetas de cristal azul, gris, rosa y negro. Un símbolo de fuerza y resistencia, este rinoceronte bebé es una idea de regalo ideal. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
     "stock": "",
     "collection": "Disney"
+  },
+  {
+    "id": 20,
+    "name": "Ballena",
+    "price": "8000",
+    "discount": "10",
+    "image": "PRD-Ballena.png",
+    "descShort": "Figura de cristal hecha a mano en forma de ballenas.",
+    "descLarge": "Esta preciosa creación de cristal captura la naturaleza alegre y los hermosos colores de las ballenas. Elaborado en su totalidad de cristal, sus 280 facetas brillan en diferentes tonos de colores. Diseñado por HandiCraft, esta decoracion aportará un toque fresco y moderno a la decoración de tu hogar. Ideal para regalar y una pieza imprescindible para los coleccionistas.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 21,
+    "name": "Carruaje Navideño",
+    "price": "15000",
+    "discount": "10",
+    "image": "PRD-Carruaje.png",
+    "descShort": "Figura de cristal hecha a mano en forma de carruaje navideño.",
+    "descLarge": "Una decoracion muy fina con forma de carruaje navideño hecha a mano por HandiCraft, Ideal para la decoracion de hogar. Maravilloso accesorio para expositores de centro de mesa de comedor. Este seria un regalo perfecto para inauguración de la casa, Navidad y festejos familiares. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "stock": "",
+    "collection": "decoracion"
+  },
+  {
+    "id": 22,
+    "name": "Platos Hondos",
+    "price": "5500",
+    "discount": "10",
+    "image": "PRD-PlatosHondos.jpg",
+    "descShort": "Platos hondos tallados x 6 unidades.",
+    "descLarge": "Vestí tu mesa con estos elegantes platos para uso diario, super practicos y de muy buen tamaño. De vidrio transparente, con diseño estético. Fabricados por la reconocida marca HandiCraft, Industria Argentina.",
+    "stock": "",
+    "collection": "vajilla"
+  },
+  {
+    "id": 23,
+    "name": "Platos playos",
+    "price": "5550",
+    "discount": "10",
+    "image": "PRD-PlatosPlayos.png",
+    "descShort": "Platos playos tallados x 6 unidades.",
+    "descLarge": "Vestí tu mesa con estos elegantes platos para uso diario, super practicos y de muy buen tamaño. De vidrio transparente, con diseño estético. Fabricados por la reconocida marca HandiCraft, Industria Argentina.",
+    "stock": "",
+    "collection": "vajilla"
+  },
+  {
+    "id": 24,
+    "name": "Tortera Tallada",
+    "price": "3000",
+    "discount": "10",
+    "image": "PRD-TorteraTallada.png",
+    "descShort": "Tortera tallada.",
+    "descLarge": "Vesti tu mesa con esta elegante tortera tallada hecha por HandiCraft. Ideal para presentar tus tortas, masas y mucho mas. Maravilloso regalo para cuando estas invitado a un acontecimiento y no sabes que llevar.",
+    "stock": "",
+    "collection": "vajilla"
+  },
+  {
+    "id": 25,
+    "name": "Frutera Tallada",
+    "price": "3500",
+    "discount": "10",
+    "image": "PRD-FruteraTallada.png",
+    "descShort": "Frutera tallada.",
+    "descLarge": "Vesti tu mesa con esta elegante frutera tallada hecha por HandiCraft. Ideal para poner frutas en la mesa de manera delicada. Maravilloso regalo para cuando estas invitado a un acontecimiento y no sabes que llevar.",
+    "stock": "",
+    "collection": "vajilla"
   }
 ]

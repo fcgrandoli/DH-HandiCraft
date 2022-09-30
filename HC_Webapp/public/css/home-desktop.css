@@ -1,11 +1,13 @@
 @media only screen and (min-width: 1200px) {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Calibri';
   }
-
   body {
     background: linear-gradient(150deg, #79a49a, #87a6ab, #62909a, #7cc6b0);
     background-size: 1000% 200%;
@@ -24,111 +26,221 @@
     }
   }
 
-  .container {
-    position: relative;
+  main {
     display: flex;
-    flex-direction: row;
+    margin: auto;
   }
-
   .section-prd {
+    margin: 5vh;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 25px 25px;
+  }
+  .preview {
+    height: 100%;
+    border-radius: 0.5rem;
+  }
+
+  .card {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    position: relative;
+    width: 17vw;
+    height: 40vh;
+    box-shadow: 10px 10px 15px 4px rgba(98, 144, 154, 1);
+    -webkit-box-shadow: 10px 10px 15px 4px rgba(98, 144, 154, 1);
+    -moz-box-shadow: 10px 10px 15px 4px rgba(98, 144, 154, 1);
+  }
+  .card .image {
     width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
   }
-
-  .producto {
-    display: flex;
-    width: 15%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: whitesmoke;
-    margin: 20px 20px;
-    transition: transform 0.5s;
-    border-radius: 1rem;
+  .card .image img {
+    width: 100%;
+    height: 100%;
+    transition: ease 0.75s;
   }
-
-  .producto:hover {
-    display: flex;
-    transform: scale(1.05, 1.05);
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  .card:hover .image img {
+    width: 150%;
+    height: 125%;
+    opacity: 0.5;
+    transform: translateX(10%); /*100%*/
   }
-
-  .producto:hover .prd-container {
+  .card .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%; /*100%*/
+    height: 100%;
+    background-color: #62909a;
+    border-right: 4px solid #7cc6b0;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    transition: 1s;
+    transform-origin: left;
+    transform: perspective(2000px) rotateY(-90deg);
+    box-shadow: 15px 15px 31px -5px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 15px 15px 31px -5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 15px 15px 31px -5px rgba(0, 0, 0, 0.5);
+  }
+  .card:hover .details {
+    transform: perspective(2000px) rotateY(0deg);
+  }
+  .center {
     display: flex;
     flex-direction: column;
     width: 100%;
-    text-align: left;
+    border-top: 3px solid #87a6ab;
+    border-bottom: 3px solid #87a6ab;
+  }
+
+  .card .details .center {
+    padding: 20px;
+    text-align: center;
+    background: whitesmoke;
     position: absolute;
-    bottom: 0px;
-    background-color: whitesmoke;
-    transform: scale(1, 1);
+    top: 50%;
+    transform: translateY(-50%);
   }
-
-  .image {
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    height: 300px;
-  }
-
-  .preview {
-    display: flex;
-    padding: 10px;
-    width: 100%;
-    height: 100%;
-    border-radius: 1.5rem;
-  }
-
-  .prd-container {
-    display: none;
-    transition: transform 1s;
-  }
-
-  .price {
-    display: flex;
-    align-items: baseline;
-    font-weight: bold;
-    font-family: 'Lucida Sans';
-    position: relative;
-    bottom: 5px;
-    padding: 5px 5px;
-    font-size: 18px;
-  }
-
-  .prd-name {
-    font-family: 'Lucida Sans';
-    font-weight: bold;
-    padding: 2.5px 2.5px;
+  .card .details .center h1 {
+    margin-bottom: 10px;
+    padding: 0;
+    line-height: 10px;
     font-size: 20px;
+    text-transform: uppercase;
+    color: #62909a;
   }
 
   .desc {
-    font-family: 'Lucida Sans';
-    padding: 5px 5px;
+    color: #62909a;
   }
 
-  .discount {
-    font-family: 'Lucida Sans';
+  .num {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .price {
+    color: #79a49a;
     font-weight: bold;
-    position: absolute;
-    right: 25px;
-    color: #39b54a;
-    
     font-size: 20px;
   }
 
-  .btn-create {
+  .discount {
+    color: #7cc6b0;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .card .details .center p {
+    margin: 10px 0;
+    padding: 0;
+  }
+
+  .card .details .center .buttons {
+    margin: 10px auto 0;
+    padding: 0;
+    display: table;
+  }
+  .card .details .center .buttons li {
+    list-style: none;
+    margin: 0 5px;
+    float: left;
+  }
+  .card .details .center .buttons li a,
+  .card .details .center .buttons li .btn-cart {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    background-color: #62909a;
+    color: whitesmoke;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    transform: 0.5s;
+    border-radius: 0.5rem;
+  }
+  .card .details .center .buttons li a:hover,
+  .card .details .center .buttons li .btn-cart:hover {
+    background-color: #7cc6b0;
+    color: whitesmoke;
+    cursor: pointer;
+  }
+
+  .buttons-admin {
     position: absolute;
-    bottom: 15rem;
-    right: 24px;
+    top: 5px;
+    right: 5px;
+    align-items: center;
+    font-size: 20px;
+    transform: 0.5s;
+  }
+  .buttons-admin li {
+    margin: 10px 5px;
+  }
+  .buttons-admin li a {
+    text-align: center;
+    line-height: 35px;
+    padding-left: 8px;
+    transform: 0.5s;
+  }
+  .buttons-admin .btn-edit {
+    list-style: none;
+    width: 35px;
+    height: 35px;
+  }
+
+  .buttons-admin .btn-edit-container {
+    list-style: none;
+    width: 35px;
+    height: 35px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: #39b54a;
+    color: white;
+  }
+  .buttons-admin .btn-edit-container:hover,
+  .buttons-admin .btn-edit:hover {
+    background-color: #30e100ed;
+    color: whitesmoke;
+  }
+  .buttons-admin .btn-delete-container {
+    position: absolute;
+    list-style: none;
+    position: relative;
+    text-align: center;
+  }
+
+  .buttons-admin .btn-delete {
+    width: 35px;
+    height: 35px;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #de2700;
+    color: whitesmoke;
+  }
+  .buttons-admin button:hover {
+    background-color: red;
+    color: whitesmoke;
+  }
+
+  .btn-create {
+    position: fixed;
+    top: 10rem;
+    right: 2rem;
     font-size: 56px;
-    line-height: 44px;
+    line-height: 47px;
     width: 48px;
     height: 48px;
-    background-color: #7cc6b0;
+    background-color: #39b54a;
     border-radius: 1.5rem;
     text-align: center;
     font-weight: bold;

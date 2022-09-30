@@ -1,46 +1,73 @@
 <% for (let i = 0; i < productList.length; i++) { %>
-<article class="producto">
+<article class="card">
   <div class="image">
     <a href="viewProduct/<%= productList[i].id%>/mostrar"
       ><img class="preview" src="/images/<%= productList[i].images[0].path %>"
     /></a>
   </div>
-  <div class="prd-container">
-    <div class="prd-name">
-      <p><%= productList[i].name %></p>
-    </div>
-    <div class="desc">
-      <p><%= productList[i].descShort %></p>
-    </div>
-    <div class="price">
-      <p>$<%= productList[i].price %></p>
-      <p class="discount">
-        <%= productList[i].discount.length == 0 ? productList[i].discount :
-        productList[i].discount + "% off" %>
-      </p>
+  <div class="details">
+    <div class="center">
+      <div class="prd-name">
+        <h1><%= productList[i].name %></h1>
+      </div>
+      <div class="desc">
+        <p><%= productList[i].descShort %></p>
+      </div>
+      <div class="num">
+        <div class="price">
+          <p>$<%= productList[i].price %></p>
+        </div>
+        <div class="discount">
+          <p>
+            <%= productList[i].discount.length == 0 ? productList[i].discount :
+            productList[i].discount + "% off" %>
+          </p>
+        </div>
+      </div>
+      <ul class="buttons">
+        <li class="cart">
+          <form
+            class="fields"
+            method="POST"
+            action="/cart/<%= productList[i].id %>/comprarProduct"
+          >
+            <button
+              class="btn-cart"
+              style="font-size: 15px"
+              class="btn-delete"
+              type="submit"
+            >
+              <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            </button>
+          </form>
+        </li>
+        <li class="shop">
+          <a href="#"
+            ><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i
+          ></a>
+        </li>
+      </ul>
     </div>
   </div>
-<% if(userLoggedIn && userLoggedIn.isAdmin == true){ %>
-    <div class="buttons">
-      <div class="btn-edit-container">
-        <a
-          class="btn-edit"
-          href="/viewProduct/<%= productList[i].id%>/editar"
-          >EDITAR</a
-        >
-        <i class="fa-solid fa-pen-to-square"></i>
-      </div>
-      <div class="btn-delete-container">
-        <form
-          class="fields"
-          method="POST"
-          action="/viewProduct/<%= productList[i].id%>/delete"
-        >
-          <input class="btn-delete" type="submit" value="ELIMINAR" />
+  <ul class="buttons-admin">
+    <% if(userLoggedIn && userLoggedIn.isAdmin == true){ %>
+    <li class="btn-edit-container">
+      <a class="btn-edit" href="/viewProduct/<%= productList[i].id%>/editar"
+        ><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i
+      ></a>
+    </li>
+    <li class="btn-delete-container">
+      <form
+        class="fields"
+        method="POST"
+        action="/viewProduct/<%= productList[i].id%>/delete"
+      >
+        <button style="font-size: 20px" class="btn-delete" type="submit">
           <i class="fa-solid fa-trash"></i>
-        </form>
-      </div>
-    </div>
+        </button>
+      </form>
+    </li>
     <% } %>
+  </ul>
 </article>
 <% } %>
