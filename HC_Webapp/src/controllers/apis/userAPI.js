@@ -3,7 +3,7 @@ const { Op } = require("sequelize");
 
 
 const userApi = {
-  list: async (req, res) => {
+  all: async (req, res) => {
     try {
       let result = [];
       let count = await user.findAll({
@@ -33,7 +33,7 @@ const userApi = {
       return res.status(500).json(error);
     }
   },
-  detail: async (req, res) => {
+  one: async (req, res) => {
     try {
       let result = await user.findByPk(req.params.id, {
         include: {

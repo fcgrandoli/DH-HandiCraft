@@ -1,10 +1,10 @@
 const {Router} = require ("express");
 const router = Router();
-const {list, detail} = require('../../controllers/apis/userAPI');
+const {all, one} = require('../../controllers/apis/userAPI');
 
-router.get('/',list);
+router.get('/',all);
 
-router.get('/:id', detail);
+router.get('/:id', one);
 
 
 module.exports = router;

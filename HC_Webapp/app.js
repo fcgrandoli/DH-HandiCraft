@@ -9,7 +9,6 @@ const productRoute = require('./src/routes/product.routes.js');
 const path = require('path');
 const methodOverride = require('method-override');
 const cors = require('cors');
-
 //APIS
 
 app.use('/api/users', require ('./src/routes/apis/usersRoutes'));

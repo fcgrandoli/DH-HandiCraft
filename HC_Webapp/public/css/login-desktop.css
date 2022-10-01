@@ -51,7 +51,7 @@
 
   .input-field {
     background: rgba(255, 255, 255, 0);
-    width:70%;
+    width:75%;
     margin: auto;
     border: none;
     border-bottom: 3px solid #62909a;
@@ -63,6 +63,13 @@
     overflow-wrap: break-word;
   }
 
+  .passwords input:focus  {
+    outline: none;
+    box-shadow: 0px 0px 15px #7cc6b0;
+    border: none;
+    border-radius: 10px;
+  }
+
   .input-field:focus {
     transition: 0.5s ease;
     border-bottom: 3px solid #7cc6b0;
@@ -70,6 +77,14 @@
   .input-field:focus + .fa-sharp {
     color: #7cc6b0;
   }
+
+  /* input:focus {
+    outline: none;
+    box-shadow: 0px 0px 15px #7cc6b0;
+    border-radius: 10px;
+} */
+
+
 
   [placeholder]:focus::-webkit-input-placeholder {
     transition: text-indent 0.8s 0.4s ease;
@@ -97,7 +112,7 @@
   .fa-sharp {
     position: absolute;
     color: #62909a;
-    top: 1.5rem;
+    top: 1.6rem;
     right: 15%;
     font-size: 20px;
     transition: 0.5s ease;
