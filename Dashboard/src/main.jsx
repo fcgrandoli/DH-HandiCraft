@@ -8,7 +8,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
      <BrowserRouter>
     <App />
+    
     </BrowserRouter>
   </React.StrictMode>
 )
+document.getElementById('input').addEventListener('change', () => {
+
+
+  if (document.body.className.indexOf('dark') === -1) {
+
+      document.body.classList.add('dark')
+  } else {
+      document.body.classList.remove('dark')
+
+  }
+})
 

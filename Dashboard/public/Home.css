@@ -1,0 +1,179 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+         :root {
+            --font-style: 'Nunito Sans', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-style);
+        }
+    html {
+        overflow-x: hidden;
+    }
+        .container {
+            position: absolute;
+            top: 90%;
+            right: 95%;
+            transform: translate(-50%, -50%);
+            transition: all 1s;
+            width: 50px;
+            height: 50px;
+            background: #B1B2CF;
+            box-sizing: border-box;
+            border-radius: 25px;
+            border: 4px solid #7cc6b0;
+            padding: 5px;
+            box-shadow: 0px 0px 15px #00dcff
+        }
+
+        .btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #62909a;
+            border-radius: 25px;
+            transition: all 1s;
+        }
+        
+        h1 {
+            color: whitesmoke;
+            position: absolute;
+            left: 60%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            width: 100%;
+            margin: auto;
+            transition: all 1s;
+            opacity: 0;
+        }
+        
+        i {
+            box-sizing: border-box;
+            padding: 10px;
+            width: 42.5px;
+            height: 42.5px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #7cc6b0;
+            text-align: center;
+            font-size: 1.2em;
+            transition: all 1s;
+        }
+        
+        .btn:hover i {
+            transform: rotate(360deg);
+        }
+        
+        .btn:hover {
+            width: 260px;
+            height: 90px;
+            cursor: pointer;
+        }
+        
+        .btn:hover h1 {
+            animation: 2s display forwards;
+        }
+        
+        @keyframes display {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .title {
+            position: absolute;
+          
+            display: grid;
+            place-items: center;
+            border-radius: 50px;
+            background-color: #00dcff;
+            opacity: 5;
+            color: white;
+            font-weight: 900;
+            font-size: 30px;
+            font-family: sans-serif;
+            mix-blend-mode: multiply;
+            user-select: none;
+            text-align: center;
+            width: 50vh;
+            top:62vh;
+            left: 159vh;
+        }
+
+        .video {
+            position: absolute;
+            top:65vh;
+            left:130vh;
+            border: 2px solid #00dcff;
+            border-radius: 500px;
+            opacity: 0.7;
+        }
+
+
+
+        
+        .dark {
+            background-color: #2A2734;
+        }
+        
+        .switch {
+            position: absolute;
+            display: inline-block;
+            top: 1%;
+            left: 96%;
+            width: 60px;
+            height: 34px;
+        }
+       
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #9A86FD;
+            border-radius: 34px;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            border-radius: 50%;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        
+        input:checked+.slider {
+            background-color: #FFB870;
+        }
+        
+        input:focus+.slider {
+            box-shadow: 0 0 1px #FFB870;
+        }
+        
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        } */
