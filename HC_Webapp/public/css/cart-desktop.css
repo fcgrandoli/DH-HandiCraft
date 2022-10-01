@@ -12,6 +12,16 @@
     margin-top: 95px;
   }
 
+  ::-webkit-scrollbar {
+    width: 17px;
+    background-color: whitesmoke;
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 5px ;
+    background: linear-gradient(45deg,  #87a6ab, #62909a, #7cc6b0);
+}
+
   .container {
     position: relative;
     display: flex;
