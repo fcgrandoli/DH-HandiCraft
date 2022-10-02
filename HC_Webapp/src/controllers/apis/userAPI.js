@@ -20,12 +20,12 @@ const userApi = {
       })
       )
       result.push({
-        'Cantidad total de usuarios': count.length,
-        Usuarios: data
+        'CantidadTotalsuarios': count.length,
+        Usuarios: data,
       })
 
       if (result) {
-        return res.status(200).json(result);
+        return res.status(200).json({result});
       } else {
         return res.status(404).json('No hay usuarios.');
       }
