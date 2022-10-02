@@ -1,2 +1,2 @@
-const baseURL = "http://localhost:3000/api/products"
+//const baseURL = "http://localhost:3000/api/products"
 
