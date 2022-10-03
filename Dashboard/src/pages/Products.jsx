@@ -18,7 +18,7 @@ export function Products() {
       {products.map((product, index) => {
         if (index === 0) {
           return (
-            <div key={index}>
+            <div class="total" key={index}>
               <p>Total de Productos: {product.productCount}</p>
               <hr />
             </div>
@@ -26,7 +26,7 @@ export function Products() {
         } else {
           return (
             <div>
-              <div key={"cat" + index}>
+              <div class="category"  key={"cat" + index}>
                 <p>Categoria: {product.Categoria}</p>
                 <hr />
               </div>
@@ -34,7 +34,7 @@ export function Products() {
                 {product.Productos.map((product, index) => {
                   if (index !== 0) {
                     return (
-                      <div key={"prod" + index}>
+                      <div class="product"  key={"prod" + index}>
                         <p>Producto: {product.Nombre}</p>
                       </div>
                     );
