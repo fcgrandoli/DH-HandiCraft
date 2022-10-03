@@ -7,6 +7,7 @@ import { ProductsTotal } from "./pages/ProductsTotal.jsx";
 //import { ProductsCategory } from "./pages/ProductsCategory.jsx";
 import { UsersTotal } from "./pages/UsersTotal.jsx";
 import { Users } from "./pages/Users.jsx";
+import { UsersLast } from "./pages/UsersLast.jsx";
 import Error from "./pages/Error.jsx";
 import { Outlet } from "react-router-dom";
 import Home from "./pages/Home";
@@ -15,10 +16,21 @@ function App() {
   return (
     <>
       <nav className="links">
-        <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/usersDetail">Users Detail</Link>
+        <div>
+          <Link to="/">Home</Link>
+        </div>
+        <div>
+          <Link to="/products">Products</Link>
+        </div>
+        <div>
+          <Link to="/users">Users</Link>
+        </div>
+        <div>
+          <Link to="/usersDetail">Users Detail</Link>
+        </div>
+        <div>
+          <Link to="/usersLast">Users Last</Link>
+        </div>
       </nav>
 
       <Routes>
@@ -26,6 +38,7 @@ function App() {
         <Route path="/products" element={<ProductsTotal />}></Route>
         <Route path="/users" element={<UsersTotal />}></Route>
         <Route path="/usersDetail" element={<Users />}></Route>
+        <Route path="/usersLast" element={<UsersLast />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
     </>

@@ -14,8 +14,7 @@ export function UsersTotal() {
         if (index === 0) {
           return (
             <div className="user" key={`usersTotal-${index}`}>
-              <p>Total de Usuarios: {user.totalUsuarios}</p>
-              <hr />
+              <h3>Total de Usuarios: {user.totalUsuarios}</h3>
             </div>
           );
         }

@@ -10,6 +10,7 @@ export function Users() {
   }, []);
   return (
     <div className="users">
+      <h3>Detalle de Usuarios:</h3>
       {users.map((user, index) => {
         if (index !== 0) {
           return (
