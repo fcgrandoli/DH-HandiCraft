@@ -1,6 +1,5 @@
-import { promiseImpl } from "ejs";
+
 import { useState, useEffect} from "react"
-import { Outlet, useParams } from "react-router-dom"
 
 
 const Users = () => {
@@ -24,22 +23,21 @@ return (
 </>
 =======
 
-//     const url = "http://localhost:3000/api/users" ;
-//      let [users, setUsers] = useState([])
+    const url = "http://localhost:3000/api/users" ;
 
-//      const fetchApi = async () => 
-//       {
-//         let request = await fetch(url);
+      const fetchApi = async () => 
+       {
+         let request = await fetch(url);
 
-//         let response = await request.json()
+        let response = await request.json()
 
-//         setUsers(response)
+        setUsers(response)
              
-//         console.log(response)
-// }
-// useEffect(() => {
-//     fetchApi();
-// }, []);
+         console.log(response)
+ }
+ useEffect(() => {
+     fetchApi();
+ }, []);
 
 
 
