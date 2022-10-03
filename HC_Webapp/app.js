@@ -24,12 +24,11 @@ app.use('/images', express.static(__dirname + '/public/images'));
 
 //GENERAL DEPENDENCIES
 
-const whiteList = ['http://localhost:5173', 'http://localhost:5173/users',]
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookie());
-app.use(cors({ origin: whiteList}))
+app.use(cors());
 app.use(
   session({
     secret: 'hc_webapp',

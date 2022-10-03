@@ -5,10 +5,7 @@ const Users = () => {
 let [count, setUser] = useState([])
 useEffect(()=>{
     const userApi = async () => {
-        let request = await fetch('http://localhost:3000/api/users',{
-            mode: 'no-cors'
-        }
-        )
+        let request = await fetch('http://localhost:3000/api/users')
         let response = await request.json()
         setUser(response)
         console.log(response)
