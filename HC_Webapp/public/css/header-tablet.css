@@ -84,6 +84,77 @@
     flex-shrink: 1;
   }
 
+  .dropbtn {
+    background-color: #62909a;
+    color: white;
+    margin: 5px 10px;
+    padding: 3px 15px;
+    display: block;
+    border: none;
+    outline: 2.5px solid whitesmoke;
+    border-radius: 15px;
+    font-size: 16px;
+  }
+
+  .dropdown {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    display: inline-block;
+    
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 8px;
+    min-width: 60px;
+    background-color: #7cc6b0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+  }
+
+  .dropdown-content form input {
+    padding: 4px 15px;
+    text-decoration: none;
+    border: none;
+    display: block;
+    background-color: #7cc6b0;
+    border-radius: 8px;
+  }
+
+  .collection {
+    background-color: #62909a;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+    color: whitesmoke;
+    margin: auto;
+
+  }
+
+  .collection:hover {
+    background-color: whitesmoke;
+    color: #62909a;
+    cursor: pointer;
+  }
+
+  .dropdown-content form input:hover {
+    background-color: whitesmoke;
+    width: 100%;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #62909a;
+  }
+
+
   .profile-name {
     font-weight: bold;
   }

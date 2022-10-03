@@ -1,5 +1,5 @@
-const { product } = require('../../database/models');
-const { Op } = require('sequelize');
+const { product } = require("../../database/models");
+const { Op } = require("sequelize");
 
 const productApi = {
   all: async (req, res) => {
@@ -11,10 +11,10 @@ const productApi = {
         },
       });
       result.push({
-        'Cantidad total de productos': count.length,
+        productCount: count.length,
       });
 
-      let collections = [...new Set(count.map(data => data.collection))];
+      let collections = [...new Set(count.map((data) => data.collection))];
 
       for (collection of collections) {
         const products = await product.findAll({
@@ -27,19 +27,19 @@ const productApi = {
             },
           },
         });
-        let Productos = products.map(product => {
-          return Object({
+        let Productos = products.map((product) => {
+          return {
             ID: product.id,
             Nombre: product.name,
             Precio: product.price,
             Descuento: product.discount,
-            'Descripcion Corta': product.descShort,
-            'Descripcion Larga': product.descLarge,
+            "Descripcion Corta": product.descShort,
+            "Descripcion Larga": product.descLarge,
             Stock: product.stock,
             Categoria: product.collection,
             Imagen: `http://localhost:3000/images/${product.images[0].path}`,
-            'Detalle de Producto': `http://localhost:3000/viewProduct/${product.id}/mostrar`,
-          });
+            "Detalle de Producto": `http://localhost:3000/viewProduct/${product.id}/mostrar`,
+          };
         });
         result.push({
           Categoria: collection,
@@ -49,9 +49,9 @@ const productApi = {
       }
 
       if (result) {
-        return res.status(200).json({result});
+        return res.status(200).json(result);
       } else {
-        return res.status(404).json('No hay productos.');
+        return res.status(404).json("No hay productos.");
       }
     } catch (error) {
       return res.status(500).json(error);
@@ -63,22 +63,22 @@ const productApi = {
         include: { all: true },
       });
 
-     const result = new Object({
-          "ID": productList.id,
-           "Nombre": productList.name,
-          "Precio": productList.price,
-          "Descuento": productList.discount,
-          'Descripcion Corta': productList.descShort,
-          'Descripcion Larga': productList.descLarge,
-          "Stock": productList.stock,
-          "Categoria": productList.collection,
-          "Imagen": `http://localhost:3000/images/${productList.images[0].path}`,
-          'Detalle de Producto': `http://localhost:3000/viewProduct/${productList.id}/mostrar`, 
-        });
+      const result = new Object({
+        ID: productList.id,
+        Nombre: productList.name,
+        Precio: productList.price,
+        Descuento: productList.discount,
+        "Descripcion Corta": productList.descShort,
+        "Descripcion Larga": productList.descLarge,
+        Stock: productList.stock,
+        Categoria: productList.collection,
+        Imagen: `http://localhost:3000/images/${productList.images[0].path}`,
+        "Detalle de Producto": `http://localhost:3000/viewProduct/${productList.id}/mostrar`,
+      });
       if (result) {
-        return res.status(200).json({result});
+        return res.status(200).json({ result });
       } else {
-        return res.status(404).json('Producto inválido.');
+        return res.status(404).json("Producto inválido.");
       }
     } catch (error) {
       return res.status(500).json(error);

@@ -1,25 +1,29 @@
-import { useState, useEffect} from "react"
-import { Outlet } from "react-router-dom"
+import { useState, useEffect } from "react";
 
-const Products = () => {
-let [count, setProducts] = useState([])
-useEffect(()=>{
-    const productApi = async () => {
-        let request = await fetch('http://localhost:3000/api/products')
-        let response = await request.json()
-        setProducts(response)
-        console.log(response)
-        
+export function Products() {
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    let url = "http://localhost:3000/api/products";
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    return response.json();
+  };
+
+  useEffect(() => {
+    getProducts().then((product) => {
+      setProducts(product);
+    });
+  }, []);
+
+  return (
+    <>
+      <div>{console.log("asd", products[0])}</div>
+    </>
+  );
 }
-productApi()
-}, [])
-return (
-<>
-    <h1>Total productos:</h1>
-    <p>  
-       
-    </p>
-</>
-)
-}
-export default Products

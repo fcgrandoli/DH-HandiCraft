@@ -10,9 +10,19 @@ const path = require('path');
 const methodOverride = require('method-override');
 const cors = require('cors');
 //APIS
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Authorization, Origin, X-Requested-With, Content-Type, Accept');
+  next();
 
+  app.options('*', (req, res) => {
+      res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE, OPTIONS');
+      res.send();
+  });
+});
 app.use('/api/users', require ('./src/routes/apis/usersRoutes'));
 app.use('/api/products', require ('./src/routes/apis/apiproduct.routes.js'));
+
 
 //SET VIEW ENGINE AND VIEWS
 app.set('view engine', 'ejs');
@@ -28,7 +38,11 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookie());
-app.use(cors());
+//app.use(cors());
+
+
+
+
 app.use(
   session({
     secret: 'hc_webapp',

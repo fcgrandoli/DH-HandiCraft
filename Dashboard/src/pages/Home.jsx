@@ -19,7 +19,7 @@ export default function Home() {
                 <li className="nav-item active">
                     <a className="nav-link" href="/">
                     
-                        <span class="sub">HANDICRAFT</span></a>
+                        <span className="sub">HANDICRAFT</span></a>
                 </li>
 
                 <hr className="sidebar-divider"/>
