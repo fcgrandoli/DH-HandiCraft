@@ -2,55 +2,53 @@
 <html lang="en">
   <%- include ('../partials/head') %>
   <link rel="stylesheet" type="text/css" href="/css/cart.css" />
-  <link rel="stylesheet" type="text/css" href="/css/cart-tablet.css" />
+ <!--  <link rel="stylesheet" type="text/css" href="/css/cart-tablet.css" />
   <link
     rel="stylesheet"
     type="text/css"
     href="/css/cart-desktop.css"
-  />
+  /> -->
   <body>
-      <div id="container">
+      <div>
       <%- include ('../partials/header') %>
       <main class="mainCart">
         <h2 class="tituloCart">
           <i class="fa-solid fa-basket-shopping"></i> Tus Compras
         </h2>
         <div class="cart">
-          <section class="firstSectionCart">
+          <section>
       <% for (let i= 0; i< cartProduct.length; i++ ){ %> <% if(cartProduct[i].name != 'DELETED')
       {%>
         <article>
+          <h4 class="tituloProducto"><%= cartProduct[i].name %></h4>
               <img
                 class="imagenesCart"
                 src="/images/<%= cartProduct[i].image %>"
               />
-              <div class="contenidoProduct">
-                <h4 class="tituloProducto"><%= cartProduct[i].name %></h4>
-                <p class="breveDescripcion">
-                  <% cartProduct[i].descs %>
-                </p>
-                <div class="padreDiv">
-                  <section class="precioArtCart"><%= cartProduct[i].price %></section>
-                  <section class="descsArtCart"><%= cartProduct[i].descs %></section>
+
+                
+                <p class="breveDescripcion"><%= cartProduct[i].descShort %></p>
+              
+                  <section class="precio">$<%= cartProduct[i].price %></section>
+                  <section class="descShort"><%= cartProduct[i].discount %>%</section>
 
                   
-                  <section class="botonera">
+                  <section class="botones">
                       <a href="/">
-                      <button class="btnsCart">
+                      <button>
                         <form
               class="fields"
               method="POST"
               action="/viewProduct/eliminar?_method=POST">
               <a href="/cart/<%= cartProduct[i].id%>/eliminarProduct">Eliminar</a>
-            </button></a></form>
+            </form></button>
              </a>
             
                   </section>
-                </div>
-              </div>
+
             </article>
             <% } %> <%} %>  
-            <a href="/"><button class="btnsCart">Volver</button></a>
+            <a href="/"><button class="botones">Volver</button></a>
         </div>
       </main>
    </section>

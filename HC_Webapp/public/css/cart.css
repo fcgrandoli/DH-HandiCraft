@@ -11,59 +11,19 @@
     min-height: 91vh;
     margin-top: 95px;
   }
-
+ 
   .container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
+    
+    background-color: red;
   }
-
-  .mainCart {
-    font-family: 'Lucida Sans', sans-serif;
-    padding: 1rem;
-  }
-  body {
-    background-color: #87a6ab;
-  }
-
-  .cart {
-    display: block;
-    align-items: center;
-    height: fit-content;
-  }
-
   .tituloCart {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 1rem;
+    font-size: 2.3rem;
     margin-top: 1.2rem;
     margin-left: 1.2rem;
     color: whitesmoke;
   }
-
-  .firstSectionCart {
-    display: grid;
-    grid-template-rows: 1fr, 1fr, 1fr, 1fr;
-    grid-gap: 0.5rem;
-    width: 90%;
-    margin: 1rem;
-    height: fit-content;
-    justify-content: center;
-  }
-
-  /*8da38e
-    62909a
-    87a6ab
-    7cc6b0
-    79a49a*/
-
-  .firstSectionCart article {
-    display: flex;
-    background-color: whitesmoke;
-    height: 28vh;
-    border-radius: 1rem;
-  }
-
   .imagenesCart {
     display: flex;
     height: 100%;
@@ -72,147 +32,37 @@
     width: 30%;
     border-radius: 0.5rem;
   }
-
-  .contenidoProduct {
+  article {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    margin: 2px;
-  }
-
-  .tituloProducto {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  .breveDescripcion {
-    display: flex;
-    justify-content: left;
-    width: 100%;
-    padding: 5px;
-    font-size: 0.8rem;
-  }
-
-  .padreDiv {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-  }
-
-  .precioArtCart {
-    display: flex;
-    width: 40%;
-    justify-content: center;
-    align-self: center;
-
-    height: 100%;
-    align-items: center;
-  }
-
-  .botonera {
-    display: flex;
-    width: 60%;
-    justify-content: center;
-    align-self: center;
-    height: 100%;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .btnsCart {
-    font-size: 0.7rem;
-    border-radius: 20%;
-  }
-
-  .precioArtCart {
-    font-size: 0.8rem;
-    font-weight: bold;
-  }
-  .ctdCart {
-    font-size: 0.8rem;
-    font-weight: bold;
-  }
-
-  .secondSectionCart {
-    display: flex;
-    width: 90%;
-
-    margin-right: 1rem;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-
     background-color: whitesmoke;
-    height: fit-content;
-    flex-direction: column;
-    border-radius: 1rem;
-    align-self: flex-start;
-    padding: 1rem;
-  }
-
-  .detalleCompra {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: auto;
-    margin: 1rem;
-
-    justify-items: center;
-  }
-
-  .detalleColumna1 p {
-    margin: 8px;
-  }
-
-  .detalleColumna2 p {
-    margin: 8px;
-    align-items: center;
-  }
-
-  .botonesFinales {
-    margin-bottom: 1rem;
-    display: flex;
-    width: 90%;
-    justify-content: center;
+    margin-bottom: 2rem;
+    height: 85%;
+    width: 40%;
     align-self: center;
-    height: 100%;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-  }
-
-  .btnCancel {
-    background-color: tomato;
-    font-size: 0.8rem;
-    padding: 6px;
-    border-radius: 1rem;
-    font-weight: bold;
-  }
-
-  .btnFinish {
-    background-color: rgb(58, 182, 58);
-    font-size: 0.8rem;
-    padding: 6px;
-    border-radius: 1rem;
-    font-weight: bold;
-  }
-
-  .btnFinish:hover {
-    color: whitesmoke;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-  .btnCancel:hover {
-    color: whitesmoke;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-  .btnsCart:hover {
-    color: red;
-    cursor: pointer;
-    font-weight: bold;
-  }
- 
+    margin-left: 30%;
+    box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    border-radius: 0.5rem;
 }
+.botones{
+  padding: 2px 10px;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    background-color: #62909a;
+    border: 2.5px solid whitesmoke;
+    color: white;
+    font-size: 18px;
+    transition: 0.5s ease;
+    margin-bottom: 2rem;
+}
+.botones:hover{
+  background-color: #7cc6b0;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+  }

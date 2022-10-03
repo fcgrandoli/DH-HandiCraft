@@ -15,9 +15,9 @@ const productCartModel = {
       id: products.length,
       name: data.name,
       price: data.price,
-      disc: data.disc,
+      discount: data.discount,
       image: data.image,
-      descs: data.descs,
+      descShort: data.descShort,
       descl: data.descl,
       cant: data.cant,
     });
@@ -27,8 +27,8 @@ const productCartModel = {
     let cartList = productCartModel.indexCart();
     cartList[id].name = 'DELETED';
     cartList[id].price = 'DELETED';
-    cartList[id].disc = 'DELETED';
-    cartList[id].descs = 'DELETED';
+    cartList[id].discount = 'DELETED';
+    cartList[id].descShort = 'DELETED';
     cartList[id].descl = 'DELETED';
     cartList[id].image = 'DELETED';
     cartList[id].cant = 'DELETED';
@@ -39,8 +39,8 @@ const productCartModel = {
     let i = data.id;
     cartList[i].name = data.name;
     cartList[i].price = data.price;
-    cartList[i].disc = data.disc;
-    cartList[i].descs = data.descs;
+    cartList[i].discount = data.discount;
+    cartList[i].descShort = data.descShort;
     cartList[i].descl = data.descl;
     cartList[i].image = data.image;
     cartList[i].cant = data.cant;
