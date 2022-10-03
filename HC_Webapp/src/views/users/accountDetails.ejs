@@ -61,7 +61,7 @@
                   name="firstName"
                   value="<%= userLoggedIn.firstName %>"
                 />
-                <i class=" fa fa-solid fa-id-card"></i>
+                <i class="fa fa-solid fa-id-card"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.firstName) { %>
@@ -78,7 +78,7 @@
                   name="lastName"
                   value="<%= userLoggedIn.lastName %>"
                 />
-                <i class=" fa fa-solid fa-id-card"></i>
+                <i class="fa fa-solid fa-id-card"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.lastName) { %>
@@ -95,7 +95,7 @@
                   name="userName"
                   value="<%= userLoggedIn.userName %>"
                 />
-                <i class=" fa fa-solid fa-user"></i>
+                <i class="fa fa-solid fa-user"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.userName) { %>
@@ -112,7 +112,7 @@
                   name="email"
                   value="<%= userLoggedIn.email %>"
                 />
-                <i class=" fa fa-solid fa-at"></i>
+                <i class="fa fa-solid fa-at"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.email) { %>
@@ -130,7 +130,7 @@
                   placeholder="******"
                   value=""
                 />
-                <i class=" fa fa-solid fa-key"></i>
+                <i class="fa fa-solid fa-key"></i>
               </div>
               <div class="errors">
                 <% if (errors.passwd) { %>
@@ -148,11 +148,12 @@
                   onchange="loadFile(event)"
                   hidden
                 />
-              </div>
-              <div class="errors">
-                <% if (errors.avatar) { %>
-                <p class="msg-error"><%= locals.errors.avatar.msg %></p>
-                <% } %>
+                <div class="errors">
+                  <p class="feed-img"></p>
+                  <% if (errors.avatar) { %>
+                  <p class="msg-error-img"><%= locals.errors.avatar.msg %></p>
+                  <% } %>
+                </div>
               </div>
               <div class="buttons">
                 <div class="submit-container">
