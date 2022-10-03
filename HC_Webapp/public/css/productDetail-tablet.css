@@ -1,2 +1,312 @@
 @media only screen and (min-width: 761px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Calibri';
   }
+
+  body {
+    background: linear-gradient(150deg, #79a49a, #87a6ab, #62909a, #7cc6b0);
+    background-size: 1000% 200%;
+    animation: gradient 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::-webkit-scrollbar {
+    width: 17px;
+    background-color: whitesmoke;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: linear-gradient(45deg, #87a6ab, #62909a, #7cc6b0);
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .container {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+  }
+
+  .prd-name {
+    color: #62909a;
+    font-size: 35px;
+    margin: 10px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .description {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    background-color: #62909a;
+    border-radius: 16px;
+    bottom: 15px;
+    width: 80%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .text {
+    width: 100%;
+    height: 40%;
+    text-align: justify;
+  }
+
+  .desc-short {
+    color: #62909a;
+    margin: 25px;
+    font-size: 25px;
+  }
+
+  .desc-large {
+    color: #62909a;
+    margin: 25px;
+    font-size: 20px;
+    overflow-wrap: break-word;
+  }
+
+  .price {
+    color: whitesmoke;
+    font-size: 30px;
+  }
+  p {
+    height: 20%;
+    overflow-wrap: break-word;
+    text-align: justify;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 0.5rem;
+    width: 90vw;
+    height: auto;
+    padding: 55px;
+    margin: 15vh auto;
+    box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  }
+
+  .half-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 0rem;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 0rem;
+  }
+  .half-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 1.5rem;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+
+  .image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #62909a;
+    background-color: whitesmoke;
+    border-radius: 16px;
+    flex-shrink: 1;
+    margin: 20px;
+  }
+
+  .preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 16px;
+    width: 90%;
+    height: 90%;
+    flex-shrink: 1;
+  }
+
+  .corner-text-wrapper {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    clip: rect(0px, 141.421px, 70.7107px, 0px);
+    height: 141.421px;
+    position: absolute;
+    right: -22.5px;
+    top: -20.7107px;
+    width: 141.421px;
+    z-index: 1;
+  }
+  .corner-text {
+    color: white;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 20px;
+    top: 20px;
+    background-color: #7cc6b0;
+    border-top-right-radius: 16px;
+    display: block;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+  }
+  .corner-text span {
+    transform: rotate(45deg);
+    position: relative;
+    font-size: 22px;
+    font-weight: bold;
+    top: 20px;
+    left: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .corner-text-wrapper-hidden,
+  .corner-text-hidden,
+  .span-hidden {
+    display: none;
+  }
+
+  .buttons {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    transition: 0.5s ease;
+    top: 10px;
+    right: 0px;
+  }
+
+  a:link {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: whitesmoke;
+  }
+
+  a:hover {
+    background-color: whitesmoke;
+    color: #62909a;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .btn-buy:hover,
+  .btn-cart:hover {
+    background-color: #7cc6b0;
+    color: whitesmoke;
+    cursor: pointer;
+  }
+
+  .btn-buy,
+  .btn-cart {
+    padding: 2px 10px;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    background-color: #62909a;
+    border: 2.5px solid whitesmoke;
+    color: white;
+    font-size: 18px;
+    transition: 0.5s ease;
+  }
+
+  .btn-delete-container {
+    margin: 0px 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #de2700;
+  }
+
+  .btn-delete {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #de2700;
+    color: white;
+    font-size: 18px;
+    transition: 0.5s ease;
+  }
+
+  .btn-delete:hover {
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.5s ease;
+  }
+
+  .btn-edit-container {
+    margin: 0px 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #26b400;
+    transition: 0.5s ease;
+  }
+
+  a.btn-edit {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+    color: white;
+    font-size: 18px;
+
+    transition: 0.5s ease;
+  }
+
+  a.btn-edit:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .fa {
+    color: whitesmoke;
+  }
+}

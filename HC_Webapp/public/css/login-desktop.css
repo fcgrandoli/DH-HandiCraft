@@ -9,6 +9,9 @@
     background: linear-gradient(150deg, #79a49a, #87a6ab, #62909a, #7cc6b0);
     background-size: 1000% 200%;
     animation: gradient 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   
   ::-webkit-scrollbar {
@@ -57,6 +60,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-top: 25px;
   }
 
   .input-field {
@@ -73,18 +77,15 @@
     overflow-wrap: break-word;
   }
 
-  .passwords input:focus  {
-    outline: none;
-    box-shadow: 0px 0px 15px #7cc6b0;
-    border: none;
-    border-radius: 10px;
-  }
+   .passwords input:focus  {
+    box-shadow: 0px 8px 8px -6px #7cc6b0;
+  } 
 
   .input-field:focus {
     transition: 0.5s ease;
     border-bottom: 3px solid #7cc6b0;
   }
-  .input-field:focus + .fa-sharp {
+  .input-field:focus + .fa {
     color: #7cc6b0;
   }
 
@@ -119,7 +120,7 @@
     padding: 20px 0px;
   }
 
-  .fa-sharp {
+.fa {
     position: absolute;
     color: #62909a;
     top: 1.6rem;

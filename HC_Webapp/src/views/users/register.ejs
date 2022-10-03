@@ -42,7 +42,7 @@
                   placeholder="Nombre"
                   value="<%= locals.oldData ? oldData.firstName : null %>"
                 />
-                <i class="fa-solid fa-id-card"></i>
+                <i class=" fa fa-solid fa-id-card"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.firstName) { %>
@@ -59,7 +59,7 @@
                   placeholder="Apellido"
                   value="<%= locals.oldData ? oldData.lastName : null %>"
                 />
-                <i class="fa-solid fa-id-card"></i>
+                <i class=" fa fa-solid fa-id-card"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.lastName) { %>
@@ -76,7 +76,7 @@
                   placeholder="Nombre de usuario"
                   value="<%= locals.oldData ? oldData.userName : null %>"
                 />
-                <i class="fa-solid fa-user"></i>
+                <i class=" fa fa-solid fa-user"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.userName) { %>
@@ -93,7 +93,7 @@
                   placeholder="Correo electronico"
                   value="<%= locals.oldData ? oldData.email : null %>"
                 />
-                <i class="fa-solid fa-at"></i>
+                <i class=" fa fa-solid fa-at"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.email) { %>
@@ -111,7 +111,7 @@
                   placeholder="Contraseña"
                   value="<%= locals.oldData ? oldData.passwd : null %>"
                 />
-                <i class="fa-solid fa-key"></i>
+                <i class=" fa fa-solid fa-key"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.passwd) { %>
@@ -121,23 +121,23 @@
               </div>
 
               <div class="image-fields-container">
-                <label for="image">Seleccionar imagen de perfil</label>
+                <label for="avatar">Seleccionar imagen de perfil</label>
+                                <input
+                  class="image-upload"
+                  type="file"
+                  name="avatar"
+                  autocomplete="off"
+                  id="avatar"
+                  autocomplete="off"
+                  onchange="loadFile(event)"
+                  hidden
+                />
                 <div class="errors">
                   <p class="feed-img"></p>
                   <% if (errors.avatar) { %>
                   <p class="msg-error-img"><%= locals.errors.avatar.msg %></p>
                   <% } %>
                 </div>
-                <input
-                  class="image-upload"
-                  type="file"
-                  name="avatar"
-                  autocomplete="off"
-                  id="image"
-                  autocomplete="off"
-                  onchange="loadFile(event)"
-                  hidden
-                />
               </div>
 
               <div class="buttons">

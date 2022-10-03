@@ -1,2 +1,206 @@
 @media only screen and (min-width: 361px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Calibri';
   }
+  body {
+    background: linear-gradient(150deg, #79a49a, #87a6ab, #62909a, #7cc6b0);
+    background-size: 1000% 200%;
+    animation: gradient 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::-webkit-scrollbar {
+    width: 17px;
+    background-color: whitesmoke;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: linear-gradient(45deg, #87a6ab, #62909a, #7cc6b0);
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    color: #62909a;
+  }
+
+  .fields {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 0.5rem;
+    width: 80vw;
+    padding: 30px 20px;
+    margin: 15vh auto;
+    box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+
+  .input-field {
+    background: rgba(255, 255, 255, 0);
+    width: 75%;
+    margin: auto;
+    border: none;
+    border-bottom: 3px solid #62909a;
+    padding: 5px 0px;
+    outline: none;
+    transition: 0.5s ease;
+    font-size: 18px;
+    color: #62909a;
+    overflow-wrap: break-word;
+  }
+
+  .passwords input:focus {
+    box-shadow: 0px 8px 8px -6px #7cc6b0;
+  }
+
+  .input-field:focus {
+    transition: 0.5s ease;
+    border-bottom: 3px solid #7cc6b0;
+  }
+  .input-field:focus + .fa {
+    color: #7cc6b0;
+  }
+
+  /* input:focus {
+    outline: none;
+    box-shadow: 0px 0px 15px #7cc6b0;
+    border-radius: 10px;
+} */
+
+  [placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.8s 0.4s ease;
+    text-indent: -100%;
+    opacity: 1;
+  }
+
+  ::placeholder {
+    color: #62909a;
+    transition: 0.5s ease;
+    opacity: 1;
+  }
+
+  .user,
+  .passwords {
+    display: flex;
+    flex-direction: column;
+    color: #62909a;
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: 20px 0px;
+  }
+
+  .fa {
+    position: absolute;
+    color: #62909a;
+    top: 1.6rem;
+    right: 15%;
+    font-size: 20px;
+    transition: 0.5s ease;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15px;
+    transition: 0.5s ease;
+  }
+
+  .submit {
+    padding: 5px 10px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #62909a;
+    color: white;
+    font-size: 18px;
+    transition: 0.5s ease;
+  }
+
+  .checkbox-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #62909a;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: 0.5s ease;
+  }
+
+  .checkbox {
+    height: 20px;
+    width: 20px;
+    background-color: whitesmoke;
+    accent-color: whitesmoke;
+    border: none;
+    clip-path: circle(46% at 50% 50%);
+    transition: 0.5s ease;
+  }
+
+  .check-box-text {
+    font-size: 18px;
+    padding-left: 5px;
+    color: whitesmoke;
+    transition: 0.5s ease;
+  }
+
+  .nav-back {
+    padding: 5px 10px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #62909a;
+    color: white;
+    font-size: 18px;
+    transition: 0.5s ease;
+  }
+
+  .nav-back:link {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  .nav-back:visited {
+    color: whitesmoke;
+  }
+
+  .submit:hover,
+  .nav-back:hover,
+  .checkbox:hover,
+  .checkbox-container:hover {
+    background-color: #7cc6b0;
+    color: whitesmoke;
+    cursor: pointer;
+  }
+}

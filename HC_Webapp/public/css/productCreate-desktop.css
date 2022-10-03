@@ -9,6 +9,9 @@
     background: linear-gradient(150deg, #79a49a, #87a6ab, #62909a, #7cc6b0);
     background-size: 1000% 200%;
     animation: gradient 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   ::-webkit-scrollbar {
@@ -37,13 +40,14 @@
     position: absolute;
     color: #62909a;
     top: 2vh;
-    left: 7.5vw;
+    margin: auto;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
 
   .box {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     background: rgba(255, 255, 255, 0.7);
@@ -52,7 +56,7 @@
     border-radius: 0.5rem;
     width: 60vw;
     padding: 50px;
-    margin: 5vh auto;
+    margin: 15vh auto;
     box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
     -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
     -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
@@ -71,24 +75,24 @@
 
   .image {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    margin: 15px;
     border: 3px solid #62909a;
     background-color: whitesmoke;
     border-radius: 16px;
-    width: 400px;
-    height: 460px;
+    min-width: 90%;
     flex-shrink: 1;
   }
 
   .preview {
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin: auto;
     padding: 10px;
     border-radius: 16px;
-    width: 395px;
-    height: 455px;
+    width: 90%;
+    height: 90%;
     flex-shrink: 1;
   }
 
@@ -164,19 +168,22 @@
     color: white;
     font-size: 18px;
     transition: 0.5s ease;
-    width: 25vw;
+    width: 50%;
     margin-top: 10px;
   }
 
   label[for='image'] {
-    font-size: 15px;
     text-align: center;
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin: auto;
   }
 
   .image-upload {
     cursor: pointer;
     transition: 0.5s ease;
     position: relative;
+    width: 50%;
   }
 
   .image-fields-container:hover {
@@ -185,7 +192,7 @@
     transition: 0.5s ease;
   }
 
-  .fa-solid {
+  .fa {
     position: absolute;
     color: #62909a;
     top: 1.5rem;
