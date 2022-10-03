@@ -1,24 +1,19 @@
 import { useState, useEffect} from "react"
 import { Outlet, useParams } from "react-router-dom"
+import { getUsers } from "../services/users";
 
 
-const Users = () => {
-let [count, setUser] = useState([])
-useEffect(()=>{
-    const userApi = async () => {
-        let request = await fetch('http://localhost:3000/api/users')
-        let response = await request.json()
-        setUser(response)
-        console.log(response)
-        
-}
-userApi()
-}, [])
+export default function Users () {
+const [users, setUsers] = useState([]);
+useEffect(() => {
+    console.log(users.length)
+  getUsers().then(setUsers);
+}, []);
 return (
 <>
     <h1>Total usuarios:</h1>
-    <p>   
-    </p>
+    
+
 </>
 )
 }
@@ -28,5 +23,4 @@ return (
 
 
 
-export default Users
 

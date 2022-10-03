@@ -1,24 +1,12 @@
-/*const baseURL = "http://localhost:3000/api/products"
-export async function getAll(page){
-    try{
-    let endpoint = `${baseURL}?page=${page}`
-    let query = await fetch (endpoint)
-    let data = await query.json()
-    return data.results
-} catch (error){
-    console.log(error)
-    return []
+const baseURL = "http://localhost:3000/api/products";
+export async function getProducts() {
+  try {
+    let endPoint = `${baseURL}`;
+    let query = await fetch(endPoint);
+    let data = await query.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return;
+  }
 }
-}
-
-export async function getOne(id){
-    try{
-    let endpoint = `${baseURL}/${id}`
-    let query = await fetch (endpoint)
-    let data = await query.json()
-    return data.results
-} catch (error){
-    console.log(error)
-    return []
-}
-} */
