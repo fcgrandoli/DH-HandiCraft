@@ -3,24 +3,19 @@ import { useState, useEffect } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import { getUsers } from "../services/users";
 
-export function Users() {
+export function UsersTotal() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     getUsers().then(setUsers);
   }, []);
   return (
-    <div className="users">
+    <div className="usersTotal">
       {users.map((user, index) => {
-        if (index !== 0) {
+        if (index === 0) {
           return (
-            <div>
-              {user.Usuarios.map((user, index) => {
-                return (
-                  <div className="user" key={`usr-${index}`}>
-                    <p>Usuario: {user.Nombre}</p>
-                  </div>
-                );
-              })}
+            <div className="user" key={`usersTotal-${index}`}>
+              <p>Total de Usuarios: {user.totalUsuarios}</p>
+              <hr />
             </div>
           );
         }

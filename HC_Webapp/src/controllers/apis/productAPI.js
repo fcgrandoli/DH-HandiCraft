@@ -11,7 +11,7 @@ const productApi = {
         },
       });
       result.push({
-        productCount: count.length,
+        totalProductos: count.length,
       });
 
       let collections = [...new Set(count.map((data) => data.collection))];
