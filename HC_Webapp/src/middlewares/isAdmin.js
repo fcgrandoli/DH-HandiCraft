@@ -6,4 +6,3 @@ module.exports = (req, res, next) => {
   }
 };
 
-//http://localhost:3000/viewProduct/createProduct

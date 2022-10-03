@@ -39,6 +39,7 @@ app.use(
 
 //MIDDLEWARES
 app.use(require('./src/middlewares/userLoggedIn.js'));
+app.use(require('./src/middlewares/collections.js'));
 
 //APP ROUTES (USE)
 app.use('/', homeRoute);

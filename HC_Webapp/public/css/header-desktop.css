@@ -3,7 +3,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Calibri';
+    font-family: "Calibri";
   }
 
   .header-container {
@@ -37,7 +37,7 @@
     display: flex;
     align-items: baseline;
     font-size: 35px;
-    font-family: 'Lucida Sans';
+    font-family: "Lucida Sans";
     font-style: italic;
     color: whitesmoke;
     overflow-wrap: normal;
@@ -61,6 +61,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
   }
 
@@ -84,11 +85,83 @@
     flex-shrink: 1;
   }
 
+  .dropbtn {
+    background-color: #62909a;
+    color: white;
+    margin: 5px 10px;
+    padding: 3px 15px;
+    display: block;
+    border: none;
+    outline: 2.5px solid whitesmoke;
+    border-radius: 15px;
+    font-size: 16px;
+  }
+
+  .dropdown {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    display: inline-block;
+    
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 8px;
+    min-width: 60px;
+    background-color: #7cc6b0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+  }
+
+  .dropdown-content form input {
+    padding: 4px 15px;
+    text-decoration: none;
+    border: none;
+    display: block;
+    background-color: #7cc6b0;
+    border-radius: 8px;
+  }
+
+  .collection {
+    background-color: #62909a;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+    color: whitesmoke;
+
+    margin: 5px auto;
+
+  }
+
+  .collection:hover {
+    background-color: whitesmoke;
+    color: #62909a;
+    cursor: pointer;
+  }
+
+  .dropdown-content form input:hover {
+    background-color: whitesmoke;
+    width: 100%;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #62909a;
+  }
+
   .profile-name {
     font-weight: bold;
   }
 
   .nav-site-container a,
+  .nav-site-container p,
   .nav-user-container a {
     margin: 5px 10px;
     padding: 3px 15px;
@@ -112,20 +185,20 @@
     position: absolute;
   }
 
-  input[type='text'].search-bar:focus::-webkit-input-placeholder {
+  input[type="text"].search-bar:focus::-webkit-input-placeholder {
     transition: text-indent 1s 0.5s ease;
     color: #62909a;
     text-indent: -100%;
     opacity: 1;
   }
-  input[type='text'].search-bar:hover::-webkit-input-placeholder {
+  input[type="text"].search-bar:hover::-webkit-input-placeholder {
     transition: text-indent 1s 0.5s ease;
     color: #62909a;
     text-indent: -100%;
     opacity: 1;
   }
 
-  input[type='text'].search-bar::-webkit-input-placeholder {
+  input[type="text"].search-bar::-webkit-input-placeholder {
     transition: 1s 0.5s ease;
     color: whitesmoke;
     transition: 0.3s;
@@ -171,7 +244,8 @@
     cursor: pointer;
   }
 
-  a:link {
+  a:link,
+  .nav-site-container p {
     color: whitesmoke;
     text-decoration: none;
     transition: ease 0.25s;
@@ -182,7 +256,8 @@
     transition: ease 0.25s;
   }
 
-  a:hover {
+  a:hover,
+  .nav-site-container .dropbtn:hover {
     transition: ease 0.25s;
     background-color: whitesmoke;
     color: #62909a;

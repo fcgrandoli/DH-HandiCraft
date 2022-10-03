@@ -8,8 +8,24 @@
       <div>
         <a class="nav-button" href="/">Home</a>
       </div>
-      <div>
-        <a class="nav-button" href="/collectionList">Colecciones</a>
+      <div class="dropdown">
+        <button class="dropbtn">Colecciones</button>
+        <div class="dropdown-content">
+          <% for (let i = 0; i < collections.length; i++) { %>
+          <form action="/categorias" method="GET">
+            <input
+              type="hidden"
+              name="collection"
+              value="<%= collections[i] %>"
+            />
+            <input
+              class="collection"
+              type="submit"
+              value="<%= collections[i] %>"
+            />
+          </form>
+          <% } %>
+        </div>
       </div>
       <div>
         <a class="nav-button" href="/enConstruccion">Noticias</a>
@@ -23,7 +39,9 @@
           name="buscar"
           placeholder="Buscar productos, marcas..."
         />
-        <button style="font-size: 15px;" class="search-bar-submit" type="submit"/><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button style="font-size: 15px" class="search-bar-submit" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </form>
     </div>
     <nav class="nav-menu">
