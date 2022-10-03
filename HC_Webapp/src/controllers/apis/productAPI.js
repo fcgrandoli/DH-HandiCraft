@@ -33,12 +33,12 @@ const productApi = {
             Nombre: product.name,
             Precio: product.price,
             Descuento: product.discount,
-            "Descripcion Corta": product.descShort,
-            "Descripcion Larga": product.descLarge,
+            DescripcionCorta: product.descShort,
+            DescripcionLarga: product.descLarge,
             Stock: product.stock,
             Categoria: product.collection,
             Imagen: `http://localhost:3000/images/${product.images[0].path}`,
-            "Detalle de Producto": `http://localhost:3000/viewProduct/${product.id}/mostrar`,
+            DetalleProducto: `http://localhost:3000/viewProduct/${product.id}/mostrar`,
           };
         });
         result.push({
