@@ -32,6 +32,15 @@
     width: 30%;
     border-radius: 0.5rem;
   }
+  ::-webkit-scrollbar {
+    width: 17px;
+    background-color: whitesmoke;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: linear-gradient(45deg, #87a6ab, #62909a, #7cc6b0);
+  }
   article {
     display: flex;
     background-color: whitesmoke;
@@ -47,6 +56,17 @@
     -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
     border-radius: 0.5rem;
 }
+.botonEliminar{
+  padding: 2px 10px;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    background-color: #62909a;
+    border: 2.5px solid whitesmoke;
+    color: white;
+    font-size: 18px;
+    transition: 0.5s ease;
+}
 .botones{
   padding: 2px 10px;
     border-radius: 15px;
@@ -60,6 +80,11 @@
     margin-bottom: 2rem;
 }
 .botones:hover{
+  background-color: #7cc6b0;
+  color: whitesmoke;
+  cursor: pointer;
+}
+.botonEliminar:hover{
   background-color: #7cc6b0;
   color: whitesmoke;
   cursor: pointer;

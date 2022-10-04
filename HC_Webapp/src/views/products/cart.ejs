@@ -32,18 +32,17 @@
                   <section class="precio">$<%= cartProduct[i].price %></section>
                   <section class="descShort"><%= cartProduct[i].discount %>%</section>
 
-                  
-                  <section class="botones">
-                      <a href="/">
-                      <button>
+                  <div class="botonEliminar">
+      
                         <form
-              class="fields"
-              method="POST"
-              action="/viewProduct/eliminar?_method=POST">
-              <a href="/cart/<%= cartProduct[i].id%>/eliminarProduct">Eliminar</a>
-            </form></button>
-             </a>
+                        class="field"
+                         method="POST"
+                         action="/viewProduct/eliminar?_method=POST">
+                 <a href="/cart/<%= cartProduct[i].id%>/eliminarProduct">ELIMINAR</a>
+              
+            </form>
             
+            </div>
                   </section>
 
             </article>
@@ -55,4 +54,6 @@
     <%- include ('../partials/footer') %>
   </body>
 </html>
+
+
       

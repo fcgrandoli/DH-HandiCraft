@@ -271,27 +271,33 @@
   },
   {
     "id": 27,
-    "name": "Canasto de Vidrio",
-    "price": "9000",
-    "discount": "15",
-    "image": "PRD-CanastoFlor.png",
-    "descShort": "Canasto de flores tallado en vidrio."
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
   },
   {
     "id": 28,
-    "name": "Canasto de Vidrio",
-    "price": "9000",
-    "discount": "15",
-    "image": "PRD-CanastoFlor.png",
-    "descShort": "Canasto de flores tallado en vidrio."
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
   },
   {
     "id": 29,
-    "name": "Canasto de Vidrio",
-    "price": "9000",
-    "discount": "15",
-    "image": "PRD-CanastoFlor.png",
-    "descShort": "Canasto de flores tallado en vidrio."
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
   },
   {
     "id": 30,
@@ -300,5 +306,35 @@
     "discount": "15",
     "image": "PRD-CanastoFlor.png",
     "descShort": "Canasto de flores tallado en vidrio."
+  },
+  {
+    "id": 31,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 32,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 33,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
   }
 ]
