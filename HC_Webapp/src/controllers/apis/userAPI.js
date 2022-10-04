@@ -16,6 +16,7 @@ const userApi = {
       let data = count.map((user) => ({
         ID: user.id,
         Nombre: user.firstName,
+        NombreDeUsuario: user.userName,
         Email: user.email,
         Detalle: `http://localhost:3000/api/users/${user.id}`,
       }));
