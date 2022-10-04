@@ -130,6 +130,7 @@
   left: 34px;
   top: -10px;
 }
+
 .userNames {
   color: #62909a;
   overflow-wrap: break-word;
@@ -138,6 +139,7 @@
   font-size: 1rem;
   transition: 0.5s ease;
 }
+
 .userNames:hover {
   background-color: #7cc6b0;
 }
@@ -190,103 +192,115 @@
 }
 
 
+html {
+  overflow-y: hidden
+}
+
+
+.sidebarUsers {
+  position: absolute;
+  top: 0vh;
+}
+
+
+
+
+
+
+
 
 
 
 
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
-         :root {
-            --font-style: 'Nunito Sans', sans-serif;
-        }
-        
-        body {
-            font-family: var(--font-style);
-        }
-    html {
-        overflow-x: hidden;
-    }
-        .container {
-            position: absolute;
-            top: 110%;
-            left: 110%;
-            transform: translate(-50%, -50%);
-            transition: all 1s;
-            width: 50px;
-            height: 50px;
-            background: #B1B2CF;
-            box-sizing: border-box;
-            border-radius: 25px;
-            border: 4px solid #7cc6b0;
-            padding: 5px;
-            box-shadow: 0px 0px 15px #00dcff
-        }
-        .btn {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #62909a;
-            border-radius: 25px;
-            transition: all 1s;
-        }
-        
-        h1 {
-            color: whitesmoke;
-            position: absolute;
-            left: 60%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1.2em;
-            width: 100%;
-            margin: auto;
-            transition: all 1s;
-            opacity: 0;
-        }
-        
-        i {
-            box-sizing: border-box;
-            padding: 10px;
-            width: 42.5px;
-            height: 42.5px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            color: #7cc6b0;
-            text-align: center;
-            font-size: 1.2em;
-            transition: all 1s;
-        }
-        
-        .btn:hover i {
-            transform: rotate(360deg);
-        }
-        
-        .btn:hover {
-            width: 230px;
-            height: 90px;
-            cursor: pointer;
-        }
-        
-        .btn:hover h1 {
-            animation: 2s display forwards;
-        }
-        
-        @keyframes display {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
 
-        
+:root {
+  --font-style: 'Nunito Sans', sans-serif;
+}
 
+body {
+  font-family: var(--font-style);
+}
 
+html {
+  overflow-x: hidden;
+}
 
-  .sidebarUsers{
-    position: relative;
-    top: -65.8vh;
+.container {
+  position: absolute;
+  top: 110%;
+  left: 110%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  width: 50px;
+  height: 50px;
+  background: #B1B2CF;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid #7cc6b0;
+  padding: 5px;
+  box-shadow: 0px 0px 15px #00dcff
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #62909a;
+  border-radius: 25px;
+  transition: all 1s;
+}
+
+h1 {
+  color: whitesmoke;
+  position: absolute;
+  left: 60%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+  width: 100%;
+  margin: auto;
+  transition: all 1s;
+  opacity: 0;
+}
+
+i {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #7cc6b0;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+.btn:hover i {
+  transform: rotate(360deg);
+}
+
+.btn:hover {
+  width: 230px;
+  height: 90px;
+  cursor: pointer;
+}
+
+.btn:hover h1 {
+  animation: 2s display forwards;
+}
+
+@keyframes display {
+  from {
+    opacity: 0;
   }
+
+  to {
+    opacity: 1;
+  }
+}
