@@ -10,8 +10,7 @@ export function ProductsLast() {
   return (
     <div className="productLast" key={"productLast"}>
       {products.map((product, index) => {
-        console.log(products.length);
-        if (index === products.length - 1) {
+         if (index === products.length - 1) {
           return <h4>{product.Nombre}</h4>;
         }
       })}
