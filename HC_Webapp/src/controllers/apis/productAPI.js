@@ -2,7 +2,7 @@ const { product } = require("../../database/models");
 const { Op } = require("sequelize");
 
 const productApi = {
-  all: async (req, res) => {
+  summary: async (req, res) => {
     try {
       let result = [];
       let count = await product.findAll({
@@ -50,6 +50,37 @@ const productApi = {
 
       if (result) {
         return res.status(200).json(result);
+      } else {
+        return res.status(404).json("No hay productos.");
+      }
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  },
+
+  all: async (req, res) => {
+    try {
+      let products = await product.findAll({
+        include: {
+          all: true,
+        },
+      });
+      let Productos = products.map((product) => {
+        return {
+          ID: product.id,
+          Nombre: product.name,
+          Precio: product.price,
+          Descuento: product.discount,
+          DescripcionCorta: product.descShort,
+          DescripcionLarga: product.descLarge,
+          Stock: product.stock,
+          Categoria: product.collection,
+          Imagen: `http://localhost:3000/images/${product.images[0].path}`,
+          DetalleProducto: `http://localhost:3000/viewProduct/${product.id}/mostrar`,
+        };
+      });
+      if (Productos) {
+        return res.status(200).json(Productos);
       } else {
         return res.status(404).json("No hay productos.");
       }

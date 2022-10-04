@@ -3,8 +3,10 @@ import reactLogo from './assets/react.svg'*/
 import "./App.css";
 import "../public/Home.css";
 import { Routes, Route, Link } from "react-router-dom";
-import { ProductsTotal } from "./pages/ProductsTotal.jsx";
 //import { ProductsCategory } from "./pages/ProductsCategory.jsx";
+import { ProductsLast } from "./pages/ProductsLast.jsx";
+import { ProductsList } from "./pages/ProductsList.jsx";
+import { ProductsTotal } from "./pages/ProductsTotal.jsx";
 import { UsersTotal } from "./pages/UsersTotal.jsx";
 import { Users } from "./pages/Users.jsx";
 import { UsersLast } from "./pages/UsersLast.jsx";
@@ -15,27 +17,40 @@ import Home from "./pages/Home";
 function App() {
   return (
     <>
-      <nav className="links">
-        <div>
-          <Link to="/">Home</Link>
-        </div>
-        <div>
-          <Link to="/products">Products</Link>
-        </div>
-        <div>
-          <Link to="/users">Users</Link>
-        </div>
-        <div>
-          <Link to="/usersDetail">Users Detail</Link>
-        </div>
-        <div>
-          <Link to="/usersLast">Users Last</Link>
-        </div>
-      </nav>
-
+      <section>
+        <nav className="links">
+          <div>
+            <Link to="/">Home</Link>
+          </div>
+          {/*           <div>
+            <Link to="/productsCategory">Categorias</Link>
+          </div>*/}
+          <div>
+            <Link to="/productsLast">Ultimo Producto</Link>
+          </div>
+          <div>
+            <Link to="/productsList">Lista de Productos</Link>
+          </div>
+          <div>
+            <Link to="/productsTotal">Total de Productos</Link>
+          </div>
+          <div>
+            <Link to="/users">Users</Link>
+          </div>
+          <div>
+            <Link to="/usersDetail">Users Detail</Link>
+          </div>
+          <div>
+            <Link to="/usersLast">Users Last</Link>
+          </div>
+        </nav>
+      </section>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/products" element={<ProductsTotal />}></Route>
+        {/*      <Route path="/productsCategory" element={<ProductsCategory />}></Route>
+        <Route path="/productsLast" element={<ProductsLast />}></Route>*/}
+        <Route path="/productsList" element={<ProductsList />}></Route>
+        <Route path="/productsTotal" element={<ProductsTotal />}></Route>
         <Route path="/users" element={<UsersTotal />}></Route>
         <Route path="/usersDetail" element={<Users />}></Route>
         <Route path="/usersLast" element={<UsersLast />}></Route>

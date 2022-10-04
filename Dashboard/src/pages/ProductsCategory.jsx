@@ -1,4 +1,4 @@
-import "../../public/Products.css";
+import "../../public/ProductsCategory.css";
 import { useState, useEffect } from "react";
 import { getProducts } from "../services/products";
 

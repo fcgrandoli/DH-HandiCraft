@@ -1,4 +1,4 @@
-import "../../public/Products.css";
+import "../../public/ProductsTotal.css";
 import { useState, useEffect } from "react";
 import { getProducts } from "../services/products";
 
@@ -8,17 +8,8 @@ export function ProductsTotal() {
     getProducts().then(setProducts);
   }, []);
   return (
-    <div>
-      {products.map((product, index) => {
-        if (index === 0) {
-          return (
-            <div className="total" key={"total-" + index}>
-              <p>Total de Productos: {product.totalProductos}</p>
-              <hr />
-            </div>
-          );
-        }
-      })}
+    <div className="totalProducts" key={"totalProducts"}>
+      <h4>Total de Productos: {products.length}</h4>
     </div>
   );
 }
