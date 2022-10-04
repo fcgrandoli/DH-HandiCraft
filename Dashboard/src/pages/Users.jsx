@@ -22,14 +22,6 @@ export function Users() {
                   <a className="userNames" href={user.Detalle}>
                   {user.NombreDeUsuario}
               </a>
-<<<<<<< Updated upstream
-                  
-              <div>
-
-              </div>
-                
-=======
->>>>>>> Stashed changes
                   </div>
                   
                 );
