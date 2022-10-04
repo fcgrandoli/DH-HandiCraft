@@ -1,3 +1,5 @@
+import image from "/hc.png";
+
 export function Sidebar() {
   return (
     <ul
@@ -9,7 +11,7 @@ export function Sidebar() {
         href="/"
       >
         <div className="sidebar-brand-icon">
-          <img className="w-100" height="70px" width="80px" />
+          <img className="w-100" src={image} height="70px" width="80px" />
         </div>
       </a>
 

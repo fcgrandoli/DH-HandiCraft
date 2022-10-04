@@ -108,6 +108,17 @@ const controllerProducto = {
       return res.redirect("/");
     }
   },
+  removeProductDash: async (req, res) => {
+    let productRemove = await product.findByPk(req.params.id);
+    if (!productRemove) {
+      return res.redirect("/");
+    } else {
+      await imagesProducts.destroy({ where: { id: req.params.id } }),
+        await image.destroy({ where: { id: req.params.id } }),
+        await product.destroy({ where: { id: req.params.id } });
+      return res.redirect("http://127.0.0.1:5173/products");
+    }
+  },
 };
 
 module.exports = controllerProducto;

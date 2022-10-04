@@ -9,16 +9,18 @@
 
 .box-1 {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 1vw auto;
   height: 95vh;
 }
 
 .box-2 {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
   width: 50%;
-  position: absolute;
-  height: 27%;
-  bottom: 16vh;
-  right: 10vh;
+
+  /*   bottom: 5vh;
+  right: 10vh; */
 }

@@ -20,7 +20,7 @@ app.use((req, res, next) => {
       res.send();
   });
 });
-app.use('/api/users', require ('./src/routes/apis/usersRoutes'));
+app.use('/api/users', require ('./src/routes/apis/apiusers.routes.js'));
 app.use('/api/products', require ('./src/routes/apis/apiproduct.routes.js'));
 
 

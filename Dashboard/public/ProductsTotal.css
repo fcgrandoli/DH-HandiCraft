@@ -8,7 +8,7 @@
   -webkit-backdrop-filter: blur(20px);
   border-radius: 0.5rem;
   width: 18rem;
-  height:15.5rem;
+  height: 15rem;
   padding: 0.5rem;
   margin: 1rem;
   box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
@@ -27,33 +27,37 @@
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   border-bottom: 0.25rem #62909a solid;
-  
 }
 
 .title-totalProducts {
   display: flex;
   font-size: 1.25rem;
-  
-
 }
 
 .totalProducts {
   position: absolute;
-  bottom:0.8rem;
+  bottom: 1rem;
   right: 4.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #62909a;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   margin: 0.25rem auto;
   width: 50%;
   height: 50%;
   border-radius: 50%;
-  outline: 5px #62909a solid;
-  background: white;
-  box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
-  -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
-  -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+}
+
+.totalProducts {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8rem;
+  height: 8rem;
+  border: 10px solid;
+  border-image: linear-gradient(var(--angle), #87a6ab, #62909a, #7cc6b0) 1;
+  animation: 2s rotate linear infinite;
 }

@@ -7,6 +7,7 @@ const {
   createProduct,
   updateProduct,
   removeProduct,
+  removeProductDash
 } = require('../controllers/controller.product.js');
 const uploadProduct = require('../middlewares/productUpload.js');
 const validationProduct = require('../validations/productCreate');
@@ -46,5 +47,5 @@ router.post(
 );
 
 router.post('/:id/delete', authMiddleware, isAdminMiddleware, removeProduct);
-
+router.post('/:id/delete/dash', authMiddleware, isAdminMiddleware, removeProductDash);
 module.exports = router;
