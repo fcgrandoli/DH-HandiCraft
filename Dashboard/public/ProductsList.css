@@ -94,47 +94,31 @@
   cursor: pointer;
   transition: 0.2s ease;
 }
-
 .buttons-admin {
-  display: flex;
-  flex-direction: column;
   position: absolute;
-  top: 0.25rem;
-  right: 0.015rem;
-  display: flex;
+  top: 5px;
+  right: 5px;
+  align-items: center;
+
   transform: 0.5s;
-}
-.buttons-admin li {
-  margin: 2px 2px;
-}
-.buttons-admin li a {
-  transform: 0.5s;
-}
-div.box-productList > div.grid-producList > div > ul {
-  list-style: none;
 }
 
 .buttons-admin .btn-edit {
-  position: relative;
+position: relative;
   list-style: none;
+  width: 1.25rem;
+  height: 1.25rem;
 }
-
-ul li a .fa {
-  display: flex;
+ul > li.btn-edit-container > a > i {
   position: absolute;
-  top: 0.25rem;
-  left: 0.25rem;
+  top:-0.5rem;
+  left:-0.75rem;
   background: transparent;
   color: white;
+  font-size: 15px;
 }
-
-ul li form button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .buttons-admin .btn-edit-container {
+  list-style: none;
   width: 1.25rem;
   height: 1.25rem;
   outline: none;
@@ -143,16 +127,29 @@ ul li form button {
   border-radius: 0.25rem;
   background-color: #39b54a;
   color: white;
-  font-size: 0.75rem;
 }
 .buttons-admin .btn-edit-container:hover,
-.buttons-admin .btn-edit:hover,
-ul li a .fa:hover {
+.buttons-admin .btn-edit:hover {
   background-color: #30e100ed;
-  color: white;
+  color: whitesmoke;
+}
+.buttons-admin .btn-delete-container {
+  position: absolute;
+  list-style: none;
+  text-align: center;
+}
+
+ul > li.btn-delete-container > form > button > i {
+  top:-0.5rem;
+  left:-0.75rem;
+  background: transparent;
+  color: whitesmoke;
+  font-size: 15px;
 }
 
 .buttons-admin .btn-delete {
+  position: relative;
+  list-style: none;
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 0.25rem;
@@ -161,7 +158,6 @@ ul li a .fa:hover {
   cursor: pointer;
   background-color: #de2700;
   color: whitesmoke;
-  font-size: 0.75rem;
 }
 .buttons-admin button:hover {
   background-color: red;
