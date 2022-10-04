@@ -41,13 +41,6 @@ export function Sidebar() {
         </a>
       </li>
 
-      <li className="nav-item">
-        <a className="nav-link" href="/">
-          <i className="fas fa-fw fa-table"></i>
-          <span>Categorias</span>
-        </a>
-      </li>
-
       <hr className="sidebar-divider d-none d-md-block" />
     </ul>
   );
