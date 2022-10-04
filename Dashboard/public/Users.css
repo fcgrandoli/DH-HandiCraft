@@ -184,16 +184,9 @@
   box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
   -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
   -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
-<<<<<<< Updated upstream
   position: relative;
   margin-left: 80vh;
   margin-top: 30vh;
-=======
- position: relative;
-margin-left: 80vh;
-margin-top:10vh ;
- 
->>>>>>> Stashed changes
 }
 
 
@@ -292,3 +285,6 @@ border-radius: 20px;
   transition: 0.3s ease;
   text-decoration: none
 }
+
+
+
