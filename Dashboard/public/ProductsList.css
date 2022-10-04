@@ -111,11 +111,11 @@ position: relative;
 }
 ul > li.btn-edit-container > a > i {
   position: absolute;
-  top:-0.5rem;
-  left:-0.75rem;
+  top:-0.45rem;
+  left:-0.7rem;
   background: transparent;
   color: white;
-  font-size: 15px;
+  font-size: 14px;
 }
 .buttons-admin .btn-edit-container {
   list-style: none;
@@ -140,11 +140,11 @@ ul > li.btn-edit-container > a > i {
 }
 
 ul > li.btn-delete-container > form > button > i {
-  top:-0.5rem;
-  left:-0.75rem;
+  top:-0.45rem;
+  left:-0.7rem;
   background: transparent;
   color: whitesmoke;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .buttons-admin .btn-delete {
