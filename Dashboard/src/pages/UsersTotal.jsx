@@ -9,12 +9,13 @@ export function UsersTotal() {
     getUsers().then(setUsers);
   }, []);
   return (
-    <div className="usersTotal">
+    <div                             className="usersTotal"          >
       {users.map((user, index) => {
         if (index === 0) {
           return (
             <div className="user" key={`usersTotal-${index}`}>
-              <h3>Total de Usuarios: {user.totalUsuarios}</h3>
+              <h3 className="title-totalus"    > Total de Usuarios:         </h3>
+              <p className="totalus"          >  {user.totalUsuarios} </p>
             </div>
           );
         }

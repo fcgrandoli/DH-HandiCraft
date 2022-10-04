@@ -1,7 +1,132 @@
-.userLast {
-  color: whitesmoke;
+*{
+  box-sizing: border-box;
 }
 
 .usersLast {
   color: whitesmoke;
+  
+}
+
+
+.datos-userLast{
+  display: flex;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  width:100%;
+  height: 35px;
+  padding: 5px;
+  margin: -142px;
+  margin-left: 0px;
+  padding-left: 250px;
+  letter-spacing:1px;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 5px 2px rgba(98, 144, 154, 1);
+  -webkit-box-shadow: 2px 2px 5px 2px rgba(98, 144, 154, 1);
+  -moz-box-shadow: 2px 2px 5px 2px rgba(98, 144, 154, 1);
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  
+}
+
+.box-usersLast{
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0.5rem;
+  width: 990px;
+  height: 85px;
+  outline: #7cc6b0 0.15rem solid;
+  padding: 5px;
+  margin: 10px;
+  box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+ position: relative;
+
+}
+
+
+.title-lastUser{
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  color: whitesmoke;
+  font-weight: bold;
+  outline: #7cc6b0 0.15rem solid;
+  background-color: #7cc6b0;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+padding-left: 20px;
+margin-top: 2px;
+}
+
+
+.userLast-id {
+  font-size: 1.09rem;
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  color: whitesmoke;
+  font-weight: bold;
+  position: relative;
+  top: -46px;
+  padding-left: 250px;
+}
+.userLast-name{
+  font-size: 1.09rem;
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  color: whitesmoke;
+  font-weight: bold;
+  position: relative;
+  top:-89px;
+  padding-left: 450px;
+}
+.userLast-email{
+  display: flex;
+  font-size: 1.09rem;
+  color: whitesmoke;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  position: relative;
+  top:-134px;
+  padding-left: 750px;
+}
+
+
+.id-userLast{
+  font-size: 1.1rem;
+    font-weight: bold;
+    color: #62909a;
+    position: relative;
+    right: 107px;
+}
+.name-userLast{
+  font-size: 1.1rem;
+    font-weight: bold;
+    color: #62909a;
+    position: relative;
+    padding-right: 120px;
+    top:
+}
+.email-userLast{
+  font-size: 1.1rem;
+    font-weight: bold;
+    color: #62909a;
+    position: relative;
+    padding-right: 145px;
+}
+.fa-user{
+  color: #62909a;
+  position: relative;
+ right: 180px;
+ padding-top: 2px;
 }
