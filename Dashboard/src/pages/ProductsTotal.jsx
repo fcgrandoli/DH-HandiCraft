@@ -10,9 +10,16 @@ export function ProductsTotal() {
   return (
     <div className="box-totalProducts" key={"totalProducts"}>
       <div className="box-title-totalProducts">
-        <a className="title-totalProducts" href="http://localhost:3000/">Total de Productos</a>
+        <a className="title-totalProducts" href="http://localhost:3000/">
+          Total de Productos
+        </a>
       </div>
       <p className="totalProducts">{products.length}</p>
+      <div>
+        <a className="productsList-link" href="/productsList">
+          Detalle
+        </a>
+      </div>
     </div>
   );
 }

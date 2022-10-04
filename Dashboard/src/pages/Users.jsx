@@ -21,6 +21,10 @@ export function Users() {
                   <a className="userNames" href={user.Detalle}>
                   {user.NombreDeUsuario}
               </a>
+                  
+              <div>
+
+              </div>
                 
                   </div>
                 );
