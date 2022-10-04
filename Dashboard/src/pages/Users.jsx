@@ -10,7 +10,7 @@ export function Users() {
     getUsers().then(setUsers);
   }, []);
   return (
-
+<>
     <div className="users">
       <h3 className="title-detail">Nombres de Usuarios</h3>
       {users.map((user, index) => {
@@ -40,7 +40,10 @@ export function Users() {
       </div>
   </div>
     </div>
-
+    <div className="sidebarUsers">
+          <Sidebar />
+        </div>
+</>
   );
 }
 
