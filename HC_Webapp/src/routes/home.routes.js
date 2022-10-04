@@ -4,7 +4,7 @@ const controllerHome = require("../controllers/controller.home.js");
 
 router.get("/", controllerHome.mostrarHome);
 
-router.get("/enConstruccion", controllerHome.mostrarMantenimiento);
+router.get("/acerca", controllerHome.acerca);
 
 router.get("/categorias", controllerHome.searchProductByCollection); 
 

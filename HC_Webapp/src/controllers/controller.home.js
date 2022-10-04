@@ -43,8 +43,8 @@ const controllerHome = {
       productList: productList,
     });
   },
-  mostrarMantenimiento: (req, res) => {
-    return res.render("enMantenimiento");
+  acerca: (req, res) => {
+    return res.render("acerca");
   },
 };
 

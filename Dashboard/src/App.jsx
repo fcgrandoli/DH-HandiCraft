@@ -5,7 +5,7 @@ import "../public/Home.css";
 import { Routes, Route, Link } from "react-router-dom";
 import { ProductsCategory } from "./pages/ProductsCategory";
 import { ProductsLast } from "./pages/ProductsLast";
-import { ProductsList } from "./pages/ProductsList";
+import { ProductsListView } from "./pages/ProductsListView";
 import { ProductsTotal } from "./pages/ProductsTotal";
 import { UsersTotal } from "./pages/UsersTotal";
 import { Users } from "./pages/Users";
@@ -27,7 +27,7 @@ function App() {
         <Route path="/products" element={<ProductsSummary />}></Route>
         <Route path="/productsCategory" element={<ProductsCategory />}></Route>
         <Route path="/productsLast" element={<ProductsLast />}></Route>
-        <Route path="/productsList" element={<ProductsList />}></Route>
+        <Route path="/productsList" element={<ProductsListView />}></Route>
         <Route path="/productsTotal" element={<ProductsTotal />}></Route>
         <Route path="/users" element={<UsersTotal />}></Route>
         <Route path="/usersDetail" element={<Users />}></Route>

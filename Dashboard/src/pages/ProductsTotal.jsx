@@ -11,7 +11,7 @@ export function ProductsTotal() {
     <div className="box-totalProducts" key={"totalProducts"}>
       <div className="box-title-totalProducts">
         <a className="title-totalProducts" href="http://localhost:3000/">
-          Total de Productos
+          Total de Productos &#187;
         </a>
       </div>
       <p className="totalProducts">{products.length}</p>

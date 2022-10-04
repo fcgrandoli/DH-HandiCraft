@@ -55,6 +55,7 @@
 
 .category {
   display: flex;
+  align-items: center;
   color: #62909a;
   font-size: 1.1rem;
   background: rgba(255, 255, 255, 0.7);
@@ -69,6 +70,7 @@
 div div div span.quantity {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 20%;
   color: #62909a;
   font-size: 1.1rem;

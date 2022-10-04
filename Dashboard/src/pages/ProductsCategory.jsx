@@ -18,7 +18,7 @@ export function ProductsCategory() {
             className="title-category"
             href="http://localhost:3000/api/products/summary"
           >
-            Categorias ({collections.length})
+            Categorias ({collections.length}) &#187;
           </a>
           <p className="title-quantity">#</p>
         </div>
