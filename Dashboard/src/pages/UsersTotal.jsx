@@ -18,8 +18,12 @@ export function UsersTotal() {
               <p className="totalus"          >  {user.totalUsuarios} </p>
             </div>
           );
+          
         }
       })}
+      <a className="usersDetail-link" href="/usersDetail">
+                Detalle
+              </a>
     </div>
   );
 }
