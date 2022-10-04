@@ -12,12 +12,16 @@ export function ProductsSummary() {
         <div className="sidebar">
           <Sidebar />
         </div>
-        <div class="box-1">
-          <ProductsLast />
+        <div class="dash-overview-container">
+          <div class="box-1">
+            <ProductsLast />
+          </div>
           <div class="box-2">
+            <div class="box-3">
+              <ProductsTotal />
+              <ProductsCategory />
+            </div>
             <ProductsList />
-            <ProductsTotal />
-            <ProductsCategory />
           </div>
         </div>
       </div>

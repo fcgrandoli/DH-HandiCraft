@@ -45,14 +45,14 @@
   },
   {
     "id": 5,
-    "name": "Dragon",
-    "price": "8500",
-    "discount": "10",
-    "image": "PRD-Dragon.png",
-    "descShort": "Figura de cristal hecha a mano en forma de dragon",
-    "descLarge": "Maravilloso accesorio para expositores de centro de mesa de comedor. Este seria un regalo perfecto para inauguración de la casa, Navidad y festejos familiares. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años",
+    "name": "Rinoceronte",
+    "price": "18000",
+    "discount": "5",
+    "image": "PRD-Rinoceronte.png",
+    "descShort": "Baby Animals Rocky el Rinoceronte - AZUL",
+    "descLarge": "Prepárate para enamorarte de esta adorable representación de Rocky el rinoceronte, elaborada con 221 facetas de cristal azul, gris, rosa y negro. Un símbolo de fuerza y resistencia, este rinoceronte bebé es una idea de regalo ideal. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
     "stock": "",
-    "collection": "Decoración"
+    "collection": "Disney"
   },
   {
     "id": 6,
@@ -202,14 +202,14 @@
   },
   {
     "id": 19,
-    "name": "Rinoceronte",
-    "price": "18000",
-    "discount": "5",
-    "image": "PRD-Rinoceronte.png",
-    "descShort": "Baby Animals Rocky el Rinoceronte - AZUL",
-    "descLarge": "Prepárate para enamorarte de esta adorable representación de Rocky el rinoceronte, elaborada con 221 facetas de cristal azul, gris, rosa y negro. Un símbolo de fuerza y resistencia, este rinoceronte bebé es una idea de regalo ideal. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años.",
+    "name": "Frutera Tallada",
+    "price": "3500",
+    "discount": "10",
+    "image": "PRD-FruteraTallada.png",
+    "descShort": "Frutera tallada.",
+    "descLarge": "Vesti tu mesa con esta elegante frutera tallada hecha por HandiCraft. Ideal para poner frutas en la mesa de manera delicada. Maravilloso regalo para cuando estas invitado a un acontecimiento y no sabes que llevar.",
     "stock": "",
-    "collection": "Disney"
+    "collection": "Vajilla"
   },
   {
     "id": 20,
@@ -268,13 +268,13 @@
   },
   {
     "id": 25,
-    "name": "Frutera Tallada",
-    "price": "3500",
+    "name": "Dragon",
+    "price": "8500",
     "discount": "10",
-    "image": "PRD-FruteraTallada.png",
-    "descShort": "Frutera tallada.",
-    "descLarge": "Vesti tu mesa con esta elegante frutera tallada hecha por HandiCraft. Ideal para poner frutas en la mesa de manera delicada. Maravilloso regalo para cuando estas invitado a un acontecimiento y no sabes que llevar.",
+    "image": "PRD-Dragon.png",
+    "descShort": "Figura de cristal hecha a mano en forma de dragon",
+    "descLarge": "Maravilloso accesorio para expositores de centro de mesa de comedor. Este seria un regalo perfecto para inauguración de la casa, Navidad y festejos familiares. Objeto decorativo. No es un juguete. No apropiado para niños menores de 15 años",
     "stock": "",
-    "collection": "Vajilla"
+    "collection": "Decoración"
   }
 ]

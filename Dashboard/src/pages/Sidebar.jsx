@@ -8,7 +8,7 @@ export function Sidebar() {
     >
       <a
         className="sidebar-brand d-flex align-items-center justify-content-center"
-        href="/"
+        href="http://localhost:3000/"
       >
         <div className="sidebar-brand-icon">
           <img className="w-100" src={image} height="70px" width="80px" />

@@ -7,7 +7,8 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 0.5rem;
-  width: 25vw;
+  width: 35vw;
+  height: 90vh;
   min-height: 10vh;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -74,7 +75,7 @@
   border-radius: 1rem;
   flex-shrink: 1;
   margin: 2.5rem;
-  width: 75%;
+  width: 60%;
   min-height: 20%;
   box-shadow: 2px 2px 5px 2px rgba(98, 144, 154, 1);
   -webkit-box-shadow: 2px 2px 5px 2px rgba(98, 144, 154, 1);

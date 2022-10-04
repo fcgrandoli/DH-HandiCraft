@@ -14,7 +14,12 @@ export function ProductsCategory() {
     <div className="box-category">
       <div className="box-title-category">
         <div className="box-titles-category">
-          <p className="title-category">Categorias ({collections.length})</p>
+          <a
+            className="title-category"
+            href="http://localhost:3000/api/products/summary"
+          >
+            Categorias ({collections.length})
+          </a>
           <p className="title-quantity">#</p>
         </div>
 

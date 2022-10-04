@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .box-totalProducts {
   display: flex;
   flex-direction: column;
@@ -19,7 +23,6 @@
 .box-title-totalProducts {
   display: flex;
   justify-content: center;
-  align-items: baseline;
   color: whitesmoke;
   font-weight: bold;
   outline: #7cc6b0 0.15rem solid;
@@ -27,11 +30,16 @@
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   border-bottom: 0.25rem #62909a solid;
+  height: 33%;
 }
 
 .title-totalProducts {
   display: flex;
-  font-size: 1.25rem;
+  align-items: center;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  margin: 0.25rem auto;
+
 }
 
 .totalProducts {

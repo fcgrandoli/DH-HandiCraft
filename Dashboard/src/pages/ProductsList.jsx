@@ -10,7 +10,7 @@ export function ProductsList() {
   return (
     <div className="box-productList" key={"productList"}>
       <div className="box-title-productList">
-        <p className="title-productList">Lista de Productos</p>
+        <a className="title-productList" href="http://localhost:3000/api/products/">Lista de Productos</a>
       </div>
       <div className="grid-producList">
         {products.map((product, index) => {

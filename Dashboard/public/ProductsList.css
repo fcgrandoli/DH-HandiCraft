@@ -6,8 +6,8 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 0.5rem;
-  width: 50vw;
-  height: 55vh;
+  width: 41vw;
+  height: 60vh;
   padding: 0.5rem;
   margin: 0.5rem;
   box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
@@ -15,32 +15,37 @@
   -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
 }
 
+#root > div > div.box-1 > div.box-2 > div.box-productList > div.grid-producList > div > a {
+  width: 85%;
+  overflow-wrap: break-word;
+}
+
 .box-title-productList {
   display: flex;
+  justify-content: center;
   color: whitesmoke;
   font-weight: bold;
-  overflow-wrap: break-word;
-  text-align: left;
-  align-self: flex-start;
   outline: #7cc6b0 0.15rem solid;
   background-color: #7cc6b0;
-  width: 100%;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   border-bottom: 0.4rem #62909a solid;
+  height: 15%;
 }
 
 .title-productList {
   display: flex;
-  font-size: 1.25rem;
-  padding-left: 1.75rem;
+  align-items: center;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  margin: 0.25rem auto;
 }
 
 .grid-producList {
   display: flex;
   display: inline-grid;
   grid-template-columns: auto auto auto auto auto;
-  gap: 1.5rem 1.5rem;
+  gap: 0.25rem 1.25rem;
   padding: 30px;
   outline: #7cc6b0 0.15rem solid;
   align-self: flex-start;
@@ -55,7 +60,7 @@
   align-items: center;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
-  height: 3rem;
+  height: 4rem;
   padding: 1rem;
   -webkit-backdrop-filter: blur(20px);
   border-radius: 0.25rem;
@@ -65,14 +70,13 @@
 }
 .productItem-name {
   color: #62909a;
-  overflow-wrap: break-word;
-  text-align: justify;
   cursor: pointer;
   font-size: 1rem;
   transition: 0.5s ease;
 }
 .productItem:hover {
   background-color: #7cc6b0;
+  outline: #62909a 2px solid;
 }
 
 .productItem:hover,
@@ -80,7 +84,8 @@
   color: whitesmoke;
   text-decoration: underline;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
+  
 }
 
 .buttons-admin {

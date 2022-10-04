@@ -76,13 +76,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
   }
   .nav-user {
     display: flex;
     text-align: center;
     overflow-wrap: break-word;
-    flex-shrink: 1;
   }
 
   .dropbtn {
@@ -102,14 +102,13 @@
     justify-content: center;
     position: relative;
     display: inline-block;
-    
   }
 
   .dropdown-content {
     display: none;
     position: absolute;
-    top: 0px;
-    left: 8px;
+    top: 2px;
+    left: 120px;
     min-width: 60px;
     background-color: #7cc6b0;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -133,7 +132,6 @@
     font-size: 18px;
     color: whitesmoke;
     margin: auto;
-
   }
 
   .collection:hover {
@@ -155,18 +153,27 @@
     background-color: #62909a;
   }
 
-  .profile-name {
-    font-weight: bold;
-  }
-
   .nav-site-container a,
   .nav-site-container p,
-  .nav-user-container a {
+  .nav-user-container a,
+  .dashboard {
     margin: 5px 10px;
     padding: 3px 15px;
     display: block;
     outline: 2.5px solid whitesmoke;
     border-radius: 15px;
+  }
+
+  nav.nav-user-container > div > a.nav-user-dashboard,
+  nav.nav-user-container > div > a.nav-user-dashboard:visited {
+    background-color: whitesmoke;
+    color: #62909a;
+    font-weight: bold;
+  }
+
+  nav.nav-user-container > div > a.nav-user-dashboard:hover {
+    background-color: #7cc6b0;
+    color: whitesmoke;
   }
 
   .nav-search {
@@ -261,6 +268,5 @@
     background-color: whitesmoke;
     color: #62909a;
     cursor: pointer;
-    font-weight: bold;
   }
 }

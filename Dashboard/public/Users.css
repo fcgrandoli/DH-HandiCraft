@@ -2,83 +2,69 @@
   color: whitesmoke;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-
 .usersTotal {
-  
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 1.5rem;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 0.5rem;
-    width: 18rem;
-    height:15.5rem;
-    padding: 0.5rem;
-    margin: 1rem;
-    box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
-    -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
-    -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0.5rem;
+  width: 18rem;
+  height: 15rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
 }
 
-.user{
-  
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    color: whitesmoke;
-    font-weight: bold;
-    outline: #7cc6b0 0.15rem solid;
-    background-color: #7cc6b0;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    border-bottom: 0.25rem #62909a solid ;
-
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  color: whitesmoke;
+  font-weight: bold;
+  outline: #7cc6b0 0.15rem solid;
+  background-color: #7cc6b0;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom: 0.25rem #62909a solid;
 }
-
 
 .title-totalus {
   display: flex;
   font-size: 1.25rem;
-  
 }
 
-
-.totalus{
+.totalus {
   position: absolute;
-  bottom:1rem;
+  bottom: 1rem;
   right: 4.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #62909a;
   font-size: 4rem;
-  font-weight:bold;
+  font-weight: bold;
   margin: 0.25rem auto;
   width: 50%;
   height: 50%;
   border-radius: 50%;
-  
-
-
 }
-
-
-
-
 
 .totalus {
   position: absolute;
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 170px;
-  height: 150px;
+  width: 8rem;
+  height: 8rem;
   border: 10px solid;
   border-image: linear-gradient(var(--angle), #87a6ab, #62909a, #7cc6b0) 1;
   animation: 2s rotate linear infinite;

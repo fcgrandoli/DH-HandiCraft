@@ -34,13 +34,15 @@
 
 .title-category {
   display: flex;
-  font-size: 1rem;
+  align-items: center;
+  font-size: 1.2rem;
+  color: whitesmoke;
   padding-left: 0.5rem;
 }
 
 .title-quantity {
   padding-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 .collection-sorter {

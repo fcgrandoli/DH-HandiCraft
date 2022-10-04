@@ -1,26 +1,44 @@
 .prd-dash-overview {
   display: flex;
   position: relative;
-  height: 90vh;
+  height: 100vh;
+}
 
-  /*   grid-template-columns: auto auto auto;
-  gap: 20px 20px; */
+div > div.dash-overview-container {
+  display: flex;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0.5rem;
+  box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  height: 95%;
+  width: 85%;
 }
 
 .box-1 {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 1vw auto;
-  height: 95vh;
+  justify-content: center;
+  height: 100%;
+  width: 41vw;
 }
 
 .box-2 {
   display: flex;
+  flex-direction: column;
+  align-self: center;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-wrap: wrap-reverse;
-  width: 50%;
 
-  /*   bottom: 5vh;
-  right: 10vh; */
+  width: 40vw;
+}
+.box-3 {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
 }

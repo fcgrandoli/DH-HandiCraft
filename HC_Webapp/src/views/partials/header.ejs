@@ -9,7 +9,7 @@
         <a class="nav-button" href="/">Home</a>
       </div>
       <div class="dropdown">
-        <button class="dropbtn">Colecciones</button>
+        <button class="dropbtn">Colecciones &#187;</button>
         <div class="dropdown-content">
           <% for (let i = 0; i < collections.length; i++) { %>
           <form action="/categorias" method="GET">
@@ -26,9 +26,6 @@
           </form>
           <% } %>
         </div>
-      </div>
-      <div>
-        <a class="nav-button" href="/enConstruccion">Noticias</a>
       </div>
     </nav>
     <div class="nav-search">
@@ -57,6 +54,17 @@
         <a class="nav-user" href="/user/viewLogin">Cuenta</a>
       </div>
 
+      <% } else if(userLoggedIn && userLoggedIn.isAdmin == true){ %>
+      <div>
+        <a class="nav-user-dashboard" href="http://127.0.0.1:5173/"
+          >Dashboard</a
+        >
+      </div>
+      <div>
+        <a class="nav-user" class="profile-name" href="/user/profile"
+          ><%= userLoggedIn.userName %></a
+        >
+      </div>
       <% } else{ %>
 
       <div>
@@ -64,7 +72,6 @@
           ><%= userLoggedIn.userName %></a
         >
       </div>
-
       <% } %>
 
       <div>
