@@ -31,7 +31,7 @@ export function ProductsCategory() {
                 key={`category-${index}`}
                 href={collectionURL + collection.Categoria}
               >
-                {collection.Categoria}
+                {collection.Categoria} &#187;
               </a>
               <span className="quantity" key={`quantity-${index}`}>
                 {collection.Count}

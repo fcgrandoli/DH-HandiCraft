@@ -81,7 +81,18 @@ div div div span.quantity {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 0.15rem #62909a solid;
 }
-
+#root
+  > div
+  > div.dash-overview-container
+  > div.box-2
+  > div.box-3
+  > div.box-category
+  > div
+  > div
+  > a:hover {
+  font-weight: bold;
+  transition: 0.25s ease;
+}
 .collection-sorter > .category {
   border-bottom-left-radius: 0.5rem;
 }
