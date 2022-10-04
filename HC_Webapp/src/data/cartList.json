@@ -271,22 +271,194 @@
   },
   {
     "id": 27,
-    "name": "Canasto de Vidrio",
-    "price": "9000",
-    "discount": "15",
-    "image": "PRD-CanastoFlor.png",
-    "descShort": "Canasto de flores tallado en vidrio."
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
   },
   {
     "id": 28,
-    "name": "Canasto de Vidrio",
-    "price": "9000",
-    "discount": "15",
-    "image": "PRD-CanastoFlor.png",
-    "descShort": "Canasto de flores tallado en vidrio."
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
   },
   {
     "id": 29,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 30,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 31,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 32,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 33,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 34,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 35,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 36,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 37,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 38,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 39,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 40,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 41,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 42,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 43,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 44,
+    "name": "Campana de cristal",
+    "price": "18000",
+    "discount": "",
+    "image": "PRD-CampanaRosa.png",
+    "descShort": "Campana de cristal Hibisco, Pequeña - MORADO"
+  },
+  {
+    "id": 45,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
+  },
+  {
+    "id": 46,
     "name": "Canasto de Vidrio",
     "price": "9000",
     "discount": "15",
@@ -294,11 +466,13 @@
     "descShort": "Canasto de flores tallado en vidrio."
   },
   {
-    "id": 30,
-    "name": "Canasto de Vidrio",
-    "price": "9000",
-    "discount": "15",
-    "image": "PRD-CanastoFlor.png",
-    "descShort": "Canasto de flores tallado en vidrio."
+    "id": 47,
+    "name": "DELETED",
+    "price": "DELETED",
+    "discount": "DELETED",
+    "image": "DELETED",
+    "descShort": "DELETED",
+    "descl": "DELETED",
+    "cant": "DELETED"
   }
 ]

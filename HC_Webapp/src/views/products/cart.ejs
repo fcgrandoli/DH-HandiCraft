@@ -2,12 +2,12 @@
 <html lang="en">
   <%- include ('../partials/head') %>
   <link rel="stylesheet" type="text/css" href="/css/cart.css" />
- <!--  <link rel="stylesheet" type="text/css" href="/css/cart-tablet.css" />
+   <link rel="stylesheet" type="text/css" href="/css/cart-tablet.css" />
   <link
     rel="stylesheet"
     type="text/css"
-    href="/css/cart-desktop.css"
-  /> -->
+    href="/css/cart-desktop.css"/>
+  
   <body>
       <div>
       <%- include ('../partials/header') %>
@@ -19,31 +19,33 @@
           <section>
       <% for (let i= 0; i< cartProduct.length; i++ ){ %> <% if(cartProduct[i].name != 'DELETED')
       {%>
+        
         <article>
           <h4 class="tituloProducto"><%= cartProduct[i].name %></h4>
-              <img
+          
+             <img
                 class="imagenesCart"
                 src="/images/<%= cartProduct[i].image %>"
               />
 
                 
                 <p class="breveDescripcion"><%= cartProduct[i].descShort %></p>
-              
-                  <section class="precio">$<%= cartProduct[i].price %></section>
+                <div class="cajaPrecio">
+              <section class="precio">$<%= cartProduct[i].price %></section>
+                </div>
                   <section class="descShort"><%= cartProduct[i].discount %>%</section>
 
-                  
-                  <section class="botones">
-                      <a href="/">
-                      <button>
+                  <div class="botonEliminar">
+      
                         <form
-              class="fields"
-              method="POST"
-              action="/viewProduct/eliminar?_method=POST">
-              <a href="/cart/<%= cartProduct[i].id%>/eliminarProduct">Eliminar</a>
-            </form></button>
-             </a>
+                        class="field"
+                         method="POST"
+                         action="/viewProduct/eliminar?_method=POST">
+                 <a href="/cart/<%= cartProduct[i].id%>/eliminarProduct">ELIMINAR</a>
+              
+            </form>
             
+            </div>
                   </section>
 
             </article>
@@ -55,4 +57,6 @@
     <%- include ('../partials/footer') %>
   </body>
 </html>
+
+
       
