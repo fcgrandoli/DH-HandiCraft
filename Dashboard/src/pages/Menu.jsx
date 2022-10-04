@@ -16,7 +16,7 @@ export default function Menu() {
         <Link to="/productsList">Lista de Productos</Link>
       </div>
       <div>
-        <Link to="/productsSummary">Overview Productos</Link>
+        <Link to="/products">Overview Productos</Link>
       </div>
       <div>
         <Link to="/productsTotal">Total de Productos</Link>

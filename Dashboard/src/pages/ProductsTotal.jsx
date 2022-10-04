@@ -8,8 +8,11 @@ export function ProductsTotal() {
     getProducts().then(setProducts);
   }, []);
   return (
-    <div className="totalProducts" key={"totalProducts"}>
-      <h4>Total de Productos: {products.length}</h4>
+    <div className="box-totalProducts" key={"totalProducts"}>
+      <div className="box-title-totalProducts">
+        <p className="title-totalProducts">Total de Productos</p>
+      </div>
+      <p className="totalProducts">{products.length}</p>
     </div>
   );
 }

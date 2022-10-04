@@ -1,0 +1,24 @@
+.prd-dash-overview {
+  display: flex;
+  position: relative;
+  height: 90vh;
+
+  /*   grid-template-columns: auto auto auto;
+  gap: 20px 20px; */
+}
+
+.box-1 {
+  display: flex;
+  margin: 1vw auto;
+  height: 95vh;
+}
+
+.box-2 {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  position: absolute;
+  height: 27%;
+  bottom: 16vh;
+  right: 10vh;
+}

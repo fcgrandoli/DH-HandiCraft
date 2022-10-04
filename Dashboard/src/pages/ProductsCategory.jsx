@@ -1,26 +1,40 @@
 import "../../public/ProductsCategory.css";
 import { useState, useEffect } from "react";
-import { getProducts } from "../services/products";
+import { getProductsByCategory } from "../services/products";
 
 export function ProductsCategory() {
-  const [products, setProducts] = useState([]);
+  const [collections, setProducts] = useState([]);
   useEffect(() => {
-    getProducts().then(setProducts);
+    getProductsByCategory().then(setProducts);
   }, []);
 
-  let collections = [...new Set(products.map((data) => data.Categoria))];
+  const collectionURL = "http://localhost:3000/categorias?collection=";
+
   return (
-    <ul className="box-category">
-      <div className="title-category">
-      <p>Categorias:</p>
+    <div className="box-category">
+      <div className="box-title-category">
+        <div className="box-titles-category">
+          <p className="title-category">Categorias ({collections.length})</p>
+          <p className="title-quantity">#</p>
+        </div>
+
+        {collections.map((collection, index) => {
+          return (
+            <div className="collection-sorter" key={`sorter-${index}`}>
+              <a
+                className="category"
+                key={`category-${index}`}
+                href={collectionURL + collection.Categoria}
+              >
+                {collection.Categoria}
+              </a>
+              <span className="quantity" key={`quantity-${index}`}>
+                {collection.Count}
+              </span>
+            </div>
+          );
+        })}
       </div>
-      {collections.map((collection, index) => {
-        return (
-          <li className="category" key={`category-${index}`}>
-            {collection}
-          </li>
-        );
-      })}
-    </ul>
+    </div>
   );
 }

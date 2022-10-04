@@ -1,8 +1,87 @@
 .box-category {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0.5rem;
+  width: 18rem;
+  height: 15rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+}
+
+.box-title-category {
+  outline: #7cc6b0 0.15rem solid;
+  border-radius: 0.5rem;
+}
+
+.box-titles-category {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   color: whitesmoke;
+  font-weight: bold;
+  outline: #7cc6b0 0.15rem solid;
+  background-color: #7cc6b0;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom: 0.25rem #62909a solid;
+}
+
+.title-category {
+  display: flex;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+.title-quantity {
+  padding-right: 1rem;
+  font-size: 1.25rem;
+}
+
+.collection-sorter {
+  display: flex;
+  width: 100%;
+  box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+  -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
 }
 
 .category {
-  color: whitesmoke;
+  display: flex;
+  color: #62909a;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  padding: 0.6rem;
+  width: 80%;
+  height: 50px;
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 0.15rem #62909a solid;
 }
 
+div div div span.quantity {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  color: #62909a;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  padding: 10px;
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 0.15rem #62909a solid;
+}
+
+.collection-sorter > .category {
+  border-bottom-left-radius: 0.5rem;
+}
+
+.collection-sorter > .quantity {
+  border-bottom-right-radius: 0.5rem;
+}

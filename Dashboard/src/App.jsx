@@ -19,11 +19,11 @@ import Menu from "./pages/Menu";
 function App() {
   return (
     <>
-<Menu />
+     
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/products" element={<ProductsSummary />}></Route>
         <Route path="/productsCategory" element={<ProductsCategory />}></Route>
-        <Route path="/productsSummary" element={<ProductsSummary />}></Route>
         <Route path="/productsLast" element={<ProductsLast />}></Route>
         <Route path="/productsList" element={<ProductsList />}></Route>
         <Route path="/productsTotal" element={<ProductsTotal />}></Route>
