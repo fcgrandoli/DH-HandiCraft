@@ -10,15 +10,18 @@ export function Users() {
   }, []);
   return (
     <div className="users">
-      <h3 className="title-detail">Detalle de Usuarios:</h3>
+      <h3 className="title-detail">Nombres de Usuarios</h3>
       {users.map((user, index) => {
         if (index !== 0) {
           return (
             <div>
               {user.Usuarios.map((user, index) => {
                 return (
-                  <div className="userNames" key={`usr-${index}`}>
-                    <p>Usuario: {user.Nombre}</p>
+                  <div key={`usr-${index}`}>
+                  <a className="userNames" href={user.Detalle}>
+                  {user.NombreDeUsuario}
+              </a>
+                
                   </div>
                 );
               })}
