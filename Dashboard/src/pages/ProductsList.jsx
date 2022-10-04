@@ -8,7 +8,10 @@ export function ProductsList() {
     getProducts().then(setProducts);
   }, []);
   return (
-    <div className="productList" key={"productList"}>
+    <div className="box-productList" key={"productList"}>
+      <div className="title-productList">
+        <p>List de Productos:</p>
+      </div>
       {products.map((product, index) => {
         return (
           <div className="productItem" key={`prodItem$-${index}`}>

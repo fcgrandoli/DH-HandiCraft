@@ -9,9 +9,19 @@ export function ProductsLast() {
   }, []);
   return (
     <div className="productLast" key={"productLast"}>
+      <div className="title-productLast">
+        <p>Último producto creado:</p>
+      </div>
       {products.map((product, index) => {
-         if (index === products.length - 1) {
-          return <h4>{product.Nombre}</h4>;
+        if (index === products.length - 1) {
+          return (
+            <>
+              <p>{product.Nombre}</p>
+              <p>{product.DescripcionLarga}</p>
+              <img src={product.Imagen}></img>
+              <a href={product.DetalleProducto}></a>
+            </>
+          );
         }
       })}
     </div>

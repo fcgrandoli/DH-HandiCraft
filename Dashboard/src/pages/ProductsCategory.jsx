@@ -7,32 +7,20 @@ export function ProductsCategory() {
   useEffect(() => {
     getProducts().then(setProducts);
   }, []);
+
+  let collections = [...new Set(products.map((data) => data.Categoria))];
   return (
-    <div>
-      {products.map((product, index) => {
-        if (index !== 0) {
-          return (
-            <div className="box-products">
-              <div className="category" key={`cat${index}-${index}`}>
-                <p>Categoria: {product.Categoria}</p>
-                <hr />
-              </div>
-              <div>
-                {product.Productos.map((product, index) => {
-                  if (index !== 0) {
-                    return (
-                      <div className="product" key={`prod${index}-${index}`}>
-                        <p>Producto: {product.Nombre}</p>
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-              <hr />
-            </div>
-          );
-        }
+    <ul className="box-category">
+      <div className="title-category">
+      <p>Categorias:</p>
+      </div>
+      {collections.map((collection, index) => {
+        return (
+          <li className="category" key={`category-${index}`}>
+            {collection}
+          </li>
+        );
       })}
-    </div>
+    </ul>
   );
 }

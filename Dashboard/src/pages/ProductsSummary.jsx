@@ -6,6 +6,7 @@ import { ProductsTotal } from "./ProductsTotal";
 export function ProductsSummary() {
   return (
     <div>
+      <ProductsCategory />
       <ProductsLast />
       <ProductsList />
       <ProductsTotal />
