@@ -14,14 +14,10 @@ import { ProductsSummary } from "./pages/ProductsSummary";
 import Error from "./pages/Error";
 import { Outlet } from "react-router-dom";
 import Home from "./pages/Home";
-import Menu from "./pages/Menu";
 
 function App() {
   return (
     <>
-     <Menu></Menu>
-
-
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/products" element={<ProductsSummary />}></Route>
