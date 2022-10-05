@@ -10,7 +10,12 @@ export function ProductsList() {
   return (
     <div className="box-productList" key={"productList"}>
       <div className="box-title-productList">
-        <a className="title-productList" href="http://localhost:3000/api/products/">Lista de Productos &#187;</a>
+        <a
+          className="title-productList"
+          href="http://localhost:3000/api/products/"
+        >
+          Lista de Productos &#187;
+        </a>
       </div>
       <div className="grid-producList">
         {products.map((product, index) => {
@@ -24,7 +29,7 @@ export function ProductsList() {
               <ul className="buttons-admin">
                 <li className="btn-edit-container">
                   <a className="btn-edit" href={urlEdit}>
-                  <i class="fa fa-solid fa-pen"></i>
+                    <i class="fa fa-solid fa-pen"></i>
                   </a>
                 </li>
                 <li className="btn-delete-container">
@@ -38,6 +43,11 @@ export function ProductsList() {
             </div>
           );
         })}
+      </div>
+      <div>
+        <a class="btn-create" href="http://localhost:3000/viewProduct/createProduct">
+          +
+        </a>
       </div>
     </div>
   );

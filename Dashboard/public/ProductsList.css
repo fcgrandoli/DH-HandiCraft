@@ -165,7 +165,25 @@ ul > li.btn-delete-container > form > button > i {
 }
 
 
-
+#root > div > div.dash-overview-container > div.box-2 > div.box-productList > div > a.btn-create {
+  color:whitesmoke;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 60px;
+  line-height: 35px;
+  width: 48px;
+  height: 48px;
+  background-color: #39b54a;
+  border-radius: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+#root > div > div.dash-overview-container > div.box-2 > div.box-productList > div > a.btn-create:hover {
+  background-color: #30e100ed;
+  color: whitesmoke;
+  transition: 0.5s ease;
+}
 
 
 

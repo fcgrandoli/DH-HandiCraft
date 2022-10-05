@@ -46,7 +46,7 @@
                   placeholder="Nombre del producto"
                   value="<%= locals.oldData ? oldData.name : null %>"
                 />
-                <i class=" fa fa-solid fa-keyboard"></i>
+                <i class="fa fa-solid fa-keyboard"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.name) { %>
@@ -64,7 +64,7 @@
                   placeholder="Descripcion breve"
                   value="<%= locals.oldData ? oldData.descShort : null %>"
                 />
-                <i class=" fa fa-solid fa-keyboard"></i>
+                <i class="fa fa-solid fa-keyboard"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.descShort) { %>
@@ -85,7 +85,7 @@
                 >
 <%= locals.oldData ? oldData.descLarge : null %></textarea
                 >
-                <i class=" fa fa-solid fa-keyboard"></i>
+                <i class="fa fa-solid fa-keyboard"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.descLarge) { %>
@@ -93,7 +93,6 @@
                   <% } %>
                 </div>
               </div>
-
               <div class="price">
                 <input
                   class="input-field"
@@ -103,7 +102,7 @@
                   placeholder="Precio"
                   value="<%= locals.oldData ? oldData.price : null %>"
                 />
-                <i class=" fa fa-solid fa-hashtag"></i>
+                <i class="fa fa-solid fa-hashtag"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.price) { %>
@@ -111,7 +110,23 @@
                   <% } %>
                 </div>
               </div>
-
+              <div class="collection-create">
+                <input
+                  class="input-field"
+                  type="text"
+                  name="collection"
+                  autocomplete="off"
+                  placeholder="Categoria (opcional)"
+                  value="<%= locals.oldData ? oldData.collection : null %>"
+                />
+                <i class="fa fa-solid fa-keyboard"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.collection) { %>
+                  <p class="msg-error"><%= locals.errors.collection.msg %></p>
+                  <% } %>
+                </div>
+              </div>
               <div class="discount">
                 <input
                   class="input-field"
@@ -121,7 +136,7 @@
                   placeholder="Descuento (opcional)"
                   value="<%= locals.oldData ? oldData.discount : null %>"
                 />
-                <i class=" fa fa-solid fa-hashtag"></i>
+                <i class="fa fa-solid fa-hashtag"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.discount) { %>
@@ -139,7 +154,7 @@
                   placeholder="Cantidad de stock (opcional)"
                   value="<%= locals.oldData ? oldData.stock : null %>"
                 />
-                <i class=" fa fa-solid fa-hashtag"></i>
+                <i class="fa fa-solid fa-hashtag"></i>
                 <div class="errors">
                   <p class="feed"></p>
                   <% if (errors.discount) { %>
