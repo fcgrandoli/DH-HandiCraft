@@ -114,7 +114,22 @@
                   <% } %>
                 </div>
               </div>
-
+              <div class="collection-create">
+                <label for="">Categoria:</label>
+                <input
+                  class="input-field"
+                  type="text"
+                  name="collection"
+                  value="<%= productList.collection %>"
+                />
+                <i class="fa fa-solid fa-keyboard"></i>
+                <div class="errors">
+                  <p class="feed"></p>
+                  <% if (errors.collection) { %>
+                  <p class="msg-error"><%= locals.errors.collection.msg %></p>
+                  <% } %>
+                </div>
+              </div>
               <div class="discount">
                 <label for="">Descuento:</label>
                 <input

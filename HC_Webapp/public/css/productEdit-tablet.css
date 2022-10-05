@@ -149,6 +149,7 @@
   .name,
   .descShort,
   .descLarge,
+  .collection-create,
   .price,
   .discount,
   .stock {
