@@ -11,6 +11,7 @@ export function Users() {
   }, []);
   return (
 <>
+<div className="box-users">
     <div className="users">
       <h3 className="title-detail">Nombres de Usuarios</h3>
       {users.map((user, index) => {
@@ -33,16 +34,17 @@ export function Users() {
 
           );
         }
-      })} <div class="container">
+      })} <div class="box-like">
       <div class="btn">
           <h1>Like si te gusto el Dashboard!</h1>
           <i  class="fa fa-thumbs-up" aria-hidden="true"></i>
       </div>
   </div>
+  </div>
     </div>
-    <div className="sidebarUsers">
+    /* <div className="sidebarUsers">
           <Sidebar />
-        </div>
+        </div> */
 </>
   );
 }

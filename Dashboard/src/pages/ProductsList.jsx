@@ -41,8 +41,10 @@ export function ProductsList() {
                 </li>
               </ul>
             </div>
+            
           );
         })}
+        
       </div>
       <div>
         <a class="btn-create" href="http://localhost:3000/viewProduct/createProduct">

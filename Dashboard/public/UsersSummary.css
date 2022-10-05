@@ -1,0 +1,33 @@
+.prd-dash {
+    display:flex;
+    position: relative;
+    height: 100vh;
+  }
+  
+  div > div.dash-container {
+    display: flex;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 0.5rem;
+    box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -webkit-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    -moz-box-shadow: 6px 6px 15px 4px rgba(98, 144, 154, 1);
+    height: 50%;
+    width: 60%;
+  }
+  
+  .box2 {
+    position:fixed;
+top: 2vh;
+right: 7vh;
+  }
+  .box3 {
+  position:fixed;
+ top: 16vh;
+left:40vh;
+    width: 100%;
+  }
+  

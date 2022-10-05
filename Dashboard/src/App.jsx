@@ -11,6 +11,7 @@ import { UsersTotal } from "./pages/UsersTotal";
 import { Users } from "./pages/Users";
 import { UsersLast } from "./pages/UsersLast";
 import { ProductsSummary } from "./pages/ProductsSummary";
+import { UserSummary } from "./pages/UserSummary";
 import Error from "./pages/Error";
 import { Outlet } from "react-router-dom";
 import Home from "./pages/Home";
@@ -25,7 +26,8 @@ function App() {
         <Route path="/productsLast" element={<ProductsLast />}></Route>
         <Route path="/productsList" element={<ProductsListView />}></Route>
         <Route path="/productsTotal" element={<ProductsTotal />}></Route>
-        <Route path="/users" element={<UsersTotal />}></Route>
+        <Route path="/users" element={<UserSummary/>}></Route>
+        <Route path="/usersTotal" element={<UsersTotal />}></Route>
         <Route path="/usersDetail" element={<Users />}></Route>
         <Route path="/usersLast" element={<UsersLast />}></Route>
         <Route path="*" element={<Error />}></Route>
